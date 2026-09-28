@@ -1,5 +1,7 @@
 # smtvv-planer | 真女5复仇合体图鉴
 
+**在线演示：[smtvv.wangliyu12.com](https://smtvv.wangliyu12.com/)**
+
 《Shin Megami Tensei V: Vengeance》非官方资料与合体路线工具。支持三套主题、五种语言、仲魔与灵体图鉴、最多八技能规划，以及「综合最优」「合体次数最少」「费用最低」三种经过规则回放校验的路线。包含完整网站资源，默认在自己的机器上计算，无需 AI API、外部计算节点或维护者的服务。
 
 ## 页面截图
