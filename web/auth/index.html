@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN" data-skin="smtv" data-theme="light">
+<head>
+  <meta charset="utf-8">
+<script>
+// Keep stylesheet recovery available even if an external script cannot load.
+window.addEventListener('error',event=>{
+  const link=event.target;
+  if(!(link instanceof HTMLLinkElement)||!link.relList.contains('stylesheet'))return;
+  const attempt=Number(link.dataset.stylesheetRetries||0);
+  if(attempt>=2)return;
+  link.dataset.stylesheetRetries=String(attempt+1);
+  const url=new URL(link.href);url.searchParams.set('cssRetry',String(attempt+1));
+  setTimeout(()=>{if(link.isConnected)link.href=url.href;},200*(attempt+1));
+},true);
+</script>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f2f4f1">
+  <title>登录 · 真女5复仇</title>
+  <link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
+  <meta name="color-scheme" content="light dark">
+  <script src="/auth/theme/smtvv.js?v=login-smtvv-20260917-1"></script>
+
+  <link rel="stylesheet" href="/auth/theme/i18n.css?v=performance-20260916-1">
+  <link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
+  <link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
+  <link rel="stylesheet" href="/auth/theme/login.css?v=login-smtvv-20260917-1">
+  <script defer src="/auth/theme/i18n.js?v=route-ledger-20260917-1"></script>
+  <script defer src="/auth/theme/login.js?v=login-smtvv-20260917-1"></script>
+</head>
+<body class="smtvv-auth">
+<header class="login-header">
+  <a class="login-brand" href="/" aria-label="真女5复仇合体规划"><img src="/auth/theme/smtvv-logo.png" width="188" height="64" alt="真女5复仇"><span hidden>真女5复仇</span></a>
+  <div class="login-controls">
+    <button id="login-font" class="icon-button" type="button" aria-label="大字号" aria-pressed="false">Aa</button>
+    <button id="login-theme" class="icon-button" type="button" aria-label="切换深色主题"><svg class="icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 13a9 9 0 0 1-9.8-9.8A9 9 0 1 0 20.8 13Z"/></svg><svg class="icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button>
+    <div id="login-language" class="login-language"></div>
+  </div>
+</header>
+<main id="root" class="login-layout"><div class="login-panel">
+  <section id="login-view" aria-labelledby="login-title">
+    <div class="login-panel-heading"><p class="login-eyebrow" aria-hidden="true">VENGEANCE / ACCOUNT ACCESS</p><h1 id="login-title">登录你的账户</h1></div>
+    <form id="form-login" action="/auth/api/firstfactor" method="post" autocomplete="on">
+      <fieldset id="login-fields" disabled>
+        <label class="login-field" for="username-textfield">账号<input id="username-textfield" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="256"></label>
+        <label class="login-field" for="password-textfield">密码</label>
+        <div class="login-password"><input id="password-textfield" name="password" type="password" autocomplete="current-password" required maxlength="1024"><button id="show-login-password" type="button" aria-pressed="false" aria-label="显示密码">显示</button></div>
+        <div id="login-options" class="login-options">
+          <label id="remember-login-option" class="login-check" hidden><input id="remember-login" type="checkbox"><span>保持登录 <small id="remember-duration"></small></span></label>
+          <label id="remember-password-option" class="login-check" title="由浏览器保存和填入密码" hidden><input id="remember-password" type="checkbox"><span>记住密码</span></label>
+        </div>
+        <div id="turnstile-section" class="turnstile-section" data-state="loading" hidden>
+          <div class="turnstile-summary">
+            <span id="turnstile-state" role="status" aria-live="polite" aria-atomic="true">正在安全验证…</span>
+            <button id="retry-turnstile" type="button" hidden>重新验证</button>
+          </div>
+          <div id="turnstile-widget" class="turnstile-widget"></div>
+        </div>
+        <button id="sign-in-button" type="submit">登录</button>
+      </fieldset>
+    </form>
+  </section>
+  <section id="authenticated-view" aria-labelledby="account-title" hidden>
+    <div class="login-panel-heading"><p class="login-eyebrow" aria-hidden="true">VENGEANCE / ACCOUNT ACCESS</p><h1 id="account-title">已登录</h1></div>
+    <p class="login-description">欢迎回来，<strong id="authenticated-username" data-i18n-skip></strong>。</p>
+    <a id="continue-link" class="login-continue" href="/">返回网站 ↗</a>
+    <button id="logout-button" type="button">退出登录</button>
+  </section>
+  <p id="login-feedback" role="alert" hidden></p>
+  <button id="retry-login" class="login-retry" type="button" hidden>重新连接</button>
+  <p id="login-loading" class="login-help" role="status">正在读取登录设置…</p>
+</div></main>
+<noscript><p class="login-noscript">请启用 JavaScript 后登录。</p></noscript>
+</body>
+</html>

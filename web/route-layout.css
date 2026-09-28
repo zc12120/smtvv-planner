@@ -1,0 +1,55 @@
+/* Unboxed recipe columns: each character owns the skill list directly below it. */
+.route-ledger { --ledger-portrait:112px; font-family:var(--font-body); color:var(--text); container:ledger / inline-size; }
+:root[data-skin] .route-ledger .ledger-step { padding:24px 0; margin-bottom:0; border-bottom:2px solid color-mix(in srgb,var(--accent) 75%,var(--line)); }
+:root[data-skin] .route-ledger .ledger-step:first-child { padding-top:0; }
+:root[data-skin] .route-ledger .ledger-step:last-child { padding-bottom:0; border-bottom:0; }
+.route-ledger .ledger-heading { display:flex; align-items:center; flex-wrap:wrap; gap:4px 12px; min-height:40px; margin-bottom:16px; }
+.route-ledger .ledger-number { color:var(--accent); font:700 1.5rem/1 var(--font-number); min-width:40px; }
+.route-ledger .ledger-heading h2 { font:700 1.25rem/1.4 var(--font-body); margin:0; color:var(--accent); }
+.route-ledger .ledger-equation { display:grid; grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 32px minmax(0,1fr); align-items:start; gap:16px; }
+.route-ledger .ledger-inputs { display:contents; }
+.route-ledger .ledger-node { min-width:0; background:none; border:0; box-shadow:none; }
+.route-ledger .ledger-operator { display:flex; align-items:center; justify-content:center; height:var(--ledger-portrait); color:var(--accent); }
+.route-ledger .ledger-operator .icon { width:24px; height:24px; }
+.route-ledger .ledger-person { display:grid; grid-template-columns:var(--ledger-portrait) minmax(0,1fr); align-items:center; gap:12px; min-height:var(--ledger-portrait); min-width:0; margin-bottom:8px; }
+.route-ledger .ledger-person > .demon-portrait { width:var(--ledger-portrait); height:var(--ledger-portrait); object-fit:contain; margin:0; }
+.route-ledger .ledger-person strong { display:block; font:600 1.5rem/1.35 var(--font-body); overflow-wrap:anywhere; }
+.route-ledger .ledger-person strong a { color:inherit; }
+.route-ledger .ledger-person small { display:block; font-size:.875rem; line-height:1.5; color:var(--muted); margin-top:4px; }
+.route-ledger .ledger-node-origin { display:flex; align-items:center; min-height:32px; margin:2px 0 0; font-size:.8rem; color:var(--muted); }
+.route-ledger .ledger-node-origin .reference-button { min-height:32px; font-size:.8rem; }
+.route-ledger .ledger-final-node .ledger-node-origin { color:var(--accent); font-weight:600; }
+.route-ledger .ledger-node-skills { border-top:1px solid var(--soft-line); padding-top:8px; }
+.route-ledger .ledger-node-skills h3 { display:flex; align-items:center; gap:8px; font-size:.8rem; font-weight:400; color:var(--muted); margin:0 0 8px; }
+.route-ledger .ledger-node-skills h3 small { font-size:.75rem; }
+.route-ledger .ledger-skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr)); align-content:start; list-style:none; gap:6px 12px; margin:0; padding:0; }
+.route-ledger .ledger-skills li { min-width:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; min-height:32px; gap:2px; }
+.route-ledger .ledger-skills .skill-link { display:inline-flex; align-items:flex-start; gap:6px; max-width:100%; font-size:1rem; line-height:1.6; }
+.route-ledger .ledger-skills .skill-name { min-width:0; overflow-wrap:anywhere; }
+.route-ledger .ledger-skills .skill-symbol { width:24px; height:24px; flex-basis:24px; }
+.route-ledger .ledger-skill-note { display:flex; flex-wrap:wrap; align-items:center; gap:0 4px; color:var(--muted); font-size:.75rem; line-height:1.6; margin-left:30px; }
+.route-ledger .ledger-skill-note .reference-button { min-height:32px; font-size:inherit; white-space:normal; text-align:left; }
+.route-ledger .ledger-no-skills { color:var(--muted); font-size:.8rem; margin:0; line-height:32px; }
+.route-ledger .ledger-new { color:var(--accent); font-size:.72rem; }
+.route-ledger .ledger-equation-many { grid-template-columns:minmax(0,2fr) 32px minmax(0,1fr); }
+.route-ledger .ledger-equation-many .ledger-inputs { display:grid; grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr); align-items:start; gap:16px; }
+.route-ledger .ledger-equation-many .ledger-inputs > .ledger-operator:nth-child(4n) { grid-column:1 / -1; height:20px; }
+@container ledger (max-width:48rem) {
+  .route-ledger .ledger-node { --ledger-portrait:88px; }
+  .route-ledger .ledger-person strong { font-size:1.375rem; }
+  .route-ledger .ledger-equation,.route-ledger .ledger-equation-many { grid-template-columns:minmax(0,1fr); gap:8px; }
+  .route-ledger .ledger-equation-many .ledger-inputs { display:contents; }
+  .route-ledger .ledger-operator { height:24px; width:56px; }
+  .route-ledger .ledger-arrow .icon { transform:rotate(90deg); }
+  .route-ledger .ledger-node-skills { margin-top:0; }
+  .route-ledger .ledger-node-origin { margin-bottom:0; }
+}
+
+.route-ledger .ledger-skills li:has(.ledger-skill-note .reference-button) { grid-column:1 / -1; }
+.route-ledger .ledger-skill-note > span { white-space:nowrap; }
+
+.route-ledger .step-requirement-toggle { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:4px 8px; color:var(--secondary); font:400 .875rem/1.5 var(--font-body); }
+.route-ledger .step-requirement-toggle .icon { width:18px; height:18px; flex-shrink:0; }
+.route-ledger .step-requirement-toggle .icon:last-child { width:14px; height:14px; }
+.route-ledger .step-requirement-toggle[aria-expanded='true'] .icon:last-child { transform:rotate(180deg); }
+.route-ledger .step-requirement-text { margin:0 0 16px; padding:8px 12px; border-left:2px solid var(--line); color:var(--secondary); font-size:.875rem; line-height:1.7; overflow-wrap:anywhere; }

@@ -1,0 +1,37 @@
+From 875750a4f76bf68189929f887951e02b66c99801 Mon Sep 17 00:00:00 2001
+From: Roman Arutyunyan <arut@nginx.com>
+Date: Tue, 19 May 2026 15:43:41 +0400
+Subject: [PATCH] HTTP/3: use max table capacity for insert buffer allocation
+
+Previously, current capacity was used for the allocation, which could
+be insufficient if table capacity was later increased.
+---
+ src/http/v3/ngx_http_v3_table.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/http/v3/ngx_http_v3_table.c b/src/http/v3/ngx_http_v3_table.c
+index 3b0b7b3..eac3da6 100644
+--- a/src/http/v3/ngx_http_v3_table.c
++++ b/src/http/v3/ngx_http_v3_table.c
+@@ -159,13 +159,17 @@ ngx_buf_t *
+ ngx_http_v3_get_insert_buffer(ngx_connection_t *c)
+ {
+     ngx_http_v3_session_t        *h3c;
++    ngx_http_v3_srv_conf_t       *h3scf;
+     ngx_http_v3_dynamic_table_t  *dt;
+ 
+     h3c = ngx_http_v3_get_session(c);
+     dt = &h3c->table;
+ 
+     if (dt->insert_buffer == NULL) {
+-        dt->insert_buffer = ngx_create_temp_buf(c->pool, dt->capacity);
++        h3scf = ngx_http_v3_get_module_srv_conf(c, ngx_http_v3_module);
++
++        dt->insert_buffer = ngx_create_temp_buf(c->pool,
++                                                h3scf->max_table_capacity);
+         if (dt->insert_buffer == NULL) {
+             return NULL;
+         }
+-- 
+2.34.1
+

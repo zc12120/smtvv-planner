@@ -1,0 +1,8315 @@
+{
+  "source": {
+    "steamAppId": 1875830,
+    "steamBuildId": "17140961",
+    "pak": "pakchunk0-WindowsNoEditor.pak",
+    "pakIndexSha1": "090daf1d1401c4198915626cd77875c8f773695f",
+    "dataAsset": "Project/Content/Blueprints/Gamedata/BinTable/Devil/NKMBaseTable",
+    "dataHeaderSha256": "d4b6a0aabc7f71a7ebd4486307c8f537b0f0335247d74bdf062d24664907d148",
+    "dataExportSha256": "12f28f0bb58d3efc4698401a2d2fe9fd8f60fa07040e679f4b9638fc485ed4e1",
+    "tables": [
+      {
+        "offset": 85,
+        "stride": 464,
+        "rows": 1201
+      },
+      {
+        "offset": 557365,
+        "stride": 368,
+        "rows": 1201
+      }
+    ],
+    "iconAsset": "Project/Content/Design/UI/Icon/Element/Textures/icon_element_01",
+    "iconHeaderSha256": "4c109da326467a27686291c4c113b7df0a0540ca7cc5256d4931690705bf448a",
+    "iconExportSha256": "53dcc075dc789e14dd5a2bb80a7ce5c1d9811948d8a73a5d4fb789a977784ea7"
+  },
+  "count": 275,
+  "affinityOrder": [
+    "phy",
+    "fir",
+    "ice",
+    "ele",
+    "for",
+    "lig",
+    "dar",
+    "alm",
+    "ail",
+    "rec",
+    "sup"
+  ],
+  "ailmentOrder": [
+    "cha",
+    "sea",
+    "pan",
+    "poi",
+    "sle",
+    "mir"
+  ],
+  "ailmentNativeColumns": {
+    "cha": 11,
+    "sea": 13,
+    "pan": 10,
+    "poi": 8,
+    "sle": 12,
+    "mir": 20
+  },
+  "demons": {
+    "Abaddon": {
+      "gameId": 84,
+      "affinities": [
+        4,
+        2,
+        0,
+        -5,
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "-n-w--s",
+      "ailments": "-w---s",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "fca52657de6754de24f29fb7f4a4811253ab2644034599a0c99bab6de7ca46aa",
+        "b226404347ab836751c2503e749019f479f7140f1e8bf4c3fa6043df6bc4c763"
+      ]
+    },
+    "Abdiel": {
+      "gameId": 240,
+      "affinities": [
+        2,
+        0,
+        0,
+        2,
+        2,
+        5,
+        -5,
+        -4,
+        -2,
+        0,
+        0
+      ],
+      "resists": "---ssrw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c1fe071fcc5b1e3d44a7ccd9fcaf24d7f7f8f8a57004769f1d9f6619df485c67",
+        "feccc480c53a5410b0c5b9a159807ab1f66199eba13d7d6545ce85548e59ddca"
+      ]
+    },
+    "Abdiel A": {
+      "gameId": 264,
+      "affinities": [
+        0,
+        0,
+        4,
+        0,
+        2,
+        -5,
+        7,
+        0,
+        0,
+        -3,
+        0
+      ],
+      "resists": "--ssswr",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b1aa55f160c026e2bbe0e89405142202b27b2eaac0df043e2cc149024764faee",
+        "e39cdc975806f219e1cc687b17bef3279c7154e6f935930af3eaf4ee1adfa910"
+      ]
+    },
+    "Adramelech": {
+      "gameId": 265,
+      "affinities": [
+        1,
+        6,
+        -5,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-sw---n",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "57133900ec7a3edfe6f0ff50ea1d08e3a32fc0b593bcd027462a2f2068bc3033",
+        "d5ac48f5a17216df6a3fd3eabc99ad9cd589f82fa764300eb98354da485f8463"
+      ]
+    },
+    "Aeros": {
+      "gameId": 157,
+      "affinities": [
+        0,
+        0,
+        0,
+        -4,
+        3,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "---ws--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6846c6f22c538e20c222dc00ead0c9938b2ed489a38f71d7b5024452eca3159e",
+        "e9e4fabb64564459dfa8ff3cba29288114c6c429bb5f1be5ea9e1c973a690b1f"
+      ]
+    },
+    "Agathion": {
+      "gameId": 44,
+      "affinities": [
+        0,
+        0,
+        -4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "--wn--w",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "168afbd8c9fff5bce9b3724ef67461af59f5ad3865a9af028cb8c460459d7bef",
+        "3e2701a392d0105042e68f2f7bf247bb2913f3c3143b67c572115c49804b88bc"
+      ]
+    },
+    "Aitvaras": {
+      "gameId": 114,
+      "affinities": [
+        0,
+        3,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "resists": "-nw----",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "fc0694f201e666ae27dc40f6d0050ba458ddd77ce716a83d91db7f722bf2defb",
+        "8f092bbdf4fdb17e6a957f9b67cc37caf6ad5fb14c47e2d38adc1edb6d35bea8"
+      ]
+    },
+    "Alice": {
+      "gameId": 355,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        5,
+        0,
+        3,
+        -2,
+        0
+      ],
+      "resists": "-----wd",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c6cf0b0dd8a2fafc86d3898dafae75ad07a724db99e444218523ea8a1adcb204",
+        "c345361cc7fd2b4b1bdd4d3f06cfdf38abb4dba7c0ff1197a01ec5ae563dbdad"
+      ]
+    },
+    "Alilat": {
+      "gameId": 198,
+      "affinities": [
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        3,
+        3
+      ],
+      "resists": "-----ss",
+      "ailments": "snsnns",
+      "ailmentRates": [
+        50,
+        0,
+        50,
+        0,
+        0,
+        50
+      ],
+      "nativeRowSha256": [
+        "ea5bcfcc086d81e4dff52a2f1c551b5a4b308caea21c3b53c742611279dbe26d",
+        "250ad5a62081065684b4752e7200a2641163578ef3a29aa96a103a70e17edeff"
+      ]
+    },
+    "Amanozako": {
+      "gameId": 38,
+      "affinities": [
+        0,
+        -4,
+        -4,
+        4,
+        2,
+        0,
+        0,
+        3,
+        0,
+        2,
+        0
+      ],
+      "resists": "-wwrnsn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b04e599e05548ed6e077d0841c786660b5665456fdb9178d0cf3828a961a22c7",
+        "3d84273a79861cc423ed96ee050844a9031a7652e5f32d5df4a1f6b483bbc35f"
+      ]
+    },
+    "Ame-no-Uzume": {
+      "gameId": 28,
+      "affinities": [
+        -3,
+        0,
+        0,
+        2,
+        -3,
+        2,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "resists": "---nw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "8c32396d724953da41f8f011c862b8f87eab3f1d2d0505336d7e366509fa2c70",
+        "5bcdcc6e6775576378ea2c7d595c72aeca9278254abdc69990f9b15379dcc470"
+      ]
+    },
+    "Amon": {
+      "gameId": 76,
+      "affinities": [
+        2,
+        6,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "resists": "sdw--ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "99511dcdb05298891e20019f9b5ea88630287069d285efbe5423a828b625debc",
+        "2607edb842187642eb668c6b7e5c7c5112ea9fdcacdc777f89e2e7f9354d2c02"
+      ]
+    },
+    "Anahita": {
+      "gameId": 20,
+      "affinities": [
+        0,
+        -2,
+        4,
+        -6,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        1
+      ],
+      "resists": "-wdw-n-",
+      "ailments": "--s--s",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "eb6f10e397314a300c102548db79ac3c30da30f35f7f6e6a43e9a86321a7e214",
+        "2a425b2caab707172218a829bb6fd4a020042171ab04a47759e76aeb0f84c391"
+      ]
+    },
+    "Ananta": {
+      "gameId": 98,
+      "affinities": [
+        0,
+        0,
+        4,
+        2,
+        -4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "--nnwnw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "4fbb4fd18526298f74b2411dd88be183469da40f36969bde937be273a8fe4c41",
+        "279019873836ac88e15fd7569ac5e803915d94e906b53c0bcd78540e8e6f6202"
+      ]
+    },
+    "Andras": {
+      "gameId": 272,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        -2,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "resists": "--nw-w-",
+      "ailments": "s-----",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "432484eb4e19a8e6e7f7e6e2c3805025cbf05c39f4a5eb8b2bdf634cda396fbb",
+        "d7892e7e788361443840192a8e11e3113cd8a928b6559c431d289cf14e7e3376"
+      ]
+    },
+    "Angel": {
+      "gameId": 259,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -3,
+        3,
+        -4,
+        0,
+        0,
+        2,
+        2
+      ],
+      "resists": "----wnw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d1edca980e66fa81cf4c3644ed07273cd246f035be277e0f645c308da65f1687",
+        "7764bc5f39f7fc854255e133deddec1f736e3b53874f5e80c171088af0211e78"
+      ]
+    },
+    "Anubis": {
+      "gameId": 120,
+      "affinities": [
+        -3,
+        0,
+        0,
+        0,
+        -3,
+        4,
+        4,
+        0,
+        0,
+        1,
+        0
+      ],
+      "resists": "----wns",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d279ec1a0454772e13436e8ffea521e0273c6d883a61a22c13bb6c84d17b21d1",
+        "9ab3dd609c857a4962138eea0e8cf3926419d639dbac681a48ac7137f2bad680"
+      ]
+    },
+    "Anzu": {
+      "gameId": 287,
+      "affinities": [
+        3,
+        0,
+        0,
+        2,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---nw--",
+      "ailments": "-s--wn",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        125,
+        0
+      ],
+      "nativeRowSha256": [
+        "35030879a7b4e71666de4d969e16d8e98f5433070df4def38e3c9748f569d4d2",
+        "2551ea39a987580297ad1f3915b269f9dc070a2f1c9189092cbf30d4f117b761"
+      ]
+    },
+    "Apsaras": {
+      "gameId": 43,
+      "affinities": [
+        0,
+        -3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "resists": "-ws----",
+      "ailments": "n-w-s-",
+      "ailmentRates": [
+        0,
+        100,
+        125,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "3dd2bd83956ce57099b728f4a11cc4d01ec120a3b7ee7e1b448b4815ccb22503",
+        "5e2010585fc5e9f3b69f2381b7a12cc65f5ab57832e9adf11892acfdf7d557eb"
+      ]
+    },
+    "Aquans": {
+      "gameId": 156,
+      "affinities": [
+        0,
+        -4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-ws----",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "86d0351f21838e5970ea07b6ee44c7c465c2143a231775734502de46881277da",
+        "8db678f30f81ada6b95b82e775a26bdddf2d2470e4c96bdc1c997e556709a7bb"
+      ]
+    },
+    "Arahabaki": {
+      "gameId": 211,
+      "affinities": [
+        0,
+        -4,
+        -2,
+        -3,
+        -3,
+        0,
+        0,
+        3,
+        0,
+        0,
+        3
+      ],
+      "resists": "nwwwwss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a04204675071ed21d63d2b0263daae0ccd0490befa798e5838962f6966609a5a",
+        "1ff59552e7e33e733174a3463f8f50946a2a59f07e3ff9e73b5299619610a9d2"
+      ]
+    },
+    "Archangel": {
+      "gameId": 258,
+      "affinities": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        3,
+        -5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "---w-nw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "bfc0441b0e8bf703829697a16b9ee89c07d79135a94fc4b26355719c8741f67f",
+        "fa60ce085cd963b099c00f717da990a872edee0d0ec15063f4877a512ace1b2b"
+      ]
+    },
+    "Arioch": {
+      "gameId": 82,
+      "affinities": [
+        2,
+        0,
+        5,
+        -7,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "--rws-s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "edc589f58446002fee0882e0a844e57089eb509d813c6d8ab1c5934eee20eb76",
+        "f3c0c0a7e6e71758668f0f24393478b590bddd2c6cf225eb4d13f2e7f236fb4b"
+      ]
+    },
+    "Artemis": {
+      "gameId": 31,
+      "affinities": [
+        5,
+        -4,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "resists": "-wnn-ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1a8649cc465eaa6e5ee70c75c8c0f29b34451a12dcb779edfaf7f13419395baa",
+        "c78fbc798628571fae3ed34eb1e8f6b097dff7e46f8d1906bdf42a2c6107ee92"
+      ]
+    },
+    "Asura": {
+      "gameId": 181,
+      "affinities": [
+        3,
+        5,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        -4,
+        0
+      ],
+      "resists": "-rw--ns",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "ad1efb744c43638c83f2444cb5ed1b4aad4f360f9c840b29aad31275cc68ebf2",
+        "08c1e9b19639ecece2baee12f8f71c7e550ae71dfb52c2e5278b513fc873efa7"
+      ]
+    },
+    "Atavaka": {
+      "gameId": 12,
+      "affinities": [
+        4,
+        0,
+        -5,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "--w--nn",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "8d808549b89aa29b308669e8650e3ebc16eea30b80a151d33232471beb91c762",
+        "77019d9432bfe23b11d65a152303c3ab2177cc4188291f1b0600b66a39764fd6"
+      ]
+    },
+    "Atropos": {
+      "gameId": 298,
+      "affinities": [
+        0,
+        -4,
+        4,
+        0,
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-ws--n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "943015480f6ce5df81db627ce680c94392024b16ed70c627d081fbdfa0df3953",
+        "381cb50ba9601f4f1fb8884e22903c44b7967b05d664409491d0d92ca58a7c61"
+      ]
+    },
+    "Attis": {
+      "gameId": 202,
+      "affinities": [
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        -4,
+        0,
+        0,
+        2,
+        0
+      ],
+      "resists": "-n----w",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "c0814c5e7d195cf5f8cd8e868e176510be3233fc4244dc325fbca23a8f5a1fc4",
+        "b44d09e5627ef7d4b4813a9b79c1e5d358bfcddccd0d901d33c72f4528f5f12c"
+      ]
+    },
+    "Azumi": {
+      "gameId": 315,
+      "affinities": [
+        0,
+        0,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "resists": "--sw---",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b5fe5ad209a90b5fdd6a9da3f49de54abaee78979aff5bec5194989f3475ae21",
+        "a1d14d8ce37724841d4b63808903059160e254fce6415a787586cfb26a471d1f"
+      ]
+    },
+    "Baal": {
+      "gameId": 17,
+      "affinities": [
+        0,
+        3,
+        -5,
+        5,
+        2,
+        3,
+        0,
+        0,
+        4,
+        -3,
+        0
+      ],
+      "resists": "-swrsn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1342bf1553f101e1eeaf7180bae5a0cc2f7299eb9170b10b5b9c2d74befdfa6e",
+        "e87c4ad0f1c183ad76995024015ad46698a6b4d033a56d4e7f021b1f3af3f301"
+      ]
+    },
+    "Baihu": {
+      "gameId": 126,
+      "affinities": [
+        2,
+        0,
+        0,
+        5,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---nw--",
+      "ailments": "--w---",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a53890519187aebddc2634efbc9967473f7ec796d3a7eb5fd6c43c78e94417f0",
+        "86024da6ba06aa72b25a4ed97450316ba99758cbb6ada4647938c7ea4e170d3e"
+      ]
+    },
+    "Baphomet": {
+      "gameId": 235,
+      "affinities": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "---w--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b9c176214dcb81c3f79a9a65baff3a3f9ef1f6e47f62ea5864e3eb8bdc56057c",
+        "b119e72a2b49b4a6f3879a6306c3c39147870016987133b124b97bd607fe7387"
+      ]
+    },
+    "Barong": {
+      "gameId": 119,
+      "affinities": [
+        3,
+        0,
+        0,
+        4,
+        -3,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---nwnw",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d4119180638fd207143ed287f3b0bf04b93f5b26dcd6176efa7a9a2301f4ea35",
+        "808a89ce06753a3f9962e003b61c66457cd34a1656c8582dd1b82fbd27add506"
+      ]
+    },
+    "Basilisk": {
+      "gameId": 113,
+      "affinities": [
+        0,
+        0,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0
+      ],
+      "resists": "-ssw---",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "744c07a9910d678f1267cadf7f3e5e96238638efe6bfcefa7fad5195b55c28d0",
+        "8288620421ae03f1ce0c387a02139958e38c9e166093d6a6f5631be784e3f1c4"
+      ]
+    },
+    "Beelzebub": {
+      "gameId": 81,
+      "affinities": [
+        0,
+        -6,
+        2,
+        4,
+        0,
+        -2,
+        6,
+        0,
+        0,
+        -4,
+        2
+      ],
+      "resists": "-wsd-sn",
+      "ailments": "--nnnn",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nativeRowSha256": [
+        "2c1d01ff7ee8129e2fa0a8f11f2da72ee95db9c2908177f67f09262fb3ae880e",
+        "7d390fcbe4f1bf7c133ffd3fead35d370fcb9069da889ca1da9a49c332e72d7a"
+      ]
+    },
+    "Belial": {
+      "gameId": 83,
+      "affinities": [
+        3,
+        6,
+        -7,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nw-n-n",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "de3ba4083068404d3492778599773ba954d675e56e0d20dd3f09f235008013fe",
+        "aa42fbbcc5f19f7bd1f7b4dc7e60f8c6f39aa5ad1671733cce82ac5fd3378bb3"
+      ]
+    },
+    "Belphegor": {
+      "gameId": 86,
+      "affinities": [
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        -3,
+        1
+      ],
+      "resists": "swns-wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "bcada552fe580717359f6729bcd87ffa26f5e434b767e9b87fd52fdcc364cad5",
+        "ae3edc831a152f1fd03553f5b59d5e59c054b90f7b3688d3a8252dae30cf2599"
+      ]
+    },
+    "Berith": {
+      "gameId": 268,
+      "affinities": [
+        2,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "resists": "-sw---s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1d10086d1502482b5c68f5bb1c5e904f176c5efebd4c19b7de0ef1bad2177b44",
+        "7da3fc22b3e6fc3c92f377f3123854e59f5200d47876940be8496299a11ab7fc"
+      ]
+    },
+    "Bicorn": {
+      "gameId": 146,
+      "affinities": [
+        2,
+        0,
+        0,
+        -3,
+        0,
+        -2,
+        2,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "resists": "---w-wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a445fe9959d33404605a5471ef7e37df160169f0306955ba5ac1949ce302074d",
+        "72ac39094a6997d71ccc07805ed7ff20014cbd27869f31e3fa6427ee3f82d06f"
+      ]
+    },
+    "Bishamonten": {
+      "gameId": 203,
+      "affinities": [
+        5,
+        5,
+        -4,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nw--n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "4b9d8d3f013ac932812561c596c60bd82da870088147e4f34c18fd935ba24b18",
+        "94fe6210cfc359b41b669cafcdee83cee09719e9203531148406ba700462ed31"
+      ]
+    },
+    "Black Frost": {
+      "gameId": 72,
+      "affinities": [
+        0,
+        0,
+        3,
+        0,
+        0,
+        -4,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-sn--wr",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d1aafbb9610731c7856b26bdd84cd20933eaea54b03daf2471c69a2dc9aef31d",
+        "770b1626ba53898975eb859dfe4d9369102443e23c6d611d6edd869ca3a3e391"
+      ]
+    },
+    "Black Ooze": {
+      "gameId": 171,
+      "affinities": [
+        2,
+        -2,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        2,
+        6,
+        -3,
+        0
+      ],
+      "resists": "sw---w-",
+      "ailments": "w-w--w",
+      "ailmentRates": [
+        125,
+        100,
+        125,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "83b5f2761f3b9cf3c6ca1dbe61243a1a248d7f755ebe84198970e89ed906c877",
+        "47b6aedef232a99f8997b503c1247433640134a70da9c9dfc23308aea1e4074c"
+      ]
+    },
+    "Black Rider": {
+      "gameId": 352,
+      "affinities": [
+        0,
+        0,
+        7,
+        0,
+        -5,
+        0,
+        2,
+        5,
+        0,
+        0,
+        1
+      ],
+      "resists": "--r-wss",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c926dd3013fc56a6102bf537536f7d1212a9fabdfc16753c1da0500f0dd2d13d",
+        "4a0665c95c72b1d0fe4d1595cef6063eac37263378904d84286b6997b17e4b95"
+      ]
+    },
+    "Bugs": {
+      "gameId": 144,
+      "affinities": [
+        0,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        -4,
+        2
+      ],
+      "resists": "-w----n",
+      "ailments": "----s-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "8eadb0c41acb5d1bb8b24ae5b33b90ea647274940068fd83b4885deb0ae9adbd",
+        "e86ba55545428d3e3b74fc66db2cda88e7096bdcefdb587ed649df69122703ea"
+      ]
+    },
+    "Cait Sith": {
+      "gameId": 140,
+      "affinities": [
+        0,
+        0,
+        0,
+        1,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "resists": "---sw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6e3b9498314473f0d427008e87916c86a35021223a59d6c0574256db850f7dd2",
+        "e296c3de0ec0de802fcc138ee48c47f7c9127b8bdc56a63b6218325586981ace"
+      ]
+    },
+    "Camael": {
+      "gameId": 248,
+      "affinities": [
+        3,
+        0,
+        -4,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "resists": "-sw--n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "cc196eba27f1b3a3ddac8de9198b4c4e33f26e769d2f88626459685abc1cf17a",
+        "1b2ed2bcb08934dfc037ec098dd3d344a8bbc46d8095be854280105e288a933e"
+      ]
+    },
+    "Cerberus": {
+      "gameId": 134,
+      "affinities": [
+        3,
+        4,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-rw----",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d74feb79cb4083f0106f8e2fe926c715ff3d7cc04800dfa57ac61641d01bef7d",
+        "75859742944adff3023ebae12c58beed673d1d6fef9cc91f0d940f3b163b792d"
+      ]
+    },
+    "Chernobog": {
+      "gameId": 182,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        3,
+        0,
+        4,
+        -3,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "530e06d14e4b27c3cb69625f02e7a91814ab9e385f0070f2cce703a3dff6c713",
+        "b4d241feed3ca6d0790163b583e0ebc418edafb686da6ece87a179a46a29a50b"
+      ]
+    },
+    "Chi You": {
+      "gameId": 79,
+      "affinities": [
+        4,
+        -5,
+        4,
+        -5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-wnwr--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "32b6dd0d734864ad2987aa5aa5fb6ab86b23859a5fa2a40e049812f4bd55e4bc",
+        "da7e6727c5670346467f789d51e3285f35aff8f93223b37ff84359a5f65d6dff"
+      ]
+    },
+    "Chimera": {
+      "gameId": 127,
+      "affinities": [
+        3,
+        2,
+        0,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0
+      ],
+      "resists": "-s-nw--",
+      "ailments": "---w--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e88d84a7cd2c1aa25bb0b7834d9669cd04b17c5d5e82a489191b6482b128ae6e",
+        "f9a51eb4ac0382bdb0adb8b3dc7dd1d09edd94399daf44e5cff1142e6ec6f92e"
+      ]
+    },
+    "Cironnup": {
+      "gameId": 128,
+      "affinities": [
+        0,
+        3,
+        1,
+        0,
+        0,
+        2,
+        -5,
+        -2,
+        0,
+        0,
+        4
+      ],
+      "resists": "-ss--sw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "dabc990cbf093868f34fd65e4348c1771975050a90c05dab2b9aa4a985dcd11d",
+        "b443f1af4762596efc868a2ca8717bfcfa1049368f7503841550b1102f1d77dc"
+      ]
+    },
+    "Cleopatra": {
+      "gameId": 295,
+      "affinities": [
+        0,
+        0,
+        5,
+        0,
+        5,
+        6,
+        -6,
+        0,
+        3,
+        5,
+        5
+      ],
+      "resists": "--s-sdw",
+      "ailments": "s--wws",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        125,
+        125,
+        50
+      ],
+      "nativeRowSha256": [
+        "c678fb3027899c6b6b3e1c308c6ae71e335491ab8b3bab3ec6452b17f2fb60ea",
+        "82439223650d44cab9017fcef61891d52a910fda5a0be987d2143c46b779f106"
+      ]
+    },
+    "Clotho": {
+      "gameId": 301,
+      "affinities": [
+        0,
+        1,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        3,
+        2
+      ],
+      "resists": "-nw----",
+      "ailments": "----n-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "4586402f7eb3ce7b7586f35c964f53d6bc6c2f85cd202dd6eb550c68c6798b6f",
+        "1c4652a7c00c5690730e0e3ea249611cd257989f2e5ca2613fb5aeed76064c20"
+      ]
+    },
+    "Cu Chulainn": {
+      "gameId": 36,
+      "affinities": [
+        4,
+        0,
+        0,
+        -2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "s--wn--",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "590f25a399336131da60e2b3776910760ccafeee4ed01fabd818e99bf39c4c6a",
+        "80d9886805576878357668995203c473cab5d40fe0d095099eac028ad42aa6a9"
+      ]
+    },
+    "Cybele": {
+      "gameId": 191,
+      "affinities": [
+        4,
+        2,
+        0,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "resists": "-s-w-n-",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "a3924661e8972fb5608c9642f047f3de67ea54d3fa54461866e96a83548a4345",
+        "193b00d964a325cd85b4e5225e3e37090d07115c8f9eb78140dc90810a25ce60"
+      ]
+    },
+    "Daemon": {
+      "gameId": 317,
+      "affinities": [
+        2,
+        2,
+        0,
+        0,
+        0,
+        -4,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-s-w-wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "864ffe09f2e73103c6cf92df9a4c7866f8673fe81a1e671378e5c0a3ccbb45be",
+        "6da45258822d4fa1ac8d1667a006a7cccd9bccc7d0772acacd52118cd89fa216"
+      ]
+    },
+    "Daisoujou": {
+      "gameId": 357,
+      "affinities": [
+        0,
+        -5,
+        0,
+        0,
+        0,
+        4,
+        4,
+        0,
+        3,
+        1,
+        0
+      ],
+      "resists": "-w---nn",
+      "ailments": "s-s-s-",
+      "ailmentRates": [
+        50,
+        100,
+        50,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "219aef7d34b7e7dd181fe5810eae09beff3d82e20c06fe15109565f524daf72c",
+        "b4818f42670c6af5dae6904bb206b1f45b48ae240ee34e3d282e07238b0c528e"
+      ]
+    },
+    "Dakini": {
+      "gameId": 297,
+      "affinities": [
+        2,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -2
+      ],
+      "resists": "ssw--w-",
+      "ailments": "-n----",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2768c4b7f002dfe6b1e9c972bc041b3b60104c8095b0c37c8885f3c40b3711a1",
+        "c7e153deb6435c543ca4c742fb85fe996a4f25ef9bae5302435676542906f225"
+      ]
+    },
+    "Danu": {
+      "gameId": 188,
+      "affinities": [
+        -3,
+        0,
+        2,
+        0,
+        0,
+        3,
+        -7,
+        4,
+        0,
+        4,
+        2
+      ],
+      "resists": "-ssssnw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e2bab407d7572b6ff15d1192e790bc29681ebcf40d663f8005b9d14ff77f4382",
+        "cb3503d511b7a2f836909f68403e13e10d861c94f78c70ebe0d86c97e2ebc96f"
+      ]
+    },
+    "Decarabia": {
+      "gameId": 273,
+      "affinities": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        -4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "9d0a7846b1b84ae24520ab9451cf31b476daf3fdc0b625bba50cabcbc5d6862b",
+        "c03c39135ae4fd0419906b770e89894837b2f78e195696ba311f30ce1d9f3f78"
+      ]
+    },
+    "Demeter": {
+      "gameId": 19,
+      "affinities": [
+        0,
+        -5,
+        0,
+        0,
+        3,
+        1,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "resists": "-w---nn",
+      "ailments": "ss-ss-",
+      "ailmentRates": [
+        50,
+        50,
+        100,
+        50,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "8110d7ef0ef43fe1920eb755cd6b24a85cdce8b50cf4bd1812c1665173eb5394",
+        "d81048d85730f2df6b3d1e359254927beeee33f5fef9b4a349b332b44c24b495"
+      ]
+    },
+    "Dionysus": {
+      "gameId": 183,
+      "affinities": [
+        2,
+        2,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "-nws---",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "adf4fa1d50180cb4485c4d08a54b97d84d5dd91b5accb468ad9794a42c505a39",
+        "1dab54fa60cc486ba03520a490626ae78a1535b4c3670639c385716e6a5cf145"
+      ]
+    },
+    "Dominion": {
+      "gameId": 255,
+      "affinities": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        3,
+        -5,
+        0,
+        0,
+        1,
+        2
+      ],
+      "resists": "---nwnw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "208073cb3947fae2b449587c7c923fcc48a8e1885554ce6b552550ebf61527ef",
+        "d6479589784f8bd39c15f4f99708721a91033137621a3823937e060305550d97"
+      ]
+    },
+    "Eligor": {
+      "gameId": 270,
+      "affinities": [
+        3,
+        2,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-n-w--s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "edb47e1c0bdcf08c50c38823f8d0e7c27fac378aa54d8df01569841ed29f24f3",
+        "010364ed3cacb1a47121e8702a8689c677db06f2f1c5dc02c728369de8bd75ba"
+      ]
+    },
+    "Erthys": {
+      "gameId": 158,
+      "affinities": [
+        0,
+        0,
+        0,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "---sw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e6e9726a65af339c45b6a2befe2002f4dbd959c28daad98b62315baae09997f4",
+        "5e0573c78649938530276ac9e361021e1e429762ae80c1b0ab7d49e1f514a0b5"
+      ]
+    },
+    "Fafnir": {
+      "gameId": 116,
+      "affinities": [
+        4,
+        0,
+        -3,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "s-ww---",
+      "ailments": "---n--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        0,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e1e6ffb21131c0d4798b45f8f97b1c63912b7eead70c4b7a71e4b0bfc8c25c4c",
+        "341042af4ea035d8ddc6b11dc234b698290e366bef3a34b930b69bed92f4d591"
+      ]
+    },
+    "Feng Huang": {
+      "gameId": 282,
+      "affinities": [
+        0,
+        4,
+        0,
+        0,
+        2,
+        0,
+        -4,
+        0,
+        0,
+        3,
+        0
+      ],
+      "resists": "-n--s-w",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b3aa8d796646b8ef9ef348737ff1d20611d193babe311e9be25bf689147f1e69",
+        "ce12bf566447b5906c46a6533f614f109ca572a9441a643b1903e4b13e0626f9"
+      ]
+    },
+    "Fionn mac Cumhaill": {
+      "gameId": 35,
+      "affinities": [
+        5,
+        4,
+        3,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-n-w-n-",
+      "ailments": "-n--n-",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "cdbda5faf41a6b5349832fcc2a6080396984b592a7488018feefb06f0111f162",
+        "c5f085c022ffd215e8b56a2a5e9b3cfa7f7de4aa8da5ee6a2ffd9260b35e8d0e"
+      ]
+    },
+    "Flaemis": {
+      "gameId": 155,
+      "affinities": [
+        0,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-sw----",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "34fca679bab263dee49207e89a79021e03f3c3cb6d52ffeb93780132e69bd88b",
+        "ca63ed6045b15cd0b876433fbd9d6871b04d950a30ed27b2ea8a78ee4de70a71"
+      ]
+    },
+    "Flauros": {
+      "gameId": 266,
+      "affinities": [
+        2,
+        4,
+        -6,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nw---s",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "6ecf51d8d4162d7c9ddf5145027ad2fe9ac8a5ccc2ca960d76d8fcda3af74416",
+        "8ec8e89b109eb41480ce244133f0c9243fb40f34fc8ee880203b4b318613248e"
+      ]
+    },
+    "Forneus": {
+      "gameId": 271,
+      "affinities": [
+        0,
+        0,
+        4,
+        -5,
+        0,
+        -3,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "resists": "--dw-wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a4b6ba3a451328f96a92a836319be99e71fb8d2678502b17e81e1a90a29b7e62",
+        "93b02b754b95f2e07a4d75ef0f3a7a9ee18f1b54fdca737e76bb913f86d0dfb0"
+      ]
+    },
+    "Fortuna": {
+      "gameId": 29,
+      "affinities": [
+        -1,
+        0,
+        0,
+        -3,
+        3,
+        1,
+        -3,
+        0,
+        0,
+        2,
+        1
+      ],
+      "resists": "---wn-w",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "ed6ba06ec40b92d84d00579b4543551f25daa1a7915475869671e6de2fccdfe2",
+        "cbf7eb1108877a90437d4481411b5eede61f95754fca9c5da185261519973ed6"
+      ]
+    },
+    "Futsunushi": {
+      "gameId": 201,
+      "affinities": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        4
+      ],
+      "resists": "-----nw",
+      "ailments": "-sn-wn",
+      "ailmentRates": [
+        100,
+        50,
+        0,
+        100,
+        125,
+        0
+      ],
+      "nativeRowSha256": [
+        "51e40b1b5df35a3bfdaf561494b92c89a0b16a7992f045cec5ee6d89bad7161b",
+        "e20266431c5d102448ed3b07988ac09da4ca6745f1de182a5b05466cc2e3d451"
+      ]
+    },
+    "Fuu-Ki": {
+      "gameId": 313,
+      "affinities": [
+        2,
+        0,
+        0,
+        -5,
+        5,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        1
+      ],
+      "resists": "---wn--",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "9d42703514c35a28e0d6ccb9529f0e8c018afe89f2295bf9ca9b25e6bee1eb36",
+        "1e180d15ee495c9630858630230f99ed795e49bf8292c707ebb98ca84f3846ee"
+      ]
+    },
+    "Gabriel": {
+      "gameId": 243,
+      "affinities": [
+        0,
+        0,
+        5,
+        -4,
+        0,
+        3,
+        0,
+        0,
+        -7,
+        3,
+        1
+      ],
+      "resists": "-snw-n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "95b12ffa339781c7b142ddd54920dfbab668965856b31e2c41ecc7836fad86df",
+        "0d1de3e2ec940ee571f4e9326def833562ced573273a7275b58b556154c82659"
+      ]
+    },
+    "Ganesha": {
+      "gameId": 221,
+      "affinities": [
+        3,
+        0,
+        0,
+        -6,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "resists": "s--wn-w",
+      "ailments": "--sw--",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "0a8e6e907b4acbb4cecde488bbea200b3188a03b5be7fbc5f07381cf53c6eb33",
+        "b4ee372f320ee1e5129b860bb0c20f0b4320be2098f3ce03cc4ded29b25c7142"
+      ]
+    },
+    "Garuda": {
+      "gameId": 278,
+      "affinities": [
+        2,
+        0,
+        0,
+        -4,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---wds-",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e234dbaf2f9d351d37dce0c2301141fdb93281ceb33b7fa45919189caae8a0a8",
+        "19efa1b19125b7dea2d78651e7ed8e887329feed6166a762b2580ed6864da9df"
+      ]
+    },
+    "Girimekhala": {
+      "gameId": 232,
+      "affinities": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -3,
+        2
+      ],
+      "resists": "r--wwws",
+      "ailments": "---sw-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "4db6b996286290022cd64ae5da9216c15610163119c459826668433cbde0f131",
+        "9581d78f31eb4b05cb96c99162f3e2a94af7ee1c501278faa79d96ee5ac5f827"
+      ]
+    },
+    "Hanuman": {
+      "gameId": 34,
+      "affinities": [
+        3,
+        0,
+        0,
+        -5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---wr--",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "80fb90264f916efee3264e0db9bc4cef656c6e5850e7dcbe60864aa0694b34a6",
+        "e7bf7fb76336f1cff73f6d31c62941f28ff4a30405b4b4ee6d7e9e6090cd5841"
+      ]
+    },
+    "Hariti": {
+      "gameId": 195,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        2,
+        0,
+        2,
+        3,
+        0
+      ],
+      "resists": "----w-n",
+      "ailments": "----s-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "c7f9a818cacf07a18f2f9232ab6c0eaee2c9c7f48eb22d19fbf35d7207c183b6",
+        "2187ae81f5b0ae272e53cf3d0bf7183f14a16909cfc7150c16fa3c959c490ac1"
+      ]
+    },
+    "Hayataro": {
+      "gameId": 152,
+      "affinities": [
+        5,
+        0,
+        0,
+        4,
+        -5,
+        3,
+        -3,
+        0,
+        0,
+        3,
+        3
+      ],
+      "resists": "s--nwsw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3181b5aa45ede82b380b40faa3e2cada6193cb7910a073d6b2673acac5e3cd55",
+        "8bf2b010c811df837fd36b0539432ceed8e026083866eb569b91c98d34dd660a"
+      ]
+    },
+    "Hecatoncheires": {
+      "gameId": 322,
+      "affinities": [
+        4,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        0,
+        2,
+        -4,
+        1
+      ],
+      "resists": "----w-n",
+      "ailments": "--s--w",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "28a0eb4af333b76ad0effe0821a4af09df62bce944c181d6273f34af76af536e",
+        "17b7dce884c63196340db3bf0dd45c754632b6a8220774323b9237b9783cf1f0"
+      ]
+    },
+    "Hell Biker": {
+      "gameId": 356,
+      "affinities": [
+        3,
+        4,
+        -5,
+        0,
+        4,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "-nw-nss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "8767bfe38d84de0d88b2d4d31a52cf30fd3e17e84cb53e5380170097132fc601",
+        "b0446ae491245964bed7ccbfa66ef3e314c54f0f4a59d20cc27eec5f1081249d"
+      ]
+    },
+    "High Pixie": {
+      "gameId": 56,
+      "affinities": [
+        0,
+        0,
+        -4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "resists": "--w-s--",
+      "ailments": "-ss---",
+      "ailmentRates": [
+        100,
+        50,
+        50,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "248683880b0bd216dffdf77249bd86ea672adb8ded958d2afb29dded9d902383",
+        "3845a68b398fa4e4de44bf0471db375e41e09b0628669502292014e9cae554b6"
+      ]
+    },
+    "Horus": {
+      "gameId": 13,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        -4,
+        2,
+        0,
+        2,
+        2
+      ],
+      "resists": "-s-swrw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "53f387c83fa5979a624418da7aaff4ff3d0646977da14676285f9ad5b7aa42df",
+        "8cd503c9a92a952b10cc59cd5558e9edcea6a8ffb7d32e4ff20a1462ebfe6aa7"
+      ]
+    },
+    "Hua Po": {
+      "gameId": 333,
+      "affinities": [
+        0,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "resists": "-nw----",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "1dc5aa61ec8b90c71cf01df83c5167814515d191c0dc524e698cec4f9adb514b",
+        "52fa6e6930b7e69f9a8a44308225b57e4d5de7976573c51bb33d1853251a1086"
+      ]
+    },
+    "Huang Long": {
+      "gameId": 94,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        5,
+        0,
+        2,
+        2
+      ],
+      "resists": "-ssssnw",
+      "ailments": "--s-ww",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        100,
+        125,
+        125
+      ],
+      "nativeRowSha256": [
+        "e6d1e2979e7726e8e774e0032993ea4481d5c2b93ffbd77c5417c677f77ea52f",
+        "b2ccbe169eef9c345399b8e8b0a486b310232fbbbb28abbd296f8428aab840f0"
+      ]
+    },
+    "Hydra": {
+      "gameId": 115,
+      "affinities": [
+        3,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        -1,
+        0
+      ],
+      "resists": "-nw----",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "88704abcc6074ef3b4b3577d068d5444cb1bc7a246c8fd8ee554e3c2b041fc4a",
+        "6e92d9f0986e52fd87bb81faaf9af1504699cc4d873a71abe2169b68ca7cb6e0"
+      ]
+    },
+    "Idun": {
+      "gameId": 23,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        -4,
+        0,
+        0,
+        4,
+        2
+      ],
+      "resists": "---wsn-",
+      "ailments": "s-----",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c8124a7f0c7aad3eef9af32c9637765ccebb9e1236964f24b25357a513d23110",
+        "a37bc89e9a18683ce92aaf74eb9873696afe2813bff56cf11b45e12d4ae4c2f3"
+      ]
+    },
+    "Inanna": {
+      "gameId": 189,
+      "affinities": [
+        -6,
+        5,
+        5,
+        5,
+        5,
+        0,
+        0,
+        3,
+        -6,
+        -4,
+        2
+      ],
+      "resists": "wnnnn-w",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a8c861d805bfe52e578c5dbdc56907cd0abf1216d0aafd6a59c390cf5a707b56",
+        "b9ce46c54a58e1ad89ea3231f5f5026497131a52ba8301afbe878f24d9180e41"
+      ]
+    },
+    "Incubus": {
+      "gameId": 68,
+      "affinities": [
+        0,
+        0,
+        0,
+        -4,
+        1,
+        0,
+        0,
+        0,
+        5,
+        0,
+        -2
+      ],
+      "resists": "---ws--",
+      "ailments": "n---s-",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "7ec940dbf3ec87941b84cc3e5ec383831d1e8e1cda100442ba7f976385fff0b5",
+        "a64a1824cda613b8728dc1df286b6ca157bd7537d5cf592c140463ff987d11b2"
+      ]
+    },
+    "Inugami": {
+      "gameId": 138,
+      "affinities": [
+        0,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "resists": "-nw--ws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a685386bf8b9e5fc526b153c3a3d004e1721b2cc2e148c42cc7e93a6a0da191e",
+        "98ce25b89276a7ac1dec7df4edc28c81c9e3ff972e1f52613f2dec78264fbf37"
+      ]
+    },
+    "Ippon-Datara": {
+      "gameId": 316,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        0,
+        -1,
+        0,
+        2
+      ],
+      "resists": "-s---w-",
+      "ailments": "---w--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6ef7771da0a58c688a396ef398d708d974646250b9b5a7d262da40f1801ff6cb",
+        "bf5cda767c3020d6d811e3f1a1cb0392db93e3252d96f0c816d4a7d4b43cba48"
+      ]
+    },
+    "Ishtar": {
+      "gameId": 25,
+      "affinities": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        3,
+        -3,
+        0,
+        0,
+        2,
+        2
+      ],
+      "resists": "---nwnw",
+      "ailments": "s-----",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "566e5b66770f49e8d01f68f5ee17275442e2c1c9218baa4974f51f206b5d4334",
+        "d0756252bfd4d8386d4705333d7476d84819f844fb352574d4595273ba0d6acb"
+      ]
+    },
+    "Isis": {
+      "gameId": 193,
+      "affinities": [
+        -4,
+        0,
+        0,
+        4,
+        0,
+        0,
+        -3,
+        0,
+        0,
+        3,
+        1
+      ],
+      "resists": "-s-n--w",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a15bf9b6c69c1c6ce01faf9888bc94fe714e9784960ff249ca6d86ff97435a8d",
+        "55b47fb7955bfe324c89ef79a68f9b4e94d7961357e3da829a3cd1fcbf35df7b"
+      ]
+    },
+    "Jack Frost": {
+      "gameId": 58,
+      "affinities": [
+        0,
+        -5,
+        4,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-wd----",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1d0e482dcdf9ed3b41d1ec3a62d164b0aeafe0644fce4e74b76812e242a4d6c8",
+        "bc14a6ba530e1f26a6cf8eb507e507da6b234b68b808c6fd50142c1992494b0b"
+      ]
+    },
+    "Jack-o'-Lantern": {
+      "gameId": 57,
+      "affinities": [
+        0,
+        5,
+        -5,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-nw----",
+      "ailments": "--w---",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "deb5464f387b352a5ea544770d372155a2e2802363898bfa7129127f8003aa44",
+        "50b6c8571b8512f9b47033a543aeb39f2a8b75ee969dfd82a5bbfb75519740eb"
+      ]
+    },
+    "Jatayu": {
+      "gameId": 281,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "---wd-w",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c58aff54d05785c7b6e823ec9a6df4ae3fa38854b09f9535a5f88a2da0b57631",
+        "2af2317e6f9ce77fca392edcc88382a2e630d2041130aa67e3105dc5f4246392"
+      ]
+    },
+    "Jikokuten": {
+      "gameId": 204,
+      "affinities": [
+        4,
+        -5,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "-wn--s-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "05ea219e706ecad8987de406c6e9c8cd7a885ed7858a42c1f48b0fd4aa4a30eb",
+        "d520837b1d1548fd6e13f322cc49661b5c772f0646020bc5e9d7de4633eb6820"
+      ]
+    },
+    "Kaiwan": {
+      "gameId": 66,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        1,
+        0,
+        2
+      ],
+      "resists": "-----wn",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "9b2ed92961ab4b4b130d5c7ff150872f54cebbba3efd4ccf71ef83b77311806f",
+        "fa9de4a2023263b23047e8dd3e65032fb4710caf515d2138188f9f7a0a8a10df"
+      ]
+    },
+    "Kali": {
+      "gameId": 190,
+      "affinities": [
+        4,
+        3,
+        -2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        -3
+      ],
+      "resists": "-nw-wsr",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6737d2b65cf7533de2a55ec2a1a626a56ea171bb7287c5a08f136b85ffc5b2ef",
+        "3de35a14c90113dc49caea5244c03c4b4e507be617d9f7b08df4d7b586159098"
+      ]
+    },
+    "Kaya-no-Hime": {
+      "gameId": 330,
+      "affinities": [
+        0,
+        -4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        3,
+        2
+      ],
+      "resists": "-ws----",
+      "ailments": "s--ws-",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        125,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "83bc8df2f210047f24cae3be3ca1115839bde727175cd660c72bbda397a09e61",
+        "9d31c3a7285569bf3e4e328d257f5bb4e70b3c2edf78c25fa26a72d8fc121153"
+      ]
+    },
+    "Kelpie": {
+      "gameId": 55,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "resists": "--s-w--",
+      "ailments": "-----n",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        0
+      ],
+      "nativeRowSha256": [
+        "a84175ae6ce3bbb2ec71d93fa5931ac36770d50b020e77f4903349992a09812d",
+        "12ce00ce2c077920f7c37251fb16fb4fa237f0f0fae721e2ead7001c85b05afe"
+      ]
+    },
+    "Khonsu": {
+      "gameId": 7,
+      "affinities": [
+        3,
+        4,
+        -5,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "-sw--n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b377a77fb1bb6013af2ad5b9882666cbd163b16af45bc8cb3fdcda2602c3b8c6",
+        "34d2d8b37f351e913e103190d2145910731714c813be115e1ae13c394c9eb397"
+      ]
+    },
+    "Khonsu Ra": {
+      "gameId": 15,
+      "affinities": [
+        3,
+        7,
+        -5,
+        0,
+        0,
+        5,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nwssd-",
+      "ailments": "-n----",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "60f8749fb8949c3b800548e944467f19dc90f2bd6fc517d0636aa9d92d2e130e",
+        "1cdde867d3130bb7e63a7178fc5d0992188b5733f8b0ec2134beace9197f5359"
+      ]
+    },
+    "Kikuri-Hime": {
+      "gameId": 194,
+      "affinities": [
+        -2,
+        0,
+        0,
+        -5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "resists": "---wns-",
+      "ailments": "s-----",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "722cfb0ff66149ac331acb7b64a9bf894d0f6841cc648c5a1384e00f18b4f2ce",
+        "bbf94d0404b006e913bca43d3925816153b78719fdb745b74cbe8cda721e4da9"
+      ]
+    },
+    "Kin-Ki": {
+      "gameId": 314,
+      "affinities": [
+        4,
+        0,
+        0,
+        2,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0
+      ],
+      "resists": "---nw--",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "deda0df11880ddcd9c2fa79048f4e2d7f9b5de58a96adfb2c82e6e36ea846d70",
+        "db9abf1e0cf21cc86fee62d52e6070ca8bb83143bb6d692c2a711664c6a978b3"
+      ]
+    },
+    "King Frost": {
+      "gameId": 87,
+      "affinities": [
+        0,
+        -6,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "resists": "-wd--sw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d67d58e42e38f57b6fe5a80565c957724bc15560de44fec3f52d3b561df32f36",
+        "1a73256e9a829dfce59a94356caa870b60d63fec6b18021bf691d906abfa7fa7"
+      ]
+    },
+    "Kodama": {
+      "gameId": 336,
+      "affinities": [
+        0,
+        -3,
+        -3,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "resists": "-ww-s--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "63829a86d39e422a7da0b2f43ee3c398abfafb1232aa95c5e7f7ef8d387ca808",
+        "5875511ed4b05f26c6b305fca622a8a062148f92a43266f2f7744d239219c45b"
+      ]
+    },
+    "Koppa Tengu": {
+      "gameId": 42,
+      "affinities": [
+        0,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---ws--",
+      "ailments": "----s-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "3401a22ff6d43aebb4d0f47d97d1603fdc6468d22a432dc8fbc8543e3c9bcf6d",
+        "0a8da27280f61cf3d92566a591c0386ffad02f7cf3520d9d97d634a3a36bfe1e"
+      ]
+    },
+    "Koropokkur": {
+      "gameId": 334,
+      "affinities": [
+        0,
+        0,
+        4,
+        0,
+        -3,
+        0,
+        -4,
+        0,
+        0,
+        1,
+        3
+      ],
+      "resists": "--n-wsw",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "91bfd4bca427a2a0e9109872000e3ed3500196c7a4805edc4fbe3b0743cc92d8",
+        "74405ed17b68b916019e0efa14dc72c7ac8f1e6187e250d7e59352cfa0ad97e5"
+      ]
+    },
+    "Koumokuten": {
+      "gameId": 205,
+      "affinities": [
+        4,
+        0,
+        0,
+        -4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "---wns-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e52b1309626267b800b933d8feae2cd4e94e11b66e774f2b43092cbfb2c1c69e",
+        "4527e5ea34c55e667bf13c1f4984714fd039035fd530f3970c139a7b4ca28660"
+      ]
+    },
+    "Kumbhanda": {
+      "gameId": 342,
+      "affinities": [
+        3,
+        0,
+        0,
+        -5,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "---wn-s",
+      "ailments": "s-ss-w",
+      "ailmentRates": [
+        50,
+        100,
+        50,
+        50,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "3e709e1c06f2df85ea8109d49a75a1ed5cf8efb7c8e7db28e3188f254fce77b4",
+        "fd63c5b68bfd8df9211a6035364b4e0b77f01a23f99e9ecb1d93db3081c48d9c"
+      ]
+    },
+    "Kurama Tengu": {
+      "gameId": 37,
+      "affinities": [
+        1,
+        0,
+        0,
+        -5,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "---wn--",
+      "ailments": "ws----",
+      "ailmentRates": [
+        125,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "59b6d0d6854fd759c98a3dcd2c0110dc4bf895025af9dbae31e2875f32a59187",
+        "f606812c9472623c64c0dc0a6864d7295cc1f30cc3aa11bfb1b60c1376dbc476"
+      ]
+    },
+    "Kushinada-Hime": {
+      "gameId": 213,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        -3,
+        0,
+        0,
+        4,
+        1
+      ],
+      "resists": "-----nw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "f74bb1559f3d5582ae70b2943884dc3d2d3f84404ef829fc4868d4c2e3f79084",
+        "d8a60acccf81e93e9bcd1dbe3b1ca119467e211347909c44e15f6f1421647f04"
+      ]
+    },
+    "Lachesis": {
+      "gameId": 300,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -5,
+        0,
+        0,
+        0,
+        5,
+        0,
+        4
+      ],
+      "resists": "----w--",
+      "ailments": "ssssss",
+      "ailmentRates": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "nativeRowSha256": [
+        "9815cb909f4a20f41bc221beeadda75b2e3b46817a6a35997e6dda278288ed8b",
+        "178a5fc19fad0271fa36e937f4c4f7dc374c2bffc82f69640540d71785078fda"
+      ]
+    },
+    "Lahmu": {
+      "gameId": 236,
+      "affinities": [
+        2,
+        -4,
+        3,
+        0,
+        2,
+        0,
+        3,
+        2,
+        3,
+        0,
+        0
+      ],
+      "resists": "-ws-s-n",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "632e19fb25903718cbff3e455839b840bbdf1a382b59b9f18fdbc26d91b3a663",
+        "6b7d0436963ef3862b1ead5bee4a7cb8a8eaa1a2ebd05bba68a3427e25fbe8cf"
+      ]
+    },
+    "Lakshmi": {
+      "gameId": 21,
+      "affinities": [
+        -4,
+        0,
+        0,
+        -3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        3,
+        3
+      ],
+      "resists": "---wsn-",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2907147c2d4b44d5d3ab964a71521ba04e8ff08c3b6d5023706ac3a91ab02d34",
+        "d021f1ad43c984d7f28a68e3affd93f6efb19947c9dac5b4f3d8032bf35c61ab"
+      ]
+    },
+    "Lamia": {
+      "gameId": 303,
+      "affinities": [
+        0,
+        0,
+        -3,
+        3,
+        0,
+        -2,
+        2,
+        0,
+        3,
+        -1,
+        0
+      ],
+      "resists": "--wn---",
+      "ailments": "---s-w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "131f3825d8c8ae687be4de5facb4b4c959f5e00e1e64050e5c82959f4e5b3d24",
+        "3bac5fdb921ba20168c845ed187fc65a9bacf7edfcf5d722004af399ad83ee42"
+      ]
+    },
+    "Leanan Sidhe": {
+      "gameId": 305,
+      "affinities": [
+        -1,
+        0,
+        0,
+        0,
+        -3,
+        -2,
+        3,
+        0,
+        3,
+        2,
+        0
+      ],
+      "resists": "----wwn",
+      "ailments": "---w--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e6b983bf4c675f6ac86ac406e9a7ba5ec3a2ad5b409fc45a2a07318dc7479544",
+        "cca86f3774f7db59907182d48ec6bfd4bb4b2a1476029eb1a818b9a58f4d150d"
+      ]
+    },
+    "Legion": {
+      "gameId": 172,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        2,
+        0,
+        2,
+        -1,
+        0
+      ],
+      "resists": "---w-wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6f9403f7b7c2e4f49e90074a734eab34caec184d122f9a2f62e3b951de89db3c",
+        "db2461e15cfd891a753e91ecea3a22cffaaff2448191e37cd20c28471b8bfe8c"
+      ]
+    },
+    "Lilim": {
+      "gameId": 67,
+      "affinities": [
+        0,
+        0,
+        -3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "--wn---",
+      "ailments": "n---s-",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "1047d2a039faceb40d05793e598e918047a40b4791593f2091fdf9790e6f5f87",
+        "4718d07706b68f0b9912aeaa3bea3825b158f1d624c35f00cb1de9d4cf3cc68b"
+      ]
+    },
+    "Lilith": {
+      "gameId": 391,
+      "affinities": [
+        -2,
+        0,
+        0,
+        4,
+        6,
+        -6,
+        0,
+        1,
+        0,
+        -3,
+        3
+      ],
+      "resists": "s--sdws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d9e3572d160ba32331a857b6ed1f5392af1707390707835b042f4d61833f7760",
+        "8475d640166673b7389fac8b450cfd1bc8a1a373e0de7ed6b1a071ea3c3c9c8d"
+      ]
+    },
+    "Loa": {
+      "gameId": 323,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        4,
+        0,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "---n--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        0,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1514d2dde9f555765fc801b8892977c4d2995da8e24dc1994e610b7f5295066a",
+        "338c89592a76e08a4bed1ccfe7ab76469cdacc9d65ae26157b785da7f99fee04"
+      ]
+    },
+    "Loki": {
+      "gameId": 89,
+      "affinities": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "--n-sws",
+      "ailments": "s--w--",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3f4e66bd0f3c9ea32d30b4f83d74c798333cc01666dea1e2e4b25ae26d5f5735",
+        "cd8022ee80d37743574124e0e2284318be339172c3ab157aa827fccfc198aa4c"
+      ]
+    },
+    "Loup-garou": {
+      "gameId": 136,
+      "affinities": [
+        3,
+        2,
+        0,
+        2,
+        0,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-swn-w-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3ed74145eaa99dddfd6be04a820c0af84ec2776895c65799c218d4c2d998a9b0",
+        "56dbb455eae7b9eca4a95fe925b8819c8810c2c56d92018b215d6c2e1bf64592"
+      ]
+    },
+    "Macabre": {
+      "gameId": 326,
+      "affinities": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        1,
+        0,
+        5,
+        0,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "--sn--",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        0,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "cf383af3db3a47435471a529cf206ad808e55a55f5be4b51b38f070886cf80be",
+        "0ca22f9255088cb113ef102a3d0a77c1251126f10612b245d0f352d6b316683c"
+      ]
+    },
+    "Mada": {
+      "gameId": 231,
+      "affinities": [
+        3,
+        5,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        3,
+        2
+      ],
+      "resists": "-dw---n",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "53b16920e88201daedc70c4f8adf4b5b00a14ca2490e5f1dfd5eb293d35a18ad",
+        "bea2c6e8bf551895a87af1790c506c22a34f792b7f42be8c9ff3bca58f14c585"
+      ]
+    },
+    "Makami": {
+      "gameId": 121,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -2,
+        -2,
+        3,
+        2
+      ],
+      "resists": "-----sw",
+      "ailments": "--w---",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d31a9c4d7adb0b10fd3b713bc32e6a84a75a8d3f2ded5194934c2b2b5f279eb8",
+        "c960fa9185822aaad27469f2b743f552ce159aa28e430b34c64fd4bdcb4b5629"
+      ]
+    },
+    "Manananggal": {
+      "gameId": 302,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        -2,
+        3,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "s----s",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "74edf68c1a251132085b8b913db44643a2b531bbd64c06663440e1c30d95bc84",
+        "8efd84f560e0b23c0d546edcc0783c4746322b6c26d0a9542a724725e489b6c8"
+      ]
+    },
+    "Mandrake": {
+      "gameId": 45,
+      "affinities": [
+        0,
+        -3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1,
+        0
+      ],
+      "resists": "-w-s---",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "7e5ec4e68505007784119c18cd7d0538ae8eaca439a29769465d6849dab61eb2",
+        "4664863087d9aa934fb603895cf9e5d158493fe1270dcbadfb463a8f4226ec0f"
+      ]
+    },
+    "Mara": {
+      "gameId": 77,
+      "affinities": [
+        5,
+        0,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "--wd-ss",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3616b0745c27b6f805c6aa4202ec4ed3257e713616e474d0b09c2ddeb6e57648",
+        "96c61fd2417373fd6b552010d6c1e8fd2c8c9ebaa82525e6fb606638a0acdf51"
+      ]
+    },
+    "Maria": {
+      "gameId": 30,
+      "affinities": [
+        -3,
+        0,
+        0,
+        -5,
+        4,
+        4,
+        -5,
+        0,
+        0,
+        4,
+        2
+      ],
+      "resists": "---wdns",
+      "ailments": "----n-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "c0b89faa580d16a438390cb3b3474a29edf1152896fdfdf39fd82060d4c9c1e7",
+        "d5e6a053363ddfc2d66061ea7da5afec3eb5c2c51ac6a6433d849620c510aa62"
+      ]
+    },
+    "Matador": {
+      "gameId": 359,
+      "affinities": [
+        4,
+        0,
+        0,
+        -5,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---wnss",
+      "ailments": "-s--ss",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        50,
+        50
+      ],
+      "nativeRowSha256": [
+        "9c94e4d134b78ffc0d9944c4398e2a243a4951baf5115a6687861e9cc285ea2d",
+        "d1704f2f899402098ce6ba56b2a40d2be3cad05e69fa8a2be57e039a2d60522c"
+      ]
+    },
+    "Melchizedek": {
+      "gameId": 249,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        -6,
+        5,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "----wdn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "79cc7460bffe24b0a19adcdf46b42140fa98f6857e1b6b4d28fccbef3b25d8dd",
+        "8e53c666729f3b3ea5edc35a07442be2b252f3108116dd73381dddaf8370e685"
+      ]
+    },
+    "Mephisto": {
+      "gameId": 78,
+      "affinities": [
+        7,
+        7,
+        0,
+        0,
+        0,
+        -6,
+        9,
+        0,
+        9,
+        0,
+        4
+      ],
+      "resists": "n----wd",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "fcdd08d10dd7f45b38658c1575de9dbba04a90b33549475fe373d8b28296da38",
+        "eb353a0fa9c6492221d4201eda2b9bdeab945d410b19974c0612a5562b9a3f1d"
+      ]
+    },
+    "Mermaid": {
+      "gameId": 304,
+      "affinities": [
+        -2,
+        -2,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        2
+      ],
+      "resists": "-wnw---",
+      "ailments": "----s-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "fde5397e7f8432e89793784ddc8b8f605399a87b151c2453214d186a45b75f55",
+        "4a2b4d994b46194e4d219af1b60c08067fe1668d55d71cd75b61357606457267"
+      ]
+    },
+    "Metatron": {
+      "gameId": 241,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        6,
+        -4,
+        -4,
+        2
+      ],
+      "resists": "-ssssn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c177c88c7ef84c5b05fd330f6a8872867553ccde08c916b403208d86687e79fc",
+        "51233cf2c883db5764f3c4f244db08169564b8e3cc3ddc18a42e4da207915552"
+      ]
+    },
+    "Michael": {
+      "gameId": 242,
+      "affinities": [
+        2,
+        5,
+        0,
+        0,
+        -4,
+        3,
+        -5,
+        4,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nn-wn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "770dd96afec8e06e3c4eedae0cb907b5ee42724eb6d3668ad2724fa7ebf93ece",
+        "d98a4f185e1b9dde56a5555c11e8b7de56b1ef95ddd50776852e2804f53316ee"
+      ]
+    },
+    "Mishaguji": {
+      "gameId": 234,
+      "affinities": [
+        0,
+        0,
+        0,
+        3,
+        -6,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---nwwn",
+      "ailments": "----s-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "dfcce2d548711565c4e3679bb59558cb6f7252dd49e4a2062fb4494418634d00",
+        "2c593b4dfe2ae25d08f8b7c0917cd58389b87e481f3ea808961b356c45974fc3"
+      ]
+    },
+    "Mithras": {
+      "gameId": 88,
+      "affinities": [
+        1,
+        5,
+        -4,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-dw--n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "889acfbc1ac84a0d1f656333c26c9d5757f4e352481ec6ee24fec93cec987755",
+        "cfc8a8f675a0f07e695e080da63004fe420228edc68de918fc7e4922a3e60927"
+      ]
+    },
+    "Mitra": {
+      "gameId": 11,
+      "affinities": [
+        0,
+        0,
+        -5,
+        0,
+        0,
+        3,
+        3,
+        2,
+        0,
+        3,
+        0
+      ],
+      "resists": "--w--ns",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e9b97af7727102a70b93b075bf3c2934755db554fcc7e6eed97582fabfe9a3da",
+        "e98a92a18a408188948755513733a259e765a4b9f5bf55513ce02475f7b5fc75"
+      ]
+    },
+    "Mokoi": {
+      "gameId": 69,
+      "affinities": [
+        0,
+        0,
+        0,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        -1
+      ],
+      "resists": "---sw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c27dfd45e52acb2c3a22325447b7d9d1dc236483b9a1aedfd14b6128cd2cdc1b",
+        "3927230794ca9ebcc8c1b123bb1606da6e5c19ab7d2b76b1ed1f7543ac27d357"
+      ]
+    },
+    "Moloch": {
+      "gameId": 85,
+      "affinities": [
+        2,
+        4,
+        -5,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nws--s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "ec8aaa5738e3dbd3b4fbbb0ad0cb20ff440eeed3d4166f2e593590dd329aedb2",
+        "956ef3554ece6d9ecabed7ef19fab1bc70344d0d3ccfb96f32b9bdf4cc158622"
+      ]
+    },
+    "Mot": {
+      "gameId": 179,
+      "affinities": [
+        0,
+        0,
+        0,
+        -6,
+        4,
+        0,
+        4,
+        4,
+        0,
+        0,
+        0
+      ],
+      "resists": "-s-w--d",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3fd632e36d8d471e70b592c22e70954a4f85085dffcef9f0cad4235e90dca73f",
+        "83ee948262ed84b9390810456a0b89ffad2f50898e0b95bc97cefa0928bceee6"
+      ]
+    },
+    "Mother Harlot": {
+      "gameId": 351,
+      "affinities": [
+        0,
+        1,
+        0,
+        4,
+        -6,
+        0,
+        0,
+        6,
+        3,
+        0,
+        3
+      ],
+      "resists": "r-wdwss",
+      "ailments": "n---w-",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "3387e070d626f45863163db10217081e2c6093d8fe9c6ffaa294621b995e4547",
+        "b987a858929958bc958f9335eaed50af934edae2ad49a85d1aa581710e20870c"
+      ]
+    },
+    "Mothman": {
+      "gameId": 147,
+      "affinities": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        -2,
+        -2,
+        0,
+        4,
+        0,
+        0
+      ],
+      "resists": "---nw--",
+      "ailments": "---s-s",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "3d4d67bfc8060bfe7584205cd0e219c147078b625be6fc635dd67b775d951b50",
+        "4202b262fc867756cddcef3d54b49d7c07b5e442cddb19f7abd4a2d7e0976258"
+      ]
+    },
+    "Muu Shuwuu": {
+      "gameId": 289,
+      "affinities": [
+        0,
+        -3,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "resists": "-w--n--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "dca20abffd2665f951a644efc10772ab1523e1e9210d4b5a6c67b8d073943499",
+        "96f339095e8888526e4c8d51cabb116845f2b4bc716026cfcaa2b285ad3d6662"
+      ]
+    },
+    "Naga": {
+      "gameId": 106,
+      "affinities": [
+        2,
+        -3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-w-nw--",
+      "ailments": "-n----",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6e3e817fdaa659a6c8941b922a7dbd402b1d9d73f15fcf9d5eef2a7678696c21",
+        "edc05e266446a82d40ccc74e74822608d31c5a95d8ed1837cc884abb557c0fd8"
+      ]
+    },
+    "Naga Raja": {
+      "gameId": 104,
+      "affinities": [
+        3,
+        -3,
+        1,
+        3,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "resists": "-wsdw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "7760ddb642f1731d1f72014bbc24eee4f4a1bf7ac845e1cc00b5a453c08d8a5d",
+        "7ab685e097e17bd7eb712f810ec6051345ce1a668e9bf53104c573f4225234ff"
+      ]
+    },
+    "Narcissus": {
+      "gameId": 332,
+      "affinities": [
+        -2,
+        -3,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "-w--n--",
+      "ailments": "n-s---",
+      "ailmentRates": [
+        0,
+        100,
+        50,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "9b015e0d610d43639701d8698f6aa162ab510393fe948e6a0d2c0422cb64f5a8",
+        "b2f8964b895c80a09ace3cbd28a48cc38268b5fc4cb44ae49c9beaf5164a2061"
+      ]
+    },
+    "Nebiros": {
+      "gameId": 267,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -3,
+        -3,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      "resists": "----wwr",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "edc626d3228dea362fb6801c5b4b5ff8bcbbc609735dd800ed1ab63cfbefb0c8",
+        "85b9a87308ee00288295600b578cc8c6f96e5cbce92e1f696ad01746c7ad4b75"
+      ]
+    },
+    "Neko Shogun": {
+      "gameId": 225,
+      "affinities": [
+        0,
+        -1,
+        0,
+        0,
+        -3,
+        0,
+        0,
+        -4,
+        0,
+        3,
+        3
+      ],
+      "resists": "-w-nws-",
+      "ailments": "--ss-s",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        50,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "72ad1ab994f1af60b3ea6e47eeea4f93034918473b238f13eb6e2e6fb7300194",
+        "2f009a8bd96a9794cf00965a4e34d4b10b006e11ee99730e9f1c652115bb0dc3"
+      ]
+    },
+    "Nekomata": {
+      "gameId": 137,
+      "affinities": [
+        3,
+        0,
+        -5,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "-swwn--",
+      "ailments": "s-----",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "eab89e965a92b01f7dc4ad42d88c917664d83cb458598d25bc25bc46698d81bd",
+        "afc5a6d383fe27a370d033daf7b941eaf1d920214dbe417e681c599b4fd24ec2"
+      ]
+    },
+    "Norn": {
+      "gameId": 22,
+      "affinities": [
+        0,
+        0,
+        0,
+        -4,
+        0,
+        1,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "resists": "---w-sn",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "941a368215bfa19fc6c7ca0f9d262b01c0aecec04e48184772fae611dc4dd8f1",
+        "24f9c34ffe53ae3118bb1e70c555cd71d33a62cd1c60556447176986afc779ec"
+      ]
+    },
+    "Nue": {
+      "gameId": 145,
+      "affinities": [
+        1,
+        0,
+        0,
+        4,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2
+      ],
+      "resists": "---nw--",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2f1f1c60bab768d7d36f31c54ed2f39773f8e5109ec764db4216990595e65a82",
+        "8e380b962c54e749fee1b00c8809363c4f776ef71251b7428260dab36960eb99"
+      ]
+    },
+    "Nuwa": {
+      "gameId": 75,
+      "affinities": [
+        2,
+        -5,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "resists": "-w-sr-s",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "218b73735dfe20663f009a4cd0417de926dc37bce84712966dfc12a04b1df5a9",
+        "614e78634301002c654b23cdc631013fe096b0db150e9450e9da5276c72cf287"
+      ]
+    },
+    "Nuwa A": {
+      "gameId": 197,
+      "affinities": [
+        0,
+        -6,
+        2,
+        3,
+        7,
+        -3,
+        -3,
+        0,
+        0,
+        3,
+        0
+      ],
+      "resists": "-w-nr-n",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "96c990fd135927fd9114f4a29ba71f4518b042592101e7d2487e676f5b1a22ac",
+        "9b1b8b6205a3bdb3c66b6d471eeafaf6537bdf8d3376f9fb8c72b5742f132185"
+      ]
+    },
+    "Obariyon": {
+      "gameId": 344,
+      "affinities": [
+        3,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "resists": "--ws-ws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "214eb034e4366a9830a7c2b4c09d44825e387ff008e2823db795946314d7955c",
+        "03812a3fc9e7a2777d2a43860981ab096ead36f154993ab62877cddb851184ff"
+      ]
+    },
+    "Oberon": {
+      "gameId": 52,
+      "affinities": [
+        0,
+        0,
+        0,
+        -4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "resists": "---wn--",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2b25c4815f24a11c30830845a2fb6f23085c8f05d1928dc21409a396d564992e",
+        "8baf9b44f3fff29f246f689b70f03dafc0916e370660b0c53f87ad316ab32f20"
+      ]
+    },
+    "Odin": {
+      "gameId": 9,
+      "affinities": [
+        6,
+        0,
+        0,
+        4,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "---rwnn",
+      "ailments": "-----s",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "5d7518b55a3503005769eb946e2b298bd751037dd94f308726410fca6a85d4c7",
+        "d9bac21690fd5607956826ec6245653ec1188f127c3b41510edf4fb3544045be"
+      ]
+    },
+    "Okuninushi": {
+      "gameId": 215,
+      "affinities": [
+        2,
+        0,
+        -5,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      "resists": "--w--ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3d443887d17e7e867b8c1388eb44c2ca239b399499080e5a91f8d191eed945a4",
+        "d4e8b5aa5e62990fceae6946719bb6e57375e7869c638936c12db1fb62901dfc"
+      ]
+    },
+    "Ongyo-Ki": {
+      "gameId": 310,
+      "affinities": [
+        5,
+        0,
+        0,
+        0,
+        0,
+        -4,
+        0,
+        3,
+        4,
+        0,
+        0
+      ],
+      "resists": "s-s-sw-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "5045b2f18ab5c206d3d28f086171eb75eea97a047e6122e0f4c8d93988112092",
+        "dd1bd548c3e1aabbee8b0a9cd1ef13216c92ed116871e6a94ea4138e7046f82f"
+      ]
+    },
+    "Oni": {
+      "gameId": 318,
+      "affinities": [
+        3,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "resists": "s--w-w-",
+      "ailments": "--w-w-",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "4c9930a242041e6dc9af2a3273166544e25f7f8321719bad394a49d763f5ca21",
+        "ba65a7482da9cdf2495968854ed5720d2a6a6e0ec34adb64f635ee3730ec419e"
+      ]
+    },
+    "Onmoraki": {
+      "gameId": 290,
+      "affinities": [
+        0,
+        2,
+        -3,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-sw-w--",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "e1a27f48a298d8da2263b716d9bdffe025d1cacf9acd76ad823e0eb6ce3b8aab",
+        "a7ceff18eda78f5365cdd068aae69e30b0af9de7b34ddbad0157d0f7e7f09a6b"
+      ]
+    },
+    "Orobas": {
+      "gameId": 139,
+      "affinities": [
+        1,
+        3,
+        -4,
+        0,
+        0,
+        -2,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-sw---s",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "5bd874a833dd166224a7d2a193dfad6d5fb5f1502f6c48efb290a0f752f39e5a",
+        "f576c5d1aa2c57be32a26de8f0d594e3cd7f60e690dbc9b37fb88835d89d64d6"
+      ]
+    },
+    "Orthrus": {
+      "gameId": 135,
+      "affinities": [
+        3,
+        3,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        1
+      ],
+      "resists": "-nw---s",
+      "ailments": "--sw--",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "864ab7ec919ce05898dd31c22e78efa49a5e603515cb242d879bb074656a8e01",
+        "8fedf0985c4b5c345f918ba2bc7c2657b69cf6f9a4c496cd27b31adb26d8663e"
+      ]
+    },
+    "Ose": {
+      "gameId": 269,
+      "affinities": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        3
+      ],
+      "resists": "-wn---n",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "912d7023db3d6deb2dd087f8dae72736d7fd02da51b9b308eb57706c10feda3b",
+        "8f5648f7c736dd4e7ad15d3fecc9ef521804ea29ecafde54bc7f51f29030498e"
+      ]
+    },
+    "Oyamatsumi": {
+      "gameId": 212,
+      "affinities": [
+        2,
+        -6,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        4
+      ],
+      "resists": "-wss--n",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "0cc3d4f4db50c0c48ca65acbc16f3a149a8689b6f56deea73ae5e84ce37ec837",
+        "e89705e680c318e479b2581d0c96111e9ca4c216ef851b9d115b182f2b67ee72"
+      ]
+    },
+    "Pale Rider": {
+      "gameId": 358,
+      "affinities": [
+        4,
+        -5,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        2
+      ],
+      "resists": "-wn--ss",
+      "ailments": "ss-nsn",
+      "ailmentRates": [
+        50,
+        50,
+        100,
+        0,
+        50,
+        0
+      ],
+      "nativeRowSha256": [
+        "9cd3165cf5f1a864def2c008c0003a1e2aef3756f3be17c7163e0c0132fcbcd1",
+        "97e9e82f8138807c0bcfc68b92023b6678c438758d5f64eabab9d460aae4d990"
+      ]
+    },
+    "Parvati": {
+      "gameId": 27,
+      "affinities": [
+        0,
+        -3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "resists": "-ws--s-",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e7f88a79459ccefd8a35985558f948caec464d4e2c7e253dae34e1db7cb0681a",
+        "7e158b7778fb24fbe4a21a686f23f33f3e1235747b9a8e1aa59bf77f4c2aae97"
+      ]
+    },
+    "Pazuzu": {
+      "gameId": 233,
+      "affinities": [
+        0,
+        0,
+        -5,
+        0,
+        3,
+        0,
+        1,
+        0,
+        4,
+        0,
+        0
+      ],
+      "resists": "--w-s-n",
+      "ailments": "--s---",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d735017b6575e94e19e3948b676ad35652b70a489f4c9bcfdcf282eea0bc2485",
+        "6c5b940dea403e7294ab5033b9a0fb8c1b6b7aa11c1b9c7fb70dd5c4701f01fc"
+      ]
+    },
+    "Pisaca": {
+      "gameId": 341,
+      "affinities": [
+        2,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        -2,
+        0
+      ],
+      "resists": "-w---wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "acf87376820ef27113c920aa015c100ee9bcdfc76f2ec3cf0f28403e5d36f0e5",
+        "7fefff0a1ef74a4c1bdaecc3091fbcb4f93c7663ae9827d5c2c8461a7e049056"
+      ]
+    },
+    "Pixie": {
+      "gameId": 59,
+      "affinities": [
+        -2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "resists": "----s-w",
+      "ailments": "--w---",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "8264e444d4308e45821f1ee387c26e84051b722ba19d4e91c6b24b6dafe4da72",
+        "26a290db4a798899737be4a7e7632acadfcfaa93073c63885b9803834336acbe"
+      ]
+    },
+    "Poltergeist": {
+      "gameId": 343,
+      "affinities": [
+        0,
+        0,
+        0,
+        2,
+        -1,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "---nww-",
+      "ailments": "--n---",
+      "ailmentRates": [
+        100,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "be8ddf08c0e7be923d858832d6b0ffb165f893c45b3f9b8036cf6b39eb98b713",
+        "a39d2e01948e5282ac3fe9e0dfe918ddad7a1c4c94525c34ab867e57760e2a8b"
+      ]
+    },
+    "Power": {
+      "gameId": 256,
+      "affinities": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        3,
+        -6,
+        0,
+        0,
+        1,
+        0
+      ],
+      "resists": "---swnw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6c56f592c4a76aa627bdd826c922b2d2896aa787daccf9bf4b26e967728e58ea",
+        "9b47bd6c16600ee479db62cfec3f1e618c610a75f73d9ded5892e63baed79099"
+      ]
+    },
+    "Preta": {
+      "gameId": 345,
+      "affinities": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "resists": "-w--wws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c7f12ec4bcace382fecd971f530839f25063a47d871c53007f44c22717a400d4",
+        "a1020a6e3c36a9e9ffdab68c92afcb29bde5bfdb72389b59792c6fa63b4d0037"
+      ]
+    },
+    "Principality": {
+      "gameId": 257,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        -5,
+        0,
+        0,
+        2,
+        1
+      ],
+      "resists": "-----nw",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "265f77a190dde3bd5384b980db4d6f81506a8e73508587c53ee377fd37ff0f0c",
+        "dc0d49dd1b4759dd223bafc6b4774c39517d088a85c52a6a31efc4560b20c0a6"
+      ]
+    },
+    "Qing Long": {
+      "gameId": 96,
+      "affinities": [
+        0,
+        0,
+        2,
+        -6,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "--swn--",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "6542b7e0b7862e32c4154f8b8d8a88830742d4accde4c2611556e4e0d5d28c6e",
+        "cfc963c043edde4ddbd3d595fcf1a8349570a32b7326e57c241c399b5d29192e"
+      ]
+    },
+    "Queen Medb": {
+      "gameId": 64,
+      "affinities": [
+        0,
+        3,
+        0,
+        -2,
+        2,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "---wn--",
+      "ailments": "s--ws-",
+      "ailmentRates": [
+        50,
+        100,
+        100,
+        125,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "0a3811c334edc392224e3736a3ac0ffdb42c025322e722b92a27283891cfbdbe",
+        "17774f1353af704fa2390c6c5766d6e04c4bb51baf62c4d7c38b891b057a6722"
+      ]
+    },
+    "Quetzalcoatl": {
+      "gameId": 95,
+      "affinities": [
+        0,
+        4,
+        0,
+        -6,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "-n-w---",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "112553a042db56ac5ee6633c20fcfcb9e4175f96115adec2bfd56f619f8dee00",
+        "b17c8a07cbfbafb9b59a88b8608a6909f293ded50b6a2716f7cfff8542f32928"
+      ]
+    },
+    "Rakshasa": {
+      "gameId": 324,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      "resists": "--w--ss",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "f74630558213d3d438d0e3096e38473b979b3b8766fc3227c0a47346d2c6218a",
+        "39dc0123f7abaf61f5ce66efedb71dc62b9a720abb285a86f61b8a4ad6cddda0"
+      ]
+    },
+    "Rangda": {
+      "gameId": 296,
+      "affinities": [
+        3,
+        0,
+        0,
+        -5,
+        3,
+        -3,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "resists": "rw-w-w-",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "04a3110758219b46ab690548edb70b07f9bbef19e854271758d3aa7f923e07d2",
+        "951c75aefbf3f993df2bed1c5e30ceb3b4dc0d29b2dd7445bfc4adb00a9057c6"
+      ]
+    },
+    "Raphael": {
+      "gameId": 245,
+      "affinities": [
+        0,
+        -4,
+        0,
+        0,
+        5,
+        3,
+        0,
+        0,
+        2,
+        3,
+        -2
+      ],
+      "resists": "-w-snn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "be5bf3c1512acc1ceb1d81de568073dd5f5e06c368c17505c1a027a39a3fdc2e",
+        "23f9a16ca0b818255f9d0489c72bfb7f7d2a5e63b39979449df5f35451fee3df"
+      ]
+    },
+    "Red Rider": {
+      "gameId": 353,
+      "affinities": [
+        6,
+        0,
+        -5,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "--wrdss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "5eb0c7d0dcb6dd76a9f9a900fca2f14678dced22218052b25d68b017899720f2",
+        "64422970666ab5a1fbd6570a42d2af6d89085709ff79a20cabf23b0457dee920"
+      ]
+    },
+    "Sandalphon": {
+      "gameId": 246,
+      "affinities": [
+        0,
+        0,
+        0,
+        3,
+        -4,
+        5,
+        0,
+        3,
+        -5,
+        0,
+        0
+      ],
+      "resists": "n--nwns",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d68933c98789cdae9cf4f00c58674d2f90d373c1721c4ac81d7fd6ff15c52fd7",
+        "0405754c2a53a61c5c2d127d88b121e653bcda150e4a990c99b6285d0fb6b0bd"
+      ]
+    },
+    "Sandman": {
+      "gameId": 70,
+      "affinities": [
+        1,
+        0,
+        0,
+        -3,
+        1,
+        0,
+        0,
+        0,
+        3,
+        0,
+        -1
+      ],
+      "resists": "---ws--",
+      "ailments": "----n-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "2e6ba1a3b29d47d12753db6165ea12b3197c4a3060dbb7aee9c09cd0e1c8e151",
+        "3e4825dbd7ccdc2a3b90012b7c66042f44da98df870f9e04e641d4c6c10fbadc"
+      ]
+    },
+    "Sarasvati": {
+      "gameId": 24,
+      "affinities": [
+        0,
+        -4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      "resists": "-wn---w",
+      "ailments": "n-s---",
+      "ailmentRates": [
+        0,
+        100,
+        50,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "733a513bd1aa2491d5cb569e69b0a6bddf346c24bbaf8d5d118ac2ab53e0f6b9",
+        "9575ed9281dc470e97e5223ccdc5e58afb50d7234f3767d54c2d61c5d6ab5ee9"
+      ]
+    },
+    "Scathach": {
+      "gameId": 26,
+      "affinities": [
+        1,
+        0,
+        0,
+        -5,
+        3,
+        0,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "resists": "---wns-",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "fc4bd73934c73dc15d32fa7ebf2d291ebaee7ee35c568198217ec7669d654819",
+        "c6acfcc3b8c26da66a273a6202c673c291c179025dfb09acf54ac9b48d6f8768"
+      ]
+    },
+    "Setanta": {
+      "gameId": 54,
+      "affinities": [
+        3,
+        0,
+        0,
+        -3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "---wn-w",
+      "ailments": "-sw---",
+      "ailmentRates": [
+        100,
+        50,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a9c615919a088202d99abe306f4d888e328b891a1da9bff1a665d144e4fe32d3",
+        "4d7f718786d01322a6c0ea5751f217562965d5b94a182ad2b30c77e2765823a9"
+      ]
+    },
+    "Seth": {
+      "gameId": 112,
+      "affinities": [
+        3,
+        0,
+        -6,
+        3,
+        3,
+        0,
+        0,
+        0,
+        2,
+        -5,
+        0
+      ],
+      "resists": "--wn-ss",
+      "ailments": "-----w",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "2e397f78f9e286c15f5e28aebaf1126722213be2908f9423a78979bda4bdeedf",
+        "2c6b78adf56fe184c8895ac029cf0642e9727285e68a9f8fa1aa855dcc74aa6d"
+      ]
+    },
+    "Shiisaa": {
+      "gameId": 129,
+      "affinities": [
+        1,
+        -3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "-w-ss--",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "acc99d505d7b7f42a4177ec1f2f4c072fd8fcc17322f2708aa5ef579a0e2dff6",
+        "a0088adce24f21c57dc8a6e50dd05f7e4fa4df130b7ec5e7c734c0e3e0066fd3"
+      ]
+    },
+    "Shiki-Ouji": {
+      "gameId": 311,
+      "affinities": [
+        0,
+        -5,
+        0,
+        0,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "sw--wss",
+      "ailments": "--w---",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "ee58856c4c8fc86a1f5fb0eb3b1802a8b1e9de6efd34c877f66c259f0d798ea4",
+        "aac4636de04be59c9121e7d4e2345c6e50130c80d303b70e7a4a6947a2f78584"
+      ]
+    },
+    "Shiva": {
+      "gameId": 178,
+      "affinities": [
+        6,
+        3,
+        -5,
+        3,
+        0,
+        0,
+        0,
+        3,
+        -5,
+        -2,
+        2
+      ],
+      "resists": "sdwd-ss",
+      "ailments": "-----s",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "19fe433ad35ed8626ff31dc473d8e3d84270c047dbbe61724cfa4b760813580a",
+        "98a346c2674c0d1666c30fe96dd0e3c9f035b33f7ba6ca7b091c60b108059211"
+      ]
+    },
+    "Siegfried": {
+      "gameId": 222,
+      "affinities": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        -5,
+        -5,
+        0,
+        -4,
+        1
+      ],
+      "resists": "d---www",
+      "ailments": "-w---w",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "8e54fe27cddca3a8b37fd88215b9c0a24983ff918f12243031e73a4bad8ce0db",
+        "4eb9aee7badb64f910ee5dc409ce3cbc4312a68ee8bb196c46dac9091e2aafc2"
+      ]
+    },
+    "Silky": {
+      "gameId": 53,
+      "affinities": [
+        -3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1
+      ],
+      "resists": "-wn----",
+      "ailments": "s-w-n-",
+      "ailmentRates": [
+        50,
+        100,
+        125,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "d893b3edb0ddcaf106ddab22b8a9272c87a6f7d9fb3efbccaed530c4f86868d7",
+        "01b4d30c0cb21aae869a45f422efa8e5f6a82637fb620e4666c8be56aa90ee67"
+      ]
+    },
+    "Skadi": {
+      "gameId": 192,
+      "affinities": [
+        0,
+        -5,
+        4,
+        0,
+        0,
+        0,
+        3,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-ws---n",
+      "ailments": "-n----",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "13252199a4982030d446069934a3aff34d5c29af8ec2feace94ee5868608a5ac",
+        "aac0b2e8c39d83338e9f5987130e733d236ec71ab5b73a0adb1e5673dceabd97"
+      ]
+    },
+    "Slime": {
+      "gameId": 173,
+      "affinities": [
+        1,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        0,
+        0,
+        3,
+        0,
+        -1
+      ],
+      "resists": "-wwwww-",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "85def96aea8b5ce2939188a4a2e1cfbb4b4a6c38f44891b55cf0481998fd026f",
+        "54ee8ff8ca6050fe663ec5e694e7d5ffaa8713a3bf894999ec910d520266baac"
+      ]
+    },
+    "Sraosha": {
+      "gameId": 244,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        -5,
+        5,
+        0,
+        2,
+        0,
+        3,
+        0
+      ],
+      "resists": "--sswd-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "61c0bb6c890d431f399819d169e90506fefa77f8fa0250275ddfab06d6c79fbb",
+        "886c08710d13c30532cd06857f2567785c329b3d30621a0f8ef2725f4cfb05ff"
+      ]
+    },
+    "Succubus": {
+      "gameId": 65,
+      "affinities": [
+        0,
+        0,
+        4,
+        0,
+        0,
+        -5,
+        0,
+        0,
+        4,
+        0,
+        1
+      ],
+      "resists": "-sn--w-",
+      "ailments": "n---n-",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "28e580e3ffb18cf4eb93e350c3770c0ed9877be139fa8ec2abbdc22f86926bd0",
+        "96af2adc00fca3d266b101c56d6bbe385066c82493f59d0b1236f6d8eb2200b1"
+      ]
+    },
+    "Sudama": {
+      "gameId": 335,
+      "affinities": [
+        0,
+        -3,
+        -2,
+        0,
+        3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "-ww-n--",
+      "ailments": "--s-w-",
+      "ailmentRates": [
+        100,
+        100,
+        50,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "25031e1676952f810c43e67aaf60e7aff67248ac6814bf3544a9595e7497000d",
+        "4dc4dfaf43034c415fd18ebc5c14e200b28ff0dd59979753c3eb8cc1828eb778"
+      ]
+    },
+    "Sui-Ki": {
+      "gameId": 312,
+      "affinities": [
+        2,
+        -5,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-wn----",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3e9a3ba752ce27917090f0c48a26ab942afd3cb1b6049111a2f6ee0753ded61b",
+        "5e0e95fc3c1d7eca8e995ebc137557a7dc367a09e68416815bfb00899e7547c7"
+      ]
+    },
+    "Sukuna-Hikona": {
+      "gameId": 214,
+      "affinities": [
+        2,
+        0,
+        4,
+        -5,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "--nw-ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "358bc0391e1c6626e196d9a00c4827030f8f927637b0051889ac4b07bcfa4bfe",
+        "fa853507dacde54b02663ddbed797de00e30855054c62d3270c8a49f8cf59d31"
+      ]
+    },
+    "Surt": {
+      "gameId": 80,
+      "affinities": [
+        4,
+        6,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-dw----",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2fa142443252e8b905215a3f7d167b11b08efc091c92dd7fb755123a84559006",
+        "5dd36ae5ff4d5c90ff318c567ff3dea51e6a721961d68aa02c91800b74934650"
+      ]
+    },
+    "Take-Minakata": {
+      "gameId": 216,
+      "affinities": [
+        2,
+        -3,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "resists": "-w-s---",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "f4071a7cf2daa8ac7fa6f92fba94b708f6cec06b6c57654b8a1fa8f9d784c0df",
+        "fd3b497dc5bcdee9f061c7783014d3290656429b20f5c5f8d20f23ea88919867"
+      ]
+    },
+    "Thor": {
+      "gameId": 200,
+      "affinities": [
+        4,
+        0,
+        0,
+        4,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-s-dws-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "0240816d824b0e4ac8a4329a114392cc416251ed32be876457d0a24593df91ac",
+        "8e6ac8686dbf80fbd7128678186d7dc2fa6d7add1d6944a85ac3c36bcbd92270"
+      ]
+    },
+    "Thoth": {
+      "gameId": 14,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        -3,
+        1,
+        0,
+        0,
+        3
+      ],
+      "resists": "-n----w",
+      "ailments": "----w-",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "cbdae410e26f30e8fb50700a806a48e1b0af0a1cdd068d8572122fe434d7e778",
+        "00bb9b7dc06d3072481f7989b655dcaddd16a9f72035a91208bdd1d59b1cceee"
+      ]
+    },
+    "Throne": {
+      "gameId": 254,
+      "affinities": [
+        0,
+        4,
+        -3,
+        0,
+        0,
+        4,
+        -6,
+        0,
+        0,
+        1,
+        0
+      ],
+      "resists": "-nw--nw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2a977b783fb255dfeccdaf904272a1d985ee41befd11b55fa6ae35a31e9c454a",
+        "d7e4ef6d98ad150120959c8252c1ae133881bf2709df5c04954d6cbbd6dcecf5"
+      ]
+    },
+    "Thunderbird": {
+      "gameId": 283,
+      "affinities": [
+        0,
+        0,
+        0,
+        5,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "---nw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c1c9a99cbfde641184d63bb8c9f2b7127a03838d2a5609753a4838015f793e36",
+        "d7db19e7f194cf547f79116014123759792dd263da19a5800f3507a8a2dd6588"
+      ]
+    },
+    "Titania": {
+      "gameId": 51,
+      "affinities": [
+        -4,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "resists": "-w---ns",
+      "ailments": "----ss",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        50,
+        50
+      ],
+      "nativeRowSha256": [
+        "5de2834fbc73501288a938997e335dbe0ee2005ecb0b8e1497816f9b87f9bfaf",
+        "87b6fe849eeec1ac266f1b19c6b5b2470cc02ede558ae948e16c9f3606449fe8"
+      ]
+    },
+    "Trumpeter": {
+      "gameId": 350,
+      "affinities": [
+        -6,
+        3,
+        3,
+        3,
+        3,
+        0,
+        0,
+        5,
+        4,
+        0,
+        0
+      ],
+      "resists": "-----nn",
+      "ailments": "-n--n-",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "c6ea801e35780888be2e1c6f1d8ccf5cc99336b9bd47e377073c06132ff566b6",
+        "8fb1ff4b1a3bf9c76181b810d0b7584ce3014f0674270ff1b845993efd9dd3fb"
+      ]
+    },
+    "Tsuchigumo": {
+      "gameId": 331,
+      "affinities": [
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        1
+      ],
+      "resists": "--ws---",
+      "ailments": "w--s--",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2aaf5c5ed8ad514c57e9ef06ab6d7e568f64ad41fecb3eb076aef6f6077d16ee",
+        "0ae570e3aa4e5eabd7ef1dce75b3e7f5ee6e181b8924d65ba0793a9ae3dc733d"
+      ]
+    },
+    "Turdak": {
+      "gameId": 325,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "----w-s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "31b9511147de20ee8b21ce64cbe1c56fe2dd3b9675be117e8a274f345be509fc",
+        "fe7993dd0c07f60cb6f7b406c0530bbeb5f2d8f7d7d8d5b6a12e08e74c2c4828"
+      ]
+    },
+    "Uriel": {
+      "gameId": 247,
+      "affinities": [
+        2,
+        5,
+        -5,
+        2,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        -4
+      ],
+      "resists": "-nws-n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "ab89bd237a0fcd06a03704c873bb9842adc4f029744977e45f88c2d5cd6e70aa",
+        "939e1cad604c703e35f880c58681d712dfc793dece58f6355c2565ca0a93b874"
+      ]
+    },
+    "Valkyrie": {
+      "gameId": 223,
+      "affinities": [
+        3,
+        0,
+        0,
+        2,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "----wn-",
+      "ailments": "sw----",
+      "ailmentRates": [
+        50,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "fe5350ad8b1c9e29e73bd0f19b3e34fbc9f97b359fa072324475cc92fd6ecb03",
+        "403eb90e37454b53a70258a9c1791ccae6fa266f7013ed1658da8ce78c6b94cc"
+      ]
+    },
+    "Vasuki": {
+      "gameId": 111,
+      "affinities": [
+        0,
+        -5,
+        4,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        -4
+      ],
+      "resists": "-wr---s",
+      "ailments": "---nnn",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        0,
+        0,
+        0
+      ],
+      "nativeRowSha256": [
+        "c20fd3bda463f0cf4c09b01118bf1b32997e94c6a8addec7683a3dac775e22f7",
+        "84f94e41136018be02cb5d624c1c4969b5a4bb04bd80fd6c7ab9adc764435755"
+      ]
+    },
+    "Vishnu": {
+      "gameId": 16,
+      "affinities": [
+        0,
+        -5,
+        0,
+        0,
+        0,
+        4,
+        6,
+        0,
+        0,
+        3,
+        0
+      ],
+      "resists": "nw---rn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "b97003d439246aa43d4214db185adefc256e105a20baa364cb9f346985eb9221",
+        "8f991e08f91e8587229a1281c451f2353de44f72be914ff53d448f2f702e67b2"
+      ]
+    },
+    "White Rider": {
+      "gameId": 354,
+      "affinities": [
+        0,
+        5,
+        0,
+        -5,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "resists": "-r-w-ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "26e4194967ad81861a91cf6759ceef1b552b916ba19eeb6ea44ca6b2112dd207",
+        "6a7516eb5433f0343c2704fd81557976d777a3f4d5e5584d75d874929fab87c4"
+      ]
+    },
+    "Xuanwu": {
+      "gameId": 97,
+      "affinities": [
+        2,
+        -6,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "-wn----",
+      "ailments": "---w--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "f055fb916258d3e1a2f05647f6f30f01575a7d2c1948eb26f8870ff462c2a99c",
+        "ae473e7f7c20b72a2456e7b2ea91e5b171c2406be58e845d1a3875dd59e85972"
+      ]
+    },
+    "Yakshini": {
+      "gameId": 299,
+      "affinities": [
+        2,
+        0,
+        0,
+        -3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "---wn--",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "5dd78f726a42cded96b7f27ca58a056a4180bfa7bc35105c08ddb420ab4dfff6",
+        "497a100f810ae109b6ad712c2a08dfdd8e24821d05d6f349c4323696d3a24fc6"
+      ]
+    },
+    "Yamata-no-Orochi": {
+      "gameId": 103,
+      "affinities": [
+        4,
+        3,
+        0,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ],
+      "resists": "-nnw---",
+      "ailments": "--www-",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        125,
+        125,
+        100
+      ],
+      "nativeRowSha256": [
+        "d4b0ccc25b5ed82612cedc8a81c96d21e6418e97b9a18ee479df663fe3731c1d",
+        "d93a406a23bbaada17df837d616255e3754676d9f5528d6ded0c46565c26a9c1"
+      ]
+    },
+    "Yatagarasu": {
+      "gameId": 280,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        -7,
+        0,
+        0,
+        2,
+        2
+      ],
+      "resists": "----snw",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e083d9a70731b0cb1cc983a6602ffe0ceb436e61c116bfc9377971bbcb778260",
+        "cdc00c2d182e87a5cd935807c950cc92203b28c470ff71abfd08166f6ca13fa0"
+      ]
+    },
+    "Yoshitsune": {
+      "gameId": 224,
+      "affinities": [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -4,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "s-----w",
+      "ailments": "---wwn",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        125,
+        125,
+        0
+      ],
+      "nativeRowSha256": [
+        "6629738782bfedf154d91d815f5d2880b3b63352db6bd8688e884b264429544b",
+        "3c50d81dba19af4a18030fadf5148acefdab852ce4b7757b2c43593db1261d36"
+      ]
+    },
+    "Yurlungur": {
+      "gameId": 105,
+      "affinities": [
+        0,
+        0,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        1,
+        1
+      ],
+      "resists": "-w-n---",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "4c5d135f6abdde3868ef0356d25f66256e8cc0cce27586010cf27a572bc23832",
+        "6cecf0bbaf94a8eb33cd567383559dc7b8c36fe3e1a1fc9347f695c18e23a39f"
+      ]
+    },
+    "Zaou-Gongen": {
+      "gameId": 180,
+      "affinities": [
+        5,
+        4,
+        0,
+        -7,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "resists": "-s-w-ss",
+      "ailments": "n-n-nn",
+      "ailmentRates": [
+        0,
+        100,
+        0,
+        100,
+        0,
+        0
+      ],
+      "nativeRowSha256": [
+        "938f609a10e4594f4c905f0b920194dc3dcf24d714e19f9388735e7af8d55b3d",
+        "afb3a4ba2c9d5bc546ada754d6cb7ffbbf8b6bd34e83acbc62e8dd6172aef1f9"
+      ]
+    },
+    "Zeus": {
+      "gameId": 8,
+      "affinities": [
+        4,
+        0,
+        0,
+        6,
+        -6,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1
+      ],
+      "resists": "---nwnn",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "00b8a1d5aa928a0cdcf1ac29729f2967474addf9f91387e2aae4741a30587b42",
+        "a595b482ac6196b4006ee7e0b39d95310fb2445fe3fef595bc4f114ad5225739"
+      ]
+    },
+    "Zhen": {
+      "gameId": 288,
+      "affinities": [
+        2,
+        -3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "-w----s",
+      "ailments": "---s-s",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "45247533e6029902efd97b0370dbcf27e60da2aef465ded00a2466ffaf091e19",
+        "6e8bfce51fe0a60a2febdd29de6de7e473dc0dd28d9d0e5762209ddf62e90214"
+      ]
+    },
+    "Zhuque": {
+      "gameId": 279,
+      "affinities": [
+        0,
+        5,
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "resists": "-nw----",
+      "ailments": "w-----",
+      "ailmentRates": [
+        125,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "e4e9988c2faa392dd08d51b8014e457efe1c8fc74c1bc6a66b70303b83524446",
+        "af4df4042d6b7ac9d343f87b19cf83eab8a3c069a0308320e9795566e800cc74"
+      ]
+    },
+    "Zouchouten": {
+      "gameId": 206,
+      "affinities": [
+        4,
+        0,
+        0,
+        0,
+        -4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "----wn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "209b4a86b85447ae368525460d8fff98893d7f8408988204e3fb443146ed2307",
+        "997c71c7618066dec19a90b8df10c59eec37c343049c05060249fab5548bccf0"
+      ]
+    },
+    "Agrat": {
+      "gameId": 392,
+      "affinities": [
+        -3,
+        2,
+        4,
+        -5,
+        0,
+        0,
+        0,
+        5,
+        -4,
+        3,
+        0
+      ],
+      "resists": "-snw--s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "504b71f9ff55528490f16cef8decdc46224d151fb8d5aa16b10766ee6f7e0207",
+        "3b675709bf5b6ba8224567fb379ff5676a0a907f1f9a6663a67330a133594ab9"
+      ]
+    },
+    "Amabie": {
+      "gameId": 387,
+      "affinities": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        -3,
+        3,
+        2
+      ],
+      "resists": "--n--sw",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "517b34ae44c4c01adcea72aca1c2848a8fd080fcdc54eab9cf3703ccc27cec69",
+        "4429e9e5837367745ff7d7fb20d62e236de7d58e46186b8b04436ee9da9e772b"
+      ]
+    },
+    "Anansi": {
+      "gameId": 41,
+      "affinities": [
+        0,
+        -4,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-wn---s",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3480b43cd0da9fbe32f105bc54c6969eeceffb9b9ed4916c8fc431d68bde7261",
+        "cd1e1465f092ae418d5f2a3423d3b1f2198ce272c258efc3327b325a03f0e2b6"
+      ]
+    },
+    "Armaiti": {
+      "gameId": 251,
+      "affinities": [
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        -2,
+        2,
+        1
+      ],
+      "resists": "---wwnn",
+      "ailments": "ssssss",
+      "ailmentRates": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "nativeRowSha256": [
+        "be547aa6b0a714a6b59af2528c1fc9b5cbd11bb6a56e8a24e0e76db5add05033",
+        "7d2c95fa7ad0992d4b9cda8e50882d911c11b72135170a39fbe381250989e19c"
+      ]
+    },
+    "Azazel": {
+      "gameId": 275,
+      "affinities": [
+        0,
+        3,
+        0,
+        -4,
+        3,
+        -2,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "resists": "-n-wnws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "320ea057fbc49ed658b34bbc8236e4f17c22cb6269be770d34c3fcc4b31f587f",
+        "7a91a9722e4a3033387f3947da4dabbfb3c9a91509dc237ca1ef3ec4011c1baa"
+      ]
+    },
+    "Cherub": {
+      "gameId": 260,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        4,
+        -4,
+        1,
+        0,
+        0,
+        -3
+      ],
+      "resists": "----dsw",
+      "ailments": "-w----",
+      "ailmentRates": [
+        100,
+        125,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "7c11b17f6697e97114126f9368a124b363ecfc6d201b13bebad63db281cf0fa8",
+        "ba438f8f343522a1c2f00ada5aeb60a9e3eb7fea5d352ecddec2d21ac2995421"
+      ]
+    },
+    "Dagda": {
+      "gameId": 4,
+      "affinities": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        -4,
+        -4,
+        3,
+        0,
+        0,
+        0
+      ],
+      "resists": "-nnnnw-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "5764d45f08080b145c36d5c8c99d77336ffca6c3d8acaf81a978f349e1c193af",
+        "853547f411ee33d22e9413f44ed7d9595ffe21b3e066906edd1aea3938b49f37"
+      ]
+    },
+    "Dis": {
+      "gameId": 46,
+      "affinities": [
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "resists": "wssss--",
+      "ailments": "-n----",
+      "ailmentRates": [
+        100,
+        0,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "93fdc376df976a1770ede0d8d50d167e2ff2fb6b7fd545b832e389d5a0eea797",
+        "19e0a65ac50e1350eb5801d31343d2adaec3d61257c1a4b852cad433e7b75a18"
+      ]
+    },
+    "Dormarth": {
+      "gameId": 141,
+      "affinities": [
+        3,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        1,
+        0,
+        2,
+        -3,
+        0
+      ],
+      "resists": "----wsn",
+      "ailments": "s-ss-s",
+      "ailmentRates": [
+        50,
+        100,
+        50,
+        50,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "51db6ef86015e61102bda1b88ca9c996f0ea835219fa97cfbecadee528dc95eb",
+        "78a2e27643eb628ecc941610201ba2bce380def6bb63fefda2ca50b7b178af9f"
+      ]
+    },
+    "Efreet": {
+      "gameId": 47,
+      "affinities": [
+        0,
+        5,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "resists": "-dw----",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "c682bcb654bfdf4af8712c6dfa55c705f46da5a04e92b478ad4973c700210b2f",
+        "a8a5fcd88a1ba6faeadc0bd36f4a510d02d56cc4cab1fc9c8a1ae2411dd2af18"
+      ]
+    },
+    "Eisheth": {
+      "gameId": 394,
+      "affinities": [
+        6,
+        0,
+        0,
+        0,
+        -3,
+        -3,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "-n--w-n",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "566a8c3e9174def65bbde0092cedf3409c46668d17b24011d999a654fdfc0f89",
+        "b496510a40f1a7d29beb0f7728dadb7cdc51ea45f1c33e8b6cf51367dc8cbe09"
+      ]
+    },
+    "Fenrir": {
+      "gameId": 148,
+      "affinities": [
+        4,
+        0,
+        4,
+        0,
+        -4,
+        0,
+        0,
+        -2,
+        0,
+        -1,
+        0
+      ],
+      "resists": "--d-w--",
+      "ailments": "-s----",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "3fa7b0ed2aa66e0f540979ea9431ad7e755fe85876594130691f2f86f036f99a",
+        "4eb34bbe3af043290197d97173a82b75f5ff167a09b0f984ab5046cc67708a0e"
+      ]
+    },
+    "Glasya-Labolas": {
+      "gameId": 142,
+      "affinities": [
+        3,
+        0,
+        0,
+        -4,
+        4,
+        0,
+        0,
+        0,
+        1,
+        -3,
+        0
+      ],
+      "resists": "---wn-n",
+      "ailments": "-----n",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        0
+      ],
+      "nativeRowSha256": [
+        "9cf29647a90ab0d4905e713f237fb0cd8408ae09660f4fcbf0e278b139094de1",
+        "7815dfee742fb6a1dd6174d1898af1cd735b79679526d6bb41a923227b453fa5"
+      ]
+    },
+    "Gogmagog": {
+      "gameId": 337,
+      "affinities": [
+        5,
+        -1,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        0
+      ],
+      "resists": "nwn-w-w",
+      "ailments": "-ww---",
+      "ailmentRates": [
+        100,
+        125,
+        125,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "cf48ffc65c65a24964537fde5eaf3fac48e3208e91e3c2fbb4bf2c0d1f42ce22",
+        "ca0ab18bf9e51a736392e384619f957edbd86db066f8d9497749349d6f59a4d9"
+      ]
+    },
+    "Gremlin": {
+      "gameId": 327,
+      "affinities": [
+        0,
+        -2,
+        2,
+        1,
+        -2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "resists": "-wssw--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "21e1df9b60a5e9639008b9b1955edf8385b21031ace10b91dcf447d0f490b6dd",
+        "e6921c5864f1e91cea7ee0e80c9acbfe3118c775aa7c6e45e521fc18da552045"
+      ]
+    },
+    "Gurulu": {
+      "gameId": 291,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        3,
+        -4,
+        0,
+        0,
+        3,
+        -2,
+        0
+      ],
+      "resists": "----nw-",
+      "ailments": "---sss",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        50,
+        50
+      ],
+      "nativeRowSha256": [
+        "d7549b3595b1c3d812a6a057a89b639aa793baba4a4f20d96dc99dac00925d57",
+        "b2dea110e627fc858e55079ba8fab76bf30c3d8c35084dc0e90f6c9842360dd3"
+      ]
+    },
+    "Halphas": {
+      "gameId": 274,
+      "affinities": [
+        0,
+        0,
+        0,
+        -2,
+        2,
+        0,
+        0,
+        -2,
+        2,
+        0,
+        0
+      ],
+      "resists": "---w-ss",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "20bff66694dd6f9541b210f3fb6c09148733c1856a2de09ebbf67044be0c0748",
+        "bc89cae6e539e69de2c385554f04dbd5f65db16e4996a46c26936944cebaca59"
+      ]
+    },
+    "Hare of Inaba": {
+      "gameId": 381,
+      "affinities": [
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        1,
+        1,
+        3
+      ],
+      "resists": "-wwwwnn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "10fee396005d472861e789457a14a564751561ea7da7e76834c3b69e821c3e53",
+        "bf0671c53d74aaa82c9c1d14ce6449c00c190d00e63c6dfd225790198648c0ca"
+      ]
+    },
+    "Karasu Tengu": {
+      "gameId": 319,
+      "affinities": [
+        0,
+        0,
+        0,
+        -4,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "---wss-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "10566befaa301482aa25b1e9a5e5583723795b961821cf7f60f90875d7baa8bc",
+        "184455b2ed68c38406ed24298db9338167ccb1441798d3f07e88d109868c1b38"
+      ]
+    },
+    "Kinmamon": {
+      "gameId": 385,
+      "affinities": [
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        -5,
+        4,
+        0
+      ],
+      "resists": "-n-wwnn",
+      "ailments": "s-s-s-",
+      "ailmentRates": [
+        50,
+        100,
+        50,
+        100,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "813795f236c8eac98b73473137ee2062bf2aee508c1f89164755421427104d79",
+        "7394545e6ae33a7ca57ba19fa2bebb9e744b170f344bf249e44ac87ebc25a575"
+      ]
+    },
+    "Konohana Sakuya": {
+      "gameId": 32,
+      "affinities": [
+        -3,
+        4,
+        0,
+        -3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "resists": "-r-wn--",
+      "ailments": "sss---",
+      "ailmentRates": [
+        50,
+        50,
+        50,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1555d791c9569e3424a0b13dbbf598f9b04b7bee84e2f0c1d0b00e60b818f820",
+        "9e959c33d8abfce49d7a31ea1df65e2f55a91afa8548bd950cc0a3b5b84962c2"
+      ]
+    },
+    "Kresnik": {
+      "gameId": 40,
+      "affinities": [
+        4,
+        0,
+        0,
+        0,
+        -4,
+        3,
+        -2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "s---wn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "fa667be34f734ab5d41f71bf411a1ee76776135862165e3facc8d4486e3913d6",
+        "cde9ef89b59049ea686887ede77bde245808a39db3d178523727e876c2766013"
+      ]
+    },
+    "Kudlak": {
+      "gameId": 346,
+      "affinities": [
+        0,
+        -4,
+        0,
+        0,
+        0,
+        -2,
+        4,
+        0,
+        3,
+        0,
+        0
+      ],
+      "resists": "-w----d",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "765c9cada73769e8aa7689db543df5d265cbd05a305eb8220488a644fee50c4f",
+        "35ad69c9f8ae782b5e154640372a572646664676c4378f98ad062cabb65ab7f5"
+      ]
+    },
+    "Lucifer": {
+      "gameId": 2,
+      "affinities": [
+        0,
+        4,
+        4,
+        2,
+        2,
+        -8,
+        3,
+        7,
+        0,
+        1,
+        0
+      ],
+      "resists": "--rr-wr",
+      "ailments": "n-n-n-",
+      "ailmentRates": [
+        0,
+        100,
+        0,
+        100,
+        0,
+        100
+      ],
+      "nativeRowSha256": [
+        "faa33acd20247197b3fe7b81dff00486ddaaceea43b7664b1f6fe539095b7a45",
+        "bfa0c9397830fe62a63c159ce438d1209848b3ef0550d419144a3f7b488f32d0"
+      ]
+    },
+    "Mad Gasser": {
+      "gameId": 174,
+      "affinities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        5,
+        -4,
+        1
+      ],
+      "resists": "-----wn",
+      "ailments": "wwwnnn",
+      "ailmentRates": [
+        125,
+        125,
+        125,
+        0,
+        0,
+        0
+      ],
+      "nativeRowSha256": [
+        "27dfb595c4a282045d9993d8c7441ccdf5793e46319fe2dbf8b2b7d532751dc6",
+        "d98014f4bf604e073dbb70fada31246c0ad001967cd9b4afb4a419e1e335daa1"
+      ]
+    },
+    "Marici": {
+      "gameId": 207,
+      "affinities": [
+        5,
+        0,
+        2,
+        0,
+        0,
+        2,
+        -3,
+        1,
+        0,
+        -5,
+        2
+      ],
+      "resists": "snss-rw",
+      "ailments": "--ww-n",
+      "ailmentRates": [
+        100,
+        100,
+        125,
+        125,
+        100,
+        0
+      ],
+      "nativeRowSha256": [
+        "54df3495903fbc4282ba678a2eebad22a30a2f172ec752577b477baca81917e5",
+        "fff6d682be22b1a31d20203a7cb47b00093bd71f750e9316e540e7f46f029a34"
+      ]
+    },
+    "Masakado": {
+      "gameId": 227,
+      "affinities": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        -4,
+        -4,
+        6,
+        0,
+        0,
+        0
+      ],
+      "resists": "s----nn",
+      "ailments": "----ww",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        125,
+        125
+      ],
+      "nativeRowSha256": [
+        "b1ee6848f70f86acc5d2b219c1d22e2ee623d784463f826d8709b0b12c6b12ad",
+        "578851c52e641711f22ac6d23369221e96de5d60033e56cd33154a805e206941"
+      ]
+    },
+    "Mastema": {
+      "gameId": 250,
+      "affinities": [
+        2,
+        -5,
+        0,
+        -3,
+        3,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "resists": "-wr-rn-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "d665ff8297a7a9c92beca3f47bd6f882703794b041fd71e2adfdfff6909dd3d6",
+        "89c5aedeb996ae0cca5c89720363673f3585967b4604481083250b28b2b2ee07"
+      ]
+    },
+    "Naamah": {
+      "gameId": 393,
+      "affinities": [
+        -6,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        3,
+        0,
+        7,
+        0,
+        2
+      ],
+      "resists": "wssss-n",
+      "ailments": "n-n---",
+      "ailmentRates": [
+        0,
+        100,
+        0,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "88f9cf8121d24f6fb482f9099ecf48701d413c88fbfefd625c65aecdc711cf8a",
+        "cb6ae61a80396cb334423a6af14c31d00e0de8bd729a6a570e4b28e9c978a21d"
+      ]
+    },
+    "Nahobeeho": {
+      "gameId": 60,
+      "affinities": [
+        4,
+        0,
+        5,
+        3,
+        -5,
+        0,
+        0,
+        0,
+        -4,
+        0,
+        1
+      ],
+      "resists": "s-dnws-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "a00cb8ff18f2c9af81995d6fa6f4e4164eb9a1d66b0cdf247c380c8bb06880a3",
+        "43f1efd74263cc7704ca339ba5166e557aae129598ab4d50d4cf59dd983e0250"
+      ]
+    },
+    "Nezha Taizi": {
+      "gameId": 226,
+      "affinities": [
+        2,
+        2,
+        0,
+        -2,
+        2,
+        0,
+        0,
+        -2,
+        0,
+        -2,
+        0
+      ],
+      "resists": "-s-ws--",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "6861837fcb9c4e664aabf4db44598f51009d11392e9fb7979ece31e75c69fd91",
+        "a074a3b534cf85e15c9be6b0eb77cf41fb4e7a05c1983e8c2f91fc40a431e05d"
+      ]
+    },
+    "Nozuchi": {
+      "gameId": 107,
+      "affinities": [
+        2,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "resists": "swww---",
+      "ailments": "---s--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        50,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "946085821955bc12479305a753417f40225bcb43421b6c801191bfdb45e63c49",
+        "530a45bdb22eb17549964f1abe3e7384e4493cb5fc8a010b93191fae61bcccaf"
+      ]
+    },
+    "Nyami Nyami": {
+      "gameId": 100,
+      "affinities": [
+        0,
+        -1,
+        3,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resists": "-wnw---",
+      "ailments": "-----s",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        50
+      ],
+      "nativeRowSha256": [
+        "b09cbd2d0cceed203c89052a7ded5b0f40f745c024919bf3951e3e05065532a4",
+        "e9e05d1eb4a026aefe51b863dbee96a6612ed4dab8e1f4fe9106553fc7fc18e8"
+      ]
+    },
+    "Onyankopon": {
+      "gameId": 386,
+      "affinities": [
+        -2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        2,
+        4
+      ],
+      "resists": "wn-n-n-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "f21606cef8ea43e6bfb32c5d0df25aa141ea435613c2c8544f0653111c93b549",
+        "a2530f5b4e1eaaa97e815ddce5a6d5be9fae0a88b722c8fba8703cc05f49b3d7"
+      ]
+    },
+    "Peallaidh": {
+      "gameId": 149,
+      "affinities": [
+        0,
+        -3,
+        1,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        3,
+        0,
+        1
+      ],
+      "resists": "-ws--ws",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "18bae87dd23d5f05b350511aa0c398caf2c7c3db19bbfe286399d3518b1fbf5e",
+        "b5ef767ccd439ac50f914fbca52a33d97da4c38ef3e6001f0a5d1eee18c157e4"
+      ]
+    },
+    "Samael": {
+      "gameId": 118,
+      "affinities": [
+        -4,
+        0,
+        -6,
+        0,
+        0,
+        4,
+        4,
+        2,
+        7,
+        2,
+        0
+      ],
+      "resists": "--w--rr",
+      "ailments": "---n-n",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        0,
+        100,
+        0
+      ],
+      "nativeRowSha256": [
+        "a88c9377e73952f458020953fd521e6e166de902ecc398982b9c6058d914d000",
+        "69cd8503badf4b78811fa3213a0089a80b19ef1f1db6c60fea5c451bdd7d84d9"
+      ]
+    },
+    "Satan": {
+      "gameId": 1,
+      "affinities": [
+        6,
+        6,
+        3,
+        3,
+        3,
+        0,
+        0,
+        7,
+        -5,
+        -2,
+        2
+      ],
+      "resists": "sd---dd",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "1e1c634f7828e1ebd5435696aeb2cf5b2a061b0cdb62c8476d5a7ba6d54aa43a",
+        "4ba2b9aa97d6a3a0669e842dd3486480eeb2d36407e9f1e1ad8627bafc00bab7"
+      ]
+    },
+    "Saturnus": {
+      "gameId": 237,
+      "affinities": [
+        4,
+        5,
+        -5,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        0,
+        0
+      ],
+      "resists": "-dw--ns",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "515903c509143505f883c36d1c740c09b40684c4caec3da18dcc3857188aa66b",
+        "94e66b0aea5c75dc4f2bbf2a4ae7c3aedecbe20ab6bcebed37d37b43382bb00a"
+      ]
+    },
+    "Senri": {
+      "gameId": 130,
+      "affinities": [
+        0,
+        0,
+        0,
+        -3,
+        2,
+        0,
+        0,
+        -2,
+        2,
+        2,
+        0
+      ],
+      "resists": "---wsn-",
+      "ailments": "n-----",
+      "ailmentRates": [
+        0,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "9556b6942bfb71266dca2732a709be44e0be11555bf35cc1c23ab255f68a4e74",
+        "4a303f4a40009d842cd137f57602d45ba6c70d0eba8476f47d05e88445606634"
+      ]
+    },
+    "Turbo Granny": {
+      "gameId": 175,
+      "affinities": [
+        3,
+        0,
+        0,
+        0,
+        1,
+        -2,
+        0,
+        0,
+        0,
+        -2,
+        0
+      ],
+      "resists": "-----wn",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "2ea5ffb0670bef54b01a65a26795ad8f6105f8b15d23b46abb11d121126a5e68",
+        "d2d1e3ac4637b19d9df8da3ada81a3a1890403c431da7ab137858aa76bb879ed"
+      ]
+    },
+    "Tzitzimitl": {
+      "gameId": 238,
+      "affinities": [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        -4,
+        0
+      ],
+      "resists": "-w---nn",
+      "ailments": "-nw--w",
+      "ailmentRates": [
+        100,
+        0,
+        125,
+        100,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "5f36d5f91da31325ae629a6951a6bba1c5a3068e7debc4fbf1f6cdac988f2394",
+        "e7ef6bad26f889e294b4eb955749bdbb851167d8acf7cbd233be0bf02a540c9c"
+      ]
+    },
+    "Unicorn": {
+      "gameId": 131,
+      "affinities": [
+        0,
+        0,
+        0,
+        -2,
+        0,
+        2,
+        0,
+        0,
+        -1,
+        1,
+        1
+      ],
+      "resists": "---w-n-",
+      "ailments": "s-sw-w",
+      "ailmentRates": [
+        50,
+        100,
+        50,
+        125,
+        100,
+        125
+      ],
+      "nativeRowSha256": [
+        "d89e606e0f54c7a96da1c330bf51a1aa1eeb0308faf2a0ac1b8f174f0653669d",
+        "55ee172a3cc5fd974dac6431141aefb29f7a86690afcc33f88ffae75b112afd3"
+      ]
+    },
+    "Vouivre": {
+      "gameId": 108,
+      "affinities": [
+        2,
+        0,
+        -3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "resists": "--w----",
+      "ailments": "-s-ns-",
+      "ailmentRates": [
+        100,
+        50,
+        100,
+        0,
+        50,
+        100
+      ],
+      "nativeRowSha256": [
+        "90967cab65fa8e61dce260c33d97d6dfa337e0fc5f45401dedd82bc6ee445df4",
+        "06be5d1794dcb0dfe4a7fa5fc27c670ce0e2e605a2d3b4054fd763724130e3f7"
+      ]
+    },
+    "Vritra": {
+      "gameId": 99,
+      "affinities": [
+        2,
+        0,
+        0,
+        3,
+        -3,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "resists": "--snws-",
+      "ailments": "------",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "80ea17ee09459685694d8807e95e908a1a046393ae47ce9b590ebd4e37bd7cc5",
+        "a106effb1bd2ba8524108f7acc1c967f273c742dbe9f8ee524179d992099f547"
+      ]
+    },
+    "Xiezhai": {
+      "gameId": 122,
+      "affinities": [
+        3,
+        0,
+        1,
+        0,
+        0,
+        1,
+        -1,
+        0,
+        -4,
+        0,
+        0
+      ],
+      "resists": "--n--nw",
+      "ailments": "wwwwww",
+      "ailmentRates": [
+        125,
+        125,
+        125,
+        125,
+        125,
+        125
+      ],
+      "nativeRowSha256": [
+        "4e0f86a23e7169423b961a341a6acabdc3e324c037a2188a9443ed4a0b899b74",
+        "5b5a9a5c7ad1fb23896411c8898fd11cefdabd7858bddb34bc18e93c340f2c5c"
+      ]
+    },
+    "Zhu Tun She": {
+      "gameId": 117,
+      "affinities": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        3,
+        -3,
+        0
+      ],
+      "resists": "--s---w",
+      "ailments": "---n--",
+      "ailmentRates": [
+        100,
+        100,
+        100,
+        0,
+        100,
+        100
+      ],
+      "nativeRowSha256": [
+        "effff3d0d3c50152bbcf0e6b2f6025931c76d1f1087c0d00f0dcb2fc62dd608a",
+        "f6544c2be5547df825306d6a0b7a17ec23a76d268e2b3231faa618e65e322159"
+      ]
+    }
+  },
+  "verification": {
+    "characterIdsChecked": true,
+    "bothNativeTablesAgree": true,
+    "allCatalogTraitsMatch": true,
+    "pakEntryChecksumsVerified": true,
+    "iconsPreserveNativePixels": true
+  }
+}

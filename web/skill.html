@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-skin="smtv"><head>
+<meta charset="utf-8">
+<script>
+// Keep stylesheet recovery available even if an external script cannot load.
+window.addEventListener('error',event=>{
+  const link=event.target;
+  if(!(link instanceof HTMLLinkElement)||!link.relList.contains('stylesheet'))return;
+  const attempt=Number(link.dataset.stylesheetRetries||0);
+  if(attempt>=2)return;
+  link.dataset.stylesheetRetries=String(attempt+1);
+  const url=new URL(link.href);url.searchParams.set('cssRetry',String(attempt+1));
+  setTimeout(()=>{if(link.isConnected)link.href=url.href;},200*(attempt+1));
+},true);
+</script>
+
+<script>try{const p=JSON.parse(localStorage.getItem("smtvv-appearance")||"{}");document.documentElement.dataset.skin=["smtv","p5","p3r"].includes(p?.skin)?p.skin:"smtv";document.documentElement.dataset.theme=p?.theme==="dark"?"dark":"light";document.documentElement.dataset.font=JSON.parse(localStorage.getItem("smtvv-font")||"null")==="large"?"large":"standard";}catch{}try{const valid=value=>["zh-Hans","en","ja","zh-Hant","ko"].includes(value);let language=new URLSearchParams(location.search).get("lang");if(!valid(language))try{language=localStorage.getItem("smtvv-language");}catch{}document.documentElement.lang=valid(language)?language:"zh-Hans";}catch{}</script>
+<script>
+window.smtvvEarlyRequests=new Map();
+for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=portraits-4&view=runtime']){
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+  const response=fetch(url,{signal:controller.signal}).then(async response=>{
+    let body;
+    try{body=await response.json();}catch(error){if(controller.signal.aborted)throw error;}
+    return {response,body};
+  }).catch(error=>({error})).finally(()=>clearTimeout(timer));
+  window.smtvvEarlyRequests.set(url,response);
+}
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>技能详情 · 真女5复仇</title><link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64"><link rel="stylesheet" href="desktop.css?v=route-actions-20260917-1"><link rel="stylesheet" href="persona.css?v=performance-20260916-1"><link rel="stylesheet" href="p3reload.css?v=p3r-20260913-2">
+<link rel="stylesheet" href="vengeance.css?v=smtv-20260914-2">
+<link rel="stylesheet" href="/auth/theme/i18n.css?v=performance-20260916-1">
+<link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
+<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
+<link rel="stylesheet" href="experience.css?v=logo-original-20260917-1">
+<link rel="preload" href="/auth/theme/i18n.js?v=route-ledger-20260917-1" as="script">
+<link rel="preload" href="assets/icons.js?v=performance-20260916-1" as="script">
+<link rel="preload" href="site.js?v=innate-search-20260918-1" as="script">
+<link rel="preload" href="skills-ui.js?v=worlds-20260914-1" as="script">
+<link rel="preload" href="entry.js?v=density-20260915-1" as="script">
+<link rel="preload" href="ui.js?v=route-actions-20260917-1" as="script">
+</head><body data-entry="skill" data-catalog-state="loading">
+<header class="site-header" data-site-header></header><div class="main-nav" data-site-nav></div>
+<main class="desktop-main entry-main"><a href="/?tab=skills" id="detail-back" class="back-link"><span data-icon="ArrowLeft"></span> 返回技能资料</a><div id="entry-content" aria-live="polite" aria-busy="true"><h1>技能详情</h1><p class="sr-only">正在读取资料…</p><div class="entry-skeleton" data-skeleton aria-hidden="true"><span class="skeleton skeleton-portrait"></span><div><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span></div></div></div></main>
+<button type="button" id="back-to-top" class="back-to-top icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
+<button type="button" id="back-to-top-left" class="back-to-top back-to-top--left icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
+<script>
+// Keep the loader inline so a failed first script request still has a recovery path.
+window.currentPage=null;
+(async()=>{
+  const sources=["/auth/theme/i18n.js?v=route-ledger-20260917-1","assets/icons.js?v=performance-20260916-1","site.js?v=innate-search-20260918-1","skills-ui.js?v=worlds-20260914-1","entry.js?v=density-20260915-1","ui.js?v=route-actions-20260917-1"];
+  for(const source of sources){
+    for(let attempt=0;attempt<3;attempt++){
+      try{
+        await new Promise((resolve,reject)=>{
+          const script=document.createElement('script');
+          const timer=setTimeout(()=>reject(Error('timeout')),12000);
+          script.src=source+(attempt?(source.includes('?')?'&':'?')+'loadRetry='+attempt:'');
+          script.async=false;
+          script.onload=()=>{clearTimeout(timer);resolve();};
+          script.onerror=()=>{clearTimeout(timer);script.remove();reject(Error('network'));};
+          document.body.append(script);
+        });
+        if (source.includes("/i18n.js")) await SmtvvI18n.ready;
+        break;
+      }catch(error){
+        // A timed-out script could still arrive later; reload the page instead
+        // of inserting another copy that might execute the same code twice.
+        if(error.message==='timeout'||attempt===2)throw error;
+        await new Promise(resolve=>setTimeout(resolve,400*(attempt+1)));
+      }
+    }
+  }
+})().catch(()=>{
+  document.body.dataset.catalogState='error';
+  document.querySelectorAll('[aria-busy="true"]').forEach(element=>element.setAttribute('aria-busy','false'));
+  const status=document.getElementById('status');
+  if(status)status.textContent='页面资源未就绪';
+  const box=document.getElementById('error')||document.getElementById('entry-content');
+  if(box){box.textContent='页面资源暂时无法加载，请重新加载。';box.setAttribute('role','alert');}
+  let button=document.getElementById('retry-data');
+  if(!button){button=document.createElement('button');button.id='retry-page';button.type='button';button.className='secondary';button.textContent='重新加载页面';(box||document.body).append(button);}
+  button.hidden=false;button.onclick=()=>location.reload();
+});
+</script>
+</body></html>

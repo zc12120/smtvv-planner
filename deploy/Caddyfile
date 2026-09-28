@@ -1,0 +1,3 @@
+{$SMTVV_PUBLIC_URL} {
+    reverse_proxy gateway:8080
+}

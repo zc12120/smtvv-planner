@@ -1,0 +1,7 @@
+# Optional: read data/web changes directly from the checkout after building.
+# The default image already contains the complete website assets.
+services:
+  app:
+    volumes:
+      - ./data:/app/data:ro
+      - ./web:/app/web:ro

@@ -1,0 +1,39 @@
+[Unit]
+Description=SMT V Vengeance fusion planner
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=smtvv-planner
+StateDirectoryMode=0750
+WorkingDirectory=/opt/smtvv-planner/current
+ExecStart=/usr/bin/python3 -u server.py --port 8765
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+Environment=SMTVV_STATE_DIR=/var/lib/smtvv-planner
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+KillMode=control-group
+CPUAccounting=yes
+CPUQuota=100%
+CPUWeight=25
+MemoryAccounting=yes
+MemoryHigh=512M
+MemoryMax=768M
+TasksMax=128
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

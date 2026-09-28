@@ -1,0 +1,30 @@
+From ceccdbd2ee799d020a371b9420bdacb9cf273aa7 Mon Sep 17 00:00:00 2001
+From: Roman Arutyunyan <arut@nginx.com>
+Date: Tue, 19 May 2026 15:46:31 +0400
+Subject: [PATCH] HTTP/3: allocate insert buffer from connection pool
+
+Previously, it was allocated from the encoder stream pool.  This could
+lead to use-after-free if the stream was closed and another encoder
+stream was opened.
+
+Reported by Trung Nguyen (@everping) of CyStack.
+---
+ src/http/v3/ngx_http_v3_table.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/http/v3/ngx_http_v3_table.c b/src/http/v3/ngx_http_v3_table.c
+index eac3da6..c825527 100644
+--- a/src/http/v3/ngx_http_v3_table.c
++++ b/src/http/v3/ngx_http_v3_table.c
+@@ -168,7 +168,7 @@ ngx_http_v3_get_insert_buffer(ngx_connection_t *c)
+     if (dt->insert_buffer == NULL) {
+         h3scf = ngx_http_v3_get_module_srv_conf(c, ngx_http_v3_module);
+ 
+-        dt->insert_buffer = ngx_create_temp_buf(c->pool,
++        dt->insert_buffer = ngx_create_temp_buf(c->quic->parent->pool,
+                                                 h3scf->max_table_capacity);
+         if (dt->insert_buffer == NULL) {
+             return NULL;
+-- 
+2.34.1
+

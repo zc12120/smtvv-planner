@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "copyright": "ATLUS / SEGA",
+  "source": {
+    "steamAppId": 1875830,
+    "steamBuildId": "17140961",
+    "pak": "pakchunk0-WindowsNoEditor.pak",
+    "pakBytes": 13839427789,
+    "pakIndexSha1": "090daf1d1401c4198915626cd77875c8f773695f",
+    "texture": "Project/Content/Design/UI/Icon/Element/Textures/icon_element_01",
+    "material": "Project/Content/Design/UI/Icon/Element/Materials/MW_10_Icon",
+    "sourceFilesSha256": {
+      "Project/Content/Design/UI/Icon/Element/Textures/icon_element_01.uasset": "4c109da326467a27686291c4c113b7df0a0540ca7cc5256d4931690705bf448a",
+      "Project/Content/Design/UI/Icon/Element/Textures/icon_element_01.uexp": "53dcc075dc789e14dd5a2bb80a7ce5c1d9811948d8a73a5d4fb789a977784ea7",
+      "Project/Content/Design/UI/Icon/Element/Materials/MW_10_Icon.uasset": "18354625cbdf72c0f06e05584380dcd5ee2158c48a128a22a70a53c3ce54a6ad",
+      "Project/Content/Design/UI/Icon/Element/Materials/MW_10_Icon.uexp": "28721d130ce58ffaf52a4af5faa3fc477ae9b786a016c2c88806eeef003da210"
+    },
+    "atlasSha256": "fcd5ed1f2120c39ce92426ee1bec49241a007ebcbecee8d2592ce9865f1e3cd4",
+    "pakEntryChecksumsVerified": true,
+    "textureFormat": "PF_B8G8R8A8",
+    "uvGridVerifiedFromMaterial": true,
+    "categoryMapping": "Existing planner symbols; innate and spe retain the passive glyph alias."
+  },
+  "atlasSize": [
+    1024,
+    680
+  ],
+  "grid": {
+    "cellSize": 80,
+    "stride": 84,
+    "offset": 4
+  },
+  "resampled": false,
+  "pngPixelsLossless": true,
+  "elements": 14,
+  "ailments": 6,
+  "icons": {
+    "elements/phy.png": {
+      "src": "/assets/elements/phy.png",
+      "atlasCell": [
+        0,
+        0
+      ],
+      "atlasCrop": [
+        12,
+        12,
+        76,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "3d0cb16baf9ef66123ebc627fa1934941266714b3bc8b51caba18644fd643c4b",
+      "pixelSha256": "d2e43c70fe7b757b42d91412a17dfa8fb54cdc0074726c8981a1168e07543da1",
+      "bytes": 5763
+    },
+    "elements/fir.png": {
+      "src": "/assets/elements/fir.png",
+      "atlasCell": [
+        1,
+        0
+      ],
+      "atlasCrop": [
+        96,
+        12,
+        160,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "b9aebb9ed47d9ab53ef9a30ec13f08d2bfe1846383d15cb2a04dd506919a0a4b",
+      "pixelSha256": "1f2dfba9c3454eeba1f7e971b4e60873e6c818077efe8bfa009b40071a75b2f0",
+      "bytes": 7207
+    },
+    "elements/ice.png": {
+      "src": "/assets/elements/ice.png",
+      "atlasCell": [
+        2,
+        0
+      ],
+      "atlasCrop": [
+        180,
+        12,
+        244,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "d666a96635e9c7a1c9b50a9bc458933cce33a15e7ffd331d475a2c7d76fee1cb",
+      "pixelSha256": "de25deb1ac87cfb2b1e252f4edd372031c254e167535ec48ae7f7576ad57527f",
+      "bytes": 9112
+    },
+    "elements/ele.png": {
+      "src": "/assets/elements/ele.png",
+      "atlasCell": [
+        3,
+        0
+      ],
+      "atlasCrop": [
+        264,
+        12,
+        328,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "83d1ca7acb95b0e7e9741aeed5e5d5ad178d286214a022ae8cd29d020fcf2a77",
+      "pixelSha256": "e030e48e77506620d2a4938135877b168b541ed0790cce940b5602a617279899",
+      "bytes": 6166
+    },
+    "elements/for.png": {
+      "src": "/assets/elements/for.png",
+      "atlasCell": [
+        4,
+        0
+      ],
+      "atlasCrop": [
+        348,
+        12,
+        412,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "a1d5183bc3041d91b0ac1b33838cea9a53d365f19f92106b815bc6fce3069400",
+      "pixelSha256": "779d859a04dc6e17585d32935e314d670bab4fd8734d1bac0dcb49eeedae1bf4",
+      "bytes": 5928
+    },
+    "elements/lig.png": {
+      "src": "/assets/elements/lig.png",
+      "atlasCell": [
+        5,
+        0
+      ],
+      "atlasCrop": [
+        432,
+        12,
+        496,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "269c9f6d6c1eda24bdeb64ed4bb5f8f569dbc1bc01566f4b2c8056bc0ca54565",
+      "pixelSha256": "e665a9e1404ab4b6fa543f7e43ea329f7f6b154f34fa73b36c2fce1f88267737",
+      "bytes": 8519
+    },
+    "elements/dar.png": {
+      "src": "/assets/elements/dar.png",
+      "atlasCell": [
+        6,
+        0
+      ],
+      "atlasCrop": [
+        516,
+        12,
+        580,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "55fb1a40f7d51cff8d4d9f74f800a5eb9a04cb544ecc5fbee2b6184d278b55bc",
+      "pixelSha256": "6074b09e2f575b74458b31182586258eb1d648b2bd659833d00191d4e59d4f05",
+      "bytes": 8341
+    },
+    "elements/alm.png": {
+      "src": "/assets/elements/alm.png",
+      "atlasCell": [
+        7,
+        0
+      ],
+      "atlasCrop": [
+        600,
+        12,
+        664,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "19d4512cb1759a909115e4b5543cb5f4bfe4440c948e3a1ab57a8982e4aa8b9f",
+      "pixelSha256": "16e1e5f6694689dc1d136f986558a88c07fffc0c72fe08d0159e7c3faf424fb7",
+      "bytes": 6934
+    },
+    "elements/ail.png": {
+      "src": "/assets/elements/ail.png",
+      "atlasCell": [
+        8,
+        0
+      ],
+      "atlasCrop": [
+        684,
+        12,
+        748,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "a943deab6e5faee645e8d6c84fb449a6b581fefe3b00cb8c96832d03a67a85a2",
+      "pixelSha256": "ec82e77b89962f814f6e298f5dd9e14a7b88a820e631938b4aeead3ffb454b5a",
+      "bytes": 5580
+    },
+    "elements/sup.png": {
+      "src": "/assets/elements/sup.png",
+      "atlasCell": [
+        9,
+        0
+      ],
+      "atlasCrop": [
+        768,
+        12,
+        832,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "db5829234167e209901e01978672451e1054212e0f8e6a5c2f04b224f8c02773",
+      "pixelSha256": "7b9bcab09b5d3d5066816b215325332836cbe4413776f072b46b6de99a5ea95c",
+      "bytes": 6722
+    },
+    "elements/rec.png": {
+      "src": "/assets/elements/rec.png",
+      "atlasCell": [
+        10,
+        0
+      ],
+      "atlasCrop": [
+        852,
+        12,
+        916,
+        76
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "5cb2f7997163d0bcb319a9339e07a13e1afd376debde82b52cfab1ef395f6554",
+      "pixelSha256": "d33fc5f5dc5c6f515476cd5c63aadac51ec4cafc9e48f812b1bd3c38d2908810",
+      "bytes": 5968
+    },
+    "elements/pas.png": {
+      "src": "/assets/elements/pas.png",
+      "atlasCell": [
+        0,
+        1
+      ],
+      "atlasCrop": [
+        12,
+        96,
+        76,
+        160
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "a88845f3bb93050291d015f73d277268eb953db4d33b26e97b525662d008b057",
+      "pixelSha256": "70005e283a58b84e2bc265bc75d5eccc1f4ee773c913a6117f830ea10f507019",
+      "bytes": 6364
+    },
+    "elements/innate.png": {
+      "src": "/assets/elements/innate.png",
+      "atlasCell": [
+        0,
+        1
+      ],
+      "atlasCrop": [
+        12,
+        96,
+        76,
+        160
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "a88845f3bb93050291d015f73d277268eb953db4d33b26e97b525662d008b057",
+      "pixelSha256": "70005e283a58b84e2bc265bc75d5eccc1f4ee773c913a6117f830ea10f507019",
+      "bytes": 6364
+    },
+    "elements/spe.png": {
+      "src": "/assets/elements/spe.png",
+      "atlasCell": [
+        0,
+        1
+      ],
+      "atlasCrop": [
+        12,
+        96,
+        76,
+        160
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "a88845f3bb93050291d015f73d277268eb953db4d33b26e97b525662d008b057",
+      "pixelSha256": "70005e283a58b84e2bc265bc75d5eccc1f4ee773c913a6117f830ea10f507019",
+      "bytes": 6364
+    },
+    "ailments/mir.png": {
+      "src": "/assets/ailments/mir.png",
+      "atlasCell": [
+        3,
+        2
+      ],
+      "atlasCrop": [
+        260,
+        176,
+        336,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "86c98836e77019664e30470523f3e5c4f9d3b365d52191433c78f7ff62da9fe3",
+      "pixelSha256": "1946e9325c8be6fbd29028ed0ef23306f553b5d14227e9d2110c9751c939ee13",
+      "bytes": 5363
+    },
+    "ailments/sle.png": {
+      "src": "/assets/ailments/sle.png",
+      "atlasCell": [
+        4,
+        2
+      ],
+      "atlasCrop": [
+        344,
+        176,
+        420,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "a7a275831c76301f159eb24615887a8c07b2c31088a40d589bec2385bff3330a",
+      "pixelSha256": "0bcde8fa3eef5c845ce053d233a71666daf052f3614ffc9d99c7967913ad6cb5",
+      "bytes": 3240
+    },
+    "ailments/pan.png": {
+      "src": "/assets/ailments/pan.png",
+      "atlasCell": [
+        5,
+        2
+      ],
+      "atlasCrop": [
+        428,
+        176,
+        504,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "c7189b9b0bfdf635c44e160a8fcbdfb2323620ea1b1836ba0acfaa27fe9e0957",
+      "pixelSha256": "563145fae5a1a085c75cae51d642e8f297d9751afc6a7b0d2b9880acd3508aa9",
+      "bytes": 3929
+    },
+    "ailments/cha.png": {
+      "src": "/assets/ailments/cha.png",
+      "atlasCell": [
+        6,
+        2
+      ],
+      "atlasCrop": [
+        512,
+        176,
+        588,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "6c731c7e0e94884792137e87e225fb4e3e0cc0f412a0c17ea84d510c8549ab55",
+      "pixelSha256": "80f0428264f2afe1211c805e0a01ffb1d8fd2280a82e4116842e6efb365329b3",
+      "bytes": 1729
+    },
+    "ailments/sea.png": {
+      "src": "/assets/ailments/sea.png",
+      "atlasCell": [
+        7,
+        2
+      ],
+      "atlasCrop": [
+        596,
+        176,
+        672,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "e46bca56486e3e5ea77e5c0e2fb061d4470eb78532d76d2b20f8d705ca2bfe05",
+      "pixelSha256": "f5bc0297629c525763a03f1e42cc97489b775984c8bb9cc098878c2fc3e3adfd",
+      "bytes": 4878
+    },
+    "ailments/poi.png": {
+      "src": "/assets/ailments/poi.png",
+      "atlasCell": [
+        8,
+        2
+      ],
+      "atlasCrop": [
+        680,
+        176,
+        756,
+        252
+      ],
+      "width": 76,
+      "height": 76,
+      "sha256": "3bb8e00322baa84ac94a7a9fc639a3b758581436cb3f90f06e9dfe09316b09d1",
+      "pixelSha256": "d17fb227a59134b7d25c90670bb1f9bf90369b6fbf845555064605fb68a4a8eb",
+      "bytes": 5222
+    }
+  }
+}

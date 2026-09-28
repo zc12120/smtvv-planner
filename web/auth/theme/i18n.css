@@ -1,0 +1,35 @@
+/* Shared, keyboard-accessible language menu; colors inherit the active skin. */
+.language-picker { position: relative; flex: 0 0 auto; align-self: center; }
+.language-picker .language-trigger { display: flex; align-items: center; justify-content: center; gap: 6px; width: auto; min-width: 60px; min-height: 44px; padding: 8px; font: inherit; font-size: 12px; white-space: nowrap; }
+.language-trigger .icon { width: 19px; height: 19px; }
+.language-picker .language-options { position: absolute; z-index: 100; inset: calc(100% + 8px) 0 auto auto; width: 184px; max-width: calc(100vw - 32px); padding: 6px; background: var(--raised, #151c28); color: var(--text, #edf3f7); border: 1px solid var(--line, #435568); box-shadow: 0 8px 24px #0003; }
+.language-options[hidden] { display: none; }
+.language-picker .language-options button { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid transparent; background: transparent; color: inherit; text-align: left; font: 500 15px/1.5 var(--font-body, sans-serif); clip-path: none; transform: none; }
+.language-picker .language-options button[aria-selected="true"] { color: var(--accent, #6de7ed); background: var(--accent-wash, #6de7ed14); }
+.language-picker .language-options button[aria-selected="true"]::after { content: '✓'; margin-left: auto; }
+.language-picker button:focus-visible { outline: 2px solid var(--accent, #6de7ed); outline-offset: 2px; }
+.language-picker .language-options button:hover { background: var(--hover, #ffffff0e); }
+.language-picker button:disabled { opacity: .6; cursor: wait; }
+.language-status { position: absolute; z-index: 101; right: 0; top: 100%; width: 220px; padding: 12px; background: var(--panel, #151c28); color: var(--text, #edf3f7); border: 1px solid var(--line, #435568); font: 14px/1.6 sans-serif; }
+.login-language { position: fixed; z-index: 100; top: 16px; right: 20px; color: #eef6ff; }
+.login-language .language-trigger { border: 1px solid #73c9ed66; background: #073376; color: inherit; }
+:root:lang(en) .nav-inner nav a { white-space: normal; }
+:root:lang(en) .resist-cell .element-name { font-size: .68rem; letter-spacing: 0; }
+:root:lang(en) .resist-cell .resist-value { font-size: .65rem; }
+:root:lang(ja) { --font-body: 'Vengeance JP', 'Noto Sans CJK JP', 'Yu Gothic', Meiryo, sans-serif; }
+:root:lang(zh-Hant) { --font-body: 'Vengeance TC', 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif; }
+:root:lang(ko) { --font-body: 'Vengeance KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif; }
+:root:lang(ko) .demon-profile-copy { word-break: keep-all; overflow-wrap: anywhere; }
+@font-face { font-family: 'Vengeance KR'; src: url('/auth/theme/fonts/noto-kr.woff2') format('woff2'); font-style: normal; font-weight: 400 500; font-display: swap; }
+@font-face { font-family: 'Vengeance KR'; src: url('/auth/theme/fonts/noto-kr-bold.woff2') format('woff2'); font-style: normal; font-weight: 600 900; font-display: swap; }
+:root:lang(ja) body.p3r-auth, :root:lang(zh-Hant) body.p3r-auth, :root:lang(ko) body.p3r-auth { font-family: var(--font-body); }
+@media (max-width: 599px) {
+  .language-picker .language-trigger { min-width: 48px; gap: 3px; padding-inline: 5px; }
+  .language-trigger .icon { width: 17px; }
+  :root:lang(en) .main-nav nav a { padding-inline: 8px; font-size: 13px; }
+  :root:lang(en) .guide-tabs button { white-space: normal; }
+}
+@media (max-width: 359px) {
+  .language-trigger .icon { display: none; }
+  .language-picker .language-trigger { min-width: 44px; }
+}

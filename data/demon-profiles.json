@@ -1,0 +1,4716 @@
+{
+  "source": {
+    "kind": "official-game-text",
+    "game": "Shin Megami Tensei V: Vengeance",
+    "publisher": "ATLUS / SEGA",
+    "steamAppId": 1875830,
+    "steamBuildId": "17140961",
+    "language": "zh-Hans",
+    "label": "游戏内仲魔介绍 · 官方简体中文原文",
+    "pak": "pakchunk0-WindowsNoEditor.pak",
+    "pakIndexSha1": "090daf1d1401c4198915626cd77875c8f773695f",
+    "profileAsset": "Project/Content/L10N/zh-Hans/Blueprints/Gamedata/BinTable/Camp/Status/DevilProfile",
+    "assets": {
+      "Project/Content/L10N/zh-Hans/Blueprints/Gamedata/BinTable/Camp/Status/DevilProfile": {
+        "headerSha256": "ebe3dadcd73669bfdff1dfe83cfd5d09715eea8c86a9ec680e4001380df5af5e",
+        "exportSha256": "2bce654e9a89ca9a2670bd7cfe10df8e5ae5c3db5eb9378cf023afe1065a7958"
+      },
+      "Project/Content/L10N/zh-Hans/Blueprints/Gamedata/BinTable/Common/CharacterName": {
+        "headerSha256": "798f1308e10bc37046e4d27e14c2d873935d0c192967c5fa924db91df5540b8b",
+        "exportSha256": "2b024eceb11204a5a090faf4f7f93361d9ea7ae36d5f521b471c8ec4f750596b"
+      },
+      "Project/Content/L10N/en/Blueprints/Gamedata/BinTable/Common/CharacterName": {
+        "headerSha256": "01436c548a02037b3e22e1d812ccae505633d0080d5f6960876f0be21f787455",
+        "exportSha256": "b7d71ae359dace2fb947d322425de701913e1bd21553bf184df997e5eaef7755"
+      }
+    },
+    "textHandling": "原文与本地化键逐页保留；展示时仅合并游戏内固定换行，保留自然段。"
+  },
+  "count": 275,
+  "demons": {
+    "Abaddon": {
+      "gameId": 84,
+      "officialNameZh": "亚巴顿",
+      "officialNameEn": "Abaddon",
+      "messageLabel": "DEVIL_ID_084_ABADDON",
+      "pages": [
+        "启示录中所记载的地狱深渊之主。\n被认为是率领\n大群害虫和瘟疫的魔王。\n　\n传说当宣告最终审判降临的\n第五位天使吹号时，\n他便会现身放出蝗群折磨人们。\n他的名字在希伯来语里\n意为“破坏”、“灭亡”、“深渊”，\n有时也被直接用于代指地狱本身。\n大规模的蝗灾会对城镇造成\n巨大的破坏，据说亚巴顿便是\n人们对这种天灾的神格化。"
+      ],
+      "paragraphs": [
+        "启示录中所记载的地狱深渊之主。被认为是率领大群害虫和瘟疫的魔王。",
+        "传说当宣告最终审判降临的第五位天使吹号时，他便会现身放出蝗群折磨人们。他的名字在希伯来语里意为“破坏”、“灭亡”、“深渊”，有时也被直接用于代指地狱本身。大规模的蝗灾会对城镇造成巨大的破坏，据说亚巴顿便是人们对这种天灾的神格化。"
+      ],
+      "localizationKeys": [
+        "CD622AC24215EC2B4C85E684E1E3A84C"
+      ],
+      "textSha256": "41b58fba3eed981702959e8569ce12d68bc217b012ad8896dea2c955a1971232"
+    },
+    "Abdiel": {
+      "gameId": 240,
+      "officialNameZh": "亚必迭",
+      "officialNameEn": "Abdiel",
+      "messageLabel": "DEVIL_ID_240_ABDIEL",
+      "pages": [
+        "名字意为“上帝之奴”，\n对上帝无比忠诚的炽天使。\n她的名字被认为来源于\n阿拉伯语中的“奴隶”一词。\n　\n她是路西法麾下的天使中\n唯一拒绝反叛上帝\n并回归了上帝座下的天使，\n也因为这不屈于诱惑的行为\n而受到了上帝的称赞。\n据说此后她作为众天使的先锋\n投入了和路西法的战斗。"
+      ],
+      "paragraphs": [
+        "名字意为“上帝之奴”，对上帝无比忠诚的炽天使。她的名字被认为来源于阿拉伯语中的“奴隶”一词。",
+        "她是路西法麾下的天使中唯一拒绝反叛上帝并回归了上帝座下的天使，也因为这不屈于诱惑的行为而受到了上帝的称赞。据说此后她作为众天使的先锋投入了和路西法的战斗。"
+      ],
+      "localizationKeys": [
+        "6C1EBAD0479A4A43C529718A8206B384"
+      ],
+      "textSha256": "ad592c15f9e124e3a05c0788c507d840aa14fdc9096f6d30523518c38f1ea3df"
+    },
+    "Abdiel A": {
+      "gameId": 264,
+      "officialNameZh": "亚必迭",
+      "officialNameEn": "Abdiel",
+      "messageLabel": "DEVIL_ID_264_ABDIEL_II",
+      "pages": [
+        "名字意为“上帝之奴”，\n对上帝无比忠诚的炽天使。\n她的名字被认为来源于\n阿拉伯语中的“奴隶”一词。\n　\n她是路西法麾下的天使中\n唯一拒绝反叛上帝\n并回归了上帝座下的天使，\n也因为这不屈于诱惑的行为\n而受到了上帝的称赞。\n　\n当神的秩序濒临崩溃危机之时，\n为了守护秩序，她刻意堕天，\n获得了超越炽天使的力量。"
+      ],
+      "paragraphs": [
+        "名字意为“上帝之奴”，对上帝无比忠诚的炽天使。她的名字被认为来源于阿拉伯语中的“奴隶”一词。",
+        "她是路西法麾下的天使中唯一拒绝反叛上帝并回归了上帝座下的天使，也因为这不屈于诱惑的行为而受到了上帝的称赞。",
+        "当神的秩序濒临崩溃危机之时，为了守护秩序，她刻意堕天，获得了超越炽天使的力量。"
+      ],
+      "localizationKeys": [
+        "B59E72E646949C46E248909C7EEAA0FE"
+      ],
+      "textSha256": "728c874f7f42b5c6c1197e4c200b8dfed1c6a55c328c93dbd99ecf10908fb4c0"
+    },
+    "Adramelech": {
+      "gameId": 265,
+      "officialNameZh": "亚得米勒",
+      "officialNameEn": "Adramelech",
+      "messageLabel": "DEVIL_ID_265_ADRAMELEK",
+      "pages": [
+        "拥有地狱的尚书长、\n地狱之王的衣帽间总管、\n恶魔上级议会议长等诸多头衔。\n据说他会以骡子的样貌现身，\n有时又会化身为孔雀。\n　\n他被认为是亚述人的信仰对象，\n人们会把婴儿当做活祭品\n放在祭坛上献给他。"
+      ],
+      "paragraphs": [
+        "拥有地狱的尚书长、地狱之王的衣帽间总管、恶魔上级议会议长等诸多头衔。据说他会以骡子的样貌现身，有时又会化身为孔雀。",
+        "他被认为是亚述人的信仰对象，人们会把婴儿当做活祭品放在祭坛上献给他。"
+      ],
+      "localizationKeys": [
+        "14404C50476960C91A1C62904CBFCC18"
+      ],
+      "textSha256": "b17b6063e0d90f34b65009760334c9990f72fb637924453c1381758278b0d0e1"
+    },
+    "Aeros": {
+      "gameId": 157,
+      "officialNameZh": "风精灵",
+      "officialNameEn": "Aeros",
+      "messageLabel": "DEVIL_ID_157_AEROS",
+      "pages": [
+        "风属性的精灵。\n　\n构成世界万物的四大元素之一，\n是一种低次元的能量体。\n亚里士多德认为其拥有促进\n形体结合的“热”和“湿”的性质，\n是带来增长的基本元素。"
+      ],
+      "paragraphs": [
+        "风属性的精灵。",
+        "构成世界万物的四大元素之一，是一种低次元的能量体。亚里士多德认为其拥有促进形体结合的“热”和“湿”的性质，是带来增长的基本元素。"
+      ],
+      "localizationKeys": [
+        "F14BB47B479BEB3EBEABC6964E603684"
+      ],
+      "textSha256": "d7d45e1a95780e42176beee6f355a9c82025c632cb92299afabd5903c18be0ad"
+    },
+    "Agathion": {
+      "gameId": 44,
+      "officialNameZh": "阿珈席翁",
+      "officialNameEn": "Agathion",
+      "messageLabel": "DEVIL_ID_044_AGATHION",
+      "pages": [
+        "服从于人类等种族的使魔，\n是一种没有实体的精灵。\n据说只会出现在正午时分。\n　\n阿珈席翁在传说中的\n姿态并不固定，既有长得\n像野兽或人的，也有说法\n称其会以小鸟的样貌现身。\n在传说中它们常会被封印在\n壶或瓶子里，但有时也可能\n会是戒指、法阵或者护身符。\n另外，“阿珈席翁”这个词\n偶尔也会被当做\n使魔的统称。"
+      ],
+      "paragraphs": [
+        "服从于人类等种族的使魔，是一种没有实体的精灵。据说只会出现在正午时分。",
+        "阿珈席翁在传说中的姿态并不固定，既有长得像野兽或人的，也有说法称其会以小鸟的样貌现身。在传说中它们常会被封印在壶或瓶子里，但有时也可能会是戒指、法阵或者护身符。另外，“阿珈席翁”这个词偶尔也会被当做使魔的统称。"
+      ],
+      "localizationKeys": [
+        "BC60E3BE4329EEEC2C15C68AA92F9EB6"
+      ],
+      "textSha256": "8babf1f594cdf322f9de04a516979fca6a8e77d43a3b5006f8aa5b6aceadd916"
+    },
+    "Agrat": {
+      "gameId": 392,
+      "officialNameZh": "阿格拉特",
+      "officialNameEn": "Agrat",
+      "messageLabel": "DEVIL_ID_392_AGRAT",
+      "pages": [
+        "阿格拉特·巴特·玛拉特。\n在关于犹太神秘主义思想的文献\n《光辉之书》中登场的四女魔之一。\n　\n她的名字意思是\n“玛拉特之女阿格拉特”，\n据说她是以实玛利的女儿玛拉特\n同沙漠恶魔伊格拉谢生下的孩子。\n她是恶魔们的女王，\n人称“在屋顶上跳舞的恶魔”，\n据说会在星期三和安息日的前夜\n带领大批破坏的使者在空中漫游。\n传说也有些男性会向阿格拉特求助，\n以求有梦魔能和他们共度春宵。"
+      ],
+      "paragraphs": [
+        "阿格拉特·巴特·玛拉特。在关于犹太神秘主义思想的文献《光辉之书》中登场的四女魔之一。",
+        "她的名字意思是“玛拉特之女阿格拉特”，据说她是以实玛利的女儿玛拉特同沙漠恶魔伊格拉谢生下的孩子。她是恶魔们的女王，人称“在屋顶上跳舞的恶魔”，据说会在星期三和安息日的前夜带领大批破坏的使者在空中漫游。传说也有些男性会向阿格拉特求助，以求有梦魔能和他们共度春宵。"
+      ],
+      "localizationKeys": [
+        "E55944364A62A99B4471FDB0B484A685"
+      ],
+      "textSha256": "e62d64cdae8bf84070aee5db0f55d2c6676d20c934198f785964728782cdd55c"
+    },
+    "Aitvaras": {
+      "gameId": 114,
+      "officialNameZh": "鸡龙",
+      "officialNameEn": "Aitvaras",
+      "messageLabel": "DEVIL_ID_114_AITVARAS",
+      "pages": [
+        "立陶宛传说中的蛇之精灵。\n　\n在室内会变成黑猫或雄鸡的样子，\n而在屋外则会变成幼龙\n或者尾巴着火的蛇。\n鸡龙会通过从邻居家偷取牛奶、\n谷物或其他值钱的东西\n来让自己寄居的家庭变得富有，\n传闻作为交换，\n它会要求寄居家庭为其提供煎蛋卷。\n鸡龙一旦住下，就很难再赶走，\n但据说拿受过教会净化的\n蜡烛照射它，就可以把它消灭。"
+      ],
+      "paragraphs": [
+        "立陶宛传说中的蛇之精灵。",
+        "在室内会变成黑猫或雄鸡的样子，而在屋外则会变成幼龙或者尾巴着火的蛇。鸡龙会通过从邻居家偷取牛奶、谷物或其他值钱的东西来让自己寄居的家庭变得富有，传闻作为交换，它会要求寄居家庭为其提供煎蛋卷。鸡龙一旦住下，就很难再赶走，但据说拿受过教会净化的蜡烛照射它，就可以把它消灭。"
+      ],
+      "localizationKeys": [
+        "58E1B52D4C1325432CFEB7AE1840FA78"
+      ],
+      "textSha256": "06948be86e50c324e67070b6ac5baa8bed224b2b94751338ff60aa7dddcfca7e"
+    },
+    "Alice": {
+      "gameId": 355,
+      "officialNameZh": "爱丽丝",
+      "officialNameEn": "Alice",
+      "messageLabel": "DEVIL_ID_355_ALICE",
+      "pages": [
+        "来历不明，外貌为金发少女的灵体。\n虽然有着纯真的容貌，但却是一位\n诅咒之力深不见底的魔人。\n　\n据说她是一个死于不幸的\n英国少女的灵魂，\n但也有说法认为她是从某人的\n偏执爱意中诞生的恶灵。"
+      ],
+      "paragraphs": [
+        "来历不明，外貌为金发少女的灵体。虽然有着纯真的容貌，但却是一位诅咒之力深不见底的魔人。",
+        "据说她是一个死于不幸的英国少女的灵魂，但也有说法认为她是从某人的偏执爱意中诞生的恶灵。"
+      ],
+      "localizationKeys": [
+        "BCCBB025479B80BC8DA223B9B8E08E93"
+      ],
+      "textSha256": "276d6e0654011601065fe1e9ae352b796af29b33ffcab7d8365ec7c38fffc94c"
+    },
+    "Alilat": {
+      "gameId": 198,
+      "officialNameZh": "阿利拉特",
+      "officialNameEn": "Alilat",
+      "messageLabel": "DEVIL_ID_198_ALILAT",
+      "pages": [
+        "阿拉伯的古老大母神。\n据说人们会将天房中的\n四根黑色石柱\n视为她的真身进行祭祀。\n　\n传闻她和她的儿子，\n即山与星之神杜斯拉，\n都在沙漠游牧民族中受到崇拜。"
+      ],
+      "paragraphs": [
+        "阿拉伯的古老大母神。据说人们会将天房中的四根黑色石柱视为她的真身进行祭祀。",
+        "传闻她和她的儿子，即山与星之神杜斯拉，都在沙漠游牧民族中受到崇拜。"
+      ],
+      "localizationKeys": [
+        "45AA276D4DD58133DB83C4A5AF40EF89"
+      ],
+      "textSha256": "55c7d4b6f14108218f98dd085588dae48ae23b6aa39afe58c7a4580cf57b49d0"
+    },
+    "Amabie": {
+      "gameId": 387,
+      "officialNameZh": "阿玛比埃",
+      "officialNameEn": "Amabie",
+      "messageLabel": "DEVIL_ID_387_AMABIE",
+      "pages": [
+        "传说是江户时代\n出现在肥后国的日本妖怪。\n　\n据说，某一天\n它在发光的大海中现身，\n为人们做出了预言。\n它预言说，自当年起的六年内，\n虽有丰收，但将流行疫病，\n届时应速速将阿玛比埃的画像\n广示于人。\n另外根据同时期的记录，\n当时还出现了许多类似的传说，\n例如海彦、神社姬、件的传说等等。"
+      ],
+      "paragraphs": [
+        "传说是江户时代出现在肥后国的日本妖怪。",
+        "据说，某一天它在发光的大海中现身，为人们做出了预言。它预言说，自当年起的六年内，虽有丰收，但将流行疫病，届时应速速将阿玛比埃的画像广示于人。另外根据同时期的记录，当时还出现了许多类似的传说，例如海彦、神社姬、件的传说等等。"
+      ],
+      "localizationKeys": [
+        "21B57C5A4962AC41557370BC07D15966"
+      ],
+      "textSha256": "e36f2ee77599e06aad202df7b75cd3c2db252904fe422486dfe9b138b00be847"
+    },
+    "Amanozako": {
+      "gameId": 38,
+      "officialNameZh": "天逆每",
+      "officialNameEn": "Amanozako",
+      "messageLabel": "DEVIL_ID_038_AMANOZAKO",
+      "pages": [
+        "被认为和天狗以及天邪鬼\n具有共通之处的日本女神。\n　\n有那么一种说法，\n称她是在须佐之男吐出\n体内积郁的戾气时诞生的。\n可能是因为那些戾气的影响，\n据说她只要遇到不顺心的事\n就会大发雷霆，这时再强大的\n神明也会被她扔到千里之外，\n再锋利的武器她都能一口咬碎。\n在另一些传说中，\n她还有着天邪鬼般的性格，\n不把事情搅乱就不罢休。"
+      ],
+      "paragraphs": [
+        "被认为和天狗以及天邪鬼具有共通之处的日本女神。",
+        "有那么一种说法，称她是在须佐之男吐出体内积郁的戾气时诞生的。可能是因为那些戾气的影响，据说她只要遇到不顺心的事就会大发雷霆，这时再强大的神明也会被她扔到千里之外，再锋利的武器她都能一口咬碎。在另一些传说中，她还有着天邪鬼般的性格，不把事情搅乱就不罢休。"
+      ],
+      "localizationKeys": [
+        "E620053D40770FDE63984C8556D4DE57"
+      ],
+      "textSha256": "82e778e5004c14f3860695cbe6ae7ba6efdcb31a469abcae094a8273ea0d7e59"
+    },
+    "Ame-no-Uzume": {
+      "gameId": 28,
+      "officialNameZh": "天钿女命",
+      "officialNameEn": "Ame-no-Uzume",
+      "messageLabel": "DEVIL_ID_028_AMENOUZUME",
+      "pages": [
+        "日本神话中的才艺女神。\n掌管诸如镇魂、\n天启等众多神乐舞。\n　\n传说为唤回躲进了岩户的天照，\n她曾鼎力相助，\n脱下衣服献上了一支舞。\n后来成为了猿田彦的妻子。"
+      ],
+      "paragraphs": [
+        "日本神话中的才艺女神。掌管诸如镇魂、天启等众多神乐舞。",
+        "传说为唤回躲进了岩户的天照，她曾鼎力相助，脱下衣服献上了一支舞。后来成为了猿田彦的妻子。"
+      ],
+      "localizationKeys": [
+        "EF31C0CD483F881E32990BBA29A287BF"
+      ],
+      "textSha256": "04faf0e00a05ed79170f384fad8ff03babb504cdd11d4a29691d7086a2f2d325"
+    },
+    "Amon": {
+      "gameId": 76,
+      "officialNameZh": "亚蒙",
+      "officialNameEn": "Amon",
+      "messageLabel": "DEVIL_ID_076_AMON",
+      "pages": [
+        "所罗门王的72大魔神之一，\n是序列第7的地狱侯爵。\n　\n亚蒙的形象多变，\n有时是一匹长着蛇尾的狼，\n有时则是狼的躯干和前爪\n加上猫头鹰的脑袋和蛇尾。\n据说他能教授召唤者\n过去和未来的知识。\n另外他还有充满侠义心的一面，\n在撒旦反叛上帝的时候，\n他曾率领着义军驰援。\n被认为和埃及神“阿蒙”\n有着同一起源。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，是序列第7的地狱侯爵。",
+        "亚蒙的形象多变，有时是一匹长着蛇尾的狼，有时则是狼的躯干和前爪加上猫头鹰的脑袋和蛇尾。据说他能教授召唤者过去和未来的知识。另外他还有充满侠义心的一面，在撒旦反叛上帝的时候，他曾率领着义军驰援。被认为和埃及神“阿蒙”有着同一起源。"
+      ],
+      "localizationKeys": [
+        "2F87BA804D89C9668705D3BA4DA2AEA3"
+      ],
+      "textSha256": "e3849750bdb667fb58a7d46f329c857516cf3a657ca5638d6a5a82997dec0b8d"
+    },
+    "Anahita": {
+      "gameId": 20,
+      "officialNameZh": "阿娜希塔",
+      "officialNameEn": "Anahita",
+      "messageLabel": "DEVIL_ID_020_ANAHITA",
+      "pages": [
+        "琐罗亚斯德教\n以及波斯神话中的女神，\n名字的意思是“清净”。\n　\n拥有美丽少女的样貌，\n是掌管河川的水神，\n但也被认为是掌管健康、\n生育、安产，以及家畜养殖\n和作物丰收的神，\n甚至还掌管财产和土地的增加。\n被描绘为肤白纤瘦而又美丽高傲的\n少女，头顶装饰了繁星的黄金宝冠，\n披戴黄金项链和斗篷，手持水瓶。\n但同时她也拥有军神的面貌，\n会乘坐驷马战车击败恶魔和暴君，\n兼具了勇气和高贵的品质。\n据说敌我双方的人民\n都曾向她献上过祈祷。"
+      ],
+      "paragraphs": [
+        "琐罗亚斯德教以及波斯神话中的女神，名字的意思是“清净”。",
+        "拥有美丽少女的样貌，是掌管河川的水神，但也被认为是掌管健康、生育、安产，以及家畜养殖和作物丰收的神，甚至还掌管财产和土地的增加。被描绘为肤白纤瘦而又美丽高傲的少女，头顶装饰了繁星的黄金宝冠，披戴黄金项链和斗篷，手持水瓶。但同时她也拥有军神的面貌，会乘坐驷马战车击败恶魔和暴君，兼具了勇气和高贵的品质。据说敌我双方的人民都曾向她献上过祈祷。"
+      ],
+      "localizationKeys": [
+        "122751FB4F91DA2BA3948CBEF7335D93"
+      ],
+      "textSha256": "86ed1d2c3f99869b60fe7437f20283eddeecb5b5953abc1902d9174d9f6a26d3"
+    },
+    "Anansi": {
+      "gameId": 41,
+      "officialNameZh": "安纳西",
+      "officialNameEn": "Anansi",
+      "messageLabel": "DEVIL_ID_041_ANANSI",
+      "pages": [
+        "登场于西非阿散蒂人传说等\n民间故事里的英雄。\n他被描绘为一个\n擅长用各种知识来解决问题的智多星。\n　\n他的模样没有严谨的定义，\n有时是蜘蛛，有时又是人。\n安纳西登场的故事很多，\n比如，他把装了所有智慧的葫芦\n吊在树上，发现还有\n没装进去的智慧，便灰心丧气地把\n收集起来的智慧都撒了出去的故事，\n还有他买下了自己的父亲天空神\n奥尼扬科蓬所拥有的故事，\n把那些故事据为己有等等。\n这些故事统称为“安纳塞姆”，\n即“蜘蛛的故事”。"
+      ],
+      "paragraphs": [
+        "登场于西非阿散蒂人传说等民间故事里的英雄。他被描绘为一个擅长用各种知识来解决问题的智多星。",
+        "他的模样没有严谨的定义，有时是蜘蛛，有时又是人。安纳西登场的故事很多，比如，他把装了所有智慧的葫芦吊在树上，发现还有没装进去的智慧，便灰心丧气地把收集起来的智慧都撒了出去的故事，还有他买下了自己的父亲天空神奥尼扬科蓬所拥有的故事，把那些故事据为己有等等。这些故事统称为“安纳塞姆”，即“蜘蛛的故事”。"
+      ],
+      "localizationKeys": [
+        "04139BEC455BB2635B103FBDF578CE63"
+      ],
+      "textSha256": "3d0d80624d1b9f92e40db9a5e7af015c65afe0f158f0c98d975c34c230d489d5"
+    },
+    "Ananta": {
+      "gameId": 98,
+      "officialNameZh": "阿难陀",
+      "officialNameEn": "Ananta",
+      "messageLabel": "DEVIL_ID_098_ANANTA",
+      "pages": [
+        "印度神话中的世界蛇，相传会在\n世界的起始与终结之际现身。\n　\n据说它盘于无尽广阔的乳海之上，\n毗湿奴神则沉睡在它的身躯上。\n当毗湿奴神醒来，\n便开始创造世界。"
+      ],
+      "paragraphs": [
+        "印度神话中的世界蛇，相传会在世界的起始与终结之际现身。",
+        "据说它盘于无尽广阔的乳海之上，毗湿奴神则沉睡在它的身躯上。当毗湿奴神醒来，便开始创造世界。"
+      ],
+      "localizationKeys": [
+        "9E8E24C344C149D9633614A9D178E7F3"
+      ],
+      "textSha256": "73d4a64a0dd438d562dd45b12861d43c70c451aa0b6f480339530f03441e6449"
+    },
+    "Andras": {
+      "gameId": 272,
+      "officialNameZh": "安德拉斯",
+      "officialNameEn": "Andras",
+      "messageLabel": "DEVIL_ID_272_ANDRAS",
+      "pages": [
+        "所罗门王的72大魔神之一，\n排行第63的大侯爵。\n　\n据说在发生纷争的地方\n一定会有他的身影。\n他会煽动憎恶之心\n从而引发更激烈的纷争，\n是象征不和的恶魔。\n如果他对召唤者满意，\n就会传授召唤者消灭敌人的方法。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，排行第63的大侯爵。",
+        "据说在发生纷争的地方一定会有他的身影。他会煽动憎恶之心从而引发更激烈的纷争，是象征不和的恶魔。如果他对召唤者满意，就会传授召唤者消灭敌人的方法。"
+      ],
+      "localizationKeys": [
+        "4DC897D04BC11DFF67E5778C4D55517B"
+      ],
+      "textSha256": "e5af7a47f28f7a2880e023811ec29576d0419f241d543740f80a9b1173531b0e"
+    },
+    "Angel": {
+      "gameId": 259,
+      "officialNameZh": "天使",
+      "officialNameEn": "Angel",
+      "messageLabel": "DEVIL_ID_259_ANGEL",
+      "pages": [
+        "在神学的天阶等级中\n位于最底层第九等的下级天使。\n　\n在作为上帝使者的\n各种天使中最接近人类。\n负责守护每一个单独的人类，\n监督他们的义举，\n并惩戒他们的为恶之心。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于最底层第九等的下级天使。",
+        "在作为上帝使者的各种天使中最接近人类。负责守护每一个单独的人类，监督他们的义举，并惩戒他们的为恶之心。"
+      ],
+      "localizationKeys": [
+        "DECAE59C44ADCB0E602D09AB515D84B6"
+      ],
+      "textSha256": "2910245b1514604d9be4751baf7eef7d6815b332c5cf6e177ea18119c8ada681"
+    },
+    "Anubis": {
+      "gameId": 120,
+      "officialNameZh": "阿努比斯",
+      "officialNameEn": "Anubis",
+      "messageLabel": "DEVIL_ID_120_ANUBIS",
+      "pages": [
+        "埃及神话中拥有胡狼头颅的\n引导死者之神。\n　\n他负责在“欧西里斯的法庭”上\n称量死者心脏的重量，\n以此判断死者\n是否可以前往天堂。\n另外他也被认为掌管着\n制作木乃伊的技术。"
+      ],
+      "paragraphs": [
+        "埃及神话中拥有胡狼头颅的引导死者之神。",
+        "他负责在“欧西里斯的法庭”上称量死者心脏的重量，以此判断死者是否可以前往天堂。另外他也被认为掌管着制作木乃伊的技术。"
+      ],
+      "localizationKeys": [
+        "81ECE3DD444A347BB7517C9332C89D92"
+      ],
+      "textSha256": "2c428d3e32e2c7ab47b4dbc77450b86e3b8d4359eb95114380417211d527ffac"
+    },
+    "Anzu": {
+      "gameId": 287,
+      "officialNameZh": "安祖",
+      "officialNameEn": "Anzu",
+      "messageLabel": "DEVIL_ID_287_ANZU",
+      "pages": [
+        "巴比伦传说中登场的邪恶巨鸟。\n　\n据说它拥有秃鹫的身体和狮子的头。\n它原本是万神殿的守护鸟，\n但萌生了想要成为众神之王的邪念，\n趁主神恩利尔沐浴的时候，\n窃取了能够授予拥有者\n全能之力的“天命石板”。"
+      ],
+      "paragraphs": [
+        "巴比伦传说中登场的邪恶巨鸟。",
+        "据说它拥有秃鹫的身体和狮子的头。它原本是万神殿的守护鸟，但萌生了想要成为众神之王的邪念，趁主神恩利尔沐浴的时候，窃取了能够授予拥有者全能之力的“天命石板”。"
+      ],
+      "localizationKeys": [
+        "39AE0051403F91BFB69A9CA7D21C8DD5"
+      ],
+      "textSha256": "705a10784c5ca6bc3ec0fc748ff956d13394f8fc8d223a222b1e3c6d7d4aa47a"
+    },
+    "Apsaras": {
+      "gameId": 43,
+      "officialNameZh": "飞天",
+      "officialNameEn": "Apsaras",
+      "messageLabel": "DEVIL_ID_043_APSARAS",
+      "pages": [
+        "印度神话中的水精灵。\n原名的意思是\n“水中的灵动之物”。\n　\n她们长着妖艳年轻女性的外貌，\n常被用来比喻阻碍苦行的杂念。\n另外，她们也负责\n将战死者的灵魂\n带往因陀罗所在的天界。"
+      ],
+      "paragraphs": [
+        "印度神话中的水精灵。原名的意思是“水中的灵动之物”。",
+        "她们长着妖艳年轻女性的外貌，常被用来比喻阻碍苦行的杂念。另外，她们也负责将战死者的灵魂带往因陀罗所在的天界。"
+      ],
+      "localizationKeys": [
+        "0163CE5646BE4C6D9A69568BAD89B0D6"
+      ],
+      "textSha256": "920219e282c25496ef50754438971bad9f020eccd7351f7b9aee86c7dc5c8a47"
+    },
+    "Aquans": {
+      "gameId": 156,
+      "officialNameZh": "水精灵",
+      "officialNameEn": "Aquans",
+      "messageLabel": "DEVIL_ID_156_AQUANS",
+      "pages": [
+        "水属性的精灵。\n　\n构成世界万物的四大元素之一，\n是一种低次元的能量体。\n第一个系统建立起\n四大元素理论的希腊学者\n亚里士多德认为其拥有\n“冷”和“湿”的性质。"
+      ],
+      "paragraphs": [
+        "水属性的精灵。",
+        "构成世界万物的四大元素之一，是一种低次元的能量体。第一个系统建立起四大元素理论的希腊学者亚里士多德认为其拥有“冷”和“湿”的性质。"
+      ],
+      "localizationKeys": [
+        "53C72DC24F08559886586D96622FEE0D"
+      ],
+      "textSha256": "2213c0e8c75abcf9dbeb2115a4deaca157ccebb37b2f63ffb8bb0dd69c4b5a79"
+    },
+    "Arahabaki": {
+      "gameId": 211,
+      "officialNameZh": "荒霸吐",
+      "officialNameEn": "Arahabaki",
+      "messageLabel": "DEVIL_ID_211_ARAHABAKI",
+      "pages": [
+        "古代日本神话中的主神。\n他的形象常呈现为\n遮光器土偶。\n　\n败给神武天皇东征军的\n长髓彦曾经信奉他，\n因此他也被视为忤逆天皇的象征，\n这使对他的信仰\n在很长一段时期内受到打压。"
+      ],
+      "paragraphs": [
+        "古代日本神话中的主神。他的形象常呈现为遮光器土偶。",
+        "败给神武天皇东征军的长髓彦曾经信奉他，因此他也被视为忤逆天皇的象征，这使对他的信仰在很长一段时期内受到打压。"
+      ],
+      "localizationKeys": [
+        "C87DBD1E41E91D3912BB9282DE09EFEA"
+      ],
+      "textSha256": "6555250b616795749efb77f6366be78330a5bb91f98c68c24af498b5c08f9cc6"
+    },
+    "Archangel": {
+      "gameId": 258,
+      "officialNameZh": "大天使",
+      "officialNameEn": "Archangel",
+      "messageLabel": "DEVIL_ID_258_ARCANGEL",
+      "pages": [
+        "在神学的天阶等级中\n位于第八等“大天使”的下级天使。\n　\n负责将上帝的意志传达给人类。\n同时也是天界的战士，\n在与黑暗军团的战争中\n负责领导天界的军队。\n大天使曾被认为是\n天使中最高的一个等级，\n但在中世纪的天阶理论中\n被排到了第八等的位置。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第八等“大天使”的下级天使。",
+        "负责将上帝的意志传达给人类。同时也是天界的战士，在与黑暗军团的战争中负责领导天界的军队。大天使曾被认为是天使中最高的一个等级，但在中世纪的天阶理论中被排到了第八等的位置。"
+      ],
+      "localizationKeys": [
+        "01FC0BE040BB3F228884409D4D163E8A"
+      ],
+      "textSha256": "aac06b7f633df00514a606a4fa1c332e64a23d624b138f78899ec7fff53a8b45"
+    },
+    "Arioch": {
+      "gameId": 82,
+      "officialNameZh": "亚略",
+      "officialNameEn": "Arioch",
+      "messageLabel": "DEVIL_ID_082_ARIOCH",
+      "pages": [
+        "以色列的堕天使，复仇之魔神。\n他的名字意为“凶猛的狮子”。\n　\n相传他只会协助雇主报私仇。\n另外据称他在还是\n上帝座下的天使时，\n曾担任过圣人以诺的守护天使。\n有说法认为，\n亚略是一个原本记载于\n旧约圣经《创世纪》\n和《但以理书》中的人名，\n后来因为某些原因\n才被作为恶魔所提及。"
+      ],
+      "paragraphs": [
+        "以色列的堕天使，复仇之魔神。他的名字意为“凶猛的狮子”。",
+        "相传他只会协助雇主报私仇。另外据称他在还是上帝座下的天使时，曾担任过圣人以诺的守护天使。有说法认为，亚略是一个原本记载于旧约圣经《创世纪》和《但以理书》中的人名，后来因为某些原因才被作为恶魔所提及。"
+      ],
+      "localizationKeys": [
+        "A7B68E8641EED851F54DF39ECF0B6038"
+      ],
+      "textSha256": "e3ef09292a1ef2ec3819224ed353938d34253edcaba1437f523d3c4909ba118c"
+    },
+    "Armaiti": {
+      "gameId": 251,
+      "officialNameZh": "阿尔迈蒂",
+      "officialNameEn": "Armaiti",
+      "messageLabel": "DEVIL_ID_251_ARMAITI",
+      "pages": [
+        "在琐罗亚斯德教中\n受到崇拜的大天使。\n被视为“阿梅沙·斯彭塔”之一。\n　\n是至高神阿胡拉·马兹达的女儿，\n统管着大地，\n被视为将牧场赐予家畜的天使。\n“阿尔迈蒂”的意思是“虔诚”，\n因此她也是诚挚信仰的化身。\n她会因为有罪之人逍遥法外而心痛，\n也会为人们遵循天规、\n安居乐业而喜悦。"
+      ],
+      "paragraphs": [
+        "在琐罗亚斯德教中受到崇拜的大天使。被视为“阿梅沙·斯彭塔”之一。",
+        "是至高神阿胡拉·马兹达的女儿，统管着大地，被视为将牧场赐予家畜的天使。“阿尔迈蒂”的意思是“虔诚”，因此她也是诚挚信仰的化身。她会因为有罪之人逍遥法外而心痛，也会为人们遵循天规、安居乐业而喜悦。"
+      ],
+      "localizationKeys": [
+        "9C93BEA842F0793D0D178EADC2F6BBE2"
+      ],
+      "textSha256": "2c4478cd617bd0e05828dd2ef82489fbcab2996260f8a0dbb045fcb3e7b5033b"
+    },
+    "Artemis": {
+      "gameId": 31,
+      "officialNameZh": "阿提密斯",
+      "officialNameEn": "Artemis",
+      "messageLabel": "DEVIL_ID_031",
+      "pages": [
+        "在希腊神话中登场的狩猎\n与贞洁女神，在后世被和\n塞勒涅混同，成为了月之女神。\n　\n除了司掌狩猎和贞洁外，\n她和兄弟神阿波罗一样\n拥有“远箭射手”的称号，\n还有着身为恐怖神明的一面，\n会带来疫病和死亡。\n这一点也体现在了她受阿波罗所骗\n而射杀了挚爱俄里翁的神话故事中。"
+      ],
+      "paragraphs": [
+        "在希腊神话中登场的狩猎与贞洁女神，在后世被和塞勒涅混同，成为了月之女神。",
+        "除了司掌狩猎和贞洁外，她和兄弟神阿波罗一样拥有“远箭射手”的称号，还有着身为恐怖神明的一面，会带来疫病和死亡。这一点也体现在了她受阿波罗所骗而射杀了挚爱俄里翁的神话故事中。"
+      ],
+      "localizationKeys": [
+        "7AF8CF92419A742F16A472924138F72F"
+      ],
+      "textSha256": "16ea768d5e7f03834177109cc7703282dc35787c725121d1081062ab385b1541"
+    },
+    "Asura": {
+      "gameId": 181,
+      "officialNameZh": "阿修罗王",
+      "officialNameEn": "Asura",
+      "messageLabel": "DEVIL_ID_181_ASURAOH",
+      "pages": [
+        "印度神话中的凶狠魔族。\n拥有强大的武力和魔力，\n相传众神曾在其手下多次受挫。\n　\n性格十分严苛，\n据说会毫不留情地攻击\n和他心中正义相悖之人。\n传说其原本是在波斯\n受到崇拜的光之众神之一，\n琐罗亚斯德教的主神\n阿胡拉马兹达同样也位列其中。"
+      ],
+      "paragraphs": [
+        "印度神话中的凶狠魔族。拥有强大的武力和魔力，相传众神曾在其手下多次受挫。",
+        "性格十分严苛，据说会毫不留情地攻击和他心中正义相悖之人。传说其原本是在波斯受到崇拜的光之众神之一，琐罗亚斯德教的主神阿胡拉马兹达同样也位列其中。"
+      ],
+      "localizationKeys": [
+        "B608F2EC469A0E4D82E39990A5A8AD95"
+      ],
+      "textSha256": "db5268c422d14e4f129c6d78a70c88d791a46d1fb32edba048880c2b06ea0aec"
+    },
+    "Atavaka": {
+      "gameId": 12,
+      "officialNameZh": "大元帅明王",
+      "officialNameEn": "Atavaka",
+      "messageLabel": "DEVIL_ID_012_ATAVAKA",
+      "pages": [
+        "司掌战争和国家守护的佛教明王。\n又作“太元帅明王”，\n是明王们的统帅。\n　\n在佛陀圆寂之时，他召集\n明王、天王、鬼神等诸方势力，\n促使他们皈依了佛门，\n令他们立下了守护众生的誓言。"
+      ],
+      "paragraphs": [
+        "司掌战争和国家守护的佛教明王。又作“太元帅明王”，是明王们的统帅。",
+        "在佛陀圆寂之时，他召集明王、天王、鬼神等诸方势力，促使他们皈依了佛门，令他们立下了守护众生的誓言。"
+      ],
+      "localizationKeys": [
+        "320259084FEA3C4AD1CFA7A44FF13613"
+      ],
+      "textSha256": "71e5c0d8e17ad7880a0880345c7c3c13ae458738b452c77729f3c4bb6e05740f"
+    },
+    "Atropos": {
+      "gameId": 298,
+      "officialNameZh": "阿特洛波斯",
+      "officialNameEn": "Atropos",
+      "messageLabel": "DEVIL_ID_298_ATROPOS",
+      "pages": [
+        "希腊神话中由主神\n委任司掌命运的\n“摩伊赖”三姐妹之一。\n　\n拉刻西斯决定好长度的命运丝线，\n会由阿特洛波斯负责将其剪断。\n她的右手中\n握着用来剪断丝线的剪刀。"
+      ],
+      "paragraphs": [
+        "希腊神话中由主神委任司掌命运的“摩伊赖”三姐妹之一。",
+        "拉刻西斯决定好长度的命运丝线，会由阿特洛波斯负责将其剪断。她的右手中握着用来剪断丝线的剪刀。"
+      ],
+      "localizationKeys": [
+        "8DEB2EB74B1074DDCF5214878794C248"
+      ],
+      "textSha256": "4e9c7b4212597b263f9f5e1492b7e35fb9ec36e928cdf607d7d774b8ce76501b"
+    },
+    "Attis": {
+      "gameId": 202,
+      "officialNameZh": "阿提斯",
+      "officialNameEn": "Attis",
+      "messageLabel": "DEVIL_ID_202_ATTIS",
+      "pages": [
+        "起源于小亚细亚\n弗里吉亚的复活之神。\n　\n阿提斯承担着为地母神\n库柏勒献身的使命，他为了\n拯救苍生而成为了活祭品，\n不断地被杀死并复活，\n是一位被尊崇为救世主的神。"
+      ],
+      "paragraphs": [
+        "起源于小亚细亚弗里吉亚的复活之神。",
+        "阿提斯承担着为地母神库柏勒献身的使命，他为了拯救苍生而成为了活祭品，不断地被杀死并复活，是一位被尊崇为救世主的神。"
+      ],
+      "localizationKeys": [
+        "39CEF8B441E7AB314FA53EBE67FDECAD"
+      ],
+      "textSha256": "8cf7f601f11657d4821c07b4520d413cbc6fd8db6e8c92ab37929a55ece8d389"
+    },
+    "Azazel": {
+      "gameId": 275,
+      "officialNameZh": "阿撒兹勒",
+      "officialNameEn": "Azazel",
+      "messageLabel": "DEVIL_ID_275_AZAZEL",
+      "pages": [
+        "领导着为教育人类而降临凡间的\n名为“看守者”的天使集团。\n　\n据说他犯下了许多违逆上帝的罪行，\n例如，因为迷上了凡间的美丽少女\n而娶她们为妻，或将被禁止的\n种种知识传授给人类等等。\n从阿撒兹勒那里得到关于武具、\n装饰品、化妆等方面的知识后，\n男人学会了争战，\n女人学会了打扮自己讨好男人。"
+      ],
+      "paragraphs": [
+        "领导着为教育人类而降临凡间的名为“看守者”的天使集团。",
+        "据说他犯下了许多违逆上帝的罪行，例如，因为迷上了凡间的美丽少女而娶她们为妻，或将被禁止的种种知识传授给人类等等。从阿撒兹勒那里得到关于武具、装饰品、化妆等方面的知识后，男人学会了争战，女人学会了打扮自己讨好男人。"
+      ],
+      "localizationKeys": [
+        "A720427441DD9E9ADAB3BBA4AEC75E60"
+      ],
+      "textSha256": "593edd618943e198f8ce985c74f8488e49178202dc146c521038875bf328a6f6"
+    },
+    "Azumi": {
+      "gameId": 315,
+      "officialNameZh": "安昙神",
+      "officialNameEn": "Azumi",
+      "messageLabel": "DEVIL_ID_315_AZUMI",
+      "pages": [
+        "渡来日本的南方海洋民族\n——安昙族所信仰的水神。\n拥有控制水的能力。\n　\n据说其祖先是伊邪那岐从\n黄泉之国回归后清洗身体时\n诞生的绵津见三神。"
+      ],
+      "paragraphs": [
+        "渡来日本的南方海洋民族——安昙族所信仰的水神。拥有控制水的能力。",
+        "据说其祖先是伊邪那岐从黄泉之国回归后清洗身体时诞生的绵津见三神。"
+      ],
+      "localizationKeys": [
+        "F6E2162F4837F3A7572BA4B263B841B0"
+      ],
+      "textSha256": "c51577c18af9a54ac503ea2a07de4b5425cd4fd6c13176af0c7acc8034abb712"
+    },
+    "Baal": {
+      "gameId": 17,
+      "officialNameZh": "巴力",
+      "officialNameEn": "Baal",
+      "messageLabel": "DEVIL_ID_017_BAAL",
+      "pages": [
+        "丰收之神，\n西闪米特人长期信仰的主神。\n名字在古代闪米特语中\n是“主人”的意思。\n　\n狭义上被认为是迦南人的主神，\n是女神阿娜特的哥哥兼丈夫。\n也存在说法认为所有的神\n都曾是类似于巴力的存在，\n所罗门魔神中的巴尔、别西卜、\n贝尔芬格、比利士等，\n都被认为是由巴力\n衍生出的恶魔。\n另外，据说巴力曾和雅威\n共享同一座神殿。"
+      ],
+      "paragraphs": [
+        "丰收之神，西闪米特人长期信仰的主神。名字在古代闪米特语中是“主人”的意思。",
+        "狭义上被认为是迦南人的主神，是女神阿娜特的哥哥兼丈夫。也存在说法认为所有的神都曾是类似于巴力的存在，所罗门魔神中的巴尔、别西卜、贝尔芬格、比利士等，都被认为是由巴力衍生出的恶魔。另外，据说巴力曾和雅威共享同一座神殿。"
+      ],
+      "localizationKeys": [
+        "EBB8ABCF41545907D6973D89317119BC"
+      ],
+      "textSha256": "0da872cf1f2b8e71e85cbdc1cde25abab4a7f498af2228fa0255f7422c9c3cb2"
+    },
+    "Baihu": {
+      "gameId": 126,
+      "officialNameZh": "白虎",
+      "officialNameEn": "Baihu",
+      "messageLabel": "DEVIL_ID_126_BYAKKO",
+      "pages": [
+        "在中国的众多神话和思想中\n被提及的“四圣兽”之一。\n　\n掌管西方、秋季\n和五行中的金。\n在古代中国，\n老虎被视为百兽之王，\n而白虎更是虎中之王。"
+      ],
+      "paragraphs": [
+        "在中国的众多神话和思想中被提及的“四圣兽”之一。",
+        "掌管西方、秋季和五行中的金。在古代中国，老虎被视为百兽之王，而白虎更是虎中之王。"
+      ],
+      "localizationKeys": [
+        "C64C2C8E471F86E0D0C68DAC6884C08E"
+      ],
+      "textSha256": "90c474d5c24988121c6eec928950d0737b8465c712f9c9d6dd791ef344e07744"
+    },
+    "Baphomet": {
+      "gameId": 235,
+      "officialNameZh": "巴风特",
+      "officialNameEn": "Baphomet",
+      "messageLabel": "DEVIL_ID_235_BAPHOMET",
+      "pages": [
+        "掌管黑弥撒，长着山羊头的恶魔。\n有时这个名字也被泛指所有恶魔。\n　\n著名的“圣殿骑士团”\n因为偶像崇拜\n而遭受弹劾时，\n据说他们就是在信奉\n这个名字的魔神。\n后来巴风特也成为了\n魔女们的崇拜对象。"
+      ],
+      "paragraphs": [
+        "掌管黑弥撒，长着山羊头的恶魔。有时这个名字也被泛指所有恶魔。",
+        "著名的“圣殿骑士团”因为偶像崇拜而遭受弹劾时，据说他们就是在信奉这个名字的魔神。后来巴风特也成为了魔女们的崇拜对象。"
+      ],
+      "localizationKeys": [
+        "3EF3B878447DCAA179A30C84A10869BD"
+      ],
+      "textSha256": "ad336320b1300518eb40efed5145d088f01c8f8a3e76082a4f659f6cb1d5b256"
+    },
+    "Barong": {
+      "gameId": 119,
+      "officialNameZh": "巴隆",
+      "officialNameEn": "Barong",
+      "messageLabel": "DEVIL_ID_119_BARONG",
+      "pages": [
+        "居住在巴厘岛森林中的伟大神兽。\n原本非常凶暴，但在受到镇祭后，\n成为了人们的守护者。\n　\n根据传说，\n象征善良的巴隆\n和象征邪恶的鬼女兰达，\n注定要持续着永不终结的争斗。"
+      ],
+      "paragraphs": [
+        "居住在巴厘岛森林中的伟大神兽。原本非常凶暴，但在受到镇祭后，成为了人们的守护者。",
+        "根据传说，象征善良的巴隆和象征邪恶的鬼女兰达，注定要持续着永不终结的争斗。"
+      ],
+      "localizationKeys": [
+        "57821B5049B88FC06DEA99A093C2F03C"
+      ],
+      "textSha256": "446623f52bbec9ca3906b9f6538978efe6d981dd011d20d4697436d6aff038c5"
+    },
+    "Basilisk": {
+      "gameId": 113,
+      "officialNameZh": "巴西利斯克",
+      "officialNameEn": "Basilisk",
+      "messageLabel": "DEVIL_ID_113_BASILISK",
+      "pages": [
+        "传说居住在非洲北部的\n一种长了翅膀的邪龙。\n名字的意思是“蛇之王”，\n拥有着王冠形状的鸡冠。\n　\n据说它吐出的气息\n和它的视线含有剧毒，\n可以瞬间杀死人类或动物。"
+      ],
+      "paragraphs": [
+        "传说居住在非洲北部的一种长了翅膀的邪龙。名字的意思是“蛇之王”，拥有着王冠形状的鸡冠。",
+        "据说它吐出的气息和它的视线含有剧毒，可以瞬间杀死人类或动物。"
+      ],
+      "localizationKeys": [
+        "A81295864284518ADAD9F49429B7744E"
+      ],
+      "textSha256": "4750695fad7db3bd321c6dae3f65e4b790a2e8d1ed9876f8c486938f00e5945f"
+    },
+    "Beelzebub": {
+      "gameId": 81,
+      "officialNameZh": "别西卜",
+      "officialNameEn": "Beelzebub",
+      "messageLabel": "DEVIL_ID_081_BEELZEBUB",
+      "pages": [
+        "统治地狱的魔王。\n名字的意思是“苍蝇王”。\n　\n传说他会差遣苍蝇下属\n搬运并控制灵魂。\n在圣经上他被描述为恶灵之王，\n因此在基督教世界被视为一名\n极具地位的强大恶魔。\n也有说法认为他是迦南的主神\n巴力被贬为恶魔后的样子。"
+      ],
+      "paragraphs": [
+        "统治地狱的魔王。名字的意思是“苍蝇王”。",
+        "传说他会差遣苍蝇下属搬运并控制灵魂。在圣经上他被描述为恶灵之王，因此在基督教世界被视为一名极具地位的强大恶魔。也有说法认为他是迦南的主神巴力被贬为恶魔后的样子。"
+      ],
+      "localizationKeys": [
+        "68863F4847EA394B91CB80AAA8034F2D"
+      ],
+      "textSha256": "ddc246d752edb944034a5ff375f0c39b69edcdc2536798570689a8e6fd1e11f5"
+    },
+    "Belial": {
+      "gameId": 83,
+      "officialNameZh": "彼列",
+      "officialNameEn": "Belial",
+      "messageLabel": "DEVIL_ID_083_BELIAL",
+      "pages": [
+        "所罗门王的72大魔神之一，\n是统领50支军团的强大王者。\n　\n据说他本是上级天使炽天使中的一员，\n后因在天界的政治斗争中落败\n而主动堕天。\n以乘坐火焰战车的\n美丽天使形象示人，\n会赋予召唤者崇高的社会地位。\n他性格毒辣，名字有“无价值”、\n“邪恶”的意思。\n传说他曾引诱人们堕落，\n致使索多玛和蛾摩拉两城遭到毁灭，\n另外他还控告过耶稣。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，是统领50支军团的强大王者。",
+        "据说他本是上级天使炽天使中的一员，后因在天界的政治斗争中落败而主动堕天。以乘坐火焰战车的美丽天使形象示人，会赋予召唤者崇高的社会地位。他性格毒辣，名字有“无价值”、“邪恶”的意思。传说他曾引诱人们堕落，致使索多玛和蛾摩拉两城遭到毁灭，另外他还控告过耶稣。"
+      ],
+      "localizationKeys": [
+        "E7AC228F426FF946126C7880F8C9DD3D"
+      ],
+      "textSha256": "01b7d3765eb13652758e51a1ae0204bf39cbf24675c2c94338c55cc4ad77211f"
+    },
+    "Belphegor": {
+      "gameId": 86,
+      "officialNameZh": "贝尔芬格",
+      "officialNameEn": "Belphegor",
+      "messageLabel": "DEVIL_ID_086_BELPHEGOR",
+      "pages": [
+        "七宗罪中司掌着\n“怠惰”的邪恶魔神。\n也有传说称其可以授予人\n发现和发明的能力。\n　\n据说是叙利亚的丰饶之神\n巴力毗珥被贬为恶魔后的形象。"
+      ],
+      "paragraphs": [
+        "七宗罪中司掌着“怠惰”的邪恶魔神。也有传说称其可以授予人发现和发明的能力。",
+        "据说是叙利亚的丰饶之神巴力毗珥被贬为恶魔后的形象。"
+      ],
+      "localizationKeys": [
+        "E0CF7731461B284AADB039984F141DC9"
+      ],
+      "textSha256": "020e6f8ee4027b5869a62f7fd0b933a4d2129dadc7380116ca6b4fc11893564e"
+    },
+    "Berith": {
+      "gameId": 268,
+      "officialNameZh": "比利士",
+      "officialNameEn": "Berith",
+      "messageLabel": "DEVIL_ID_268_BERITH",
+      "pages": [
+        "所罗门王的72大魔神之一，\n是骑着魁梧骏马的恐惧之王。\n　\n他在72大魔神中也是地位\n特别高的魔王，据说如果面对他时\n有失礼数，就会被他瞬间烧死。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，是骑着魁梧骏马的恐惧之王。",
+        "他在72大魔神中也是地位特别高的魔王，据说如果面对他时有失礼数，就会被他瞬间烧死。"
+      ],
+      "localizationKeys": [
+        "F5EE73F1422FEE08003F79BEFA9C0BB1"
+      ],
+      "textSha256": "8af191ec1afc0c39fc26fef3ea7e58bb56ae1e833595c45f35f8423b10898d74"
+    },
+    "Bicorn": {
+      "gameId": 146,
+      "officialNameZh": "双角兽",
+      "officialNameEn": "Bicorn",
+      "messageLabel": "DEVIL_ID_146_BICORN",
+      "pages": [
+        "额头上有两只螺旋状角的邪恶马怪。\n　\n它名字的含义有“两只角”\n和“月牙形”两种解释，\n但确切的起源不明。\n也有说法称其原名来自于\n“雷姆”的错译，那是旧约\n圣经里一种两只角的动物。"
+      ],
+      "paragraphs": [
+        "额头上有两只螺旋状角的邪恶马怪。",
+        "它名字的含义有“两只角”和“月牙形”两种解释，但确切的起源不明。也有说法称其原名来自于“雷姆”的错译，那是旧约圣经里一种两只角的动物。"
+      ],
+      "localizationKeys": [
+        "4BC9CB8C4FBDC496B45DBF98A73BF2CA"
+      ],
+      "textSha256": "62a72c9a0bdb6789f8bc740df3d6b973fdf7a2c6794e698d71afdc6614dbdd0d"
+    },
+    "Bishamonten": {
+      "gameId": 203,
+      "officialNameZh": "毘沙门天",
+      "officialNameEn": "Bishamonten",
+      "messageLabel": "DEVIL_ID_203_BISHAMONTEN",
+      "pages": [
+        "又名多闻天王，\n是佛教的护法神，\n也是四大天王之一。\n　\n八部众与他是同族。\n他受帝释天之命守护四方中的北方。\n常被描绘为身着甲胄、\n手持长戟的怒面形象。\n据说圣德太子曾向他祈求胜利，\n因此他作为战神在武士中广受信奉。\n另外他也作为守护财富之神\n被纳入了七福神中。"
+      ],
+      "paragraphs": [
+        "又名多闻天王，是佛教的护法神，也是四大天王之一。",
+        "八部众与他是同族。他受帝释天之命守护四方中的北方。常被描绘为身着甲胄、手持长戟的怒面形象。据说圣德太子曾向他祈求胜利，因此他作为战神在武士中广受信奉。另外他也作为守护财富之神被纳入了七福神中。"
+      ],
+      "localizationKeys": [
+        "29E216034F6637805BCE33B5A875A1E6"
+      ],
+      "textSha256": "e54a60a040efea4a4c7d901dee11683fe188b6d391c16fbea9d2ff6c37317dd7"
+    },
+    "Black Frost": {
+      "gameId": 72,
+      "officialNameZh": "邪恶霜精",
+      "officialNameEn": "Black Frost",
+      "messageLabel": "DEVIL_ID_072",
+      "pages": [
+        "长大后变得凶恶的杰克霜精。\n只有不忘自己恶魔的身份，\n坚持锻炼，才能变成这个样子。\n　\n原本喜欢恶作剧的雪之妖精，\n在成为了这个状态后，\n获得了魔王级别的强大力量。"
+      ],
+      "paragraphs": [
+        "长大后变得凶恶的杰克霜精。只有不忘自己恶魔的身份，坚持锻炼，才能变成这个样子。",
+        "原本喜欢恶作剧的雪之妖精，在成为了这个状态后，获得了魔王级别的强大力量。"
+      ],
+      "localizationKeys": [
+        "11CE0F2A44E3DBC8DAE1C38FC5EC3040"
+      ],
+      "textSha256": "fc2fddd6350941ceed203f4ed87a7cdee2d69fca0fce2b1bb6a75f4cddbd7264"
+    },
+    "Black Ooze": {
+      "gameId": 171,
+      "officialNameZh": "黑软泥怪",
+      "officialNameEn": "Black Ooze",
+      "messageLabel": "DEVIL_ID_171_BLACKOOZE",
+      "pages": [
+        "类似阿米巴原虫的不定型怪物，\n会袭击人类，吞食其血肉。\n　\n据说其真面目是\n没能成功化为实体的恶魔，\n四处徘徊是为了寻求人类身上的祸灵。\n被认为是软泥怪的亚种，\n据说一旦吸收祸灵的功能失控，\n软泥怪就会变成黑软泥怪。"
+      ],
+      "paragraphs": [
+        "类似阿米巴原虫的不定型怪物，会袭击人类，吞食其血肉。",
+        "据说其真面目是没能成功化为实体的恶魔，四处徘徊是为了寻求人类身上的祸灵。被认为是软泥怪的亚种，据说一旦吸收祸灵的功能失控，软泥怪就会变成黑软泥怪。"
+      ],
+      "localizationKeys": [
+        "B864640F49170526CB78DEBC1D861415"
+      ],
+      "textSha256": "0127ba2fab00da763d1e87deec6312b718caf281cb5113e30b50ecfb7a365469"
+    },
+    "Black Rider": {
+      "gameId": 352,
+      "officialNameZh": "黑骑士",
+      "officialNameEn": "Black Rider",
+      "messageLabel": "DEVIL_ID_352_BLACKRIDER",
+      "pages": [
+        "记载于约翰启示录中，\n会在世界末日降临时\n出现的四骑士之一。\n　\n他骑着黑色的骏马，手持天秤，\n拥有在世上散播饥荒的力量，\n被赋予了折磨并杀死众生的权力。"
+      ],
+      "paragraphs": [
+        "记载于约翰启示录中，会在世界末日降临时出现的四骑士之一。",
+        "他骑着黑色的骏马，手持天秤，拥有在世上散播饥荒的力量，被赋予了折磨并杀死众生的权力。"
+      ],
+      "localizationKeys": [
+        "30C0BB4A405697A1F81E5A9639E1A3B7"
+      ],
+      "textSha256": "99bb45ec8c411eb093725d8d3c43a1cd98a6fefd7c66e79f526a123d75d4edd0"
+    },
+    "Bugs": {
+      "gameId": 144,
+      "officialNameZh": "巴古斯",
+      "officialNameEn": "Bugs",
+      "messageLabel": "DEVIL_ID_144_BAGS",
+      "pages": [
+        "于英国威尔士地区民间传说中\n登场的一种地精。\n　\n据说其外貌像全身长毛的人类，\n作为会在入夜后出现的\n噩梦以及怪物的代名词广为人知。\n人们认为它会吃掉不听家长话的\n坏孩子，妈妈们常用它来教育小孩。\n“不乖的坏小孩会被巴古斯吃掉。”\n妈妈们就是用这样的说法\n吓唬那些不乖乖闭眼的小孩，\n哄他们入睡的。"
+      ],
+      "paragraphs": [
+        "于英国威尔士地区民间传说中登场的一种地精。",
+        "据说其外貌像全身长毛的人类，作为会在入夜后出现的噩梦以及怪物的代名词广为人知。人们认为它会吃掉不听家长话的坏孩子，妈妈们常用它来教育小孩。“不乖的坏小孩会被巴古斯吃掉。”妈妈们就是用这样的说法吓唬那些不乖乖闭眼的小孩，哄他们入睡的。"
+      ],
+      "localizationKeys": [
+        "A9B9FA184E45B37C9F3B3BAB12552CA0"
+      ],
+      "textSha256": "6bc0d2da2fdda124c548c72ced1345c4992a51ac9922aefc03bdee18e48e0339"
+    },
+    "Cait Sith": {
+      "gameId": 140,
+      "officialNameZh": "猫妖精",
+      "officialNameEn": "Cait Sith",
+      "messageLabel": "DEVIL_ID_140_CAITSITH",
+      "pages": [
+        "生活在苏格兰高地地区的妖精猫，\n传说它们在树洞和废屋中\n拥有属于它们自己的王国。\n　\n体型和狗相近，全身黑毛，\n只有胸口部分为白毛。\n据说它们通人语，\n在那双绿眼睛里\n闪烁着智慧的光芒。\n它们通常都生活在王国里，\n但有时也会装作普通的黑猫\n和人类一起生活。\n这些妖精基本上性格温和，\n但如果有人欺负猫，\n据说它们就会把那无良之人\n押送到王国去。"
+      ],
+      "paragraphs": [
+        "生活在苏格兰高地地区的妖精猫，传说它们在树洞和废屋中拥有属于它们自己的王国。",
+        "体型和狗相近，全身黑毛，只有胸口部分为白毛。据说它们通人语，在那双绿眼睛里闪烁着智慧的光芒。它们通常都生活在王国里，但有时也会装作普通的黑猫和人类一起生活。这些妖精基本上性格温和，但如果有人欺负猫，据说它们就会把那无良之人押送到王国去。"
+      ],
+      "localizationKeys": [
+        "DF7E8C8B4874B54E81116BBE8B38324C"
+      ],
+      "textSha256": "9d7de798471aa50fcdf6e0c2afe745959a182a0007f12a3ec9b622901007f495"
+    },
+    "Camael": {
+      "gameId": 248,
+      "officialNameZh": "卡麦尔",
+      "officialNameEn": "Camael",
+      "messageLabel": "DEVIL_ID_248_KAMAEL",
+      "pages": [
+        "犹太传说中的战斗天使。\n负责统领能天使们，\n名字的意思是“仰望神之人”。\n　\n他是破坏、惩罚、\n死亡天使们的指挥官，\n也有说法称其是火星的支配者。"
+      ],
+      "paragraphs": [
+        "犹太传说中的战斗天使。负责统领能天使们，名字的意思是“仰望神之人”。",
+        "他是破坏、惩罚、死亡天使们的指挥官，也有说法称其是火星的支配者。"
+      ],
+      "localizationKeys": [
+        "1D9F57BD4EB1687088E254BFD298C32A"
+      ],
+      "textSha256": "dc84087b9bc41b482b960275111c812e5c92ddc5e8509f0959cc216c8bf2fea9"
+    },
+    "Cerberus": {
+      "gameId": 134,
+      "officialNameZh": "刻耳柏洛斯",
+      "officialNameEn": "Cerberus",
+      "messageLabel": "DEVIL_ID_134_KERBEROS",
+      "pages": [
+        "登场于希腊神话的勇猛巨犬。\n在传说中它负责看守\n黑暗巨坑塔尔塔罗斯。\n　\n它的父亲是风暴巨人堤丰，\n母亲是蛇神厄客德娜，\n同时它也是欧特鲁斯的兄长。\n被描绘为长着蛇尾的\n恐怖地狱看门犬形象，\n但英雄赫拉克勒斯在完成\n十二伟业的过程中抓获了它，\n并拿锁链把它牵到了地表世界。"
+      ],
+      "paragraphs": [
+        "登场于希腊神话的勇猛巨犬。在传说中它负责看守黑暗巨坑塔尔塔罗斯。",
+        "它的父亲是风暴巨人堤丰，母亲是蛇神厄客德娜，同时它也是欧特鲁斯的兄长。被描绘为长着蛇尾的恐怖地狱看门犬形象，但英雄赫拉克勒斯在完成十二伟业的过程中抓获了它，并拿锁链把它牵到了地表世界。"
+      ],
+      "localizationKeys": [
+        "56265A4D4831EDE441E41B91EF2B3219"
+      ],
+      "textSha256": "f62ba08ea8601556e0e98396ff78aa6272cceaed02a59e1809ce08218bcee241"
+    },
+    "Chernobog": {
+      "gameId": 182,
+      "officialNameZh": "切尔诺伯格",
+      "officialNameEn": "Chernobog",
+      "messageLabel": "DEVIL_ID_182_TCHERNOBOG",
+      "pages": [
+        "斯拉夫神话中掌管黑夜、\n邪恶和死亡的神。\n名字的意思是“黑之神”。\n　\n据说和其他众多死神一样\n居住在地底。\n和掌管光明及善良的\n“白之神”贝勒伯格相对。\n因为拥有使人不幸的能力，\n所以至今仍留存着\n用他的名义诅咒别人的俗语\n“愿黑之神杀死你”。"
+      ],
+      "paragraphs": [
+        "斯拉夫神话中掌管黑夜、邪恶和死亡的神。名字的意思是“黑之神”。",
+        "据说和其他众多死神一样居住在地底。和掌管光明及善良的“白之神”贝勒伯格相对。因为拥有使人不幸的能力，所以至今仍留存着用他的名义诅咒别人的俗语“愿黑之神杀死你”。"
+      ],
+      "localizationKeys": [
+        "8772911F4A50684915FD0FBCCD6E9922"
+      ],
+      "textSha256": "c64aadac316590f7c8fa4e77a07a73673fb7d4372e1641b141a51f2da5538933"
+    },
+    "Cherub": {
+      "gameId": 260,
+      "officialNameZh": "智天使",
+      "officialNameEn": "Cherub",
+      "messageLabel": "DEVIL_ID_260_CHERUB",
+      "pages": [
+        "在神学的天阶等级中\n位于第二等的上级天使“智天使”\n的群体。\n　\n拥有四翼四面，\n负责搬运上帝的宝座，\n或是驱驾上帝的战车。\n作为圣经中伊甸园的守卫\n广为人知，据说就是他们\n手持火焰之剑保护着生命之树。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第二等的上级天使“智天使”的群体。",
+        "拥有四翼四面，负责搬运上帝的宝座，或是驱驾上帝的战车。作为圣经中伊甸园的守卫广为人知，据说就是他们手持火焰之剑保护着生命之树。"
+      ],
+      "localizationKeys": [
+        "9C5490F4449A477B7D81018F041A8BA1"
+      ],
+      "textSha256": "e306a948dadb5768cf74419c6022b064727db1ebf31a2d5ad531dbd91a29b6bf"
+    },
+    "Chi You": {
+      "gameId": 79,
+      "officialNameZh": "蚩尤",
+      "officialNameEn": "Chi You",
+      "messageLabel": "DEVIL_ID_079_CHIHYU",
+      "pages": [
+        "在中国的古代神话中登场的魔王。\n被描绘为长着牛头、\n八臂（一说六臂）\n和四只眼睛的形象。\n　\n身为武器的发明者，\n他十分善战，麾下有一支\n连战连胜的强大军队。\n为夺取天下，他和伟大的黄帝\n率军交战，原本形势互不相让，\n但最终还是败给了\n得到西王母相助的黄帝。\n相传在这之后他的身躯被拆散，\n分别埋在了两个不同的地方。"
+      ],
+      "paragraphs": [
+        "在中国的古代神话中登场的魔王。被描绘为长着牛头、八臂（一说六臂）和四只眼睛的形象。",
+        "身为武器的发明者，他十分善战，麾下有一支连战连胜的强大军队。为夺取天下，他和伟大的黄帝率军交战，原本形势互不相让，但最终还是败给了得到西王母相助的黄帝。相传在这之后他的身躯被拆散，分别埋在了两个不同的地方。"
+      ],
+      "localizationKeys": [
+        "D74D8FAD4120AFC7B2943D8175A8B31D"
+      ],
+      "textSha256": "3a09e65cd2c3d067d16f74d5fe268dfdb8fb9e066e83e0c1e5d089ff688c26ae"
+    },
+    "Chimera": {
+      "gameId": 127,
+      "officialNameZh": "奇美拉",
+      "officialNameEn": "Chimera",
+      "messageLabel": "DEVIL_ID_127_CHIMERA",
+      "pages": [
+        "拥有狮子头、公山羊头\n以及蛇尾的怪物。\n　\n原本是作为季节象征的圣兽，\n但在被纳入希腊神话后\n成为了凶猛的魔兽。\n父亲是风暴巨人堤丰，\n母亲是蛇神厄客德娜。"
+      ],
+      "paragraphs": [
+        "拥有狮子头、公山羊头以及蛇尾的怪物。",
+        "原本是作为季节象征的圣兽，但在被纳入希腊神话后成为了凶猛的魔兽。父亲是风暴巨人堤丰，母亲是蛇神厄客德娜。"
+      ],
+      "localizationKeys": [
+        "3E60893845F8DD548AFFB884AABFF174"
+      ],
+      "textSha256": "d6f804e4637bbf9ab7d43e11b2efa77e9914cd1f24ba809321614ab1d0ba1f26"
+    },
+    "Cironnup": {
+      "gameId": 128,
+      "officialNameZh": "奇隆努普",
+      "officialNameEn": "Cironnup",
+      "messageLabel": "DEVIL_ID_128_CIRONNUP",
+      "pages": [
+        "名字在阿伊努人的语言里\n是“狐狸”的意思。\n阿伊努语中同样指代\n“狐狸”的词还有“斯玛里”，\n但“奇隆努普”也有\n“我们所杀之物”的意思，\n据说曾经泛指所有中小型动物。\n　\n阿伊努人认为它是\n传达灾祸预兆的神兽，\n会从山上大声吼叫，\n把灾害即将到来的消息告诉人们。"
+      ],
+      "paragraphs": [
+        "名字在阿伊努人的语言里是“狐狸”的意思。阿伊努语中同样指代“狐狸”的词还有“斯玛里”，但“奇隆努普”也有“我们所杀之物”的意思，据说曾经泛指所有中小型动物。",
+        "阿伊努人认为它是传达灾祸预兆的神兽，会从山上大声吼叫，把灾害即将到来的消息告诉人们。"
+      ],
+      "localizationKeys": [
+        "024C15344AF50FEE95A521AA1FDAA3CC"
+      ],
+      "textSha256": "c3389f706fb5c1fb095979f7ba49131be914f6642cd2756a942c70a0ea085186"
+    },
+    "Cleopatra": {
+      "gameId": 295,
+      "officialNameZh": "克利奥帕特拉",
+      "officialNameEn": "Cleopatra",
+      "messageLabel": "DEVIL_ID_295_CLEOPATRA",
+      "pages": [
+        "正确的名称是\n“克利奥帕特拉七世”。\n“克利奥帕特拉”在希腊语中\n意为“父亲的荣耀”。\n　\n她是众所周知的绝世美女，\n曾凭借好口才和优美的嗓音\n魅惑了诸多男性。\n她那倾国倾城的美貌甚至获得过\n这样的评价：“她的鼻子再矮一分，\n历史或许会大不相同。”"
+      ],
+      "paragraphs": [
+        "正确的名称是“克利奥帕特拉七世”。“克利奥帕特拉”在希腊语中意为“父亲的荣耀”。",
+        "她是众所周知的绝世美女，曾凭借好口才和优美的嗓音魅惑了诸多男性。她那倾国倾城的美貌甚至获得过这样的评价：“她的鼻子再矮一分，历史或许会大不相同。”"
+      ],
+      "localizationKeys": [
+        "047DF3284DDB930986AF4985AA0417A9"
+      ],
+      "textSha256": "88c4c6d321aba7cdf6add9a1df0deba999d790675cfc639dcbc62f8af76adfc1"
+    },
+    "Clotho": {
+      "gameId": 301,
+      "officialNameZh": "克洛托",
+      "officialNameEn": "Clotho",
+      "messageLabel": "DEVIL_ID_301_CLOTHO",
+      "pages": [
+        "希腊神话中由主神\n委任司掌命运的\n“摩伊赖”三姐妹之一。\n　\n丝线象征着命运，而克洛托\n就是命运丝线的编织者。"
+      ],
+      "paragraphs": [
+        "希腊神话中由主神委任司掌命运的“摩伊赖”三姐妹之一。",
+        "丝线象征着命运，而克洛托就是命运丝线的编织者。"
+      ],
+      "localizationKeys": [
+        "3F0F345F481B9E08FE62B69A501F9AD3"
+      ],
+      "textSha256": "bad5d1787f005c2495ff6a7eb262d5c1d2de519b0cea898b176a3624c5f6f575"
+    },
+    "Cu Chulainn": {
+      "gameId": 36,
+      "officialNameZh": "库夫林",
+      "officialNameEn": "Cu Chulainn",
+      "messageLabel": "DEVIL_ID_036_CUCHULAINN",
+      "pages": [
+        "爱尔兰的俊美英雄。\n太阳神鲁格之子，\n是一位武艺高强、\n一骑当千的勇猛战士。\n　\n因为拒绝了战争女神\n摩莉甘的追求而被下了死咒，\n最终被自己的枪迦耶伯格刺穿。"
+      ],
+      "paragraphs": [
+        "爱尔兰的俊美英雄。太阳神鲁格之子，是一位武艺高强、一骑当千的勇猛战士。",
+        "因为拒绝了战争女神摩莉甘的追求而被下了死咒，最终被自己的枪迦耶伯格刺穿。"
+      ],
+      "localizationKeys": [
+        "DAFF15CC48CE648237E160A295D785D4"
+      ],
+      "textSha256": "0caf492485fb836637d4908bbc055bac4dd22d0af0762ba0a9a372c9cbf1759f"
+    },
+    "Cybele": {
+      "gameId": 191,
+      "officialNameZh": "库柏勒",
+      "officialNameEn": "Cybele",
+      "messageLabel": "DEVIL_ID_191_CYBELE",
+      "pages": [
+        "身为大地化身的一位太母神。\n　\n人们曾在如今位于土耳其的\n弗里吉亚地区的山顶\n建造她的神殿并祭祀她。\n她能支配野兽\n并驯服狮子作为侍从。\n后来在罗马，\n她也收获了热烈的崇拜。"
+      ],
+      "paragraphs": [
+        "身为大地化身的一位太母神。",
+        "人们曾在如今位于土耳其的弗里吉亚地区的山顶建造她的神殿并祭祀她。她能支配野兽并驯服狮子作为侍从。后来在罗马，她也收获了热烈的崇拜。"
+      ],
+      "localizationKeys": [
+        "3CD7FC694FFFA4D21E240D9926014388"
+      ],
+      "textSha256": "2114aa98ba441987013ac3a8e9e8b6a8ee3db5e57d2c2dd282fecb188b89c86b"
+    },
+    "Daemon": {
+      "gameId": 317,
+      "officialNameZh": "戴蒙",
+      "officialNameEn": "Daemon",
+      "messageLabel": "DEVIL_ID_317_DAIMON",
+      "pages": [
+        "连名字都没有的下级恶魔。\n这类恶魔被统称为“戴蒙”。\n　\n“戴蒙”这个名字\n原本在希腊语中\n泛指所有低级的超自然灵体，\n其中恶魔之类的恶灵\n被称为“卡科戴蒙”，\n而天使之类的善灵\n则被称为“阿加特戴蒙”。\n另外在基督教中\n对恶魔的统称“DEMON”\n也来源于这个词。"
+      ],
+      "paragraphs": [
+        "连名字都没有的下级恶魔。这类恶魔被统称为“戴蒙”。",
+        "“戴蒙”这个名字原本在希腊语中泛指所有低级的超自然灵体，其中恶魔之类的恶灵被称为“卡科戴蒙”，而天使之类的善灵则被称为“阿加特戴蒙”。另外在基督教中对恶魔的统称“DEMON”也来源于这个词。"
+      ],
+      "localizationKeys": [
+        "A4373E31497B7AF0CCF1829534CD7397"
+      ],
+      "textSha256": "86e3272bd698d38ff1615f659c5e3f3acb3700b2db3bdda4fdbeb03b522572c7"
+    },
+    "Dagda": {
+      "gameId": 4,
+      "officialNameZh": "达格达",
+      "officialNameEn": "Dagda",
+      "messageLabel": "DEVIL_ID_004_DAGDA",
+      "pages": [
+        "登场于凯尔特神话的一位神明，\n是达奴神族的至高神。\n他的名字意为“善神”。\n　\n他爱好喝粥、胃口极大、性格温厚。\n据说他也擅长武艺，\n拥有一把能施展破坏和再生\n两种力量的巨大棍棒，\n还拥有能自由操控天气的黄金竖琴，\n以及可以无限供应粮食的大锅。"
+      ],
+      "paragraphs": [
+        "登场于凯尔特神话的一位神明，是达奴神族的至高神。他的名字意为“善神”。",
+        "他爱好喝粥、胃口极大、性格温厚。据说他也擅长武艺，拥有一把能施展破坏和再生两种力量的巨大棍棒，还拥有能自由操控天气的黄金竖琴，以及可以无限供应粮食的大锅。"
+      ],
+      "localizationKeys": [
+        "83D063AC4C1A2DBBC50D308C192DC62C"
+      ],
+      "textSha256": "c8d0eda93c3173cd743bbcff8edbf18b554cfa4902dd43ca17e29749404de2c8"
+    },
+    "Daisoujou": {
+      "gameId": 357,
+      "officialNameZh": "大僧正",
+      "officialNameEn": "Daisoujou",
+      "messageLabel": "DEVIL_ID_357_DAISOUJOU",
+      "pages": [
+        "为拯救世人而绝食冥想，\n自断性命的僧侣，\n因此引发奇迹，使其身体\n不会腐坏，得以持续存在。\n据说当救赎之日来临的那一天，\n他会再次现身在人们面前。"
+      ],
+      "paragraphs": [
+        "为拯救世人而绝食冥想，自断性命的僧侣，因此引发奇迹，使其身体不会腐坏，得以持续存在。据说当救赎之日来临的那一天，他会再次现身在人们面前。"
+      ],
+      "localizationKeys": [
+        "699B0D5A45586BD994FF65B807A1CD2A"
+      ],
+      "textSha256": "46f78529e0c4b38f4301362f1cc2abff5e10391029d241666ab91894019bcbf4"
+    },
+    "Dakini": {
+      "gameId": 297,
+      "officialNameZh": "荼吉尼",
+      "officialNameEn": "Dakini",
+      "messageLabel": "DEVIL_ID_297_DAKINI",
+      "pages": [
+        "印度神话中掌管情爱与交欢的女神，\n效忠于迦梨。\n　\n据说会吞食人肉，\n每晚都要在墓地或火葬场举办集会。\n名字的含义为“空中游乐者”，\n因为她会拿着装满鲜血的头骨酒杯，\n一边跳舞一边在空中行进。"
+      ],
+      "paragraphs": [
+        "印度神话中掌管情爱与交欢的女神，效忠于迦梨。",
+        "据说会吞食人肉，每晚都要在墓地或火葬场举办集会。名字的含义为“空中游乐者”，因为她会拿着装满鲜血的头骨酒杯，一边跳舞一边在空中行进。"
+      ],
+      "localizationKeys": [
+        "ECB8D75E46A46C73EA73AB8989020B44"
+      ],
+      "textSha256": "412e1e73d8eb3eb6e70346197c5cec503fb751052ed8288036585eb5e44c7d76"
+    },
+    "Danu": {
+      "gameId": 188,
+      "officialNameZh": "达奴",
+      "officialNameEn": "Danu",
+      "messageLabel": "DEVIL_ID_188_DANU",
+      "pages": [
+        "在凯尔特神话中登场的大地母神。\n是达奴神族的母亲，\n也被认为是孕育了\n所有生命的世界本身。\n　\n传说达奴的巨大身躯\n现在仍旧横卧在大地之上，\n信仰虔诚的爱尔兰芒斯特地区，\n更是以承蒙达奴恩泽之地而闻名。"
+      ],
+      "paragraphs": [
+        "在凯尔特神话中登场的大地母神。是达奴神族的母亲，也被认为是孕育了所有生命的世界本身。",
+        "传说达奴的巨大身躯现在仍旧横卧在大地之上，信仰虔诚的爱尔兰芒斯特地区，更是以承蒙达奴恩泽之地而闻名。"
+      ],
+      "localizationKeys": [
+        "89C42D0E49C9EA0A93BA9DB6290F2093"
+      ],
+      "textSha256": "91c1293f1905c819781b86e21db2dbca50a8c20cf53a0e49ae5407689d916770"
+    },
+    "Decarabia": {
+      "gameId": 273,
+      "officialNameZh": "单卡拉比",
+      "officialNameEn": "Decarabia",
+      "messageLabel": "DEVIL_ID_273_DECARABIA",
+      "pages": [
+        "所罗门王的72大魔神之一。\n　\n以五芒星图的样子示人的奇特恶魔。\n在关于鸟类和宝石的方面\n拥有丰富的知识，\n据说他的使魔也是鸟的样子。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一。",
+        "以五芒星图的样子示人的奇特恶魔。在关于鸟类和宝石的方面拥有丰富的知识，据说他的使魔也是鸟的样子。"
+      ],
+      "localizationKeys": [
+        "F3E76B71464FE133DC545A9E59D78F07"
+      ],
+      "textSha256": "acb3f713896190e944c2fd1e9bf844167511ed57cc38c12c07ddcb060eeb2624"
+    },
+    "Demeter": {
+      "gameId": 19,
+      "officialNameZh": "德墨忒尔",
+      "officialNameEn": "Demeter",
+      "messageLabel": "DEVIL_ID_019_DEMETER",
+      "pages": [
+        "希腊神话中的女神。\n她的名字在古希腊语中\n意为“大地母亲”。\n　\n她是宙斯的姐姐，\n被认为是把栽培谷物的技术\n传授给人类的丰饶之神。\n因为她为文明带来了发展，\n由此人类社会开始需要法律，\n所以还有一个别名叫做\n“德墨忒尔·塞斯摩弗洛斯”，\n意为“律法创造者”。"
+      ],
+      "paragraphs": [
+        "希腊神话中的女神。她的名字在古希腊语中意为“大地母亲”。",
+        "她是宙斯的姐姐，被认为是把栽培谷物的技术传授给人类的丰饶之神。因为她为文明带来了发展，由此人类社会开始需要法律，所以还有一个别名叫做“德墨忒尔·塞斯摩弗洛斯”，意为“律法创造者”。"
+      ],
+      "localizationKeys": [
+        "E264EFE7432228DD57CDB79972B0FA29"
+      ],
+      "textSha256": "21c17df3a52a41766ef3b5b5cbe80d6d16209209906aceb956d1d1e099949375"
+    },
+    "Dionysus": {
+      "gameId": 183,
+      "officialNameZh": "狄俄尼索斯",
+      "officialNameEn": "Dionysus",
+      "messageLabel": "DEVIL_ID_183_DIONYSUS",
+      "pages": [
+        "希腊神话中的酒与戏剧之神。\n主要受到来自女性的狂热信奉。\n　\n原本是守护着雷斯山脉的\n生命之神。\n据说是他发现了葡萄树，\n并把栽培葡萄和\n酿制葡萄酒的方法\n传授普及给了人类。"
+      ],
+      "paragraphs": [
+        "希腊神话中的酒与戏剧之神。主要受到来自女性的狂热信奉。",
+        "原本是守护着雷斯山脉的生命之神。据说是他发现了葡萄树，并把栽培葡萄和酿制葡萄酒的方法传授普及给了人类。"
+      ],
+      "localizationKeys": [
+        "433DFD6147BEA577A86B9799973575DB"
+      ],
+      "textSha256": "aaf02b16e630fdcbfbeb2d8fd096b35b577d6cfdc1c4309bc7d072c8c7264da1"
+    },
+    "Dis": {
+      "gameId": 46,
+      "officialNameZh": "狄丝",
+      "officialNameEn": "Dís",
+      "messageLabel": "DEVIL_ID_046_DIS",
+      "pages": [
+        "北欧神话中认为她是\n人类灵魂的伴随者。\n　\n她是农耕畜牧的守护者，\n另一方面，\n她也被视作战争运势的掌控者，\n因此有人认为她是女武神的随从灵，\n或是和女武神担负着同样的使命的神明。\n另外也有人\n认为她是一名低阶女神。"
+      ],
+      "paragraphs": [
+        "北欧神话中认为她是人类灵魂的伴随者。",
+        "她是农耕畜牧的守护者，另一方面，她也被视作战争运势的掌控者，因此有人认为她是女武神的随从灵，或是和女武神担负着同样的使命的神明。另外也有人认为她是一名低阶女神。"
+      ],
+      "localizationKeys": [
+        "422D496C471B2CCEFCDC9288B8B3B57B"
+      ],
+      "textSha256": "e00f48d53aa5522a5fad46c3815f26e94604c629be75f7d39697975a38ac7fb7"
+    },
+    "Dominion": {
+      "gameId": 255,
+      "officialNameZh": "主天使",
+      "officialNameEn": "Dominion",
+      "messageLabel": "DEVIL_ID_255_DOMINION",
+      "pages": [
+        "在神学的天阶等级中\n位于第四等的中级天使。\n名字的意思是“统治”。\n　\n作为天界的行政官，\n他们负责管理天使们的工作。\n他们的行动是上帝意志的体现，\n他们的愿望是将上帝的统治\n播撒到宇宙的每一个角落。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第四等的中级天使。名字的意思是“统治”。",
+        "作为天界的行政官，他们负责管理天使们的工作。他们的行动是上帝意志的体现，他们的愿望是将上帝的统治播撒到宇宙的每一个角落。"
+      ],
+      "localizationKeys": [
+        "5A0729CE4049105A3A03C2BB351E2D7A"
+      ],
+      "textSha256": "43a7c0419fead7a5aa3ec3baa83edd87704c0afb3996dc8372f6e6b8bc3d1fd4"
+    },
+    "Dormarth": {
+      "gameId": 141,
+      "officialNameZh": "德亚玛斯",
+      "officialNameEn": "Dormarth",
+      "messageLabel": "DEVIL_ID_141_DORMARTH",
+      "pages": [
+        "凯尔特神话中登场的猎犬恶魔。\n　\n它的主人是冥府之王葛温，传说\n它的红鼻子即便在雾气环绕的山中\n也能被人清楚地看见。关于\n它名字的意思说法众多，没有定论，\n但主流说法是，其象征着\n“死亡之门”，人们认为德亚玛斯\n在葛温统治的冥府负责看守出入口。"
+      ],
+      "paragraphs": [
+        "凯尔特神话中登场的猎犬恶魔。",
+        "它的主人是冥府之王葛温，传说它的红鼻子即便在雾气环绕的山中也能被人清楚地看见。关于它名字的意思说法众多，没有定论，但主流说法是，其象征着“死亡之门”，人们认为德亚玛斯在葛温统治的冥府负责看守出入口。"
+      ],
+      "localizationKeys": [
+        "1C4569D648C2B73FC2E67282B5BFA9D7"
+      ],
+      "textSha256": "45f0c58c31982cd549c9f49dc4e0d3651153ec5db51a89b54fb96d9f061bd5a4"
+    },
+    "Efreet": {
+      "gameId": 47,
+      "officialNameZh": "伊弗利特",
+      "officialNameEn": "Efreet",
+      "messageLabel": "DEVIL_ID_047_IFRIT",
+      "pages": [
+        "阿拉伯传说中的精灵。\n拥有和火焰相关的力量，十分强大。\n　\n据说他会用魔法给召唤自己的人\n带来种种恩惠，但性情暴躁，\n如果对召唤者感到不满，\n就会立刻将其杀死。"
+      ],
+      "paragraphs": [
+        "阿拉伯传说中的精灵。拥有和火焰相关的力量，十分强大。",
+        "据说他会用魔法给召唤自己的人带来种种恩惠，但性情暴躁，如果对召唤者感到不满，就会立刻将其杀死。"
+      ],
+      "localizationKeys": [
+        "8711321C4907022F3CF44CBD2CC1FB20"
+      ],
+      "textSha256": "87c53f93ca4ff2ddb00c876f006d3a9905dcbd464db1e520b17d36db9eea30b5"
+    },
+    "Eisheth": {
+      "gameId": 394,
+      "officialNameZh": "伊谢丝",
+      "officialNameEn": "Eisheth",
+      "messageLabel": "DEVIL_ID_394_EISHETH",
+      "pages": [
+        "伊谢丝·泽努尼姆。\n在关于犹太神秘主义思想的文献\n《光辉之书》中登场的四女魔之一。\n　\n该文献的思想体系中有一个象征\n邪恶之力的概念，即“逆卡巴拉”，\n而她被认为是在逆卡巴拉中\n占有地位的公主，是罪恶的体现者，\n会引诱无数人类走向破灭。\n据说如果滥用带有神秘之力的言语，\n那些言语就会被恶魔夺走，\n导致世界变得傲慢、虚荣且堕落。\n在那样的世界中，罪恶的化身伊谢丝\n将会现身并攻击人们。"
+      ],
+      "paragraphs": [
+        "伊谢丝·泽努尼姆。在关于犹太神秘主义思想的文献《光辉之书》中登场的四女魔之一。",
+        "该文献的思想体系中有一个象征邪恶之力的概念，即“逆卡巴拉”，而她被认为是在逆卡巴拉中占有地位的公主，是罪恶的体现者，会引诱无数人类走向破灭。据说如果滥用带有神秘之力的言语，那些言语就会被恶魔夺走，导致世界变得傲慢、虚荣且堕落。在那样的世界中，罪恶的化身伊谢丝将会现身并攻击人们。"
+      ],
+      "localizationKeys": [
+        "A30D75324A812B3D45AE9F819A03CF8A"
+      ],
+      "textSha256": "0986267316fe4898aff334a749c27b8ac9d34e571f7c10dc859801ca23a38368"
+    },
+    "Eligor": {
+      "gameId": 270,
+      "officialNameZh": "埃力格",
+      "officialNameEn": "Eligor",
+      "messageLabel": "DEVIL_ID_270_ELIGOR",
+      "pages": [
+        "所罗门王的72大魔神之一，\n以俊美骑士之形象示人的地狱公爵。\n　\n据说他拥有看透未来的力量，\n关于战争的知识也十分丰富。\n也有说法称他可以教给领导者\n如何获得士兵们的拥戴。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，以俊美骑士之形象示人的地狱公爵。",
+        "据说他拥有看透未来的力量，关于战争的知识也十分丰富。也有说法称他可以教给领导者如何获得士兵们的拥戴。"
+      ],
+      "localizationKeys": [
+        "53DA85E447C9A92C346764BAA33B9C7A"
+      ],
+      "textSha256": "4b9aa8fac82973d56c62ab2c6e5554974b5e9e7ec0f26ca615b13b1c1e8ee40b"
+    },
+    "Erthys": {
+      "gameId": 158,
+      "officialNameZh": "磐石精灵",
+      "officialNameEn": "Erthys",
+      "messageLabel": "DEVIL_ID_158_ERTHYS",
+      "pages": [
+        "土属性的精灵。\n　\n构成世界万物的四大元素之一，\n是一种低次元的能量体。\n亚里士多德认为其拥有\n促进分解的“冷”和“干”的性质，\n是带来破坏的基本元素。"
+      ],
+      "paragraphs": [
+        "土属性的精灵。",
+        "构成世界万物的四大元素之一，是一种低次元的能量体。亚里士多德认为其拥有促进分解的“冷”和“干”的性质，是带来破坏的基本元素。"
+      ],
+      "localizationKeys": [
+        "7D4B528142354A4D4B139FA0D868EBEC"
+      ],
+      "textSha256": "2437bc6f83cb93fd2575d1046f4b306e1566c45e946637cd5878a8c3df687c27"
+    },
+    "Fafnir": {
+      "gameId": 116,
+      "officialNameZh": "法夫纳",
+      "officialNameEn": "Fafnir",
+      "messageLabel": "DEVIL_ID_116",
+      "pages": [
+        "北欧传说中登场的恶龙，\n最后被英雄齐格飞打败。\n　\n在12世纪时写就的\n《沃尔松格萨迦》中，\n被描述为长了脚的\n大蛇般的怪物，拥有剧毒，\n行走时会让大地\n也跟着震颤。"
+      ],
+      "paragraphs": [
+        "北欧传说中登场的恶龙，最后被英雄齐格飞打败。",
+        "在12世纪时写就的《沃尔松格萨迦》中，被描述为长了脚的大蛇般的怪物，拥有剧毒，行走时会让大地也跟着震颤。"
+      ],
+      "localizationKeys": [
+        "1839DF6D475FD8E17E7389A29898DD6A"
+      ],
+      "textSha256": "4effa9e529f0d715c716d1334268a34bd92bbfef7d5df40f8d58a1118395467c"
+    },
+    "Feng Huang": {
+      "gameId": 282,
+      "officialNameZh": "凤凰",
+      "officialNameEn": "Feng Huang",
+      "messageLabel": "DEVIL_ID_282_HOUOU",
+      "pages": [
+        "东亚传说中广为人知的一种鸟。\n据说只会在和平盛世出现。\n　\n被认为是百鸟之王，\n当凤凰死去时，\n会有无数鸟儿为其悲鸣。"
+      ],
+      "paragraphs": [
+        "东亚传说中广为人知的一种鸟。据说只会在和平盛世出现。",
+        "被认为是百鸟之王，当凤凰死去时，会有无数鸟儿为其悲鸣。"
+      ],
+      "localizationKeys": [
+        "1078532C45A21F6873CD539598F23107"
+      ],
+      "textSha256": "c9e0c79343a426db9619ad3f748f3dc6adb67aa2c9ee676c98f8b2c1176a4f35"
+    },
+    "Fenrir": {
+      "gameId": 148,
+      "officialNameZh": "芬里尔",
+      "officialNameEn": "Fenrir",
+      "messageLabel": "DEVIL_ID_148_FENRIR",
+      "pages": [
+        "北欧神话中的巨狼怪物，\n恶神洛基的儿子。\n据说在诸神黄昏时，\n它把奥丁吞进了肚中。\n　\n它原本被魔法绳索格莱普尼尔束缚，\n却于诸神黄昏之日挣脱了桎梏，\n并在此后与众神展开了战斗。"
+      ],
+      "paragraphs": [
+        "北欧神话中的巨狼怪物，恶神洛基的儿子。据说在诸神黄昏时，它把奥丁吞进了肚中。",
+        "它原本被魔法绳索格莱普尼尔束缚，却于诸神黄昏之日挣脱了桎梏，并在此后与众神展开了战斗。"
+      ],
+      "localizationKeys": [
+        "C63379F84838F9FDB5735E9B3A1BB217"
+      ],
+      "textSha256": "34dd44585551d519ea3ba71c9bb86282974318e3f526e1997aff8ef1641aefa5"
+    },
+    "Fionn mac Cumhaill": {
+      "gameId": 35,
+      "officialNameZh": "芬恩·麦克库尔",
+      "officialNameEn": "Fionn mac Cumhaill",
+      "messageLabel": "DEVIL_ID_035_FIONNMACCUMHAILL",
+      "pages": [
+        "凯尔特神话中的英雄。\n统领费奥纳骑士团，\n负责守护爱尔兰至尊王康马克。\n因为金发和白皙的皮肤\n而被唤作“芬恩（金色的头发）”，\n但其实本名叫做狄姆纳。\n　\n在德鲁伊范格斯身边修行时，\n范格斯曾命他\n用智慧鲑鱼做菜。\n他因为在这时舔了粘在拇指上的\n鲑鱼脂肪而获得了智慧。\n传说在那以后，\n芬恩就能通过舔拇指的\n动作获得智慧了。"
+      ],
+      "paragraphs": [
+        "凯尔特神话中的英雄。统领费奥纳骑士团，负责守护爱尔兰至尊王康马克。因为金发和白皙的皮肤而被唤作“芬恩（金色的头发）”，但其实本名叫做狄姆纳。",
+        "在德鲁伊范格斯身边修行时，范格斯曾命他用智慧鲑鱼做菜。他因为在这时舔了粘在拇指上的鲑鱼脂肪而获得了智慧。传说在那以后，芬恩就能通过舔拇指的动作获得智慧了。"
+      ],
+      "localizationKeys": [
+        "ACC3B9974C30A0031DAD988322FDC2D3"
+      ],
+      "textSha256": "13186c007d39724941b5b0e388fa3255773b25f794bea59cf0b5be2e8c0a92e1"
+    },
+    "Flaemis": {
+      "gameId": 155,
+      "officialNameZh": "火精灵",
+      "officialNameEn": "Flaemis",
+      "messageLabel": "DEVIL_ID_155_FLAMIES",
+      "pages": [
+        "火属性的精灵。\n　\n构成世界万物的四大元素之一，\n是一种低次元的能量体，\n被认为拥有“热”和“干”的性质。\n在古希腊系统建立起来的\n地水火风四大元素理论，\n为早期的占星术\n也带来了很大的影响。"
+      ],
+      "paragraphs": [
+        "火属性的精灵。",
+        "构成世界万物的四大元素之一，是一种低次元的能量体，被认为拥有“热”和“干”的性质。在古希腊系统建立起来的地水火风四大元素理论，为早期的占星术也带来了很大的影响。"
+      ],
+      "localizationKeys": [
+        "11ABA8074A62AC38DB696D9145896821"
+      ],
+      "textSha256": "13264b8721c97231b2827eb6016b4624d9623603dc4802c088d40490625c4561"
+    },
+    "Flauros": {
+      "gameId": 266,
+      "officialNameZh": "佛劳洛斯",
+      "officialNameEn": "Flauros",
+      "messageLabel": "DEVIL_ID_266_FLAUROS",
+      "pages": [
+        "所罗门王的72大魔神之一，\n以豹面战士的形象示人。\n　\n据说他拥有透视\n过去与未来的力量，\n还可以随意操控火焰，\n将敌人燃烧殆尽。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，以豹面战士的形象示人。",
+        "据说他拥有透视过去与未来的力量，还可以随意操控火焰，将敌人燃烧殆尽。"
+      ],
+      "localizationKeys": [
+        "E576CA1E4F2AD7C1DAE53B928D97638E"
+      ],
+      "textSha256": "861d752d761c461e2ed52e1b6a8048eba226c96ff50d91d54808b8fdd4cee76e"
+    },
+    "Forneus": {
+      "gameId": 271,
+      "officialNameZh": "佛钮司",
+      "officialNameEn": "Forneus",
+      "messageLabel": "DEVIL_ID_271_FORNEUS",
+      "pages": [
+        "所罗门王的72大魔神之一。\n　\n以银色的巨大翼鱼形象示人。\n精通和语言相关的一切，\n据说能够教授修辞学、语言学、\n姓名学等方面的知识。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一。",
+        "以银色的巨大翼鱼形象示人。精通和语言相关的一切，据说能够教授修辞学、语言学、姓名学等方面的知识。"
+      ],
+      "localizationKeys": [
+        "4B0E1F4F4F757457BA4EF197CEAE9D5C"
+      ],
+      "textSha256": "4b8000537bea40d926617ac8a146e4f28d35623d0703518278b003f048c81dd0"
+    },
+    "Fortuna": {
+      "gameId": 29,
+      "officialNameZh": "福尔图娜",
+      "officialNameEn": "Fortuna",
+      "messageLabel": "DEVIL_ID_029_FORTUNA",
+      "pages": [
+        "罗马的幸运女神。\n被认为掌管着命运的车轮。\n　\n原本是为家畜和谷物\n带来增产与丰收的女神。\n另外，她与希腊神话中的\n女神堤喀被视为同一位神。"
+      ],
+      "paragraphs": [
+        "罗马的幸运女神。被认为掌管着命运的车轮。",
+        "原本是为家畜和谷物带来增产与丰收的女神。另外，她与希腊神话中的女神堤喀被视为同一位神。"
+      ],
+      "localizationKeys": [
+        "A7956A5B423841945B753A82BB2C5CE7"
+      ],
+      "textSha256": "67299bc65bf53825f67ad33eb8266df8cd7b7c587fc5f44052f140d195fbae88"
+    },
+    "Futsunushi": {
+      "gameId": 201,
+      "officialNameZh": "经津主",
+      "officialNameEn": "Futsunushi",
+      "messageLabel": "DEVIL_ID_201_HUTSUNUSI",
+      "pages": [
+        "《日本书纪》中\n登场的刀剑之神。\n据说他在天孙降临之前\n平定了苇原中国。\n　\n“经津主”这个名字里，\n“经津”指斩断物体的动作，\n“主”则是神的意思。"
+      ],
+      "paragraphs": [
+        "《日本书纪》中登场的刀剑之神。据说他在天孙降临之前平定了苇原中国。",
+        "“经津主”这个名字里，“经津”指斩断物体的动作，“主”则是神的意思。"
+      ],
+      "localizationKeys": [
+        "E5B3EA0A4D38F552AF7A2882D08B9F74"
+      ],
+      "textSha256": "94313a2441be91c3eb7d408e52f2d3bfae02b2878659c0298f38b13c6db056b1"
+    },
+    "Fuu-Ki": {
+      "gameId": 313,
+      "officialNameZh": "风鬼",
+      "officialNameEn": "Fuu-Ki",
+      "messageLabel": "DEVIL_ID_313_FUUKI",
+      "pages": [
+        "曾在平安时代统治伊贺、伊势地区，\n传说中的豪族“藤原千方”\n所驱使的四鬼之一。\n　\n是拥有强大力量的使役神，\n能够掀起大风吹飞敌人。\n他被用于比喻那些\n曾实现过诸多壮举的勇者，\n另外也有说法认为他是忍者的起源。"
+      ],
+      "paragraphs": [
+        "曾在平安时代统治伊贺、伊势地区，传说中的豪族“藤原千方”所驱使的四鬼之一。",
+        "是拥有强大力量的使役神，能够掀起大风吹飞敌人。他被用于比喻那些曾实现过诸多壮举的勇者，另外也有说法认为他是忍者的起源。"
+      ],
+      "localizationKeys": [
+        "07909C5D44E8CA628A85B881DD33BAB3"
+      ],
+      "textSha256": "20b6a492789fa00248f988a946c184a31176f3f8d1bda880af1448dcdac706d4"
+    },
+    "Gabriel": {
+      "gameId": 243,
+      "officialNameZh": "加百列",
+      "officialNameEn": "Gabriel",
+      "messageLabel": "DEVIL_ID_243_GABRIEL",
+      "pages": [
+        "在天阶等级中位于顶点的\n四大天使之一，\n名字的意思是“统括者”。\n也是曾向圣母告知\n怀胎消息的圣告天使。\n　\n面容仿若少女，\n也有说法称在天使当中\n只有加百列不是中性的，\n而是女性。"
+      ],
+      "paragraphs": [
+        "在天阶等级中位于顶点的四大天使之一，名字的意思是“统括者”。也是曾向圣母告知怀胎消息的圣告天使。",
+        "面容仿若少女，也有说法称在天使当中只有加百列不是中性的，而是女性。"
+      ],
+      "localizationKeys": [
+        "B9158E8C463206731F43CC9CF0E2377D"
+      ],
+      "textSha256": "edd27424d7b374255e17b22d98c3726c814eb594c7fda27baa4f542dd77d18f3"
+    },
+    "Ganesha": {
+      "gameId": 221,
+      "officialNameZh": "葛内舍",
+      "officialNameEn": "Ganesha",
+      "messageLabel": "DEVIL_ID_221_GANESA",
+      "pages": [
+        "印度神话中的象头神。\n　\n原本是帕尔瓦蒂\n为了防止丈夫湿婆偷窥其入浴\n而用污垢创造出来的神明，\n但很快就被湿婆斩首。\n之后湿婆把自己最先看到的\n大象首级安在了他的身体上，\n让他变成了现在的样子。"
+      ],
+      "paragraphs": [
+        "印度神话中的象头神。",
+        "原本是帕尔瓦蒂为了防止丈夫湿婆偷窥其入浴而用污垢创造出来的神明，但很快就被湿婆斩首。之后湿婆把自己最先看到的大象首级安在了他的身体上，让他变成了现在的样子。"
+      ],
+      "localizationKeys": [
+        "CAEF39614D415E6E14BAC7A722D7CAE9"
+      ],
+      "textSha256": "265582f7022ae472e6920bf412e0472405bb8ced221bbd29698f21b752a2c83e"
+    },
+    "Garuda": {
+      "gameId": 278,
+      "officialNameZh": "迦楼罗",
+      "officialNameEn": "Garuda",
+      "messageLabel": "DEVIL_ID_278_GARUDA",
+      "pages": [
+        "印度神话中的圣鸟。\n　\n曾为了拯救被那伽族\n用诡计掳走的母亲，\n袭击天界以求取得不死甘露。\n它那足以击退众多神明的力量\n被毗湿奴看中，\n毗湿奴以赋予它不死之身作为交换，\n让它成为了自己的坐骑。"
+      ],
+      "paragraphs": [
+        "印度神话中的圣鸟。",
+        "曾为了拯救被那伽族用诡计掳走的母亲，袭击天界以求取得不死甘露。它那足以击退众多神明的力量被毗湿奴看中，毗湿奴以赋予它不死之身作为交换，让它成为了自己的坐骑。"
+      ],
+      "localizationKeys": [
+        "7F8E08AE45B0C29DE605D1AC42FAEE5F"
+      ],
+      "textSha256": "54f64823dcafe759bc358fc3ca4e5b49b1f9cc9fc5b06be23267dae080fbbc67"
+    },
+    "Girimekhala": {
+      "gameId": 232,
+      "officialNameZh": "基力梅卡拉",
+      "officialNameEn": "Girimekhala",
+      "messageLabel": "DEVIL_ID_232_GIRIMEKRA",
+      "pages": [
+        "斯里兰卡神话中\n所记载的巨象怪物。\n　\n相传前来妨碍释迦牟尼解脱的\n魔王魔罗的坐骑就是它。\n拥有邪眼，据说被它的邪眼\n注视过的人，会遭遇疾病和灾祸。"
+      ],
+      "paragraphs": [
+        "斯里兰卡神话中所记载的巨象怪物。",
+        "相传前来妨碍释迦牟尼解脱的魔王魔罗的坐骑就是它。拥有邪眼，据说被它的邪眼注视过的人，会遭遇疾病和灾祸。"
+      ],
+      "localizationKeys": [
+        "7A7137764588CC18BCF0C994B290A828"
+      ],
+      "textSha256": "3f0e220ae0e7a02580f628b1aec62a242c2758fc3f0f3542aaed663ac3a3d2ec"
+    },
+    "Glasya-Labolas": {
+      "gameId": 142,
+      "officialNameZh": "格剌希亚拉波斯",
+      "officialNameEn": "Glasya-Labolas",
+      "messageLabel": "DEVIL_ID_142_GLASYALABOLAS",
+      "pages": [
+        "所罗门王的72大魔神之一。\n准确来说，\n其名字应写作格剌希亚=拉波斯。\n另外也有人称其为“卡喀里诺拉斯”。\n　\n样貌是一只拥有狮鹫翅膀的狗，\n据说能立刻授予召唤者\n一切关于文化与艺术的知识。\n另外也是流血与杀人事件的策划者，\n擅长预知未来，\n拥有能使人变透明的力量。\n也有说法认为\n他是奈比洛斯的坐骑。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一。准确来说，其名字应写作格剌希亚=拉波斯。另外也有人称其为“卡喀里诺拉斯”。",
+        "样貌是一只拥有狮鹫翅膀的狗，据说能立刻授予召唤者一切关于文化与艺术的知识。另外也是流血与杀人事件的策划者，擅长预知未来，拥有能使人变透明的力量。也有说法认为他是奈比洛斯的坐骑。"
+      ],
+      "localizationKeys": [
+        "B20228F54700809A4ECD7780CB2972D7"
+      ],
+      "textSha256": "5fe00ed966a4d7d7a115cafd15e3f9355f7414bd0ce92ce6ada110e0d3aae834"
+    },
+    "Gogmagog": {
+      "gameId": 337,
+      "officialNameZh": "歌革玛各",
+      "officialNameEn": "Gogmagog",
+      "messageLabel": "DEVIL_ID_337_GOGMAGOG",
+      "pages": [
+        "传说于上古时代\n居住在不列颠岛上的巨人。\n名字的意思是“敌对者”。\n　\n据说他的身躯巨大，\n只要挥动一下手臂就能破坏帆船。\n企图入侵不列颠岛之人\n屡屡在他的防护下折戟，\n但最后他还是被特洛伊人布鲁图斯击败。"
+      ],
+      "paragraphs": [
+        "传说于上古时代居住在不列颠岛上的巨人。名字的意思是“敌对者”。",
+        "据说他的身躯巨大，只要挥动一下手臂就能破坏帆船。企图入侵不列颠岛之人屡屡在他的防护下折戟，但最后他还是被特洛伊人布鲁图斯击败。"
+      ],
+      "localizationKeys": [
+        "4326A0F944C061404F1ED297A8A9A464"
+      ],
+      "textSha256": "526663924978d8c8629245f7fa6ec1ad071c6f169c336532d4db3bdd7287a982"
+    },
+    "Gremlin": {
+      "gameId": 327,
+      "officialNameZh": "葛雷姆林",
+      "officialNameEn": "Gremlin",
+      "messageLabel": "DEVIL_ID_327_GREMLIN",
+      "pages": [
+        "会附身在机器和工具上，\n令其无法正常工作的恶作剧妖精。\n　\n据说在二战时的英国，\n常常发生飞机无法发动的事故，\n调查原因之后便发现了葛雷姆林。\n虽然不受待见，\n但有时也会为人们提供帮助。\n据说富兰克林通过闪电\n收集电流的时候，\n实际上也得到了葛雷姆林的帮助。"
+      ],
+      "paragraphs": [
+        "会附身在机器和工具上，令其无法正常工作的恶作剧妖精。",
+        "据说在二战时的英国，常常发生飞机无法发动的事故，调查原因之后便发现了葛雷姆林。虽然不受待见，但有时也会为人们提供帮助。据说富兰克林通过闪电收集电流的时候，实际上也得到了葛雷姆林的帮助。"
+      ],
+      "localizationKeys": [
+        "14D0538E46486E319F6EF58D191CCE14"
+      ],
+      "textSha256": "b87fb5855354cc24791723810e5dadfca1fa899cdbed51e8db0cc8696b801db3"
+    },
+    "Gurulu": {
+      "gameId": 291,
+      "officialNameZh": "格鲁鲁",
+      "officialNameEn": "Gurulu",
+      "messageLabel": "DEVIL_ID_291_GURR",
+      "pages": [
+        "斯里兰卡神话中形似巨鸟的恶魔。\n　\n也叫作“凶鸟夜叉”，\n被视为恶鬼之一。\n据说在与斯里兰卡神话学说对立的\n印度神话中，其形象为灵鸟迦楼罗，\n因此在斯里兰卡神话中\n他的形象被解释为了恶魔。"
+      ],
+      "paragraphs": [
+        "斯里兰卡神话中形似巨鸟的恶魔。",
+        "也叫作“凶鸟夜叉”，被视为恶鬼之一。据说在与斯里兰卡神话学说对立的印度神话中，其形象为灵鸟迦楼罗，因此在斯里兰卡神话中他的形象被解释为了恶魔。"
+      ],
+      "localizationKeys": [
+        "4D3DD479413A5E5255F6C3BAE0948224"
+      ],
+      "textSha256": "0594aa555ca47b7874c0f52658e8c71bd7a41454624a5d563a9f519703849d5f"
+    },
+    "Halphas": {
+      "gameId": 274,
+      "officialNameZh": "哈帕斯",
+      "officialNameEn": "Halphas",
+      "messageLabel": "DEVIL_ID_274_HALPHAS",
+      "pages": [
+        "所罗门王的72大魔神之一。\n　\n被称为“死与破灭的伯爵”，\n通常以眼睛血红、通体漆黑的\n鸽子形象示人。\n拥有建筑的能力，\n可以建造出配备了\n丰富武器和军备的要塞或城堡。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一。",
+        "被称为“死与破灭的伯爵”，通常以眼睛血红、通体漆黑的鸽子形象示人。拥有建筑的能力，可以建造出配备了丰富武器和军备的要塞或城堡。"
+      ],
+      "localizationKeys": [
+        "B17757174323D739C29EC59E3A88CCD6"
+      ],
+      "textSha256": "05f25d814049bcfa5981e50896d371e085d6dbbd19032bd3ee8db4b61ca60604"
+    },
+    "Hanuman": {
+      "gameId": 34,
+      "officialNameZh": "哈奴曼",
+      "officialNameEn": "Hanuman",
+      "messageLabel": "DEVIL_ID_034_HANUMAN",
+      "pages": [
+        "印度神话中的英雄。\n拥有变化自如的神通和飞天的能力。\n　\n在叙事诗《罗摩衍那》中\n记载了他的诸多事迹。\n他的名字意为“拥有颚骨者”，\n常被描绘为一个\n长着猴头猴尾的半人形象。"
+      ],
+      "paragraphs": [
+        "印度神话中的英雄。拥有变化自如的神通和飞天的能力。",
+        "在叙事诗《罗摩衍那》中记载了他的诸多事迹。他的名字意为“拥有颚骨者”，常被描绘为一个长着猴头猴尾的半人形象。"
+      ],
+      "localizationKeys": [
+        "AD2FD15B4BB2E175081035B436432C05"
+      ],
+      "textSha256": "0dd0048b41f3204b3d183f609cec4b0fc97a5da24a627b73725f2628771753c0"
+    },
+    "Hare of Inaba": {
+      "gameId": 381,
+      "officialNameZh": "因幡白兔",
+      "officialNameEn": "Hare of Inaba",
+      "messageLabel": "DEVIL_ID_381_INABASIROUSAGI",
+      "pages": [
+        "在古事记和出云神话中登场的\n聪明狡猾的兔子，被奉为白兔神。\n　\n它为了从隐歧岛前往因幡国，\n骗鲨鱼们在海面上排成一列，\n自己假装数数，\n踩在鲨鱼的背上渡海。\n但在最后关头，\n它说出了自己的骗局，\n于是被最后一条鲨鱼剥了皮。\n之后大国主把疗伤的方法教给了它，\n让它恢复了原样。"
+      ],
+      "paragraphs": [
+        "在古事记和出云神话中登场的聪明狡猾的兔子，被奉为白兔神。",
+        "它为了从隐歧岛前往因幡国，骗鲨鱼们在海面上排成一列，自己假装数数，踩在鲨鱼的背上渡海。但在最后关头，它说出了自己的骗局，于是被最后一条鲨鱼剥了皮。之后大国主把疗伤的方法教给了它，让它恢复了原样。"
+      ],
+      "localizationKeys": [
+        "B22A538244F5EE3B6DD410BEFDC16F7A"
+      ],
+      "textSha256": "5513b86e54d2153f013e85cc46cb5fed57d75e608ebaa1cb44519531c960e0fd"
+    },
+    "Hariti": {
+      "gameId": 195,
+      "officialNameZh": "诃梨帝母",
+      "officialNameEn": "Hariti",
+      "messageLabel": "DEVIL_ID_195_HARITI",
+      "pages": [
+        "以鬼子母神的身份\n为人所知的女神。\n作为孩童出生成长的守护神\n受到世人信仰。\n　\n她原本是绑架并吞食\n人类小孩的恶鬼，\n但因为自己的500个孩子中\n最小也是自己最疼爱的那个\n被释迦牟尼藏起，\n而陷入了极度的悲伤之中。\n释迦牟尼以此为契机对她进行劝诫，\n让她明白了双亲失去孩子时的感受。\n于是她改过自新成为善神，\n从此以石榴为食，不再吞食小孩。"
+      ],
+      "paragraphs": [
+        "以鬼子母神的身份为人所知的女神。作为孩童出生成长的守护神受到世人信仰。",
+        "她原本是绑架并吞食人类小孩的恶鬼，但因为自己的500个孩子中最小也是自己最疼爱的那个被释迦牟尼藏起，而陷入了极度的悲伤之中。释迦牟尼以此为契机对她进行劝诫，让她明白了双亲失去孩子时的感受。于是她改过自新成为善神，从此以石榴为食，不再吞食小孩。"
+      ],
+      "localizationKeys": [
+        "7260D094436515FB5825D6972CF27E1F"
+      ],
+      "textSha256": "a456a29bd3d2c4142536eb9af5f985752dc01075dc815b00fb8b68b1419b0850"
+    },
+    "Hayataro": {
+      "gameId": 152,
+      "officialNameZh": "早太郎",
+      "officialNameEn": "Hayataro",
+      "messageLabel": "DEVIL_ID_152_HAYATARO",
+      "pages": [
+        "相传是长野的光前寺\n所喂养的一条灵犬，\n曾留下消灭怪物的传说。\n　\n过去有一只自称神明的猴怪\n在远江的见附村要求村民\n献上少女作为贡品，\n但这只猴怪非常害怕早太郎。\n一位云游僧听说了这件事后，\n向光前寺的和尚请求让早太郎帮忙。\n早太郎造访了村子并在一场战斗后\n消灭了猴怪，但自己也身负重伤，\n最终千辛万苦回到了光前寺，\n在和尚身前咽下了最后一口气。"
+      ],
+      "paragraphs": [
+        "相传是长野的光前寺所喂养的一条灵犬，曾留下消灭怪物的传说。",
+        "过去有一只自称神明的猴怪在远江的见附村要求村民献上少女作为贡品，但这只猴怪非常害怕早太郎。一位云游僧听说了这件事后，向光前寺的和尚请求让早太郎帮忙。早太郎造访了村子并在一场战斗后消灭了猴怪，但自己也身负重伤，最终千辛万苦回到了光前寺，在和尚身前咽下了最后一口气。"
+      ],
+      "localizationKeys": [
+        "7FE07A9E4437BF8A48FB598ED2441CF1"
+      ],
+      "textSha256": "86579ed7f52a4e29a92dc437d6af8d80955901ecfead1da7d290050b2a71c7cc"
+    },
+    "Hecatoncheires": {
+      "gameId": 322,
+      "officialNameZh": "百臂巨人",
+      "officialNameEn": "Hecatoncheires",
+      "messageLabel": "DEVIL_ID_322_HEKATONCHEIR",
+      "pages": [
+        "希腊神话中由乌拉诺斯\n和盖亚所生的巨人。\n名字的意思是“拥有百手者”。\n　\n诸神和泰坦一族之间爆发战争时，\n他被宙斯带出了亡者的世界，\n协助宙斯为胜利做出了贡献。"
+      ],
+      "paragraphs": [
+        "希腊神话中由乌拉诺斯和盖亚所生的巨人。名字的意思是“拥有百手者”。",
+        "诸神和泰坦一族之间爆发战争时，他被宙斯带出了亡者的世界，协助宙斯为胜利做出了贡献。"
+      ],
+      "localizationKeys": [
+        "0EFFCA2D447344A9503F869ECFFD6B96"
+      ],
+      "textSha256": "8b65232cd6da6ec00d2542637a71bfe6bf3067a010cbe5cb6ea568ad48c26c80"
+    },
+    "Hell Biker": {
+      "gameId": 356,
+      "officialNameZh": "地狱天使",
+      "officialNameEn": "Hell Biker",
+      "messageLabel": "DEVIL_ID_356_HELLSANGEL",
+      "pages": [
+        "自称“地狱天使”，\n并作为恶魔出现的愤怒骑士。\n　\n憎恨自己也憎恨世界，\n这种愤怒把他变成了只能通过\n暴力来表达意志的可憎存在。"
+      ],
+      "paragraphs": [
+        "自称“地狱天使”，并作为恶魔出现的愤怒骑士。",
+        "憎恨自己也憎恨世界，这种愤怒把他变成了只能通过暴力来表达意志的可憎存在。"
+      ],
+      "localizationKeys": [
+        "15E011FC465BC1893740618BC0C70C0B"
+      ],
+      "textSha256": "3e723596813830300f02bde1b85de68d12b17c6e96c743254a8ecc5c05ab9f1d"
+    },
+    "High Pixie": {
+      "gameId": 56,
+      "officialNameZh": "高等皮克希",
+      "officialNameEn": "High Pixie",
+      "messageLabel": "DEVIL_ID_056_HIGHPIXIE",
+      "pages": [
+        "在妖精皮克希的族群中\n地位较高的那一批，力量更强，\n担任类似于士兵的职责。\n　\n在皮克希们居住的遗迹\n或洞穴中，她们被认为\n是负责抵御外敌的。"
+      ],
+      "paragraphs": [
+        "在妖精皮克希的族群中地位较高的那一批，力量更强，担任类似于士兵的职责。",
+        "在皮克希们居住的遗迹或洞穴中，她们被认为是负责抵御外敌的。"
+      ],
+      "localizationKeys": [
+        "64BA5520428C6B591461728559A9A3C5"
+      ],
+      "textSha256": "7649ef9dd51145092b053885e23e4b4435caf40002fa608e3f99d9974c0b1710"
+    },
+    "Horus": {
+      "gameId": 13,
+      "officialNameZh": "荷鲁斯",
+      "officialNameEn": "Horus",
+      "messageLabel": "DEVIL_ID_013_HORUS",
+      "pages": [
+        "广泛象征了天空、鹰隼、\n尼罗河湍流等自然恩赐\n及伟大的古埃及神明。\n　\n在某些时候，荷鲁斯被\n视为主神，受此影响，\n他也兼具太阳的属性。"
+      ],
+      "paragraphs": [
+        "广泛象征了天空、鹰隼、尼罗河湍流等自然恩赐及伟大的古埃及神明。",
+        "在某些时候，荷鲁斯被视为主神，受此影响，他也兼具太阳的属性。"
+      ],
+      "localizationKeys": [
+        "C343C6CC45771E30EC403D93C657EE02"
+      ],
+      "textSha256": "31bd47b7a39c27c2e8356d0959655d9af3e46d812282db4a04fc752501e26273"
+    },
+    "Hua Po": {
+      "gameId": 333,
+      "officialNameZh": "花魄",
+      "officialNameEn": "Hua Po",
+      "messageLabel": "DEVIL_ID_333_KAHAKU",
+      "pages": [
+        "中国传说中的树精，会寄宿在\n有多个人上吊过的树木上。\n　\n长了一幅身穿白衣的\n美丽少女样貌，\n但身形要比人类小巧得多。\n据说她们虽然不会说话，但声音\n却像小鸟的叫声一般清脆悦耳。"
+      ],
+      "paragraphs": [
+        "中国传说中的树精，会寄宿在有多个人上吊过的树木上。",
+        "长了一幅身穿白衣的美丽少女样貌，但身形要比人类小巧得多。据说她们虽然不会说话，但声音却像小鸟的叫声一般清脆悦耳。"
+      ],
+      "localizationKeys": [
+        "E8B7F01742BB42F7D1A2ED8F93F843C3"
+      ],
+      "textSha256": "4a90ad30d7735d8f090352865bfbc042448be3885f0758cc0f4d0272ce8539b4"
+    },
+    "Huang Long": {
+      "gameId": 94,
+      "officialNameZh": "黄龙",
+      "officialNameEn": "Huang Long",
+      "messageLabel": "DEVIL_ID_094_KOURYU",
+      "pages": [
+        "中国神话中的尊贵龙神。\n　\n与其名字一样\n是通体黄色的瑞兽，当人间\n发生吉事的时候便会现身。\n传说其司掌大地\n和五行之土的力量，\n统领着青龙、白虎、\n玄武、朱雀四神。"
+      ],
+      "paragraphs": [
+        "中国神话中的尊贵龙神。",
+        "与其名字一样是通体黄色的瑞兽，当人间发生吉事的时候便会现身。传说其司掌大地和五行之土的力量，统领着青龙、白虎、玄武、朱雀四神。"
+      ],
+      "localizationKeys": [
+        "99C4698E4BF858021284D085E9E7EB0F"
+      ],
+      "textSha256": "426ee2a771e67345f969ed56b146b31cdf919a525f30eba31899aa9726a3d779"
+    },
+    "Hydra": {
+      "gameId": 115,
+      "officialNameZh": "海德拉",
+      "officialNameEn": "Hydra",
+      "messageLabel": "DEVIL_ID_115",
+      "pages": [
+        "希腊神话中的一种怪物。\n传说是一条拥有九个头的巨蛇，\n但关于头的个数说法并不统一。\n父亲为风暴巨人堤丰，\n母亲为蛇神厄客德娜。\n　\n拥有不死的生命力，\n据说即使把它的头砍下，\n也会从伤口处立刻再长出两个头。\n另外它还身怀剧毒，凡人只是\n吸到它吐出的气息就会毙命。\n作为赫拉克勒斯的十二伟业之一\n登场，并最终死于赫拉克勒斯手下。"
+      ],
+      "paragraphs": [
+        "希腊神话中的一种怪物。传说是一条拥有九个头的巨蛇，但关于头的个数说法并不统一。父亲为风暴巨人堤丰，母亲为蛇神厄客德娜。",
+        "拥有不死的生命力，据说即使把它的头砍下，也会从伤口处立刻再长出两个头。另外它还身怀剧毒，凡人只是吸到它吐出的气息就会毙命。作为赫拉克勒斯的十二伟业之一登场，并最终死于赫拉克勒斯手下。"
+      ],
+      "localizationKeys": [
+        "01AEDBAA47561ED4B6FEB381C01656A6"
+      ],
+      "textSha256": "49af858ea2e03a71fe08844eba68697a931891c135d13e2515e3d8de1036810d"
+    },
+    "Idun": {
+      "gameId": 23,
+      "officialNameZh": "伊登",
+      "officialNameEn": "Idun",
+      "messageLabel": "DEVIL_ID_023_ITHUNN",
+      "pages": [
+        "在北欧神话中登场的女神。\n是诗歌之神布拉基的妻子，\n也是金苹果的管理者。\n　\n传说众神之所以能永葆青春，\n就是借助了由她管理的\n金苹果的力量。\n另外，据说那种苹果\n是放在白蜡木箱中保管的。"
+      ],
+      "paragraphs": [
+        "在北欧神话中登场的女神。是诗歌之神布拉基的妻子，也是金苹果的管理者。",
+        "传说众神之所以能永葆青春，就是借助了由她管理的金苹果的力量。另外，据说那种苹果是放在白蜡木箱中保管的。"
+      ],
+      "localizationKeys": [
+        "5F7D88A4402B597CC4330790B2D3D845"
+      ],
+      "textSha256": "3080655b3a3eed9f83486fe369544b73b73e3837c84f93d17d62cf51664cd804"
+    },
+    "Inanna": {
+      "gameId": 189,
+      "officialNameZh": "伊南娜",
+      "officialNameEn": "Inanna",
+      "messageLabel": "DEVIL_ID_189_INANNA",
+      "pages": [
+        "在苏美尔神话中登场的丰饶女神，\n名字的意思是“天之女主人”。\n　\n作为掌管丰饶的女神，\n世人常将她与“阿佛洛狄忒”、\n“伊什塔尔”、“维纳斯”等神视为\n同一存在，因此她拥有很多信众。\n同时她也拥有\n排除外敌的守护神的一面，\n据说就连那些男性神\n在面对她的力量时\n也会像蝙蝠一般落荒而逃。"
+      ],
+      "paragraphs": [
+        "在苏美尔神话中登场的丰饶女神，名字的意思是“天之女主人”。",
+        "作为掌管丰饶的女神，世人常将她与“阿佛洛狄忒”、“伊什塔尔”、“维纳斯”等神视为同一存在，因此她拥有很多信众。同时她也拥有排除外敌的守护神的一面，据说就连那些男性神在面对她的力量时也会像蝙蝠一般落荒而逃。"
+      ],
+      "localizationKeys": [
+        "47CC87DD4F459EE9B67730ABF193BE8C"
+      ],
+      "textSha256": "54655a08db9f3b948a963c31393e44a9071b51842a8f5cc1c24ac4d3ca2b4405"
+    },
+    "Incubus": {
+      "gameId": 68,
+      "officialNameZh": "男梦魔",
+      "officialNameEn": "Incubus",
+      "messageLabel": "DEVIL_ID_068_INCUBUS",
+      "pages": [
+        "欧洲各地的传说中所提及的\n男性梦魔。和女梦魔相对应。\n　\n据说他们会在女性入睡时\n潜入对方梦中令其怀孕。\n另外据说这样生下的孩子\n会成为恶灵或魔女。\n如果被男梦魔缠上，\n需要到教会进行祈祷，\n但这样也只能赶走男梦魔，\n无法将其消灭。"
+      ],
+      "paragraphs": [
+        "欧洲各地的传说中所提及的男性梦魔。和女梦魔相对应。",
+        "据说他们会在女性入睡时潜入对方梦中令其怀孕。另外据说这样生下的孩子会成为恶灵或魔女。如果被男梦魔缠上，需要到教会进行祈祷，但这样也只能赶走男梦魔，无法将其消灭。"
+      ],
+      "localizationKeys": [
+        "2A4F3E904904037A5D3F3182DB0271E6"
+      ],
+      "textSha256": "6c4661cbb69c3625bc804d079369b85f78ee8b1fe1b09c3bb01b46b4aa5a53b4"
+    },
+    "Inugami": {
+      "gameId": 138,
+      "officialNameZh": "犬神",
+      "officialNameEn": "Inugami",
+      "messageLabel": "DEVIL_ID_138_INUGAMI",
+      "pages": [
+        "日本传说中的犬灵，自古以来，\n人们都认为它会附身人类作恶。\n　\n被犬神附身的人会丧失理智。\n另外，传说阴阳师们\n会用犬神来当式神。\n犬神常被用于害人的咒术。\n根据记载，创造这种犬灵的方式，\n便是按照术法的步骤\n让活生生的狗毙命。"
+      ],
+      "paragraphs": [
+        "日本传说中的犬灵，自古以来，人们都认为它会附身人类作恶。",
+        "被犬神附身的人会丧失理智。另外，传说阴阳师们会用犬神来当式神。犬神常被用于害人的咒术。根据记载，创造这种犬灵的方式，便是按照术法的步骤让活生生的狗毙命。"
+      ],
+      "localizationKeys": [
+        "74D25C1F44A46E76AF82A188A95882CD"
+      ],
+      "textSha256": "125f9d11d021b8b89730ff6b02bc5adb58efd12d75b54b4bc0fba6aa94f40575"
+    },
+    "Ippon-Datara": {
+      "gameId": 316,
+      "officialNameZh": "一本踏鞴",
+      "officialNameEn": "Ippon-Datara",
+      "messageLabel": "DEVIL_ID_316_IPPONDATARA",
+      "pages": [
+        "传说中居住在熊野的深山里，\n只有一只眼睛和一条腿的妖怪。\n　\n据说当山上积雪时，\n雪地里就会留下大约30厘米长，\n似乎只由一只脚踏出的足迹。"
+      ],
+      "paragraphs": [
+        "传说中居住在熊野的深山里，只有一只眼睛和一条腿的妖怪。",
+        "据说当山上积雪时，雪地里就会留下大约30厘米长，似乎只由一只脚踏出的足迹。"
+      ],
+      "localizationKeys": [
+        "12C9EA2F4E167AE28AB04B80CE7B871B"
+      ],
+      "textSha256": "aac3ab21f3db2b91671f086fc7c3d7e251604288e5a46bf7a58ff307b6036a84"
+    },
+    "Ishtar": {
+      "gameId": 25,
+      "officialNameZh": "伊什塔尔",
+      "officialNameEn": "Ishtar",
+      "messageLabel": "DEVIL_ID_025_ISHTAR",
+      "pages": [
+        "阿卡德的爱欲与战争女神。\n人称“天之女王”，\n被视为金星的化身。\n　\n在《吉尔伽美什史诗》中，\n她和诸多英雄有着情人关系，\n但每过不久便会杀死他们，\n或将他们变为动物。"
+      ],
+      "paragraphs": [
+        "阿卡德的爱欲与战争女神。人称“天之女王”，被视为金星的化身。",
+        "在《吉尔伽美什史诗》中，她和诸多英雄有着情人关系，但每过不久便会杀死他们，或将他们变为动物。"
+      ],
+      "localizationKeys": [
+        "D651F9614BD4D7A41F39E497FA4B51DB"
+      ],
+      "textSha256": "969a3c46813db49ce22741d6df987bfa53345fb8d0feb743b93c65f7bd6fda64"
+    },
+    "Isis": {
+      "gameId": 193,
+      "officialNameZh": "伊西斯",
+      "officialNameEn": "Isis",
+      "messageLabel": "DEVIL_ID_193_ISIS",
+      "pages": [
+        "被称为“埃及之母”的女神。\n被认为是冥界之神\n欧西里斯的妹妹兼妻子。\n　\n传说在丈夫被沙暴之神赛特肢解后，\n她把丈夫的遗骸重新组合起来，\n并创造出遗失了的男性生殖器，\n将丈夫复活后和他交合，\n之后生下了荷鲁斯。\n作为死者的守护女神，\n在许多坟墓中的壁画上\n都能看到她的身影。\n另外伊西斯的哺乳图，据说是后来\n玛利亚怀抱幼年耶稣图的原型。"
+      ],
+      "paragraphs": [
+        "被称为“埃及之母”的女神。被认为是冥界之神欧西里斯的妹妹兼妻子。",
+        "传说在丈夫被沙暴之神赛特肢解后，她把丈夫的遗骸重新组合起来，并创造出遗失了的男性生殖器，将丈夫复活后和他交合，之后生下了荷鲁斯。作为死者的守护女神，在许多坟墓中的壁画上都能看到她的身影。另外伊西斯的哺乳图，据说是后来玛利亚怀抱幼年耶稣图的原型。"
+      ],
+      "localizationKeys": [
+        "CDC84419466D94DB00CC22B3202A4651"
+      ],
+      "textSha256": "3a9fda2d6f691b5362fa1f8e174d9c4f23f0c527885d447e9baade932295cb82"
+    },
+    "Jack Frost": {
+      "gameId": 58,
+      "officialNameZh": "杰克霜精",
+      "officialNameEn": "Jack Frost",
+      "messageLabel": "DEVIL_ID_058_JACKFROST",
+      "pages": [
+        "在冬天出现的霜精。\n身体由雪和冰构成，\n到春天就会融化消失。\n　\n虽然长相可爱，\n但同时也有着可怕之处，\n会一边大笑\n一边吐出冷气把人冻住。\n据说原本是像\n大脚怪雪人那样的恐怖怪物，\n变成现在这样的可爱样子，\n是为了更有效率地冻人。"
+      ],
+      "paragraphs": [
+        "在冬天出现的霜精。身体由雪和冰构成，到春天就会融化消失。",
+        "虽然长相可爱，但同时也有着可怕之处，会一边大笑一边吐出冷气把人冻住。据说原本是像大脚怪雪人那样的恐怖怪物，变成现在这样的可爱样子，是为了更有效率地冻人。"
+      ],
+      "localizationKeys": [
+        "50E54A62455E46BA69F22BA41165CE86"
+      ],
+      "textSha256": "515a563d16195f7b2d5ece89b8def2022ab44da234c27dae4653c7a917b866bd"
+    },
+    "Jack-o'-Lantern": {
+      "gameId": 57,
+      "officialNameZh": "杰克灯笼",
+      "officialNameEn": "Jack-o'-Lantern",
+      "messageLabel": "DEVIL_ID_057_JACKOLANTERN",
+      "pages": [
+        "造型广为人知的\n万圣节南瓜灯妖怪。\n　\n原本是在英国康沃尔地区\n被称为精灵意志的鬼火，\n与日本的人魂相似，\n被认为是彷徨在\n世间的死者魂魄。\n据说会在夜晚出现\n惊吓行人，或是引诱行人\n跟随自己，最后让其迷路。"
+      ],
+      "paragraphs": [
+        "造型广为人知的万圣节南瓜灯妖怪。",
+        "原本是在英国康沃尔地区被称为精灵意志的鬼火，与日本的人魂相似，被认为是彷徨在世间的死者魂魄。据说会在夜晚出现惊吓行人，或是引诱行人跟随自己，最后让其迷路。"
+      ],
+      "localizationKeys": [
+        "989DEAAA49243D86FB736C8CD1B64419"
+      ],
+      "textSha256": "7b70e112bd25b1e210b5d4c02b31909a26e42a1be3c7c520e3b0323e6cc3205c"
+    },
+    "Jatayu": {
+      "gameId": 281,
+      "officialNameZh": "佳塔由",
+      "officialNameEn": "Jatayu",
+      "messageLabel": "DEVIL_ID_281_JATAYU",
+      "pages": [
+        "印度神话中的秃鹫之王，\n被视为灵鸟迦楼罗的化身。\n　\n在叙事诗《罗摩衍那》中，\n记载了他为帮助\n毗湿奴的化身罗摩王\n从魔王罗波那手中\n救回悉多公主\n而奋勇作战的英姿。"
+      ],
+      "paragraphs": [
+        "印度神话中的秃鹫之王，被视为灵鸟迦楼罗的化身。",
+        "在叙事诗《罗摩衍那》中，记载了他为帮助毗湿奴的化身罗摩王从魔王罗波那手中救回悉多公主而奋勇作战的英姿。"
+      ],
+      "localizationKeys": [
+        "3AEB58C14FB7B5AB6C4D0395C6F043C9"
+      ],
+      "textSha256": "67ea2711bbf7903e91a44f507b995530de635a497c2c99b70f93724358a82921"
+    },
+    "Jikokuten": {
+      "gameId": 204,
+      "officialNameZh": "持国天王",
+      "officialNameEn": "Jikokuten",
+      "messageLabel": "DEVIL_ID_204_JIKOKUTEN",
+      "pages": [
+        "是佛教的护法神，\n也是四大天王之一。\n　\n八部众与他是同族。\n受帝释天之命守护四方中的东方。\n常被描绘为身着甲胄、\n手持长剑的怒面形象。\n正如“持国”之名所示，\n据说其有大神通，能保国泰民安。"
+      ],
+      "paragraphs": [
+        "是佛教的护法神，也是四大天王之一。",
+        "八部众与他是同族。受帝释天之命守护四方中的东方。常被描绘为身着甲胄、手持长剑的怒面形象。正如“持国”之名所示，据说其有大神通，能保国泰民安。"
+      ],
+      "localizationKeys": [
+        "475BFE294A6237B6DDB39AADFE25C40F"
+      ],
+      "textSha256": "cd51fcc31b8d12d796b3ba70bad987212349c9fe64c13ee4d0529ad486380937"
+    },
+    "Kaiwan": {
+      "gameId": 66,
+      "officialNameZh": "迦温",
+      "officialNameEn": "Kaiwan",
+      "messageLabel": "DEVIL_ID_066_KAIWAN",
+      "pages": [
+        "根据旧约圣经的《阿摩司书》记载，\n是以色列人在接受上帝信仰前\n所信奉的偶像神。\n　\n据说他象征着星辰，\n很多时候都和另一个\n名为撒固的偶像神\n被视为成对的神明。"
+      ],
+      "paragraphs": [
+        "根据旧约圣经的《阿摩司书》记载，是以色列人在接受上帝信仰前所信奉的偶像神。",
+        "据说他象征着星辰，很多时候都和另一个名为撒固的偶像神被视为成对的神明。"
+      ],
+      "localizationKeys": [
+        "27911066402C6799E4EC3BA76A28AF15"
+      ],
+      "textSha256": "2d755212bdbf5381be297dd4b82b01f83efc20e28478d3cddef05ec9fc8f4a84"
+    },
+    "Kali": {
+      "gameId": 190,
+      "officialNameZh": "迦梨",
+      "officialNameEn": "Kali",
+      "messageLabel": "DEVIL_ID_190_KALI",
+      "pages": [
+        "喜爱破坏和杀戮的暗黑女神。\n由湿婆之妻帕尔瓦蒂女神变身而成。\n　\n传说帕尔瓦蒂女神的\n另一个化身难近母女神\n在面对阿修罗的军队时，\n因极度的愤怒而面庞发黑，\n迦梨便从这张愤怒的黑脸中出现，\n转瞬之间就打倒了阿修罗们。\n据说她的形象是黑色皮肤，\n佩戴着用人头和骸骨做成的首饰，\n有着四只甚至更多的手臂，\n那些手上都拿着\n沾满鲜血的武器或人头。"
+      ],
+      "paragraphs": [
+        "喜爱破坏和杀戮的暗黑女神。由湿婆之妻帕尔瓦蒂女神变身而成。",
+        "传说帕尔瓦蒂女神的另一个化身难近母女神在面对阿修罗的军队时，因极度的愤怒而面庞发黑，迦梨便从这张愤怒的黑脸中出现，转瞬之间就打倒了阿修罗们。据说她的形象是黑色皮肤，佩戴着用人头和骸骨做成的首饰，有着四只甚至更多的手臂，那些手上都拿着沾满鲜血的武器或人头。"
+      ],
+      "localizationKeys": [
+        "6AC4C76D4072A0830AEAFE802AF79ED0"
+      ],
+      "textSha256": "0b3cb95ae63a369cd2853b99464deb72d629540f880e309b4dac6469d469a6d4"
+    },
+    "Karasu Tengu": {
+      "gameId": 319,
+      "officialNameZh": "鸦天狗",
+      "officialNameEn": "Karasu Tengu",
+      "messageLabel": "DEVIL_ID_319_KARASUTENGU",
+      "pages": [
+        "天狗的同族。\n　\n并未长有堪称天狗象征的长鼻子。\n也有说法称他如同其名字描绘的那样，\n暗藏着像乌鸦那样尖锐的鸟喙。\n被认为有着邪恶的性格，\n会附身于人，使其堕落。"
+      ],
+      "paragraphs": [
+        "天狗的同族。",
+        "并未长有堪称天狗象征的长鼻子。也有说法称他如同其名字描绘的那样，暗藏着像乌鸦那样尖锐的鸟喙。被认为有着邪恶的性格，会附身于人，使其堕落。"
+      ],
+      "localizationKeys": [
+        "90ED4471439A579B3F69E1B81A44491C"
+      ],
+      "textSha256": "8d72085fdac243f5c53819b2fa8b278646ba2469ec88b8d324fa66c7a201502e"
+    },
+    "Kaya-no-Hime": {
+      "gameId": 330,
+      "officialNameZh": "鹿屋野比卖",
+      "officialNameEn": "Kaya-no-Hime",
+      "messageLabel": "DEVIL_ID_330_KAYANOHIME",
+      "pages": [
+        "在日本神话中登场的草之神。\n　\n名字里的“鹿屋（kaya）”\n指用于铺屋顶的茅草，\n是人们熟知的一种草。\n家家屋顶上都能见到的茅草之名，\n后来便成为了草之灵，\n乃至草之神的名字。"
+      ],
+      "paragraphs": [
+        "在日本神话中登场的草之神。",
+        "名字里的“鹿屋（kaya）”指用于铺屋顶的茅草，是人们熟知的一种草。家家屋顶上都能见到的茅草之名，后来便成为了草之灵，乃至草之神的名字。"
+      ],
+      "localizationKeys": [
+        "F44D81CD4841E0E6EC6247896CED0DE5"
+      ],
+      "textSha256": "895ba38fc91c2845b263c10a6f56975ea716676a6a8344c26b31c9281342777c"
+    },
+    "Kelpie": {
+      "gameId": 55,
+      "officialNameZh": "凯尔派",
+      "officialNameEn": "Kelpie",
+      "messageLabel": "DEVIL_ID_055_KELPIE",
+      "pages": [
+        "苏格兰民间故事里提及的水妖，\n外表看上去和马很相似。\n　\n传说它有着可怕的一面，\n会把受到它吸引的人淹死，\n但若能驯服它，\n它就会化为一匹\n至高无上的忠诚骏马。"
+      ],
+      "paragraphs": [
+        "苏格兰民间故事里提及的水妖，外表看上去和马很相似。",
+        "传说它有着可怕的一面，会把受到它吸引的人淹死，但若能驯服它，它就会化为一匹至高无上的忠诚骏马。"
+      ],
+      "localizationKeys": [
+        "E12488AE412DB6F822ABB9B1221E2973"
+      ],
+      "textSha256": "e7593b54005fd6cbd6c91852adc00166c30eb11fbf04c90b25550f79dd8fcb3e"
+    },
+    "Khonsu": {
+      "gameId": 7,
+      "officialNameZh": "孔苏",
+      "officialNameEn": "Khonsu",
+      "messageLabel": "DEVIL_ID_007_KHONS",
+      "pages": [
+        "埃及神话中司掌月亮的神明。\n常被描绘为一尊年轻的木乃伊，\n于其侧头部有卷发垂下。\n　\n相传他拥有一艘月之船，\n是月亮的化身，\n并会与法老王如影随形。\n根据埃及第五王朝的\n末代法老王乌尼斯\n所葬金字塔中的铭文，\n若法老王意图吃人获得力量，\n孔苏便会为法老王杀死首长们\n以榨取他们体内的精华。"
+      ],
+      "paragraphs": [
+        "埃及神话中司掌月亮的神明。常被描绘为一尊年轻的木乃伊，于其侧头部有卷发垂下。",
+        "相传他拥有一艘月之船，是月亮的化身，并会与法老王如影随形。根据埃及第五王朝的末代法老王乌尼斯所葬金字塔中的铭文，若法老王意图吃人获得力量，孔苏便会为法老王杀死首长们以榨取他们体内的精华。"
+      ],
+      "localizationKeys": [
+        "6EF46EF24F8A53349D0085A18A2632F3"
+      ],
+      "textSha256": "67119daf19b0d594036a2d443c84285e952bf0186722094721b951ddb69f0879"
+    },
+    "Khonsu Ra": {
+      "gameId": 15,
+      "officialNameZh": "孔苏·拉",
+      "officialNameEn": "Khonsu Ra",
+      "messageLabel": "DEVIL_ID_015_KHONSRA",
+      "pages": [
+        "由埃及神话中掌管月亮的神明孔苏\n和太阳神拉融合而成。\n　\n那象征王权的面具显示着拉的面貌，\n在鹰隼的头上顶着一个\n缠绕着眼镜蛇的日晕圆盘。\n传说他拥有和万物相关的力量，\n万物包括日月、昼夜、\n凡间和冥界等等。"
+      ],
+      "paragraphs": [
+        "由埃及神话中掌管月亮的神明孔苏和太阳神拉融合而成。",
+        "那象征王权的面具显示着拉的面貌，在鹰隼的头上顶着一个缠绕着眼镜蛇的日晕圆盘。传说他拥有和万物相关的力量，万物包括日月、昼夜、凡间和冥界等等。"
+      ],
+      "localizationKeys": [
+        "7E45EC2A42D6D4D9CF43CAB41C374C95"
+      ],
+      "textSha256": "6f2a0a0a121402542ca0317b487afdaf85c8f15beb85fb497fbe2703251edc7b"
+    },
+    "Kikuri-Hime": {
+      "gameId": 194,
+      "officialNameZh": "菊理媛",
+      "officialNameEn": "Kikuri-Hime",
+      "messageLabel": "DEVIL_ID_194_KIKURIHIME",
+      "pages": [
+        "菊理姬。\n也被称为白山姬，是白山之女神。\n　\n她是转述伊邪那美神启的巫女\n经过神格化后的形象，\n据说当伊邪那岐和伊邪那美\n于黄泉之国争执时，她作为\n仲裁者在黄泉比良坂现身。\n她是爱与结缘的女神，\n因此在日语中，人们以\n有结缘之意的“菊理”一词\n为她命名。"
+      ],
+      "paragraphs": [
+        "菊理姬。也被称为白山姬，是白山之女神。",
+        "她是转述伊邪那美神启的巫女经过神格化后的形象，据说当伊邪那岐和伊邪那美于黄泉之国争执时，她作为仲裁者在黄泉比良坂现身。她是爱与结缘的女神，因此在日语中，人们以有结缘之意的“菊理”一词为她命名。"
+      ],
+      "localizationKeys": [
+        "7E57663A43A81EBE5BE86CBB928FF119"
+      ],
+      "textSha256": "614eafcce17b4379981b44388e54674be9c786f0270482a89d102dfab245a33d"
+    },
+    "Kin-Ki": {
+      "gameId": 314,
+      "officialNameZh": "金鬼",
+      "officialNameEn": "Kin-Ki",
+      "messageLabel": "DEVIL_ID_314_KINKI",
+      "pages": [
+        "曾在平安时代统治伊贺、伊势地区，\n传说中的豪族“藤原千方”\n所驱使的四鬼之一。\n　\n传说其拥有刀枪不入的坚固身躯，\n并以此帮助千方获得了胜利。\n据说他最后因为\n纪友雄的和歌坠入了地狱深处，\n而他们坠落后留下的\n四个大洞则留存到了今日。"
+      ],
+      "paragraphs": [
+        "曾在平安时代统治伊贺、伊势地区，传说中的豪族“藤原千方”所驱使的四鬼之一。",
+        "传说其拥有刀枪不入的坚固身躯，并以此帮助千方获得了胜利。据说他最后因为纪友雄的和歌坠入了地狱深处，而他们坠落后留下的四个大洞则留存到了今日。"
+      ],
+      "localizationKeys": [
+        "4BAD13584909AD12DD71E096F0B97422"
+      ],
+      "textSha256": "cac8061d73c0066d94acb2442880dba6a546e13c88bfbf592684442a1685e96f"
+    },
+    "King Frost": {
+      "gameId": 87,
+      "officialNameZh": "霜精之王",
+      "officialNameEn": "King Frost",
+      "messageLabel": "DEVIL_ID_087_KINGFROST",
+      "pages": [
+        "拥有巨大的雪人身躯，\n是杰克霜精的王者。\n　\n它统领着无数的杰克霜精，\n拥有以白雪与冰霜\n冻结整个世界的力量，\n但是性格非常天真无邪。"
+      ],
+      "paragraphs": [
+        "拥有巨大的雪人身躯，是杰克霜精的王者。",
+        "它统领着无数的杰克霜精，拥有以白雪与冰霜冻结整个世界的力量，但是性格非常天真无邪。"
+      ],
+      "localizationKeys": [
+        "83D593E5447E754EC7D135B185B9F5DB"
+      ],
+      "textSha256": "426869fed866a492434f940f24c55c0f0ef018536c1747220bb8d9aff3cd9431"
+    },
+    "Kinmamon": {
+      "gameId": 385,
+      "officialNameZh": "君真物",
+      "officialNameEn": "Kinmamon",
+      "messageLabel": "DEVIL_ID_385_KINMAMON",
+      "pages": [
+        "琉球神道的至高神。\n传说她来自于常世国“仪来河内”，\n自天地开辟以来一直守护着琉球国。\n　\n这位神明有阴阳二相，\n从天而降的被称为\n“仪来河内君真物”，\n而由海而升的则被称为\n“御没神座君真物”。\n她也被认为是一尊稀人神，\n会在注定的时刻自彼岸造访，\n并附在女性身上现身于人们面前。"
+      ],
+      "paragraphs": [
+        "琉球神道的至高神。传说她来自于常世国“仪来河内”，自天地开辟以来一直守护着琉球国。",
+        "这位神明有阴阳二相，从天而降的被称为“仪来河内君真物”，而由海而升的则被称为“御没神座君真物”。她也被认为是一尊稀人神，会在注定的时刻自彼岸造访，并附在女性身上现身于人们面前。"
+      ],
+      "localizationKeys": [
+        "7BF9695C40B446950A73BAAA08C5EB28"
+      ],
+      "textSha256": "0dc9ac568abd1196a95da554c14cb46a02c9382efc18666cad7955b4cb96e02d"
+    },
+    "Kodama": {
+      "gameId": 336,
+      "officialNameZh": "木灵",
+      "officialNameEn": "Kodama",
+      "messageLabel": "DEVIL_ID_336_KODAMA",
+      "pages": [
+        "日本传说中的草木之灵，\n据说会寄宿在\n树龄超过百年的大树之中。\n　\n日语中声音在山间回荡的现象\n便是以其命名，\n这是因为过去人们认为这种现象\n是木灵在对说话人做出回答。"
+      ],
+      "paragraphs": [
+        "日本传说中的草木之灵，据说会寄宿在树龄超过百年的大树之中。",
+        "日语中声音在山间回荡的现象便是以其命名，这是因为过去人们认为这种现象是木灵在对说话人做出回答。"
+      ],
+      "localizationKeys": [
+        "DDE95E024CFB0400071C34AE89867106"
+      ],
+      "textSha256": "79b4237b88d61ed2488dd073d874a7e614114ddaaf55723510b109d6cb30a6e4"
+    },
+    "Konohana Sakuya": {
+      "gameId": 32,
+      "officialNameZh": "木花朔耶",
+      "officialNameEn": "Konohana Sakuya",
+      "messageLabel": "DEVIL_ID_032_KONOHANASAKUYA",
+      "pages": [
+        "于日本神话中登场的国津神之一，\n大山津见的女儿。\n磐长姬是她的姐姐。\n　\n她的名字象征着\n如樱花般盛开的女性，\n被认为是八百万神当中\n最为美丽的女神之一。\n被天津神琼琼杵尊看中，成为了\n他的妻子，并在一夜之内怀胎，\n但其腹中之子被怀疑是国津神血脉，\n为证明清白，她一把火烧了正殿，\n并于燃烧的正殿中闭门不出，\n最终平安分娩。\n因为这个火中分娩的传说，\n她被看作一位火山之神。\n人们认为她和浅间大神为同一尊神明，\n但据说她曾经却是一位水神。"
+      ],
+      "paragraphs": [
+        "于日本神话中登场的国津神之一，大山津见的女儿。磐长姬是她的姐姐。",
+        "她的名字象征着如樱花般盛开的女性，被认为是八百万神当中最为美丽的女神之一。被天津神琼琼杵尊看中，成为了他的妻子，并在一夜之内怀胎，但其腹中之子被怀疑是国津神血脉，为证明清白，她一把火烧了正殿，并于燃烧的正殿中闭门不出，最终平安分娩。因为这个火中分娩的传说，她被看作一位火山之神。人们认为她和浅间大神为同一尊神明，但据说她曾经却是一位水神。"
+      ],
+      "localizationKeys": [
+        "F6A2F79C4E51520498B3D398A5AC4E0D"
+      ],
+      "textSha256": "72b1c825a2a353dea81aa75f820703c1287dccbb19d8a457b08df480ff6705aa"
+    },
+    "Koppa Tengu": {
+      "gameId": 42,
+      "officialNameZh": "木叶天狗",
+      "officialNameEn": "Koppa Tengu",
+      "messageLabel": "DEVIL_ID_042_KOPPATENGU",
+      "pages": [
+        "天狗的一种。\n　\n因为灵力比其他天狗弱，\n所以体型较小。\n据说是由长寿的狼所化，\n变身后的样子\n和鸦天狗相同。"
+      ],
+      "paragraphs": [
+        "天狗的一种。",
+        "因为灵力比其他天狗弱，所以体型较小。据说是由长寿的狼所化，变身后的样子和鸦天狗相同。"
+      ],
+      "localizationKeys": [
+        "F54E3A7B4D8760347EC1E8B22E03A4FB"
+      ],
+      "textSha256": "1a4281f46516fb31ba24f054a2999599ec13bc3af705f230335be43a394fdfe2"
+    },
+    "Koropokkur": {
+      "gameId": 334,
+      "officialNameZh": "克鲁波克鲁",
+      "officialNameEn": "Koropokkur",
+      "messageLabel": "DEVIL_ID_334_KORPOKKUR",
+      "pages": [
+        "阿伊努传说中\n小矮人外形的妖怪。\n　\n被称为“住在蜂斗菜下的人”，\n据说性格温顺且善良。\n传说他们曾与阿伊努人共同生活，\n但自从某一天两族关系破裂后，\n他们就完全销声匿迹了。"
+      ],
+      "paragraphs": [
+        "阿伊努传说中小矮人外形的妖怪。",
+        "被称为“住在蜂斗菜下的人”，据说性格温顺且善良。传说他们曾与阿伊努人共同生活，但自从某一天两族关系破裂后，他们就完全销声匿迹了。"
+      ],
+      "localizationKeys": [
+        "1B2D73E6455E93BCB9ABC1878E0E536B"
+      ],
+      "textSha256": "c9dc837b7bd75bc4a18bb4a2a09798218c1a04a816e758a93d8003664b621de8"
+    },
+    "Koumokuten": {
+      "gameId": 205,
+      "officialNameZh": "广目天王",
+      "officialNameEn": "Koumokuten",
+      "messageLabel": "DEVIL_ID_205_KOUMOKUTEN",
+      "pages": [
+        "是佛教的护法神，\n也是四大天王之一。\n　\n八部众与他是同族。\n受帝释天之命守护四方中的西方。\n常被描绘为身着甲胄、\n手持三叉矛的怒面形象。\n据说他会以\n锐利的眼神监视世界，\n并以其口才教化人们。"
+      ],
+      "paragraphs": [
+        "是佛教的护法神，也是四大天王之一。",
+        "八部众与他是同族。受帝释天之命守护四方中的西方。常被描绘为身着甲胄、手持三叉矛的怒面形象。据说他会以锐利的眼神监视世界，并以其口才教化人们。"
+      ],
+      "localizationKeys": [
+        "49BFCF794B29F79643E7B5873A59519B"
+      ],
+      "textSha256": "14336d858e4c12ec7a2d5dcac568d6149394ac83a20e9616b2580144731a22bd"
+    },
+    "Kresnik": {
+      "gameId": 40,
+      "officialNameZh": "克雷斯尼克",
+      "officialNameEn": "Kresnik",
+      "messageLabel": "DEVIL_ID_040_KRESNIK",
+      "pages": [
+        "善良的吸血鬼猎人，\n受到了光明力量的加护。\n名字来源于“十字架”。\n　\n和同样起源于斯洛文尼亚的\n吸血鬼库德拉克互为宿敌，\n彼此间不断重复着壮烈的战斗。\n在战斗中他们会变身为猪、公牛、\n马等动物，而克雷斯尼克\n变身的动物永远是白色。\n根据传说，神的敌人库德拉克\n绝对无法战胜光明的使者，\n两者间的战斗必定会以\n克雷斯尼克的胜利落幕。"
+      ],
+      "paragraphs": [
+        "善良的吸血鬼猎人，受到了光明力量的加护。名字来源于“十字架”。",
+        "和同样起源于斯洛文尼亚的吸血鬼库德拉克互为宿敌，彼此间不断重复着壮烈的战斗。在战斗中他们会变身为猪、公牛、马等动物，而克雷斯尼克变身的动物永远是白色。根据传说，神的敌人库德拉克绝对无法战胜光明的使者，两者间的战斗必定会以克雷斯尼克的胜利落幕。"
+      ],
+      "localizationKeys": [
+        "615DE0B1451707CBB30320939E6347DB"
+      ],
+      "textSha256": "e2819ed9e20abe57485a7377120127c22874d4dc6d11a46ad1e99d3c2fc2280e"
+    },
+    "Kudlak": {
+      "gameId": 346,
+      "officialNameZh": "库德拉克",
+      "officialNameEn": "Kudlak",
+      "messageLabel": "DEVIL_ID_346_KUDLAK",
+      "pages": [
+        "象征邪恶和黑暗的吸血鬼。\n和神的代行者克雷斯尼克不共戴天。\n　\n疫病、荒年、不幸等\n人类遇到的一切坏事，\n都被认为是库德拉克所致。\n传说他总是会袭击无辜之人\n和不设防之人。\n与克雷斯尼克战斗时，\n他会变化成马或猪之类的样貌，\n但毛色永远都是象征黑暗的黑色。"
+      ],
+      "paragraphs": [
+        "象征邪恶和黑暗的吸血鬼。和神的代行者克雷斯尼克不共戴天。",
+        "疫病、荒年、不幸等人类遇到的一切坏事，都被认为是库德拉克所致。传说他总是会袭击无辜之人和不设防之人。与克雷斯尼克战斗时，他会变化成马或猪之类的样貌，但毛色永远都是象征黑暗的黑色。"
+      ],
+      "localizationKeys": [
+        "C52348A54A2471D7255D4A9F1711A178"
+      ],
+      "textSha256": "3bb9f5fd3b2ceb5b0e1805addac749c508ffd58e24c5f1567c0aa54320c5bd38"
+    },
+    "Kumbhanda": {
+      "gameId": 342,
+      "officialNameZh": "鸠盘荼",
+      "officialNameEn": "Kumbhanda",
+      "messageLabel": "DEVIL_ID_342_KUMBHANDA",
+      "pages": [
+        "印度的鬼族。\n是吸食人类精气的女性魔物，\n据说经常会变化为瓶子的模样。\n　\n身高三米，红发黑肤，\n拥有人类的身体和白马的头颅。\n又名厌魅鬼，\n本是楼陀罗的部下，\n但在进入佛典后，\n被视为四天王之一\n增长天王的眷属。\n另外据说在密教典籍中\n他们是有男女之分的。"
+      ],
+      "paragraphs": [
+        "印度的鬼族。是吸食人类精气的女性魔物，据说经常会变化为瓶子的模样。",
+        "身高三米，红发黑肤，拥有人类的身体和白马的头颅。又名厌魅鬼，本是楼陀罗的部下，但在进入佛典后，被视为四天王之一增长天王的眷属。另外据说在密教典籍中他们是有男女之分的。"
+      ],
+      "localizationKeys": [
+        "08310B964275514A13BF169105BDFC03"
+      ],
+      "textSha256": "507517d20317228f3d816728870073d0fe07068152ea4c31968ccbac716bcee4"
+    },
+    "Kurama Tengu": {
+      "gameId": 37,
+      "officialNameZh": "鞍马天狗",
+      "officialNameEn": "Kurama Tengu",
+      "messageLabel": "DEVIL_ID_037_KURAMATENGU",
+      "pages": [
+        "传说居住在\n京都鞍马山上的天狗。\n　\n是日本传说中拥有最强力量\n和最广泛知名度的天狗之一，\n在除厄和招福上\n具有无比高强的法力。\n也有说法认为其是\n毘沙门天在夜晚的姿态。"
+      ],
+      "paragraphs": [
+        "传说居住在京都鞍马山上的天狗。",
+        "是日本传说中拥有最强力量和最广泛知名度的天狗之一，在除厄和招福上具有无比高强的法力。也有说法认为其是毘沙门天在夜晚的姿态。"
+      ],
+      "localizationKeys": [
+        "2DCEA6C14901CB4B78B76B8309B71970"
+      ],
+      "textSha256": "edaa1e1f46df3aa3c1e36f802c9d44c24245ab449750a6e910358e8b806bd8d5"
+    },
+    "Kushinada-Hime": {
+      "gameId": 213,
+      "officialNameZh": "奇稻田姬",
+      "officialNameEn": "Kushinada-Hime",
+      "messageLabel": "DEVIL_ID_213_KUSHINADAHIME",
+      "pages": [
+        "日本神话中的女神。\n司掌丰收和田园。\n　\n相传她是手名椎、足名椎的\n八个女儿中的幺妹，\n但她的姐姐们\n都被献祭给了八岐大蛇。\n当她自己也将成为活祭，\n献出生命时，被前来讨伐\n八岐大蛇的须佐之男所救，\n后来成为了他的妻子。"
+      ],
+      "paragraphs": [
+        "日本神话中的女神。司掌丰收和田园。",
+        "相传她是手名椎、足名椎的八个女儿中的幺妹，但她的姐姐们都被献祭给了八岐大蛇。当她自己也将成为活祭，献出生命时，被前来讨伐八岐大蛇的须佐之男所救，后来成为了他的妻子。"
+      ],
+      "localizationKeys": [
+        "663BADB3447FD50B3BF5BC85DC210026"
+      ],
+      "textSha256": "9ceb8a70bfaabea55a5c7edac20850777f870b69c7757b24064bc34e4289a194"
+    },
+    "Lachesis": {
+      "gameId": 300,
+      "officialNameZh": "拉刻西斯",
+      "officialNameEn": "Lachesis",
+      "messageLabel": "DEVIL_ID_300_LACHESIS",
+      "pages": [
+        "希腊神话中由主神\n委任司掌命运的\n“摩伊赖”三姐妹之一。\n　\n克洛托编织的丝线，\n会由拉刻西斯负责测量\n并决定其长度。\n据说丝线的长度，\n就是这条生命被赋予的寿命。"
+      ],
+      "paragraphs": [
+        "希腊神话中由主神委任司掌命运的“摩伊赖”三姐妹之一。",
+        "克洛托编织的丝线，会由拉刻西斯负责测量并决定其长度。据说丝线的长度，就是这条生命被赋予的寿命。"
+      ],
+      "localizationKeys": [
+        "86E5DDD641511BD2B4341A8221C42926"
+      ],
+      "textSha256": "dd9781d64053adc0c5d2f8d7f512ea180e9fdd904bc5bd3c2d9456291387465f"
+    },
+    "Lahmu": {
+      "gameId": 236,
+      "officialNameZh": "拉赫穆",
+      "officialNameEn": "Lahmu",
+      "messageLabel": "DEVIL_ID_236_LAHMU_III",
+      "pages": [
+        "登场于巴比伦尼亚神话的神。\n是阿勃祖和提亚马特\n生下的第一个孩子，\n被认为象征着海底的淤泥。\n　\n拉赫穆常被描绘为大蛇的样子，\n或者一位头顶六绺卷发的男性。\n他和另一位名叫拉哈穆的神相对应，\n据说安沙尔和基沙尔\n便是这两位神之间的孩子。"
+      ],
+      "paragraphs": [
+        "登场于巴比伦尼亚神话的神。是阿勃祖和提亚马特生下的第一个孩子，被认为象征着海底的淤泥。",
+        "拉赫穆常被描绘为大蛇的样子，或者一位头顶六绺卷发的男性。他和另一位名叫拉哈穆的神相对应，据说安沙尔和基沙尔便是这两位神之间的孩子。"
+      ],
+      "localizationKeys": [
+        "536C00EC464CE8C01491B696FFCC1FF1"
+      ],
+      "textSha256": "f9eb1285422abd5ead5809e6aac249b38d74d2db19d3939624ec47d7bba5598d"
+    },
+    "Lakshmi": {
+      "gameId": 21,
+      "officialNameZh": "吉祥天女",
+      "officialNameEn": "Lakshmi",
+      "messageLabel": "DEVIL_ID_021_LAXMI",
+      "pages": [
+        "印度神话中美与幸福的女神。\n是至高神毗湿奴的妃子，\n爱神伽摩的母亲。\n　\n她美貌非凡，仿如将\n理想女性的形象汇聚于一身。\n她也是一名妖艳的舞者，据说\n许多神明都曾拜倒在她的舞姿下。"
+      ],
+      "paragraphs": [
+        "印度神话中美与幸福的女神。是至高神毗湿奴的妃子，爱神伽摩的母亲。",
+        "她美貌非凡，仿如将理想女性的形象汇聚于一身。她也是一名妖艳的舞者，据说许多神明都曾拜倒在她的舞姿下。"
+      ],
+      "localizationKeys": [
+        "600D8D694F905F5F696E8A961DDE7223"
+      ],
+      "textSha256": "90a78c8f9743caf9cc911f0d2840d6c8d67d4c0523d6aa57e7c42c32ab0443f6"
+    },
+    "Lamia": {
+      "gameId": 303,
+      "officialNameZh": "拉弥亚",
+      "officialNameEn": "Lamia",
+      "messageLabel": "DEVIL_ID_303_LAMIA",
+      "pages": [
+        "希腊神话中登场的蛇女。\n据说居住在利比亚。\n　\n上半身是美丽的女性，下半身是蛇，\n据说喜好年轻男性和小孩的鲜血。\n原本是利比亚的女王，\n其美貌连宙斯都不禁倾心。\n但因遭到女神赫拉嫉妒，\n她的孩子们惨遭杀害，\n她在疯狂之中变成了一只\n会攻击并吃人的怪物。"
+      ],
+      "paragraphs": [
+        "希腊神话中登场的蛇女。据说居住在利比亚。",
+        "上半身是美丽的女性，下半身是蛇，据说喜好年轻男性和小孩的鲜血。原本是利比亚的女王，其美貌连宙斯都不禁倾心。但因遭到女神赫拉嫉妒，她的孩子们惨遭杀害，她在疯狂之中变成了一只会攻击并吃人的怪物。"
+      ],
+      "localizationKeys": [
+        "21E5D41E43FD90A74917559351488CF7"
+      ],
+      "textSha256": "0449bb13bb0d9352ec3560ee15d52879bbd6928f2c03cf587abe9c62ee23bcbb"
+    },
+    "Leanan Sidhe": {
+      "gameId": 305,
+      "officialNameZh": "拉南希",
+      "officialNameEn": "Leanan Sidhe",
+      "messageLabel": "DEVIL_ID_305_LHIANNANSHEE",
+      "pages": [
+        "爱尔兰传说中的妖精，\n据说会以与人类女性近似的\n样貌出现。\n名字的意思是“妖精恋人”。\n　\n如果有男性接受了她的爱意，\n她就会吸取其生命力，\n但同时赋予其创作的灵感作为回报。"
+      ],
+      "paragraphs": [
+        "爱尔兰传说中的妖精，据说会以与人类女性近似的样貌出现。名字的意思是“妖精恋人”。",
+        "如果有男性接受了她的爱意，她就会吸取其生命力，但同时赋予其创作的灵感作为回报。"
+      ],
+      "localizationKeys": [
+        "0F6B272D42CA1BB67AD8A2BD2B375B5C"
+      ],
+      "textSha256": "7cf51b618106cd07439c7281764ec8caa1a7be26d7cdb15d1f7f5e67877a85be"
+    },
+    "Legion": {
+      "gameId": 172,
+      "officialNameZh": "恶灵军团",
+      "officialNameEn": "Legion",
+      "messageLabel": "DEVIL_ID_172_LEGION",
+      "pages": [
+        "在圣经《马可福音》中\n以“我即多数”被记载的恶灵群体。\n　\n相传其名源于当时罗马的军队用语，\n意思是“连队”，\n指五千人规模的兵团。"
+      ],
+      "paragraphs": [
+        "在圣经《马可福音》中以“我即多数”被记载的恶灵群体。",
+        "相传其名源于当时罗马的军队用语，意思是“连队”，指五千人规模的兵团。"
+      ],
+      "localizationKeys": [
+        "07FF876F42645AF5E1E4FF8365C50D6D"
+      ],
+      "textSha256": "c1e55a4e0ba9a9dcf7ef33fc9ba031d67f537f8f9755271a866c08c45b26571a"
+    },
+    "Lilim": {
+      "gameId": 67,
+      "officialNameZh": "莉莉姆",
+      "officialNameEn": "Lilim",
+      "messageLabel": "DEVIL_ID_067_LILIM",
+      "pages": [
+        "犹太传说中女性姿态的梦魔。\n会诱惑睡着的男性并袭击新生儿。\n　\n据说是诱惑了亚当的\n女恶魔莉莉丝所生，\n和她们的母亲一样，\n会吸取男性的精气。"
+      ],
+      "paragraphs": [
+        "犹太传说中女性姿态的梦魔。会诱惑睡着的男性并袭击新生儿。",
+        "据说是诱惑了亚当的女恶魔莉莉丝所生，和她们的母亲一样，会吸取男性的精气。"
+      ],
+      "localizationKeys": [
+        "A1D4B264461688A25ABED1BBD1692456"
+      ],
+      "textSha256": "9a1c6a46b9b905eb79c2728cddeed56fba2ddc0622f522429bc1d0d3cc434fdf"
+    },
+    "Lilith": {
+      "gameId": 391,
+      "officialNameZh": "莉莉丝",
+      "officialNameEn": "Lilith",
+      "messageLabel": "DEVIL_ID_391_LILITH",
+      "pages": [
+        "旧约圣经中成为亚当\n第一位妻子的女性。\n后来离开伊甸园并化为了夜魔。\n　\n关于她堕落和被流放原因\n有许多种说法，但各种说法\n都把她描述为不忠贞的象征。\n据说她原本是巴比伦的一位地母神。\n　\n在关于犹太神秘主义思想的文献\n《光辉之书》中，她是四女魔之首，\n除了会诱惑男性外，还会杀死婴儿，\n另外也被描写为萨麦尔最初的伴侣。"
+      ],
+      "paragraphs": [
+        "旧约圣经中成为亚当第一位妻子的女性。后来离开伊甸园并化为了夜魔。",
+        "关于她堕落和被流放原因有许多种说法，但各种说法都把她描述为不忠贞的象征。据说她原本是巴比伦的一位地母神。",
+        "在关于犹太神秘主义思想的文献《光辉之书》中，她是四女魔之首，除了会诱惑男性外，还会杀死婴儿，另外也被描写为萨麦尔最初的伴侣。"
+      ],
+      "localizationKeys": [
+        "891746194042831C27B99CAA401D8E7F"
+      ],
+      "textSha256": "c29b4b8b994a2558851d922db14d734691133b4508039d7430ed1f7aab1d2e21"
+    },
+    "Loa": {
+      "gameId": 323,
+      "officialNameZh": "洛阿",
+      "officialNameEn": "Loa",
+      "messageLabel": "DEVIL_ID_323_LOA",
+      "pages": [
+        "巫毒教中对神和圣灵的统称。\n　\n在教义里被提及的\n众多神秘存在当中，\n会实际对凡间的人类活动\n造成影响的那些，\n便被称为洛阿。\n特别是其中归于阴属性的那些，\n据说拥有和杀人咒术\n一脉相承的强大力量。"
+      ],
+      "paragraphs": [
+        "巫毒教中对神和圣灵的统称。",
+        "在教义里被提及的众多神秘存在当中，会实际对凡间的人类活动造成影响的那些，便被称为洛阿。特别是其中归于阴属性的那些，据说拥有和杀人咒术一脉相承的强大力量。"
+      ],
+      "localizationKeys": [
+        "B4769A154E7F7FC4CC05A3A00CF8D0A1"
+      ],
+      "textSha256": "55cc238474bfa61ef930ec7484ffc48c7bce49e8d16ce1af9160084f90eaaa4b"
+    },
+    "Loki": {
+      "gameId": 89,
+      "officialNameZh": "洛基",
+      "officialNameEn": "Loki",
+      "messageLabel": "DEVIL_ID_089_LOKI",
+      "pages": [
+        "北欧神话中的恶神。\n此神并非十恶不赦，但是个性\n反复无常，且精于阴谋算计。\n　\n曾经一度与主神奥丁结为兄弟，\n但是被发现犯下了诸多的恶行，\n包括杀害了奥丁的儿子巴德尔，\n因此在最后受到了惩罚。"
+      ],
+      "paragraphs": [
+        "北欧神话中的恶神。此神并非十恶不赦，但是个性反复无常，且精于阴谋算计。",
+        "曾经一度与主神奥丁结为兄弟，但是被发现犯下了诸多的恶行，包括杀害了奥丁的儿子巴德尔，因此在最后受到了惩罚。"
+      ],
+      "localizationKeys": [
+        "B2CB95A3419696E3C2CBC6B50CC32C90"
+      ],
+      "textSha256": "b289ab940105f607678a4085d63643d02fcdcf6df49e8fa9200f2bc3621e9752"
+    },
+    "Loup-garou": {
+      "gameId": 136,
+      "officialNameZh": "狼人",
+      "officialNameEn": "Loup-garou",
+      "messageLabel": "DEVIL_ID_136_LOUPGAROU",
+      "pages": [
+        "法国传说中的一种狼人。\n在白天是人类的模样，\n但到了晚上据说就会\n变成狼人袭击人类。\n　\n根据传说，他们本是普通人，\n但成为狼人后，\n无法再变回正常的人类。"
+      ],
+      "paragraphs": [
+        "法国传说中的一种狼人。在白天是人类的模样，但到了晚上据说就会变成狼人袭击人类。",
+        "根据传说，他们本是普通人，但成为狼人后，无法再变回正常的人类。"
+      ],
+      "localizationKeys": [
+        "656D0D97414C93A8F8D7B7B2A5D2B9AE"
+      ],
+      "textSha256": "767da83174b0eb4c03eeefbf8e2980259858c1eb6b2d294e36eafcdcf803b5dd"
+    },
+    "Lucifer": {
+      "gameId": 2,
+      "officialNameZh": "路西法",
+      "officialNameEn": "Lucifer",
+      "messageLabel": "DEVIL_ID_002_LUCIFER",
+      "pages": [
+        "基督教传统中的堕天使首领，\n被视为与撒旦等同的魔王。\n　\n名字的含义是“带来光明者”，\n正如这个名字所描绘的那样，\n他曾是众天使当中\n最美丽的一位大天使。\n但据说他选择了\n向造物主上帝发起反叛，\n自愿成为了一名堕天使。"
+      ],
+      "paragraphs": [
+        "基督教传统中的堕天使首领，被视为与撒旦等同的魔王。",
+        "名字的含义是“带来光明者”，正如这个名字所描绘的那样，他曾是众天使当中最美丽的一位大天使。但据说他选择了向造物主上帝发起反叛，自愿成为了一名堕天使。"
+      ],
+      "localizationKeys": [
+        "1F60F9D047E907E0E63C2EBCE2C706DD"
+      ],
+      "textSha256": "0943ec24c82310e4ff2589d85df12b26c7a6e8c169f28d76efb07d741c93e9c2"
+    },
+    "Macabre": {
+      "gameId": 326,
+      "officialNameZh": "马卡布",
+      "officialNameEn": "Macabre",
+      "messageLabel": "DEVIL_ID_326_MACABRE",
+      "pages": [
+        "在中世纪欧洲的宗教剧中登场，\n和“死神”有着相同名字\n和外貌的恶灵。\n　\n拥有能瞬间致人死亡的\n强大诅咒之力，是名副其实\n如“死神”一般的恶灵。\n穿着上面画有白色骸骨的黑衣，\n手中挥舞用于收割灵魂的长柄巨镰。\n另外为了赞颂伟大的“死亡”，\n还会跳一种被称为“死亡之舞”的\n舞蹈，深受人们畏惧。"
+      ],
+      "paragraphs": [
+        "在中世纪欧洲的宗教剧中登场，和“死神”有着相同名字和外貌的恶灵。",
+        "拥有能瞬间致人死亡的强大诅咒之力，是名副其实如“死神”一般的恶灵。穿着上面画有白色骸骨的黑衣，手中挥舞用于收割灵魂的长柄巨镰。另外为了赞颂伟大的“死亡”，还会跳一种被称为“死亡之舞”的舞蹈，深受人们畏惧。"
+      ],
+      "localizationKeys": [
+        "662565704A41B746A208F2839A9EDF86"
+      ],
+      "textSha256": "899a049aade1b4787d8d880533b9eaaa6e454a58afcfd59c19a4f7a3746d7288"
+    },
+    "Mad Gasser": {
+      "gameId": 174,
+      "officialNameZh": "疯狂瓦斯怪人",
+      "officialNameEn": "Mad Gasser",
+      "messageLabel": "DEVIL_ID_174_MADGASSER",
+      "pages": [
+        "散布成分不明的毒气\n折磨人们的怪人。\n　\n据说他的个子很高，穿得一身黑，\n戴着没有帽檐的帽子。\n他散布的毒气闻起来甜甜的，\n但如果吸入就会产生\n剧烈的头疼和反胃症状。\n据说每当人们就要忘记他的时候，\n他就会再次现身散布毒气。\n也有说法认为，他出现在人们的眼前\n是一件非常少见的事。"
+      ],
+      "paragraphs": [
+        "散布成分不明的毒气折磨人们的怪人。",
+        "据说他的个子很高，穿得一身黑，戴着没有帽檐的帽子。他散布的毒气闻起来甜甜的，但如果吸入就会产生剧烈的头疼和反胃症状。据说每当人们就要忘记他的时候，他就会再次现身散布毒气。也有说法认为，他出现在人们的眼前是一件非常少见的事。"
+      ],
+      "localizationKeys": [
+        "00555E794BE951A17EC184B9A79FD807"
+      ],
+      "textSha256": "9b36c28609d2b0231ffd4e87d67c5fa6074dfeebd8c8192a8654394ffd55f071"
+    },
+    "Mada": {
+      "gameId": 231,
+      "officialNameZh": "摩陀",
+      "officialNameEn": "Mada",
+      "messageLabel": "DEVIL_ID_231_MADA",
+      "pages": [
+        "印度神话里的巨大阿修罗。\n名字的意思是“酩酊者”。\n　\n传说是由仙人吉耶婆那\n从火焰中创造而生。\n拥有能一口吞下敌人的力量，\n相传就连因陀罗\n都曾因畏惧他而屈服。"
+      ],
+      "paragraphs": [
+        "印度神话里的巨大阿修罗。名字的意思是“酩酊者”。",
+        "传说是由仙人吉耶婆那从火焰中创造而生。拥有能一口吞下敌人的力量，相传就连因陀罗都曾因畏惧他而屈服。"
+      ],
+      "localizationKeys": [
+        "0DA755674784A7680A952B820151E75C"
+      ],
+      "textSha256": "c8bcfe227e0ad4b9f157a2c6ebf2ca2a11186344d32ca92676ec4caa49beed1b"
+    },
+    "Makami": {
+      "gameId": 121,
+      "officialNameZh": "真神",
+      "officialNameEn": "Makami",
+      "messageLabel": "DEVIL_ID_121_MAKAMI",
+      "pages": [
+        "日本神话中的神兽。\n是狼的一种神格化。\n　\n被认为拥有强大的除厄辟邪之力，\n尤其擅长预防火灾和盗窃，\n因此自古以来常被画在绘马上面。\n但另一方面，\n因为是吃人的野兽，\n所以也是人们畏惧的对象。"
+      ],
+      "paragraphs": [
+        "日本神话中的神兽。是狼的一种神格化。",
+        "被认为拥有强大的除厄辟邪之力，尤其擅长预防火灾和盗窃，因此自古以来常被画在绘马上面。但另一方面，因为是吃人的野兽，所以也是人们畏惧的对象。"
+      ],
+      "localizationKeys": [
+        "71E589624461EBD6385F34A8AA3CB45A"
+      ],
+      "textSha256": "398798c863d9752fa111f88adfc9de5e4b6cf5ac54b589a76c90208abe1afa6b"
+    },
+    "Manananggal": {
+      "gameId": 302,
+      "officialNameZh": "马纳南加尔",
+      "officialNameEn": "Manananggal",
+      "messageLabel": "DEVIL_ID_302_MANANANGGAL",
+      "pages": [
+        "流传于菲律宾锡基霍尔岛\n传说中的魔女。\n　\n白天是美女的样子，\n到了晚上则会化身为吸血鬼。\n据说她会分离上下半身，\n用背上长出的蝙蝠翅膀飞行，\n袭击人类吸食鲜血。\n传说马纳南加尔主要猎食胎儿，\n她会用自己那细长的舌头\n在孕妇的子宫上开洞，\n吸食胎儿的鲜血，\n或者将胎儿直接吸出来吃掉。"
+      ],
+      "paragraphs": [
+        "流传于菲律宾锡基霍尔岛传说中的魔女。",
+        "白天是美女的样子，到了晚上则会化身为吸血鬼。据说她会分离上下半身，用背上长出的蝙蝠翅膀飞行，袭击人类吸食鲜血。传说马纳南加尔主要猎食胎儿，她会用自己那细长的舌头在孕妇的子宫上开洞，吸食胎儿的鲜血，或者将胎儿直接吸出来吃掉。"
+      ],
+      "localizationKeys": [
+        "F5582F814EB74C7772C766A2DD6449A0"
+      ],
+      "textSha256": "97779cf946ec07eff9e1e0f017b16a8d7897f22a05c23738deff8f54323cdfcf"
+    },
+    "Mandrake": {
+      "gameId": 45,
+      "officialNameZh": "曼陀罗",
+      "officialNameEn": "Mandrake",
+      "messageLabel": "DEVIL_ID_045_MANDRAKE",
+      "pages": [
+        "一种异形的植物，\n根部长得像一个有两条腿的人，\n而且还有男女性别之分。\n　\n曼陀罗是一种可治百病的\n珍贵灵药，但非常难以获得。\n因为在把它从土里\n拔出来时，它会发出\n可以夺人性命的恐怖惊叫。"
+      ],
+      "paragraphs": [
+        "一种异形的植物，根部长得像一个有两条腿的人，而且还有男女性别之分。",
+        "曼陀罗是一种可治百病的珍贵灵药，但非常难以获得。因为在把它从土里拔出来时，它会发出可以夺人性命的恐怖惊叫。"
+      ],
+      "localizationKeys": [
+        "7E3B5B7542DB9B57A3B154AA49A5B548"
+      ],
+      "textSha256": "db7da431da13947444dbe7b459b2f3d3489abb5f650205e945f879308a745ec7"
+    },
+    "Mara": {
+      "gameId": 77,
+      "officialNameZh": "魔罗",
+      "officialNameEn": "Mara",
+      "messageLabel": "DEVIL_ID_077_MARA",
+      "pages": [
+        "印度神话中统领恶灵的魔王，\n被认为会带来死亡。\n　\n擅长煽动恐惧，\n还曾试图诱惑\n正在修行的佛陀。\n据说这名魔王的强大力量\n影响了世界各地，催生出了\n如梦魇和魔拉这样的恶魔。"
+      ],
+      "paragraphs": [
+        "印度神话中统领恶灵的魔王，被认为会带来死亡。",
+        "擅长煽动恐惧，还曾试图诱惑正在修行的佛陀。据说这名魔王的强大力量影响了世界各地，催生出了如梦魇和魔拉这样的恶魔。"
+      ],
+      "localizationKeys": [
+        "290413FB425FE10EC98271B7361FB212"
+      ],
+      "textSha256": "5ab84d23634c8d0cd248ef830e697a2a63a60e1a009c4d5630dc8a6b998e85de"
+    },
+    "Maria": {
+      "gameId": 30,
+      "officialNameZh": "玛利亚",
+      "officialNameEn": "Maria",
+      "messageLabel": "DEVIL_ID_030",
+      "pages": [
+        "圣母玛利亚。\n她是基督的母亲，\n被人称为“上帝之母”。\n　\n在收到天使加百列宣告降孕后，\n因圣灵感孕怀上了基督。\n虽然在基督教中\n是受到教会敬奉的圣母，\n但也有些教派\n不将她视为敬奉的对象。"
+      ],
+      "paragraphs": [
+        "圣母玛利亚。她是基督的母亲，被人称为“上帝之母”。",
+        "在收到天使加百列宣告降孕后，因圣灵感孕怀上了基督。虽然在基督教中是受到教会敬奉的圣母，但也有些教派不将她视为敬奉的对象。"
+      ],
+      "localizationKeys": [
+        "4AF0481147E84101CC07E4B9908E02CE"
+      ],
+      "textSha256": "439198a32dbd76ec9f71b6b77efc5f1efbac833ef135a75968171c4fece73a94"
+    },
+    "Marici": {
+      "gameId": 207,
+      "officialNameZh": "摩利支天",
+      "officialNameEn": "Marici",
+      "messageLabel": "DEVIL_ID_207",
+      "pages": [
+        "又称光明佛母。\n是无形而不可触的自然现象“蜃景”\n在被赋予神格后诞生的佛教神。\n　\n本是印度的一尊\n名为“伐拉希”的神，\n相传这个名字的意思是\n“蜃景”或者“威光”。\n日本的武士们认为她能\n保佑信奉者百害不侵，\n并助其隐秘行踪突袭敌人，\n因此也会祭拜她。\n她常被描绘为天女的形象，\n一般会有三面六臂（或者八臂），\n手持金刚杵、尖针、箭矢等武器。"
+      ],
+      "paragraphs": [
+        "又称光明佛母。是无形而不可触的自然现象“蜃景”在被赋予神格后诞生的佛教神。",
+        "本是印度的一尊名为“伐拉希”的神，相传这个名字的意思是“蜃景”或者“威光”。日本的武士们认为她能保佑信奉者百害不侵，并助其隐秘行踪突袭敌人，因此也会祭拜她。她常被描绘为天女的形象，一般会有三面六臂（或者八臂），手持金刚杵、尖针、箭矢等武器。"
+      ],
+      "localizationKeys": [
+        "A256C89F43ED42FDB0405F981E2C997E"
+      ],
+      "textSha256": "91816ebae9206ccc7bcdaa2a783ec9a5703e6b8ec5c97880e43d0758a2d713cc"
+    },
+    "Masakado": {
+      "gameId": 227,
+      "officialNameZh": "将门",
+      "officialNameEn": "Masakado",
+      "messageLabel": "DEVIL_ID_227_MASAKADO",
+      "pages": [
+        "平将门。他是于平安时代中期\n掀起叛乱的一名武将。\n　\n在成功支配关东后自立为新皇，\n之后被藤原秀乡与平贞盛打败。\n死后作为会带来灾祸的御灵\n受到供奉，并在传说中染上了\n英雄色彩，作为关东的守护神\n被人们信仰至今。"
+      ],
+      "paragraphs": [
+        "平将门。他是于平安时代中期掀起叛乱的一名武将。",
+        "在成功支配关东后自立为新皇，之后被藤原秀乡与平贞盛打败。死后作为会带来灾祸的御灵受到供奉，并在传说中染上了英雄色彩，作为关东的守护神被人们信仰至今。"
+      ],
+      "localizationKeys": [
+        "CE3890AB4E8E6E992F433CB31C0151C6"
+      ],
+      "textSha256": "7e3a7c75b79e90e5274b759a9f3a48a43c76f2d6ce8c76074ef7f63836a67288"
+    },
+    "Mastema": {
+      "gameId": 250,
+      "officialNameZh": "曼塞马特",
+      "officialNameEn": "Mastema",
+      "messageLabel": "DEVIL_ID_250_MANSEMAT",
+      "pages": [
+        "希伯来传说中\n负责告发罪恶的天使。\n他作为刑罚执行者，\n为上帝尽心尽力。\n　\n据说上帝允许他诱惑人类，\n测试人类的信仰。\n另外还有说法称他甚至从上帝那里\n求得了将恶魔作为手下的权力。\n他在“撒都该的残片和死海古卷”中\n被记载为灾祸天使、万恶之父，\n同时也被描绘为奉承上帝的天使。"
+      ],
+      "paragraphs": [
+        "希伯来传说中负责告发罪恶的天使。他作为刑罚执行者，为上帝尽心尽力。",
+        "据说上帝允许他诱惑人类，测试人类的信仰。另外还有说法称他甚至从上帝那里求得了将恶魔作为手下的权力。他在“撒都该的残片和死海古卷”中被记载为灾祸天使、万恶之父，同时也被描绘为奉承上帝的天使。"
+      ],
+      "localizationKeys": [
+        "328FC1E74A7D000E399032A7C5F450C3"
+      ],
+      "textSha256": "2be2ae80ff9e07f62b856d3fb915630ffd854f9a2b2b87dbc5a8d3b305987081"
+    },
+    "Matador": {
+      "gameId": 359,
+      "officialNameZh": "斗牛士",
+      "officialNameEn": "Matador",
+      "messageLabel": "DEVIL_ID_359_MATADOR",
+      "pages": [
+        "他是以自己的生命为代价\n让观众陷入狂热的游戏支配者。\n　\n据说那些因为一招不慎而死在了\n残酷秀场上的斗士们，\n他们的不甘以及对喝彩\n与狂欢的渴望，最终便\n化为了这位魔人残留于世。"
+      ],
+      "paragraphs": [
+        "他是以自己的生命为代价让观众陷入狂热的游戏支配者。",
+        "据说那些因为一招不慎而死在了残酷秀场上的斗士们，他们的不甘以及对喝彩与狂欢的渴望，最终便化为了这位魔人残留于世。"
+      ],
+      "localizationKeys": [
+        "701D36334CA9736D5834ADAA2F89D058"
+      ],
+      "textSha256": "d2fe11021ce37f0dce0eaf04d95ef6075fbabc9b21861089233296fbfdcdefb2"
+    },
+    "Melchizedek": {
+      "gameId": 249,
+      "officialNameZh": "麦基洗德",
+      "officialNameEn": "Melchizedek",
+      "messageLabel": "DEVIL_ID_249_MELCHIZEDEK",
+      "pages": [
+        "在基督教诺斯底主义中\n被称为“众天使的救世主”，\n是代表和平与正义的天使。\n　\n据说是由女神索菲亚所生，\n象征之物是圣杯和一块面包，\n作为和平天使的统领者广为人知。\n在圣经中，他以正义之王\n麦基洗德的身份得到记载。"
+      ],
+      "paragraphs": [
+        "在基督教诺斯底主义中被称为“众天使的救世主”，是代表和平与正义的天使。",
+        "据说是由女神索菲亚所生，象征之物是圣杯和一块面包，作为和平天使的统领者广为人知。在圣经中，他以正义之王麦基洗德的身份得到记载。"
+      ],
+      "localizationKeys": [
+        "A2082F6D4EB87C9466989E9770907030"
+      ],
+      "textSha256": "2d721be1679f938af8d37b62759b9e08f3a477117d3cb50e8d6d51018ab21c97"
+    },
+    "Mephisto": {
+      "gameId": 78,
+      "officialNameZh": "墨菲斯托",
+      "officialNameEn": "Mephisto",
+      "messageLabel": "DEVIL_ID_078_MEPHISTO",
+      "pages": [
+        "正确的名字是“墨菲斯托费勒斯”。\n他是地狱大公之一，\n名字的意思是\n“不应被爱的光明”。\n　\n他作为被乔治·浮士德\n召唤出的恶魔广为人知，\n是继撒旦之后\n最可怕的地狱统治者。\n但他十分后悔堕入了地狱，\n因此据说非常憎恨\n通过努力可以上天堂的人类。\n另外，除了拥有关于天文学、\n占星术、气象学的丰富知识外，\n他还擅长幻术，据说制造出的\n幻景能支配受术者的五感。"
+      ],
+      "paragraphs": [
+        "正确的名字是“墨菲斯托费勒斯”。他是地狱大公之一，名字的意思是“不应被爱的光明”。",
+        "他作为被乔治·浮士德召唤出的恶魔广为人知，是继撒旦之后最可怕的地狱统治者。但他十分后悔堕入了地狱，因此据说非常憎恨通过努力可以上天堂的人类。另外，除了拥有关于天文学、占星术、气象学的丰富知识外，他还擅长幻术，据说制造出的幻景能支配受术者的五感。"
+      ],
+      "localizationKeys": [
+        "239C0DD54868364BDE78ACBA6AC7E949"
+      ],
+      "textSha256": "0e7f9a3ecca91ff1942b487b6a32c8bd8fa81b2ae0f614d7f2ccd8c7ba73f427"
+    },
+    "Mermaid": {
+      "gameId": 304,
+      "officialNameZh": "美人鱼",
+      "officialNameEn": "Mermaid",
+      "messageLabel": "DEVIL_ID_304_MERMAID",
+      "pages": [
+        "生活在水下世界的女性人鱼。\n男性人鱼一般称为\n“鱼人（Merman）”。\n　\n渔夫常把她们视为凶兆，\n认为她们的出现预示着\n暴风雨的来临或渔获的降低。\n据说她们的歌声能魅惑听到的人，\n大航海时代的航海家们\n对她们抱有畏惧，\n认为她们会引诱船员，\n让船遭遇海难。"
+      ],
+      "paragraphs": [
+        "生活在水下世界的女性人鱼。男性人鱼一般称为“鱼人（Merman）”。",
+        "渔夫常把她们视为凶兆，认为她们的出现预示着暴风雨的来临或渔获的降低。据说她们的歌声能魅惑听到的人，大航海时代的航海家们对她们抱有畏惧，认为她们会引诱船员，让船遭遇海难。"
+      ],
+      "localizationKeys": [
+        "C7F7A2304D2A416BBC1A2C98461CDEBC"
+      ],
+      "textSha256": "fe78d78d3474ad70674f50b8125279f5dd9e128f453c0fdb31af48ff346b98bc"
+    },
+    "Metatron": {
+      "gameId": 241,
+      "officialNameZh": "梅塔特隆",
+      "officialNameEn": "Metatron",
+      "messageLabel": "DEVIL_ID_241_METATRON",
+      "pages": [
+        "天使中最伟大\n也是最神秘的一位。\n拥有“上帝代言人”、\n“契约天使”等众多别名。\n　\n在担负重任，\n维持世界秩序的同时，\n也有会对人类施加暴行的一面。"
+      ],
+      "paragraphs": [
+        "天使中最伟大也是最神秘的一位。拥有“上帝代言人”、“契约天使”等众多别名。",
+        "在担负重任，维持世界秩序的同时，也有会对人类施加暴行的一面。"
+      ],
+      "localizationKeys": [
+        "7501A6E2406850E612D501826ABFAB6C"
+      ],
+      "textSha256": "6197520af2490a95650003b1e8b7e3e215c27e2354ad49a6993c81eab4234793"
+    },
+    "Michael": {
+      "gameId": 242,
+      "officialNameZh": "米迦勒",
+      "officialNameEn": "Michael",
+      "messageLabel": "DEVIL_ID_242_MIKAEL",
+      "pages": [
+        "在天阶等级中位于顶点的\n四大天使之一，也是有着\n“如上帝者”之名的至高天使。\n　\n是由上帝亲自委任为\n左膀右臂的最为优秀的天使。\n据说他手中握有能够战胜\n任何利刃的神秘武器。"
+      ],
+      "paragraphs": [
+        "在天阶等级中位于顶点的四大天使之一，也是有着“如上帝者”之名的至高天使。",
+        "是由上帝亲自委任为左膀右臂的最为优秀的天使。据说他手中握有能够战胜任何利刃的神秘武器。"
+      ],
+      "localizationKeys": [
+        "33DAF885412A6640D6038C93C9F2DC91"
+      ],
+      "textSha256": "30df6ed5b5b6a94f05b16845e9fbcb746605aca6aef297aaedf7918dee314e91"
+    },
+    "Mishaguji": {
+      "gameId": 234,
+      "officialNameZh": "御社宫司神",
+      "officialNameEn": "Mishaguji",
+      "messageLabel": "DEVIL_ID_234_MISHAGUJISAMA",
+      "pages": [
+        "在大和王权的势力兴起之前，\n信浓地区所信奉的土著神。\n　\n据说岩石等物当中也会寄宿神灵，\n御社宫司神便是从\n这一古代信仰形态中诞生的神，\n其御神体通常是石棒等物。\n有一种说法认为，\n在诹访大社的下属神社里\n自古以来便供奉着这尊神。"
+      ],
+      "paragraphs": [
+        "在大和王权的势力兴起之前，信浓地区所信奉的土著神。",
+        "据说岩石等物当中也会寄宿神灵，御社宫司神便是从这一古代信仰形态中诞生的神，其御神体通常是石棒等物。有一种说法认为，在诹访大社的下属神社里自古以来便供奉着这尊神。"
+      ],
+      "localizationKeys": [
+        "FBF77F36486D0A4894AA66AA35CC0115"
+      ],
+      "textSha256": "4bd6f2d3d1abdff2bd206c57495df1906c6b44200a1680970087cb95ef0ad127"
+    },
+    "Mithras": {
+      "gameId": 88,
+      "officialNameZh": "米特拉斯",
+      "officialNameEn": "Mithras",
+      "messageLabel": "DEVIL_ID_088_MITHRAS",
+      "pages": [
+        "公元1世纪到4世纪，\n主要在罗马世界\n受到崇拜的太阳神。\n他被认为可以拯救人们脱离苦难，\n是一位具有英雄性质的神明。\n　\n供奉他的仪式被视作一种\n不可外传的秘密，\n但根据记载，\n似乎需要在仪式上\n沐浴牛羊活祭的血液。\n据说这位神即使死去也会复活，\n每到象征着他复活的冬至，\n信徒就会为他举办大型祭典。"
+      ],
+      "paragraphs": [
+        "公元1世纪到4世纪，主要在罗马世界受到崇拜的太阳神。他被认为可以拯救人们脱离苦难，是一位具有英雄性质的神明。",
+        "供奉他的仪式被视作一种不可外传的秘密，但根据记载，似乎需要在仪式上沐浴牛羊活祭的血液。据说这位神即使死去也会复活，每到象征着他复活的冬至，信徒就会为他举办大型祭典。"
+      ],
+      "localizationKeys": [
+        "876876784E9C91F4CBD0B6B7885CE0C5"
+      ],
+      "textSha256": "6ba14be8779a1ca1c8a23cf52c50fd7164ac7bfc01db8f86d3faafeba3f9d681"
+    },
+    "Mitra": {
+      "gameId": 11,
+      "officialNameZh": "密特拉",
+      "officialNameEn": "Mitra",
+      "messageLabel": "DEVIL_ID_011_MITRA",
+      "pages": [
+        "古代波斯的契约之神。\n是一尊地位崇高的神明，\n同时还拥有战神和太阳神的面貌。\n　\n掌管整个世界的调和与真理，\n会对任何企图恶意扰乱秩序的人\n给予制裁和惩罚。\n另外，作为守护调和的一个方面，\n也被认为拥有治愈疾病的力量。"
+      ],
+      "paragraphs": [
+        "古代波斯的契约之神。是一尊地位崇高的神明，同时还拥有战神和太阳神的面貌。",
+        "掌管整个世界的调和与真理，会对任何企图恶意扰乱秩序的人给予制裁和惩罚。另外，作为守护调和的一个方面，也被认为拥有治愈疾病的力量。"
+      ],
+      "localizationKeys": [
+        "895E64F04BB1C094E49E5A9241064F64"
+      ],
+      "textSha256": "a81978f02487a1e0d50dd136a8073f4a6ef393fcf9221819b8ab75a4cc7311a2"
+    },
+    "Mokoi": {
+      "gameId": 69,
+      "officialNameZh": "莫考伊",
+      "officialNameEn": "Mokoi",
+      "messageLabel": "DEVIL_ID_069_MOKOI",
+      "pages": [
+        "自古流传于澳大利亚\n原住民传说中的妖怪。\n　\n它们和猫头鹰一起生活在丛林里，\n外貌和人类很相似，\n但长着巨大的头颅，\n并且没有舌头，不会说话。\n根据传说，莫考伊是由人类的\n“影之魂”转世而成，\n它们有时会和人类女性交合，\n并吃掉生下来的孩子，\n有时还会和人类爆发战争。"
+      ],
+      "paragraphs": [
+        "自古流传于澳大利亚原住民传说中的妖怪。",
+        "它们和猫头鹰一起生活在丛林里，外貌和人类很相似，但长着巨大的头颅，并且没有舌头，不会说话。根据传说，莫考伊是由人类的“影之魂”转世而成，它们有时会和人类女性交合，并吃掉生下来的孩子，有时还会和人类爆发战争。"
+      ],
+      "localizationKeys": [
+        "1993A41047B09084249DCDADFFE5D2A5"
+      ],
+      "textSha256": "73d4c4bf4fb649a3d43ff16b45d0b6a13b686347770dd4e38e958bdb844f3e06"
+    },
+    "Moloch": {
+      "gameId": 85,
+      "officialNameZh": "摩洛",
+      "officialNameEn": "Moloch",
+      "messageLabel": "DEVIL_ID_085_MOLOCH",
+      "pages": [
+        "中东迦南地区所崇拜的火神。\n　\n据说在他的祭坛上\n会放一座拥有公牛头的\n人形铜像作为神体。\n人们会在祭祀时\n用烈火灼烧加热\n这座中空的铜像，再把作为\n活祭品的小孩们丢进铜像里。\n在圣经上也记载了这位\n残忍的异教之神的名字。"
+      ],
+      "paragraphs": [
+        "中东迦南地区所崇拜的火神。",
+        "据说在他的祭坛上会放一座拥有公牛头的人形铜像作为神体。人们会在祭祀时用烈火灼烧加热这座中空的铜像，再把作为活祭品的小孩们丢进铜像里。在圣经上也记载了这位残忍的异教之神的名字。"
+      ],
+      "localizationKeys": [
+        "6F5C13B04A6B2AA863A566A4908B5512"
+      ],
+      "textSha256": "d9752a53a4a4600d344d6064e2d91abe8e05e13ee63414225dae1c24971a3189"
+    },
+    "Mot": {
+      "gameId": 179,
+      "officialNameZh": "莫特",
+      "officialNameEn": "Mot",
+      "messageLabel": "DEVIL_ID_179_MOT",
+      "pages": [
+        "曾经威胁迦南之地的和平，\n美索不达米亚的死亡与荒芜之神。\n居住在以“忌讳”为名的冥界。\n　\n曾使用阴谋杀害和自己相对的\n丰饶之神，但后来在其妹妹\n阿娜特的报复下被讨伐。"
+      ],
+      "paragraphs": [
+        "曾经威胁迦南之地的和平，美索不达米亚的死亡与荒芜之神。居住在以“忌讳”为名的冥界。",
+        "曾使用阴谋杀害和自己相对的丰饶之神，但后来在其妹妹阿娜特的报复下被讨伐。"
+      ],
+      "localizationKeys": [
+        "97869FB842DA68FE61A9DC9F4C2D8158"
+      ],
+      "textSha256": "b5ea8fa28ea50fd9aceb26b66457c7c90492b4edd0546390d30f38e45f4779af"
+    },
+    "Mother Harlot": {
+      "gameId": 351,
+      "officialNameZh": "巴比伦大淫妇",
+      "officialNameEn": "Mother Harlot",
+      "messageLabel": "DEVIL_ID_351_MOTHERHARLET",
+      "pages": [
+        "在约翰启示录中被记载为\n“大淫妇”的魔人。\n　\n据说她骑着一只与神敌对，\n拥有七个头和十只角的红色野兽，\n且手中握着装满污秽之物的金杯。"
+      ],
+      "paragraphs": [
+        "在约翰启示录中被记载为“大淫妇”的魔人。",
+        "据说她骑着一只与神敌对，拥有七个头和十只角的红色野兽，且手中握着装满污秽之物的金杯。"
+      ],
+      "localizationKeys": [
+        "C41DD93D410BD1CAF52EAD8D49B761E3"
+      ],
+      "textSha256": "fccbb3edbade95fe787e872911930ab2370e3a37fe26f05151addfc2c8a8cdcc"
+    },
+    "Mothman": {
+      "gameId": 147,
+      "officialNameZh": "天蛾人",
+      "officialNameEn": "Mothman",
+      "messageLabel": "DEVIL_ID_147_MOTHMAN",
+      "pages": [
+        "相传在60～80年代的美国\n曾有人目击过的未知生物。\n　\n长着鲜红的眼睛，因身体左右两侧\n形似飞蛾翅膀的鳍状突起\n而得名“天蛾人”。\n据说它可以双足行走，\n且不用振翅就能飞行。\n它对血腥味很敏感，\n会追寻气味找到受伤者吸食其鲜血。\n由于存在目击证言，\n称在天蛾人出现时\n还观测到了UFO，\n因此也有说法认为\n天蛾人其实是外星人。"
+      ],
+      "paragraphs": [
+        "相传在60～80年代的美国曾有人目击过的未知生物。",
+        "长着鲜红的眼睛，因身体左右两侧形似飞蛾翅膀的鳍状突起而得名“天蛾人”。据说它可以双足行走，且不用振翅就能飞行。它对血腥味很敏感，会追寻气味找到受伤者吸食其鲜血。由于存在目击证言，称在天蛾人出现时还观测到了UFO，因此也有说法认为天蛾人其实是外星人。"
+      ],
+      "localizationKeys": [
+        "166BBA4F4AA15AFD59DD928A7262B744"
+      ],
+      "textSha256": "96a3c1571c5f459b6d9af09841b6e91d31963293432358715de88c72cb84f4ec"
+    },
+    "Muu Shuwuu": {
+      "gameId": 289,
+      "officialNameZh": "莫索保",
+      "officialNameEn": "Muu Shuwuu",
+      "messageLabel": "DEVIL_ID_289_MOSHOBOU",
+      "pages": [
+        "蒙古布里亚特族传说中的怪物。\n　\n传说不识爱之滋味便死去的\n少女们的灵魂就会化作这种邪鸟。\n它们会变成美丽少女的样子\n诱惑旅行者，\n并趁机啄穿旅行者的头颅，\n吸食他们的脑子。"
+      ],
+      "paragraphs": [
+        "蒙古布里亚特族传说中的怪物。",
+        "传说不识爱之滋味便死去的少女们的灵魂就会化作这种邪鸟。它们会变成美丽少女的样子诱惑旅行者，并趁机啄穿旅行者的头颅，吸食他们的脑子。"
+      ],
+      "localizationKeys": [
+        "16D6A2CE448B0E4769B18698B03414DD"
+      ],
+      "textSha256": "7e23a12a0d0a40894981ab684541353d23ca46f577063a1617091fdc4b796fd9"
+    },
+    "Naamah": {
+      "gameId": 393,
+      "officialNameZh": "拿玛",
+      "officialNameEn": "Naamah",
+      "messageLabel": "DEVIL_ID_393_NAAMAH",
+      "pages": [
+        "在关于犹太神秘主义思想的文献\n《光辉之书》中登场的四女魔之一。\n她的名字在希伯来语中\n有着“欢愉”的意思。\n　\n她在四女魔中最为性感、擅于诱惑，\n据说会在梦中和人类男性交合，\n并利用其欲望创造出无数恶灵。\n另外其美貌甚至能蛊惑天使，\n传说她和一位名叫肖姆龙的天使\n生下了恶魔之王阿斯摩太。\n有说法认为，\n这名女魔原本是人类女性，\n是旧约圣经中该隐的子孙、\n土八该隐的妹妹拿玛\n在后世被重新解释为女魔后的形象。"
+      ],
+      "paragraphs": [
+        "在关于犹太神秘主义思想的文献《光辉之书》中登场的四女魔之一。她的名字在希伯来语中有着“欢愉”的意思。",
+        "她在四女魔中最为性感、擅于诱惑，据说会在梦中和人类男性交合，并利用其欲望创造出无数恶灵。另外其美貌甚至能蛊惑天使，传说她和一位名叫肖姆龙的天使生下了恶魔之王阿斯摩太。有说法认为，这名女魔原本是人类女性，是旧约圣经中该隐的子孙、土八该隐的妹妹拿玛在后世被重新解释为女魔后的形象。"
+      ],
+      "localizationKeys": [
+        "A86167154784561398C932975B9E834F"
+      ],
+      "textSha256": "68d3066aa691275d64d9c88b4ca2a1eadcda8ef05dad0ed1b6e489bc7769f92d"
+    },
+    "Naga": {
+      "gameId": 106,
+      "officialNameZh": "那伽",
+      "officialNameEn": "Naga",
+      "messageLabel": "DEVIL_ID_106_NAGA",
+      "pages": [
+        "印度神话中将眼镜蛇\n神格化之后的半人半蛇之神。\n掌管再生与复活。\n　\n据说他们生活在河流、\n湖泊、大海深处的乐园里，\n没有战争的时候\n便终日载歌载舞。"
+      ],
+      "paragraphs": [
+        "印度神话中将眼镜蛇神格化之后的半人半蛇之神。掌管再生与复活。",
+        "据说他们生活在河流、湖泊、大海深处的乐园里，没有战争的时候便终日载歌载舞。"
+      ],
+      "localizationKeys": [
+        "6FDDAC494C27E265A12B118DB450FAEC"
+      ],
+      "textSha256": "fdd54d1d7aa9172f6929ad67bf1e0dc13a1c9a50231270b871ec0fc8745bc8b5"
+    },
+    "Naga Raja": {
+      "gameId": 104,
+      "officialNameZh": "那伽之王",
+      "officialNameEn": "Naga Raja",
+      "messageLabel": "DEVIL_ID_104_NAGARAJA",
+      "pages": [
+        "在印度神话中登场的\n半人半蛇之神，\n那伽族的王。\n　\n力量特别强大的那伽\n就会被如此称呼。\n难陀、德叉迦等“八大龙王”\n也都属于那伽之王。"
+      ],
+      "paragraphs": [
+        "在印度神话中登场的半人半蛇之神，那伽族的王。",
+        "力量特别强大的那伽就会被如此称呼。难陀、德叉迦等“八大龙王”也都属于那伽之王。"
+      ],
+      "localizationKeys": [
+        "8C997DAF4C8689A3A8097C9C0885533A"
+      ],
+      "textSha256": "a4c1fdb66faf3b628a66b4183433dadbd90cc4b355c28e5af52f23d1e61696c9"
+    },
+    "Nahobeeho": {
+      "gameId": 60,
+      "officialNameZh": "创吼",
+      "officialNameEn": "Nahobeeho",
+      "messageLabel": "DEVIL_ID_060_NAHOBIHO",
+      "pages": [
+        "外貌如同合一神一般的杰克霜精。\n这副样貌是其不满足于\n自己恶魔的身份，\n不断挑战自身极限的结果。\n　\n蓝色的头发和衣服都是\n他本人的作品，据说他自己\n也对其鬼斧神工感到非常自豪。\n他特别喜欢雪天的清晨，\n据说他梦想创造出一个\n银装素裹一望无际的世界。"
+      ],
+      "paragraphs": [
+        "外貌如同合一神一般的杰克霜精。这副样貌是其不满足于自己恶魔的身份，不断挑战自身极限的结果。",
+        "蓝色的头发和衣服都是他本人的作品，据说他自己也对其鬼斧神工感到非常自豪。他特别喜欢雪天的清晨，据说他梦想创造出一个银装素裹一望无际的世界。"
+      ],
+      "localizationKeys": [
+        "E9A198FC41BD2CEA632C55B4CDEECB1D"
+      ],
+      "textSha256": "4de01abfff942583c7757b672f427d223935ea9aa86d0dd9e4e8c43d2064b101"
+    },
+    "Narcissus": {
+      "gameId": 332,
+      "officialNameZh": "那耳喀索斯",
+      "officialNameEn": "Narcissus",
+      "messageLabel": "DEVIL_ID_332_NARCISSUS",
+      "pages": [
+        "因为自恋而闻名的\n希腊神话中的花之神，\n水仙花被认为是由他所变。\n　\n原本是一位十分貌美的青年，\n但因拒绝了妖精厄科的好意\n而受到惩罚，被下了诅咒，\n只能爱上倒映在水中的自己。\n传说他因为无法离开\n倒映了自己样貌的泉水\n而最终衰弱致死，\n并变成了以他冠名的花朵。"
+      ],
+      "paragraphs": [
+        "因为自恋而闻名的希腊神话中的花之神，水仙花被认为是由他所变。",
+        "原本是一位十分貌美的青年，但因拒绝了妖精厄科的好意而受到惩罚，被下了诅咒，只能爱上倒映在水中的自己。传说他因为无法离开倒映了自己样貌的泉水而最终衰弱致死，并变成了以他冠名的花朵。"
+      ],
+      "localizationKeys": [
+        "DE5754EF4F6D235837D2678435A2A930"
+      ],
+      "textSha256": "20beee32af9fd1cd3e38fb20d3892203d7ee60adebd95bd27c44aed5d23936d4"
+    },
+    "Nebiros": {
+      "gameId": 267,
+      "officialNameZh": "奈比洛斯",
+      "officialNameEn": "Nebiros",
+      "messageLabel": "DEVIL_ID_267_NEBIROS",
+      "pages": [
+        "地狱的元帅兼检察官，\n据说这位恶魔每时每刻都在\n观察着众魔神的举动。\n　\n他尤其擅长使用操控死灵\n和尸体的法术，被认为是\n魔神当中最优秀的死灵法师之一。"
+      ],
+      "paragraphs": [
+        "地狱的元帅兼检察官，据说这位恶魔每时每刻都在观察着众魔神的举动。",
+        "他尤其擅长使用操控死灵和尸体的法术，被认为是魔神当中最优秀的死灵法师之一。"
+      ],
+      "localizationKeys": [
+        "C30D2DC7450D0FAE889D459B1C120014"
+      ],
+      "textSha256": "853fd2174f08fd9f0d4149ab515d96dd0750df57d44f96eb46b41914615279b0"
+    },
+    "Neko Shogun": {
+      "gameId": 225,
+      "officialNameZh": "猫将军",
+      "officialNameEn": "Neko Shogun",
+      "messageLabel": "DEVIL_ID_225_NEKOSHOGUN",
+      "pages": [
+        "拥有强大预言能力的一位道教神明。\n据说形象为人身猫头，\n在安南（现位于越南）有祭祀他的庙宇。\n这座庙宇原本祭祀的似乎是一位\n14～15世纪的武将“毛尚书”，\n但因为“毛”和“猫”同音，\n致使其转化为了名为\n“猫将军”的不同神明。\n另外还有一位名叫\n“铁猫将军”的航海之神，\n也与其有着相似的由来。"
+      ],
+      "paragraphs": [
+        "拥有强大预言能力的一位道教神明。据说形象为人身猫头，在安南（现位于越南）有祭祀他的庙宇。这座庙宇原本祭祀的似乎是一位14～15世纪的武将“毛尚书”，但因为“毛”和“猫”同音，致使其转化为了名为“猫将军”的不同神明。另外还有一位名叫“铁猫将军”的航海之神，也与其有着相似的由来。"
+      ],
+      "localizationKeys": [
+        "133FCFAA43D00373557EA7BCF90233EB"
+      ],
+      "textSha256": "0345c807bb8dbd7d394759a73234aa57b94867f176cb93c2885d7db891f2ed61"
+    },
+    "Nekomata": {
+      "gameId": 137,
+      "officialNameZh": "猫又",
+      "officialNameEn": "Nekomata",
+      "messageLabel": "DEVIL_ID_137_NEKOMATA",
+      "pages": [
+        "长寿的猫在获得灵力后\n化身而成的妖怪。\n智慧出众，能听懂人话。\n　\n根据获得的灵力强弱，\n能够操控现象的规模也各有不同。\n据说其中一些还能化为人形，\n甚至可以控制死者。"
+      ],
+      "paragraphs": [
+        "长寿的猫在获得灵力后化身而成的妖怪。智慧出众，能听懂人话。",
+        "根据获得的灵力强弱，能够操控现象的规模也各有不同。据说其中一些还能化为人形，甚至可以控制死者。"
+      ],
+      "localizationKeys": [
+        "A63CE920440EBFC9A92D53A1FE3A93D5"
+      ],
+      "textSha256": "715d1b7239474f8cde6af83c28e2ce42b5db130104ec8543a95486c277dfce86"
+    },
+    "Nezha Taizi": {
+      "gameId": 226,
+      "officialNameZh": "哪吒太子",
+      "officialNameEn": "Nezha Taizi",
+      "messageLabel": "DEVIL_ID_226_NATATAISHI",
+      "pages": [
+        "永远保持着少年模样的英雄神。\n在《西游记》中和孙悟空\n展开过激烈的战斗。\n　\n传说他在出生时\n便手持乾坤圈，身披混天绫，\n并在后来凭借这两件法宝\n战胜了龙王和魔王。\n也有说法认为\n战斗就发生在他刚出生的时候。\n由于父亲的背叛，他曾一度自刎，\n后来释迦牟尼慈悲为怀，\n令其复活，并担任天兵的统帅。"
+      ],
+      "paragraphs": [
+        "永远保持着少年模样的英雄神。在《西游记》中和孙悟空展开过激烈的战斗。",
+        "传说他在出生时便手持乾坤圈，身披混天绫，并在后来凭借这两件法宝战胜了龙王和魔王。也有说法认为战斗就发生在他刚出生的时候。由于父亲的背叛，他曾一度自刎，后来释迦牟尼慈悲为怀，令其复活，并担任天兵的统帅。"
+      ],
+      "localizationKeys": [
+        "82DC364D4112D0CDAEB637BFA4FF31AC"
+      ],
+      "textSha256": "8db33d4b13d8de3a3a46c843e729447339de370c3fae3d206054fcfa90ada0ee"
+    },
+    "Norn": {
+      "gameId": 22,
+      "officialNameZh": "诺伦",
+      "officialNameEn": "Norn",
+      "messageLabel": "DEVIL_ID_022_NORN",
+      "pages": [
+        "北欧神话中的命运女神们。\n据说她们是巨人族的成员。\n　\n她们居住在世界树的\n树根下涌出的水井旁，\n据说由她们所决定的命运，\n连众神也无法违抗。"
+      ],
+      "paragraphs": [
+        "北欧神话中的命运女神们。据说她们是巨人族的成员。",
+        "她们居住在世界树的树根下涌出的水井旁，据说由她们所决定的命运，连众神也无法违抗。"
+      ],
+      "localizationKeys": [
+        "93D3EF944E8AB4F66012408CB064ECAB"
+      ],
+      "textSha256": "f21f5c5130be7b33f5bc2cec17a0c789a8fcd005949b5345c936041d4e385e62"
+    },
+    "Nozuchi": {
+      "gameId": 107,
+      "officialNameZh": "野槌",
+      "officialNameEn": "Nozuchi",
+      "messageLabel": "DEVIL_ID_107_NOZUCHI",
+      "pages": [
+        "日本记纪中所记载的蛇之精灵，\n自古便居住在山中，\n据说掌管着地脉。\n　\n名字被认为来源于日本古语，\n意思是“野神”。\n传说它居住在大山深处的树荫下\n或灌木丛中，\n头部前端有一张大嘴，\n却没有眼睛和鼻子。\n据说它并不邪恶，但脾气暴躁，\n有时会攻击并吞食面前的人类。"
+      ],
+      "paragraphs": [
+        "日本记纪中所记载的蛇之精灵，自古便居住在山中，据说掌管着地脉。",
+        "名字被认为来源于日本古语，意思是“野神”。传说它居住在大山深处的树荫下或灌木丛中，头部前端有一张大嘴，却没有眼睛和鼻子。据说它并不邪恶，但脾气暴躁，有时会攻击并吞食面前的人类。"
+      ],
+      "localizationKeys": [
+        "0B306D0D4BA636C76AE37685C3CB0026"
+      ],
+      "textSha256": "f86a3085e4435f0702d1eaae354808fccc06125495b6a1460c55023cf76e820c"
+    },
+    "Nue": {
+      "gameId": 145,
+      "officialNameZh": "奴延",
+      "officialNameEn": "Nue",
+      "messageLabel": "DEVIL_ID_145_NUE",
+      "pages": [
+        "日本传说中登场的怪物。\n据说拥有猿猴的头、老虎的四肢、\n狸猫的身躯和蛇的尾巴。\n　\n因为这种怪异模糊的外貌，\n“奴延”也被用来比喻\n身份不明之人。\n另外据说奴延在现身时\n会发出独特的叫声。\n根据《平家物语》的记载，\n每晚丑时三刻，奴延都会\n藏在黑云里袭击天皇的宫殿，\n后来一位叫源赖政的武将\n用弓箭把它射了下来，将其消灭。"
+      ],
+      "paragraphs": [
+        "日本传说中登场的怪物。据说拥有猿猴的头、老虎的四肢、狸猫的身躯和蛇的尾巴。",
+        "因为这种怪异模糊的外貌，“奴延”也被用来比喻身份不明之人。另外据说奴延在现身时会发出独特的叫声。根据《平家物语》的记载，每晚丑时三刻，奴延都会藏在黑云里袭击天皇的宫殿，后来一位叫源赖政的武将用弓箭把它射了下来，将其消灭。"
+      ],
+      "localizationKeys": [
+        "1D65A80E499DB3259CAED2B5D0A3F152"
+      ],
+      "textSha256": "f1d587b5a6c995cc85e3b063e5ca8f8faa755ca2d0c25b286dbbed4e689b65d2"
+    },
+    "Nuwa": {
+      "gameId": 75,
+      "officialNameZh": "女娲",
+      "officialNameEn": "Nuwa",
+      "messageLabel": "DEVIL_ID_075_JOKA",
+      "pages": [
+        "在中国神话里登场的女神。\n被描绘为人头蛇身的样貌，\n相传便是她创造了人类。\n　\n是三皇之一，和同为三皇的伏羲\n被认为是兄妹或者夫妇的关系。\n当支撑天地的四根柱子折断时，\n据说是她对其完成了修复。\n同时她也作为用泥巴\n捏塑出了人类的造物主广为人知。"
+      ],
+      "paragraphs": [
+        "在中国神话里登场的女神。被描绘为人头蛇身的样貌，相传便是她创造了人类。",
+        "是三皇之一，和同为三皇的伏羲被认为是兄妹或者夫妇的关系。当支撑天地的四根柱子折断时，据说是她对其完成了修复。同时她也作为用泥巴捏塑出了人类的造物主广为人知。"
+      ],
+      "localizationKeys": [
+        "947AF2BF44257A4B9B81DE83CCA06EC4"
+      ],
+      "textSha256": "e9cc2efd3c09c5d801483bde8a34cab0a783bdb60448d30c44868c2401146daf"
+    },
+    "Nuwa A": {
+      "gameId": 197,
+      "officialNameZh": "女娲",
+      "officialNameEn": "Nuwa",
+      "messageLabel": "DEVIL_ID_197_JOKA_II",
+      "pages": [
+        "在中国神话里登场的女神。\n被描绘为人头蛇身的样貌，\n相传便是她创造了人类。\n　\n她是三皇之一，传说她与同为三皇的\n伏羲是兄妹或夫妇的关系。\n当支撑天地的四根柱子折断时，\n据说是她对其完成了修复。\n同时她也作为用泥巴捏塑出了人类的\n造物主广为人知。\n　\n她的这个形态更接近蛇，\n但也只是她解放出部分力量的形态，\n力量远不及其真正的实力。"
+      ],
+      "paragraphs": [
+        "在中国神话里登场的女神。被描绘为人头蛇身的样貌，相传便是她创造了人类。",
+        "她是三皇之一，传说她与同为三皇的伏羲是兄妹或夫妇的关系。当支撑天地的四根柱子折断时，据说是她对其完成了修复。同时她也作为用泥巴捏塑出了人类的造物主广为人知。",
+        "她的这个形态更接近蛇，但也只是她解放出部分力量的形态，力量远不及其真正的实力。"
+      ],
+      "localizationKeys": [
+        "0D982DF34633CB427B6A938A31FDAFA6"
+      ],
+      "textSha256": "c144443f199d06c75cd8d74f7a0fdae489947565140bd8d7988ae1becda5946b"
+    },
+    "Nyami Nyami": {
+      "gameId": 100,
+      "officialNameZh": "涯米涯米",
+      "officialNameEn": "Nyami Nyami",
+      "messageLabel": "DEVIL_ID_100_NYAMINYAMI",
+      "pages": [
+        "在南非的汤加族和罗子族中\n流传的赞比西河之神。\n　\n长着蛇的身体、鱼或龙的脑袋，\n传说会守护身处水边的人，\n赐予他们食物。\n据说他原本和妻子奇塔波生活在一起，\n但卡里巴大坝的建设\n拆散了他们。\n另外当地居民也因为大坝的建设\n而被迫迁居到了贫瘠的土地。\n大坝建设过程中发生了大洪水，\n人们认为那是愤怒的涯米涯米\n降下的神罚。"
+      ],
+      "paragraphs": [
+        "在南非的汤加族和罗子族中流传的赞比西河之神。",
+        "长着蛇的身体、鱼或龙的脑袋，传说会守护身处水边的人，赐予他们食物。据说他原本和妻子奇塔波生活在一起，但卡里巴大坝的建设拆散了他们。另外当地居民也因为大坝的建设而被迫迁居到了贫瘠的土地。大坝建设过程中发生了大洪水，人们认为那是愤怒的涯米涯米降下的神罚。"
+      ],
+      "localizationKeys": [
+        "866BBBC84BA84DD9A7E2F3AA2CEC3A24"
+      ],
+      "textSha256": "496c9cd6c99f2fe15c03cc9ec32c35ee954e19ffd7d6d3e9c17003dfbd86e889"
+    },
+    "Obariyon": {
+      "gameId": 344,
+      "officialNameZh": "背背鬼",
+      "officialNameEn": "Obariyon",
+      "messageLabel": "DEVIL_ID_344_OBARIYON",
+      "pages": [
+        "日本传说中的一种幽灵或者妖怪。\n也叫“背负小鬼”。\n　\n据说要是在晚上\n路过茂密的灌木丛，\n就会听到“背我背我”的喊声，\n然后它就会跳到人的背上。\n如果让背背鬼上身，\n就会感到肩上突然多了重担，\n十分难受。大多数人\n都承受不了这种压力，\n可如果能把背背鬼带回家，\n据说它就会变成金币。"
+      ],
+      "paragraphs": [
+        "日本传说中的一种幽灵或者妖怪。也叫“背负小鬼”。",
+        "据说要是在晚上路过茂密的灌木丛，就会听到“背我背我”的喊声，然后它就会跳到人的背上。如果让背背鬼上身，就会感到肩上突然多了重担，十分难受。大多数人都承受不了这种压力，可如果能把背背鬼带回家，据说它就会变成金币。"
+      ],
+      "localizationKeys": [
+        "246EFE9E459911875F0D68847532040D"
+      ],
+      "textSha256": "86c013400a09a96595f029c08301af9fe12b2634b4e57b696d5f08e330136ec9"
+    },
+    "Oberon": {
+      "gameId": 52,
+      "officialNameZh": "奥伯隆",
+      "officialNameEn": "Oberon",
+      "messageLabel": "DEVIL_ID_052_OBERON",
+      "pages": [
+        "妖精之王。\n娶了女王缇坦妮雅为妻，\n司掌妖精中的一切祭仪事务。\n　\n虽是年长的妖精，但由于在\n幼年时受到过诅咒，他的身体\n仍旧是少年时期的模样。\n传说他时不时会和人类女性\n坠入爱河，并因此\n受到妻子的惩戒。"
+      ],
+      "paragraphs": [
+        "妖精之王。娶了女王缇坦妮雅为妻，司掌妖精中的一切祭仪事务。",
+        "虽是年长的妖精，但由于在幼年时受到过诅咒，他的身体仍旧是少年时期的模样。传说他时不时会和人类女性坠入爱河，并因此受到妻子的惩戒。"
+      ],
+      "localizationKeys": [
+        "BC49ECC94389776173C85FBCFC45FDD7"
+      ],
+      "textSha256": "98a6ab4793831d6a28bef0cd85da3f8c3ccc25c262ad3a530f26d1b8ee0bcf0b"
+    },
+    "Odin": {
+      "gameId": 9,
+      "officialNameZh": "奥丁",
+      "officialNameEn": "Odin",
+      "messageLabel": "DEVIL_ID_009_ODIN",
+      "pages": [
+        "北欧神话的主神。\n既是武者也是魔术师，\n更是知识的探求者。\n　\n他手持永恒之枪，\n戴着会复制的戒指德罗普尼尔，\n胯下则骑着八足神马斯雷普尼尔。\n为了获取知识他不惜一切代价，\n根据传说，为了喝到\n能授予知识的密米尔泉水，\n他献出了自己的一只眼睛。\n他还是一位迎接战士灵魂的神。"
+      ],
+      "paragraphs": [
+        "北欧神话的主神。既是武者也是魔术师，更是知识的探求者。",
+        "他手持永恒之枪，戴着会复制的戒指德罗普尼尔，胯下则骑着八足神马斯雷普尼尔。为了获取知识他不惜一切代价，根据传说，为了喝到能授予知识的密米尔泉水，他献出了自己的一只眼睛。他还是一位迎接战士灵魂的神。"
+      ],
+      "localizationKeys": [
+        "39E8E4B345CFCD9476D8E2A73CC3475D"
+      ],
+      "textSha256": "9c880ad4d371d4b4e8a4e83d9c16e73288774945d7ad380e1a9a28ac5f315c2e"
+    },
+    "Okuninushi": {
+      "gameId": 215,
+      "officialNameZh": "大国主",
+      "officialNameEn": "Okuninushi",
+      "messageLabel": "DEVIL_ID_215_OKUNINUSHI",
+      "pages": [
+        "日本神话中的国津神。\n掌管农耕和医疗之力。\n　\n在克服须佐之男提出的难题后，\n和其女儿须世理姬\n一道于出云建国，\n因此被视为出云建命的祖先，\n是出云神话中\n地位最重要的神明。"
+      ],
+      "paragraphs": [
+        "日本神话中的国津神。掌管农耕和医疗之力。",
+        "在克服须佐之男提出的难题后，和其女儿须世理姬一道于出云建国，因此被视为出云建命的祖先，是出云神话中地位最重要的神明。"
+      ],
+      "localizationKeys": [
+        "201E0921493504BE7C89AD96DCF6F6C8"
+      ],
+      "textSha256": "a19bec97ad8892718591a6291bffe2c27c09242890214861641d9eef9edc07cb"
+    },
+    "Ongyo-Ki": {
+      "gameId": 310,
+      "officialNameZh": "隐形鬼",
+      "officialNameEn": "Ongyo-Ki",
+      "messageLabel": "DEVIL_ID_310_ONGYOKI",
+      "pages": [
+        "曾在平安时代统治伊贺、伊势地区，\n传说中的豪族“藤原千方”\n所驱使的四鬼之一。\n　\n是能隐匿自己的身形和气息\n进行偷袭的使役神。\n人们认为鬼能斡旋\n人和神之间的关系，\n根据《风土记》记载，伊贺、\n伊势地区也有很多和鬼相关的活动。"
+      ],
+      "paragraphs": [
+        "曾在平安时代统治伊贺、伊势地区，传说中的豪族“藤原千方”所驱使的四鬼之一。",
+        "是能隐匿自己的身形和气息进行偷袭的使役神。人们认为鬼能斡旋人和神之间的关系，根据《风土记》记载，伊贺、伊势地区也有很多和鬼相关的活动。"
+      ],
+      "localizationKeys": [
+        "1AEF8E18410865F74BDC868EE9CE52F9"
+      ],
+      "textSha256": "084350e8c8ed552fe0f5c250d909830dfd3fb9e0f96f14c7822a9f6e54be6e9f"
+    },
+    "Oni": {
+      "gameId": 318,
+      "officialNameZh": "鬼",
+      "officialNameEn": "Oni",
+      "messageLabel": "DEVIL_ID_318_ONI",
+      "pages": [
+        "在各种日本传说里登场，\n丑陋且拥有怪力的邪恶妖怪。\n据说他们极其残暴，\n会袭击人类的村落。\n　\n他们拥有红色的皮肤，\n头顶长角，还有长长的爪子\n以及像刀一样锐利的獠牙。"
+      ],
+      "paragraphs": [
+        "在各种日本传说里登场，丑陋且拥有怪力的邪恶妖怪。据说他们极其残暴，会袭击人类的村落。",
+        "他们拥有红色的皮肤，头顶长角，还有长长的爪子以及像刀一样锐利的獠牙。"
+      ],
+      "localizationKeys": [
+        "164642844B1EC44D871A18A221D30F55"
+      ],
+      "textSha256": "63b5c0df71fda1974b3e274167257b5eed5166d152f57495cd741ecae193536a"
+    },
+    "Onmoraki": {
+      "gameId": 290,
+      "officialNameZh": "阴摩罗鬼",
+      "officialNameEn": "Onmoraki",
+      "messageLabel": "DEVIL_ID_290_ONMORAKI",
+      "pages": [
+        "形似鸟类的日本妖怪，\n长着一张人脸，会发出令人\n厌恶的鸣叫声，口中还会喷出火焰。\n　\n据说这种妖怪的真面目\n是没人供奉的死尸，\n它们会出现在疏于修行的僧侣面前。"
+      ],
+      "paragraphs": [
+        "形似鸟类的日本妖怪，长着一张人脸，会发出令人厌恶的鸣叫声，口中还会喷出火焰。",
+        "据说这种妖怪的真面目是没人供奉的死尸，它们会出现在疏于修行的僧侣面前。"
+      ],
+      "localizationKeys": [
+        "D557F9D94476415124BE5AB2D707DD70"
+      ],
+      "textSha256": "5415bf289b742c75d9cb5fcb723f74c669c6cfde5f1b5d5a01d7403e8201a8a7"
+    },
+    "Onyankopon": {
+      "gameId": 386,
+      "officialNameZh": "奥尼扬科蓬",
+      "officialNameEn": "Onyankopon",
+      "messageLabel": "DEVIL_ID_386_ONYANKOPON",
+      "pages": [
+        "在西非阿散蒂等民族中\n流传的天空神。\n人们认为这个名字是至高神\n尼阿美的别名之一，\n意思是“伟大之人”。\n　\n他是创造了万物的蜘蛛之神，\n赐予了人们生存的喜悦和动力。\n苦难之人会向这位神明求助。\n传说他最初居住在人们近旁，\n但人们捣山药时用捣锤磕到了他，\n于是他便搬到了天空上居住。\n虽然已和人类相距甚远，\n但人们并不认为他是一位\n触不可及的神明。"
+      ],
+      "paragraphs": [
+        "在西非阿散蒂等民族中流传的天空神。人们认为这个名字是至高神尼阿美的别名之一，意思是“伟大之人”。",
+        "他是创造了万物的蜘蛛之神，赐予了人们生存的喜悦和动力。苦难之人会向这位神明求助。传说他最初居住在人们近旁，但人们捣山药时用捣锤磕到了他，于是他便搬到了天空上居住。虽然已和人类相距甚远，但人们并不认为他是一位触不可及的神明。"
+      ],
+      "localizationKeys": [
+        "06BA0F1F43E5BE55DEFAB690A3DE9522"
+      ],
+      "textSha256": "1211517f96ab45ee349eaa79de8e9fa7d31a8e8c926af480986438214e643c42"
+    },
+    "Orobas": {
+      "gameId": 139,
+      "officialNameZh": "欧若博司",
+      "officialNameEn": "Orobas",
+      "messageLabel": "DEVIL_ID_139_OROBAS",
+      "pages": [
+        "所罗门王的72大魔神之一，\n相传是以马头人样貌示人的恶魔。\n　\n会对召唤他的魔法师抱有好感，\n并以威严的态度应对，\n回答其关于现在、过去、\n未来的任何问题。\n据说魔法师们经常召唤他，\n借他的能力揭露谎言\n或者预测未来。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一，相传是以马头人样貌示人的恶魔。",
+        "会对召唤他的魔法师抱有好感，并以威严的态度应对，回答其关于现在、过去、未来的任何问题。据说魔法师们经常召唤他，借他的能力揭露谎言或者预测未来。"
+      ],
+      "localizationKeys": [
+        "B8BB10A542CFA19F85AA7BBD1B72FC5A"
+      ],
+      "textSha256": "2666a654a818fc611f9edf65102215fd1489fa50d1fec19b118fcc1c9a5becfe"
+    },
+    "Orthrus": {
+      "gameId": 135,
+      "officialNameZh": "欧特鲁斯",
+      "officialNameEn": "Orthrus",
+      "messageLabel": "DEVIL_ID_135_ORTHRUS",
+      "pages": [
+        "登场于希腊神话的双头巨犬，\n被认为是刻耳柏洛斯的弟弟。\n　\n为居住在世界尽头之岛上的\n怪物革律翁看守牧场，\n是一头优秀的看门犬，\n但被英雄赫拉克勒斯在完成\n十二伟业的过程中一击杀死。"
+      ],
+      "paragraphs": [
+        "登场于希腊神话的双头巨犬，被认为是刻耳柏洛斯的弟弟。",
+        "为居住在世界尽头之岛上的怪物革律翁看守牧场，是一头优秀的看门犬，但被英雄赫拉克勒斯在完成十二伟业的过程中一击杀死。"
+      ],
+      "localizationKeys": [
+        "F07D71994F3CA7DF2F58DA8DD8AA6640"
+      ],
+      "textSha256": "e575fa524f83c0d96a4e71ac324edf0a3d5cd16845e305cb61339759c6128093"
+    },
+    "Ose": {
+      "gameId": 269,
+      "officialNameZh": "欧赛",
+      "officialNameEn": "Ose",
+      "messageLabel": "DEVIL_ID_269_OSE",
+      "pages": [
+        "所罗门王的72大魔神之一。\n　\n半兽半人的恶魔。\n据说可以变成召唤者所希望的样子，\n但这种力量只能持续很短的时间。"
+      ],
+      "paragraphs": [
+        "所罗门王的72大魔神之一。",
+        "半兽半人的恶魔。据说可以变成召唤者所希望的样子，但这种力量只能持续很短的时间。"
+      ],
+      "localizationKeys": [
+        "000E136442B6AB6847053AA2D36B9ECB"
+      ],
+      "textSha256": "801935ac8fa51006d93985889e242c6b21e9ece93c633451497fd6811f7b645d"
+    },
+    "Oyamatsumi": {
+      "gameId": 212,
+      "officialNameZh": "大山津见",
+      "officialNameEn": "Oyamatsumi",
+      "messageLabel": "DEVIL_ID_212_OYAMATSUMI",
+      "pages": [
+        "日本神话中登场的国津神之一。\n是须佐之男的妻子奇稻田姬的祖父。\n　\n作为山神被人们所知，\n但因同时掌管着水源和农田收成，\n也被视作水神和农田之神。"
+      ],
+      "paragraphs": [
+        "日本神话中登场的国津神之一。是须佐之男的妻子奇稻田姬的祖父。",
+        "作为山神被人们所知，但因同时掌管着水源和农田收成，也被视作水神和农田之神。"
+      ],
+      "localizationKeys": [
+        "E4AE8295496705964389AEA67632F9B6"
+      ],
+      "textSha256": "4c185074518b1a9bb2524be217b2b59e6309b00a831bf906e9b9cb5a1c56404c"
+    },
+    "Pale Rider": {
+      "gameId": 358,
+      "officialNameZh": "苍白骑士",
+      "officialNameEn": "Pale Rider",
+      "messageLabel": "DEVIL_ID_358_PALERIDER",
+      "pages": [
+        "记载于约翰启示录中，\n会在世界末日降临时\n出现的四骑士之一。\n　\n他骑着青白色的骏马，\n黄泉之主追随于他。\n这位骑士被称为“死亡”，\n拥有通过绝症剥夺性命，\n以此灭亡人类的力量。"
+      ],
+      "paragraphs": [
+        "记载于约翰启示录中，会在世界末日降临时出现的四骑士之一。",
+        "他骑着青白色的骏马，黄泉之主追随于他。这位骑士被称为“死亡”，拥有通过绝症剥夺性命，以此灭亡人类的力量。"
+      ],
+      "localizationKeys": [
+        "0703D130479EA367388E828055CBD018"
+      ],
+      "textSha256": "ce65450a2dd56455f0f9446c45067b6e51b25c09dc270763e47d7214132f6915"
+    },
+    "Parvati": {
+      "gameId": 27,
+      "officialNameZh": "帕尔瓦蒂",
+      "officialNameEn": "Parvati",
+      "messageLabel": "DEVIL_ID_027_PARVATHI",
+      "pages": [
+        "印度神话中湿婆的妃子之一。\n　\n她拥有着能够象征\n一切美好的美丽容貌。\n总是跟随在湿婆的身边，\n据说湿婆之所以\n能够开启第三只眼，\n也有她的一份功劳。"
+      ],
+      "paragraphs": [
+        "印度神话中湿婆的妃子之一。",
+        "她拥有着能够象征一切美好的美丽容貌。总是跟随在湿婆的身边，据说湿婆之所以能够开启第三只眼，也有她的一份功劳。"
+      ],
+      "localizationKeys": [
+        "21051F624E7506C5C0D2A5BC259A6FD1"
+      ],
+      "textSha256": "36ac20abd485bd08ee0162f17b9447ab1856b99ea2e951c68dbbd0a2f3a8026c"
+    },
+    "Pazuzu": {
+      "gameId": 233,
+      "officialNameZh": "帕祖祖",
+      "officialNameEn": "Pazuzu",
+      "messageLabel": "DEVIL_ID_233_PAZUZU",
+      "pages": [
+        "苏美尔传说中的邪神。\n被认为是掌管东南风的魔王。\n　\n他拥有狮子的头和人的身体，\n背上有两对鸟的翅膀，\n手是狮子的前爪，脚是鹰的爪子，\n同时长着蝎子的尾巴，\n额头上还有一只形状怪异弯曲的角。\n据说他会伴随着含有毒气的热风\n从波斯湾而来，并让疾病蔓延。"
+      ],
+      "paragraphs": [
+        "苏美尔传说中的邪神。被认为是掌管东南风的魔王。",
+        "他拥有狮子的头和人的身体，背上有两对鸟的翅膀，手是狮子的前爪，脚是鹰的爪子，同时长着蝎子的尾巴，额头上还有一只形状怪异弯曲的角。据说他会伴随着含有毒气的热风从波斯湾而来，并让疾病蔓延。"
+      ],
+      "localizationKeys": [
+        "B90B43C248C955420E7345A77FC4BC63"
+      ],
+      "textSha256": "9890037a1a19b3b7d609a2231ee8177b667e7ca10099d4b35071c3e020a81445"
+    },
+    "Peallaidh": {
+      "gameId": 149,
+      "officialNameZh": "皮亚雷",
+      "officialNameEn": "Peallaidh",
+      "messageLabel": "DEVIL_ID_149_PEALLAIDH",
+      "pages": [
+        "苏格兰的一种半人半兽的妖精。\n传说喜好栖息于河川\n或者湖边、海岸等水域。\n　\n是“棕仙”这类妖精的一种，\n据说长着鹿腿、山羊蹄，\n上半身是多毛人类男性的样子。\n如果感到孤单，就会为寻求人类陪伴\n而追赶旅行者之类的行人一整晚。\n虽然基本上算是无害，\n但在棕仙这类妖精里\n也属于恶意较强的，\n一般认为靠近它会有危险。"
+      ],
+      "paragraphs": [
+        "苏格兰的一种半人半兽的妖精。传说喜好栖息于河川或者湖边、海岸等水域。",
+        "是“棕仙”这类妖精的一种，据说长着鹿腿、山羊蹄，上半身是多毛人类男性的样子。如果感到孤单，就会为寻求人类陪伴而追赶旅行者之类的行人一整晚。虽然基本上算是无害，但在棕仙这类妖精里也属于恶意较强的，一般认为靠近它会有危险。"
+      ],
+      "localizationKeys": [
+        "E6B329BE40E442C2377F51A60916B06D"
+      ],
+      "textSha256": "a1b71398a65a0353b1eeb15a6b7fac5e851a606d973f2f63fca34fcd04443856"
+    },
+    "Pisaca": {
+      "gameId": 341,
+      "officialNameZh": "毕舍遮",
+      "officialNameEn": "Pisaca",
+      "messageLabel": "DEVIL_ID_341_PISHACHA",
+      "pages": [
+        "印度神话中的\n一种食尸饿鬼。\n　\n被认为会从口腔进入人体，\n如果不用咒语或药物将其驱除，\n它就会不断给人带来病痛。\n另外，据说直接看到它样子的人\n一定会在之后的九个月内丧命。"
+      ],
+      "paragraphs": [
+        "印度神话中的一种食尸饿鬼。",
+        "被认为会从口腔进入人体，如果不用咒语或药物将其驱除，它就会不断给人带来病痛。另外，据说直接看到它样子的人一定会在之后的九个月内丧命。"
+      ],
+      "localizationKeys": [
+        "AAE24DB4465AD5F51F271BAB3F539EC6"
+      ],
+      "textSha256": "2a3caa501c6eaa0b7f0d70f3170e987d2ecefeb9ad2495f31350e8dd393a566d"
+    },
+    "Pixie": {
+      "gameId": 59,
+      "officialNameZh": "皮克希",
+      "officialNameEn": "Pixie",
+      "messageLabel": "DEVIL_ID_059_PIXIE",
+      "pages": [
+        "栖息于英国西南部的小型妖精。\n性格活泼，喜欢恶作剧。\n　\n样子在各地的传说中都略有不同，\n但对性格的描述基本保持着一致。\n她们的代表性恶作剧\n叫做“皮克希捣蛋”，\n会让人在同一个地方\n不断绕圈行进。\n但另一方面，\n她们又会帮助人类干农活，\n整体来说被视为一种善良的妖精。"
+      ],
+      "paragraphs": [
+        "栖息于英国西南部的小型妖精。性格活泼，喜欢恶作剧。",
+        "样子在各地的传说中都略有不同，但对性格的描述基本保持着一致。她们的代表性恶作剧叫做“皮克希捣蛋”，会让人在同一个地方不断绕圈行进。但另一方面，她们又会帮助人类干农活，整体来说被视为一种善良的妖精。"
+      ],
+      "localizationKeys": [
+        "0F445A4D4D483CEEC3E412A26DE695BC"
+      ],
+      "textSha256": "15a36c31db1c1e0e69627e5e536bd557375226a8139af3a51fc22e5e4f0d8a0d"
+    },
+    "Poltergeist": {
+      "gameId": 343,
+      "officialNameZh": "骚灵",
+      "officialNameEn": "Poltergeist",
+      "messageLabel": "DEVIL_ID_343_POLTERGEIST",
+      "pages": [
+        "会在家中疯狂恶作剧的恶灵。\n原名来自德语，\n意思是“吵闹的灵魂”。\n　\n它的行为不仅限于\n制造噪音之类的无害恶作剧，\n还会进行诸如纵火或暴力伤害\n这样的恶性破坏活动。\n据说这种灵异现象只会出现在\n拥有青春期孩子的家庭当中，\n也有说法认为是孩子们\n不稳定的情绪制造出了它。"
+      ],
+      "paragraphs": [
+        "会在家中疯狂恶作剧的恶灵。原名来自德语，意思是“吵闹的灵魂”。",
+        "它的行为不仅限于制造噪音之类的无害恶作剧，还会进行诸如纵火或暴力伤害这样的恶性破坏活动。据说这种灵异现象只会出现在拥有青春期孩子的家庭当中，也有说法认为是孩子们不稳定的情绪制造出了它。"
+      ],
+      "localizationKeys": [
+        "762E79E44844CC71BCBA4FA7E0F0B61B"
+      ],
+      "textSha256": "4d9ac21309794bff3a8c4c6555038e59657767cd7811f414652e3eae73ab4db9"
+    },
+    "Power": {
+      "gameId": 256,
+      "officialNameZh": "能天使",
+      "officialNameEn": "Power",
+      "messageLabel": "DEVIL_ID_256_POWER",
+      "pages": [
+        "在神学的天阶等级中\n位于第六等“能天使”的中级天使。\n名字的意思是“上帝之力”。\n　\n为防止恶魔入侵天界，他们随时\n都矗立于最前线，巡视着天空回廊。\n因为身处容易受到恶魔诱惑的位置，\n据说能天使中出现过不少堕落者，\n许多堕天使曾经都是能天使。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第六等“能天使”的中级天使。名字的意思是“上帝之力”。",
+        "为防止恶魔入侵天界，他们随时都矗立于最前线，巡视着天空回廊。因为身处容易受到恶魔诱惑的位置，据说能天使中出现过不少堕落者，许多堕天使曾经都是能天使。"
+      ],
+      "localizationKeys": [
+        "B3F3BDCA4F089234EE52A4A3AE5A3A8A"
+      ],
+      "textSha256": "393b8f992cd2c319789ebaf4a4a21538b107754e1426c89e7e53e23d58210b8a"
+    },
+    "Preta": {
+      "gameId": 345,
+      "officialNameZh": "饿鬼",
+      "officialNameEn": "Preta",
+      "messageLabel": "DEVIL_ID_345_GAKI",
+      "pages": [
+        "佛教世界中流传的饿死鬼，\n样貌丑陋。\n　\n据说生前贪婪的人们\n会堕入饿鬼道变成这种样子。\n它们的饥饿感永远无法\n获得满足，这份痛苦\n会不断持续直至下次转世。"
+      ],
+      "paragraphs": [
+        "佛教世界中流传的饿死鬼，样貌丑陋。",
+        "据说生前贪婪的人们会堕入饿鬼道变成这种样子。它们的饥饿感永远无法获得满足，这份痛苦会不断持续直至下次转世。"
+      ],
+      "localizationKeys": [
+        "91C262A24FF9B78BB9FBE2BCBD6C61F6"
+      ],
+      "textSha256": "e78b8ef2118fcd21307492a154e3fd300d9c3779eae6ee304f126b09b5ec6cb8"
+    },
+    "Principality": {
+      "gameId": 257,
+      "officialNameZh": "权天使",
+      "officialNameEn": "Principality",
+      "messageLabel": "DEVIL_ID_257_PRINCIPALITY",
+      "pages": [
+        "在神学的天阶等级中\n位于第七等“权天使”的下级天使。\n　\n传说其负责守护并监视人类的领导者，\n并掌管着国家与文明的兴衰。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第七等“权天使”的下级天使。",
+        "传说其负责守护并监视人类的领导者，并掌管着国家与文明的兴衰。"
+      ],
+      "localizationKeys": [
+        "5CB5B6C8423367395732F793BAA76642"
+      ],
+      "textSha256": "0ed7e9bb5d7f3c0ae58d22abaa1ce9e741928bc37bbd547423f59ebb6e6a32e1"
+    },
+    "Qing Long": {
+      "gameId": 96,
+      "officialNameZh": "青龙",
+      "officialNameEn": "Qing Long",
+      "messageLabel": "DEVIL_ID_096_SEIRYU",
+      "pages": [
+        "在中国的众多神话和思想中\n被提及的“四圣兽”之一。\n　\n掌管东方、春季\n和五行中的木。\n在四圣兽中最为尊贵，\n据说居住于海底的宫殿中。\n另外在风水学里，\n认为将流水置于东侧，\n便可引导青龙之力，化为吉相。"
+      ],
+      "paragraphs": [
+        "在中国的众多神话和思想中被提及的“四圣兽”之一。",
+        "掌管东方、春季和五行中的木。在四圣兽中最为尊贵，据说居住于海底的宫殿中。另外在风水学里，认为将流水置于东侧，便可引导青龙之力，化为吉相。"
+      ],
+      "localizationKeys": [
+        "9E3A11CA42D1C17A9CF4BF9DFB49126C"
+      ],
+      "textSha256": "ceee1a3fae82902f1c5a4ccfea4d5e248f65a0b5878baa638f9e0e559fd6a163"
+    },
+    "Queen Medb": {
+      "gameId": 64,
+      "officialNameZh": "妖精女王",
+      "officialNameEn": "Queen Medb",
+      "messageLabel": "DEVIL_ID_064_QUEENMAB",
+      "pages": [
+        "凯尔特神话中的妖精女王。\n　\n原本近似于一种梦魔，\n但因为常和缇坦妮雅混同，\n因此以女王的身份而变得有名。\n她有很多个丈夫，\n会用自己的经血调制成\n红色蜂蜜酒分给他们，\n以此划分支配权。"
+      ],
+      "paragraphs": [
+        "凯尔特神话中的妖精女王。",
+        "原本近似于一种梦魔，但因为常和缇坦妮雅混同，因此以女王的身份而变得有名。她有很多个丈夫，会用自己的经血调制成红色蜂蜜酒分给他们，以此划分支配权。"
+      ],
+      "localizationKeys": [
+        "999358B54F56177F6EEB1D8B44E9F91F"
+      ],
+      "textSha256": "9ce368c94b36429613b7c7be27856706ad475caf10329a4f5059f5a709e95d36"
+    },
+    "Quetzalcoatl": {
+      "gameId": 95,
+      "officialNameZh": "羽蛇神",
+      "officialNameEn": "Quetzalcoatl",
+      "messageLabel": "DEVIL_ID_095_QUETZALCOATL",
+      "pages": [
+        "阿兹特克神话中的创世神。\n名字的意思是“拥有羽毛的蛇”，\n被描述为一条长有翅膀的大蛇。\n　\n在神话中被视为太阳本身，\n金星则是他的心脏。\n也被认为是赋予呼吸的风之神。\n据说是他用自己的血创造了人类，\n并作为守护者\n为人类带来了丰收和文化。"
+      ],
+      "paragraphs": [
+        "阿兹特克神话中的创世神。名字的意思是“拥有羽毛的蛇”，被描述为一条长有翅膀的大蛇。",
+        "在神话中被视为太阳本身，金星则是他的心脏。也被认为是赋予呼吸的风之神。据说是他用自己的血创造了人类，并作为守护者为人类带来了丰收和文化。"
+      ],
+      "localizationKeys": [
+        "BA592D4E41112BD6FB050591AFDBCDD0"
+      ],
+      "textSha256": "4f8d1e7316cf428037b465db41623a062c2cbb0ea5a3b2a5eea665c258eabb02"
+    },
+    "Rakshasa": {
+      "gameId": 324,
+      "officialNameZh": "罗刹",
+      "officialNameEn": "Rakshasa",
+      "messageLabel": "DEVIL_ID_324_RAKSHASA",
+      "pages": [
+        "印度神话中和众神敌对的邪鬼一族，\n也是人类的敌人。\n　\n他们是邪恶力量的化身，样貌狰狞，\n但拥有变身的能力，\n有时会借此来欺骗人类。\n另外也有传说称他们会吃人的死尸，\n还会煽动人们互相猜忌与怀疑。"
+      ],
+      "paragraphs": [
+        "印度神话中和众神敌对的邪鬼一族，也是人类的敌人。",
+        "他们是邪恶力量的化身，样貌狰狞，但拥有变身的能力，有时会借此来欺骗人类。另外也有传说称他们会吃人的死尸，还会煽动人们互相猜忌与怀疑。"
+      ],
+      "localizationKeys": [
+        "110F6A38452E2CCD35B0B089AA9FC5E0"
+      ],
+      "textSha256": "59f41b1c5b58c1c8cfb68e6b99e2553df2d7bfbc7d3cb855b2e931651c2b5652"
+    },
+    "Rangda": {
+      "gameId": 296,
+      "officialNameZh": "兰达",
+      "officialNameEn": "Rangda",
+      "messageLabel": "DEVIL_ID_296_RANGDA",
+      "pages": [
+        "印度尼西亚巴厘岛神话中的魔女，\n象征着巴厘印度教中邪恶的一面。\n　\n据说憎恨他人，\n走上了邪恶道路的女性魔法师\n就会成为兰达。\n传闻兰达会用黑魔法\n散播疾病、引发灾害，\n也会诅咒他人、驱使恶灵。\n她和象征善良的神兽巴隆是宿敌，\n传说即使她被打败，\n也必定会转世重生，\n和巴隆永远争斗下去。"
+      ],
+      "paragraphs": [
+        "印度尼西亚巴厘岛神话中的魔女，象征着巴厘印度教中邪恶的一面。",
+        "据说憎恨他人，走上了邪恶道路的女性魔法师就会成为兰达。传闻兰达会用黑魔法散播疾病、引发灾害，也会诅咒他人、驱使恶灵。她和象征善良的神兽巴隆是宿敌，传说即使她被打败，也必定会转世重生，和巴隆永远争斗下去。"
+      ],
+      "localizationKeys": [
+        "FB1FA22A43A510E2CEBAA386215029D2"
+      ],
+      "textSha256": "7a50dcb1b759508eabeaf628ba108f4974fbf6e17b80ec40d05d535440ddbd29"
+    },
+    "Raphael": {
+      "gameId": 245,
+      "officialNameZh": "拉斐尔",
+      "officialNameEn": "Raphael",
+      "messageLabel": "DEVIL_ID_245_RAPHAEL",
+      "pages": [
+        "在天阶等级中位于顶点的\n四大天使之一。\n名字的意思是“治愈者”。\n　\n据说他在伊甸园之中负责守护\n与智慧之树成对的那棵生命之树。"
+      ],
+      "paragraphs": [
+        "在天阶等级中位于顶点的四大天使之一。名字的意思是“治愈者”。",
+        "据说他在伊甸园之中负责守护与智慧之树成对的那棵生命之树。"
+      ],
+      "localizationKeys": [
+        "3A3088734D37F84AB1099AA894BCD85D"
+      ],
+      "textSha256": "40fe57e7c680335da9beae815cc64188cecd2e3280793b82afe5dc042c2e0725"
+    },
+    "Red Rider": {
+      "gameId": 353,
+      "officialNameZh": "红骑士",
+      "officialNameEn": "Red Rider",
+      "messageLabel": "DEVIL_ID_353_REDRIDER",
+      "pages": [
+        "记载于约翰启示录中，\n会在世界末日降临时\n出现的四骑士之一。\n　\n他骑着赤红色的骏马，\n手持巨大宝剑，\n被赋予了能从世界上夺走和平，\n使人互相残杀的力量。"
+      ],
+      "paragraphs": [
+        "记载于约翰启示录中，会在世界末日降临时出现的四骑士之一。",
+        "他骑着赤红色的骏马，手持巨大宝剑，被赋予了能从世界上夺走和平，使人互相残杀的力量。"
+      ],
+      "localizationKeys": [
+        "3EF2312F4D5D10AB2BD5F5860073ED24"
+      ],
+      "textSha256": "d77b87f82a1e1822cc333378237109092ed0980156e3a1509638221c16d72c6a"
+    },
+    "Samael": {
+      "gameId": 118,
+      "officialNameZh": "萨麦尔",
+      "officialNameEn": "Samael",
+      "messageLabel": "DEVIL_ID_118_SAMAEL",
+      "pages": [
+        "谜团众多的天使。\n名为“有毒的光辉之人”，\n名字中包含了意思相反的两个词。\n　\n是一条长有翅膀的巨蛇，虽为天使，\n但通常也被认为是恶魔的首领。\n有说法认为他是堕天使，\n但圣经等典籍中的许多记述\n并不支持这种解释。"
+      ],
+      "paragraphs": [
+        "谜团众多的天使。名为“有毒的光辉之人”，名字中包含了意思相反的两个词。",
+        "是一条长有翅膀的巨蛇，虽为天使，但通常也被认为是恶魔的首领。有说法认为他是堕天使，但圣经等典籍中的许多记述并不支持这种解释。"
+      ],
+      "localizationKeys": [
+        "C286F0CA41442E81BB8F2BBD4341F753"
+      ],
+      "textSha256": "69b965defcc56d8d40c7442ed0475b7c160edd66723d14d768e0dba2a66284d5"
+    },
+    "Sandalphon": {
+      "gameId": 246,
+      "officialNameZh": "圣德芬",
+      "officialNameEn": "Sandalphon",
+      "messageLabel": "DEVIL_ID_246_SANDALPHON",
+      "pages": [
+        "犹太教传说中的伟大天使，\n据说是梅塔特隆的双胞胎兄弟，\n负责掌管天堂中的歌唱。\n　\n传说其体型非常巨大，\n人类要想从他的脚爬到他的头，\n需要花费五百年的时间。"
+      ],
+      "paragraphs": [
+        "犹太教传说中的伟大天使，据说是梅塔特隆的双胞胎兄弟，负责掌管天堂中的歌唱。",
+        "传说其体型非常巨大，人类要想从他的脚爬到他的头，需要花费五百年的时间。"
+      ],
+      "localizationKeys": [
+        "25DF7E884CEE95D864AEA991999857D8"
+      ],
+      "textSha256": "f65201688dc64385f8af979f8bd6adc234df757a0f8ec73b8ec74fdec00757e1"
+    },
+    "Sandman": {
+      "gameId": 70,
+      "officialNameZh": "睡魔",
+      "officialNameEn": "Sandman",
+      "messageLabel": "DEVIL_ID_070_SANDMAN",
+      "pages": [
+        "德国民间传说中的妖精。\n也被称为“沙人”。\n　\n他会把背袋里的魔沙\n洒向人类的眼睛，\n使人陷入沉睡。\n如果中招的人强忍睡意，\n他就会坐到那个人的\n眼皮上令其闭眼。\n如果有坏孩子\n这样都还不肯去睡，\n就会被他挖走眼珠。\n关于暴力性格方面的描写，\n被认为是德国的\n妈妈们自己编的。"
+      ],
+      "paragraphs": [
+        "德国民间传说中的妖精。也被称为“沙人”。",
+        "他会把背袋里的魔沙洒向人类的眼睛，使人陷入沉睡。如果中招的人强忍睡意，他就会坐到那个人的眼皮上令其闭眼。如果有坏孩子这样都还不肯去睡，就会被他挖走眼珠。关于暴力性格方面的描写，被认为是德国的妈妈们自己编的。"
+      ],
+      "localizationKeys": [
+        "7D23251D4E9009463435F7A32A53F47E"
+      ],
+      "textSha256": "99d8d9cc450e2f14aa9f211782d2796e086209abc7e20f1e1a675e1555b865f3"
+    },
+    "Sarasvati": {
+      "gameId": 24,
+      "officialNameZh": "妙音天女",
+      "officialNameEn": "Sarasvati",
+      "messageLabel": "DEVIL_ID_024_SARASVATI",
+      "pages": [
+        "印度神话中的一位女神，\n三位主神中梵天的妻子。\n　\n名字的意思是“持水者”，\n被认为是河川的化身。\n同时也是一位技艺之神，\n传说精通六十四种\n音乐和艺术。"
+      ],
+      "paragraphs": [
+        "印度神话中的一位女神，三位主神中梵天的妻子。",
+        "名字的意思是“持水者”，被认为是河川的化身。同时也是一位技艺之神，传说精通六十四种音乐和艺术。"
+      ],
+      "localizationKeys": [
+        "D764D69547CBFC0495E29FB004BF88A3"
+      ],
+      "textSha256": "0a626f137fee93c4506c10982734fd19b065bd4517dd2ffe1271cafecc79a97e"
+    },
+    "Satan": {
+      "gameId": 1,
+      "officialNameZh": "撒旦",
+      "officialNameEn": "Satan",
+      "messageLabel": "DEVIL_ID_001_SATAN",
+      "pages": [
+        "犹太教、基督教中的黑暗天使，\n名字的含义为“敌对者”。\n　\n也是人们熟知的，在伊甸园\n诱惑了亚当与夏娃的那条邪恶毒蛇。\n另外在《约伯记》中，他被描绘为\n负责考验信徒约伯的神之仆从，\n被认为是天界派遣到人间的一位\n肩负着审判人类使命的控告天使。"
+      ],
+      "paragraphs": [
+        "犹太教、基督教中的黑暗天使，名字的含义为“敌对者”。",
+        "也是人们熟知的，在伊甸园诱惑了亚当与夏娃的那条邪恶毒蛇。另外在《约伯记》中，他被描绘为负责考验信徒约伯的神之仆从，被认为是天界派遣到人间的一位肩负着审判人类使命的控告天使。"
+      ],
+      "localizationKeys": [
+        "89892E85450C0E2C235267954BDE6B5B"
+      ],
+      "textSha256": "87cf6ef8f1fb5a083c1b5a19c6488eb84351939daee6656c0059a557c76bdba1"
+    },
+    "Saturnus": {
+      "gameId": 237,
+      "officialNameZh": "萨图尔努斯",
+      "officialNameEn": "Saturnus",
+      "messageLabel": "DEVIL_ID_237_SATURNUS",
+      "pages": [
+        "流传于罗马神话中的原初大地之神，\n也是一位丰饶之神。\n和希腊神话中的克罗诺斯\n被视为同一尊神明。\n　\n迦勒底的占星术士们\n将这尊神称为“黑太阳”。\n“黑太阳”是指冬至时高度较低的太阳，\n也被叫作“夜晚的太阳”，\n因此他也被认为是\n居住在冥界地底的“死王”。\n传说过去的人们会向冬天的太阳\n萨图尔努斯献上祈祷，\n借此呼唤新的春天，\n而这一习俗流传至今，\n演变为了现在的圣诞节。"
+      ],
+      "paragraphs": [
+        "流传于罗马神话中的原初大地之神，也是一位丰饶之神。和希腊神话中的克罗诺斯被视为同一尊神明。",
+        "迦勒底的占星术士们将这尊神称为“黑太阳”。“黑太阳”是指冬至时高度较低的太阳，也被叫作“夜晚的太阳”，因此他也被认为是居住在冥界地底的“死王”。传说过去的人们会向冬天的太阳萨图尔努斯献上祈祷，借此呼唤新的春天，而这一习俗流传至今，演变为了现在的圣诞节。"
+      ],
+      "localizationKeys": [
+        "7035829A492B3B2F125923AB64DECBF8"
+      ],
+      "textSha256": "77c09e9992c3e5d73ddc5972fc7e0774cf0fc05533566b5b4eaacffe8e47263f"
+    },
+    "Scathach": {
+      "gameId": 26,
+      "officialNameZh": "斯卡哈",
+      "officialNameEn": "Scathach",
+      "messageLabel": "DEVIL_ID_026_SCATHACHA",
+      "pages": [
+        "凯尔特神话中的女神。\n也是统领异界“影之国”的女王。\n　\n身为咒术师的同时\n也擅长武艺，\n后来成为了库夫林的老师，\n并赠予了他魔枪迦耶伯格。"
+      ],
+      "paragraphs": [
+        "凯尔特神话中的女神。也是统领异界“影之国”的女王。",
+        "身为咒术师的同时也擅长武艺，后来成为了库夫林的老师，并赠予了他魔枪迦耶伯格。"
+      ],
+      "localizationKeys": [
+        "B5D5A21540EB575ED14FC68CA460E1B6"
+      ],
+      "textSha256": "cc05ab5bea7d5c5397555b7fe90f089bb49a02f106127d090fa12338ac946a11"
+    },
+    "Senri": {
+      "gameId": 130,
+      "officialNameZh": "仙狸",
+      "officialNameEn": "Senri",
+      "messageLabel": "DEVIL_ID_130_SENRI",
+      "pages": [
+        "据说是由长命的山猫\n化身而成的妖怪。\n它会变化为美女\n吸取人类男子的精气。\n　\n仙狸被认为是猫又类妖怪当中\n层次最高的一种。\n据说野兽所化的妖怪设法收集精气的\n最终目的就是成为仙狸。"
+      ],
+      "paragraphs": [
+        "据说是由长命的山猫化身而成的妖怪。它会变化为美女吸取人类男子的精气。",
+        "仙狸被认为是猫又类妖怪当中层次最高的一种。据说野兽所化的妖怪设法收集精气的最终目的就是成为仙狸。"
+      ],
+      "localizationKeys": [
+        "F9DC0CEC454A64B979484F9D3158D85E"
+      ],
+      "textSha256": "e8f1ac4fdc4a82498f997ea7b0455f02698a5afe660c83f97e8b7b93f3e9d843"
+    },
+    "Setanta": {
+      "gameId": 54,
+      "officialNameZh": "瑟坦特",
+      "officialNameEn": "Setanta",
+      "messageLabel": "DEVIL_ID_054_SETANTA",
+      "pages": [
+        "爱尔兰神话中登场的年轻勇士。\n　\n传说他曾赤手空拳\n打倒过一只凶猛的看门狗，\n后来又主动提出由自己\n代为担任护卫，并因此\n得到了“猛犬”的外号。"
+      ],
+      "paragraphs": [
+        "爱尔兰神话中登场的年轻勇士。",
+        "传说他曾赤手空拳打倒过一只凶猛的看门狗，后来又主动提出由自己代为担任护卫，并因此得到了“猛犬”的外号。"
+      ],
+      "localizationKeys": [
+        "BE5CAD5F40BE9B799676619C3D9BC86F"
+      ],
+      "textSha256": "92964d0fa0a80fed3237c68cceb13766810a42a5b256c96c41ada1e4974bcc17"
+    },
+    "Seth": {
+      "gameId": 112,
+      "officialNameZh": "赛特",
+      "officialNameEn": "Seth",
+      "messageLabel": "DEVIL_ID_112_SETH",
+      "pages": [
+        "埃及神话中的恶神，\n但也曾是于上埃及地区\n受人崇拜的主神。\n　\n他谋害了自己的兄长欧西里斯，\n借此成为了众神的统治者，\n但后来又被欧西里斯的\n儿子荷鲁斯打败。"
+      ],
+      "paragraphs": [
+        "埃及神话中的恶神，但也曾是于上埃及地区受人崇拜的主神。",
+        "他谋害了自己的兄长欧西里斯，借此成为了众神的统治者，但后来又被欧西里斯的儿子荷鲁斯打败。"
+      ],
+      "localizationKeys": [
+        "009D06E54D4A3DBBD7D9ED8DB3E653A3"
+      ],
+      "textSha256": "849f2fffc0d55f28879e3e7a2de0ab2263bc434c190ef2cd3cfdc2384bccadec"
+    },
+    "Shiisaa": {
+      "gameId": 129,
+      "officialNameZh": "狮爷",
+      "officialNameEn": "Shiisaa",
+      "messageLabel": "DEVIL_ID_129_SHISA",
+      "pages": [
+        "能保护家庭\n不受任何妖魔鬼怪侵害\n并带来福气的圣兽。\n　\n顾名思义，原型是狮子。\n在琉球神话中\n留下了浓墨重彩的一笔。"
+      ],
+      "paragraphs": [
+        "能保护家庭不受任何妖魔鬼怪侵害并带来福气的圣兽。",
+        "顾名思义，原型是狮子。在琉球神话中留下了浓墨重彩的一笔。"
+      ],
+      "localizationKeys": [
+        "34C60F7646FB0EFD6FC3BDA544052848"
+      ],
+      "textSha256": "9996ab7eecc134184153b7d75aecd22372c58bbc21fb59997e15871c9db49f09"
+    },
+    "Shiki-Ouji": {
+      "gameId": 311,
+      "officialNameZh": "式王子",
+      "officialNameEn": "Shiki-Ouji",
+      "messageLabel": "DEVIL_ID_311_SHIKIOJI",
+      "pages": [
+        "阴阳道中一部分流派\n所驱使的强大式神。\n　\n既可用于为害他人，\n也可用于驱除病魔。\n不过其本性属于鬼神一类，\n十分凶猛狰狞。"
+      ],
+      "paragraphs": [
+        "阴阳道中一部分流派所驱使的强大式神。",
+        "既可用于为害他人，也可用于驱除病魔。不过其本性属于鬼神一类，十分凶猛狰狞。"
+      ],
+      "localizationKeys": [
+        "06798BAB482199582D457DA58E46EF9A"
+      ],
+      "textSha256": "8b66bc4769ad071d3af8b018f2e0bdf68d0c099e4a3a29f62f04aaa1758c8e73"
+    },
+    "Shiva": {
+      "gameId": 178,
+      "officialNameZh": "湿婆",
+      "officialNameEn": "Shiva",
+      "messageLabel": "DEVIL_ID_178_SHIVA",
+      "pages": [
+        "司掌世界的破坏\n与创造的伟大神明。\n在印度教中和毗湿奴并列，\n是拥有最多信众的神。\n　\n传说他会通过破坏来净化人世，\n之后再重塑世界。\n面对恶魔，\n他会展现可怕的破坏力，\n而对信众则会施以恩惠。\n关于湿婆的样貌有多种说法，\n但一般认为其拥有四只手、\n一张脸和三只眼睛。\n相传他额头上的\n第三只眼睛能射出\n烧尽万物的恐怖神光。"
+      ],
+      "paragraphs": [
+        "司掌世界的破坏与创造的伟大神明。在印度教中和毗湿奴并列，是拥有最多信众的神。",
+        "传说他会通过破坏来净化人世，之后再重塑世界。面对恶魔，他会展现可怕的破坏力，而对信众则会施以恩惠。关于湿婆的样貌有多种说法，但一般认为其拥有四只手、一张脸和三只眼睛。相传他额头上的第三只眼睛能射出烧尽万物的恐怖神光。"
+      ],
+      "localizationKeys": [
+        "478EA31647CB14850B894396ED89AF0C"
+      ],
+      "textSha256": "3da10d1989be54513877e3cea975c755bc1887c36b2c5929674e0c9b2ddf9530"
+    },
+    "Siegfried": {
+      "gameId": 222,
+      "officialNameZh": "齐格飞",
+      "officialNameEn": "Siegfried",
+      "messageLabel": "DEVIL_ID_222_SIEGFRIED",
+      "pages": [
+        "在德国叙事诗《尼伯龙根之歌》中\n登场的英雄。和传说中的英雄\n西格鲁德被视为同一人物。\n　\n他娶了勃艮第王国的\n公主古德伦为妻，\n但因为卷入了妻子和\n王妃布伦希尔德之间的争端，\n导致自己的性命遭人觊觎。\n虽然拥有着不死之身，\n但据说在同国重臣\n哈根的巧妙算计之下，\n最终还是因\n被刺穿后背上的要害而死。"
+      ],
+      "paragraphs": [
+        "在德国叙事诗《尼伯龙根之歌》中登场的英雄。和传说中的英雄西格鲁德被视为同一人物。",
+        "他娶了勃艮第王国的公主古德伦为妻，但因为卷入了妻子和王妃布伦希尔德之间的争端，导致自己的性命遭人觊觎。虽然拥有着不死之身，但据说在同国重臣哈根的巧妙算计之下，最终还是因被刺穿后背上的要害而死。"
+      ],
+      "localizationKeys": [
+        "A743C89B49394A1EE15520B6C25B4929"
+      ],
+      "textSha256": "34ba728dbe4716282438541073b9b203df89e48e667871b09695246fc2d82441"
+    },
+    "Silky": {
+      "gameId": 53,
+      "officialNameZh": "希路奇",
+      "officialNameEn": "Silky",
+      "messageLabel": "DEVIL_ID_053_SILKY",
+      "pages": [
+        "据说在英格兰和苏格兰的\n交界附近较为常见的女性家灵。\n　\n当家中的人都熟睡之后，\n她会处理所有家中的杂务，\n是一位在传统意义上\n受到欢迎的妖精。\n当她做家务的时候，\n据说能听到丝绸衣物\n摩擦时的声音。\n另外她还会保护\n自己所在的家，据说有时\n会杀死图谋不轨的来客。"
+      ],
+      "paragraphs": [
+        "据说在英格兰和苏格兰的交界附近较为常见的女性家灵。",
+        "当家中的人都熟睡之后，她会处理所有家中的杂务，是一位在传统意义上受到欢迎的妖精。当她做家务的时候，据说能听到丝绸衣物摩擦时的声音。另外她还会保护自己所在的家，据说有时会杀死图谋不轨的来客。"
+      ],
+      "localizationKeys": [
+        "6F998684412CDF5E387E2CB89E7C9AFB"
+      ],
+      "textSha256": "da0e083f38b50a00d1edd2f9fef6e8e981fcb40105a6f7d5836acb9a1aae037f"
+    },
+    "Skadi": {
+      "gameId": 192,
+      "officialNameZh": "斯卡蒂",
+      "officialNameEn": "Skadi",
+      "messageLabel": "DEVIL_ID_192_SKADI",
+      "pages": [
+        "凯尔特神话和北欧神话中的女神。\n　\n名字的意思是“暗影”，据说是指\n众神在最后的审判之日时\n陨落后的去处。在凯尔特神话中\n被视为黑暗女神，也有人认为\n她与女神斯卡哈是同一位神。\n在北欧神话里她是尼奥尔德的妻子，\n被认为是冬天和山林的女神。"
+      ],
+      "paragraphs": [
+        "凯尔特神话和北欧神话中的女神。",
+        "名字的意思是“暗影”，据说是指众神在最后的审判之日时陨落后的去处。在凯尔特神话中被视为黑暗女神，也有人认为她与女神斯卡哈是同一位神。在北欧神话里她是尼奥尔德的妻子，被认为是冬天和山林的女神。"
+      ],
+      "localizationKeys": [
+        "75AD760245B9E5CCDC762A95E4CAC7BB"
+      ],
+      "textSha256": "f921b518f2f1fc7a25b98e89be333772fdc0d60932df8c218c3fd6e22116f253"
+    },
+    "Slime": {
+      "gameId": 173,
+      "officialNameZh": "软泥怪",
+      "officialNameEn": "Slime",
+      "messageLabel": "DEVIL_ID_173_SLIME",
+      "pages": [
+        "拥有粘液状身躯的原始怪物。\n据说其真面目是\n没能成功化为实体的恶魔。\n　\n将软泥怪作为怪物来\n记录的起源有多种说法，\n暂无定论。\n一般认为它们拥有\n收集发光体的习性。"
+      ],
+      "paragraphs": [
+        "拥有粘液状身躯的原始怪物。据说其真面目是没能成功化为实体的恶魔。",
+        "将软泥怪作为怪物来记录的起源有多种说法，暂无定论。一般认为它们拥有收集发光体的习性。"
+      ],
+      "localizationKeys": [
+        "53E878FC412C3166BAA99194144A65CA"
+      ],
+      "textSha256": "c3ac4f7b11ae855097b2a5c046bb919660257dfbf5fe1fe0cc4a6a812744ed0d"
+    },
+    "Sraosha": {
+      "gameId": 244,
+      "officialNameZh": "斯拉欧加",
+      "officialNameEn": "Sraosha",
+      "messageLabel": "DEVIL_ID_244_SRAOSHA",
+      "pages": [
+        "会在太阳落山后降临凡间\n消灭邪恶的大天使。\n他的名字有着\n“侧耳倾听”的意思。\n　\n在琐罗亚斯德教中，他被认为\n是负责倾听人们诉求的天使，\n充当着阿胡拉·马兹达的耳朵。"
+      ],
+      "paragraphs": [
+        "会在太阳落山后降临凡间消灭邪恶的大天使。他的名字有着“侧耳倾听”的意思。",
+        "在琐罗亚斯德教中，他被认为是负责倾听人们诉求的天使，充当着阿胡拉·马兹达的耳朵。"
+      ],
+      "localizationKeys": [
+        "0DA2E85A4FFD3664DE21D6AF1F990A08"
+      ],
+      "textSha256": "466a9d30c177fcdde0afb3a67b5f55be31eafc5b5d436dfa301dd55f1c29b55a"
+    },
+    "Succubus": {
+      "gameId": 65,
+      "officialNameZh": "女梦魔",
+      "officialNameEn": "Succubus",
+      "messageLabel": "DEVIL_ID_065_SUCCUBUS",
+      "pages": [
+        "欧洲各地的传说中所提及的\n女性梦魔。和男梦魔相对应。\n　\n据说她们会在男性入睡时\n潜入对方梦中与其发生关系，\n吸取对方精气。\n其真面目是丑陋的老妇，\n但在梦中现身时\n她们的容貌极美。"
+      ],
+      "paragraphs": [
+        "欧洲各地的传说中所提及的女性梦魔。和男梦魔相对应。",
+        "据说她们会在男性入睡时潜入对方梦中与其发生关系，吸取对方精气。其真面目是丑陋的老妇，但在梦中现身时她们的容貌极美。"
+      ],
+      "localizationKeys": [
+        "EDCC61A4448F675A96B6BCBBD351947F"
+      ],
+      "textSha256": "e548c318681bd973536001e492acbb1cf14ce62cd760c98304c27fae0d01fd6a"
+    },
+    "Sudama": {
+      "gameId": 335,
+      "officialNameZh": "山灵",
+      "officialNameEn": "Sudama",
+      "messageLabel": "DEVIL_ID_335_SUDAMA",
+      "pages": [
+        "日本传说中的山水木石之灵。\n据说会寄宿在年代久远的\n大树和巨岩当中。\n　\n虽不是恶灵，\n但因有着山野监视人的性质，\n有时会以人或怪物的\n形象出现，并做出警告。"
+      ],
+      "paragraphs": [
+        "日本传说中的山水木石之灵。据说会寄宿在年代久远的大树和巨岩当中。",
+        "虽不是恶灵，但因有着山野监视人的性质，有时会以人或怪物的形象出现，并做出警告。"
+      ],
+      "localizationKeys": [
+        "6D61ABF645664E9160B44FAEA801B752"
+      ],
+      "textSha256": "46f532bfc47763e549cd0678244fca58e0162bb998928e7ec1b447e9a199a146"
+    },
+    "Sui-Ki": {
+      "gameId": 312,
+      "officialNameZh": "水鬼",
+      "officialNameEn": "Sui-Ki",
+      "messageLabel": "DEVIL_ID_312_SUIKI",
+      "pages": [
+        "曾在平安时代统治伊贺、伊势地区，\n传说中的豪族“藤原千方”\n所驱使的四鬼之一。\n　\n是拥有强大力量的使役神，\n能在任何地方引发洪水溺毙敌人。\n根据《太平记》记载，\n他在听了纪友雄\n吟唱的某首诗歌后，\n身体四散分裂而消失。"
+      ],
+      "paragraphs": [
+        "曾在平安时代统治伊贺、伊势地区，传说中的豪族“藤原千方”所驱使的四鬼之一。",
+        "是拥有强大力量的使役神，能在任何地方引发洪水溺毙敌人。根据《太平记》记载，他在听了纪友雄吟唱的某首诗歌后，身体四散分裂而消失。"
+      ],
+      "localizationKeys": [
+        "2960F7EC4DB6539A7D4C06B0463DB4D9"
+      ],
+      "textSha256": "9c32d9f8e660154d3f99770327b50555cdc297321740c31e8f7f382d3c98bd4a"
+    },
+    "Sukuna-Hikona": {
+      "gameId": 214,
+      "officialNameZh": "少彦名",
+      "officialNameEn": "Sukuna-Hikona",
+      "messageLabel": "DEVIL_ID_214_SUKUNAHIKONA",
+      "pages": [
+        "日本神话中登场的一位神明。\n是神产巢日神的子嗣之一，\n据说是从其指缝中滑落的神明。\n　\n他原本属于天津神，\n后来因为和大国主神结拜为兄弟\n而被列为国津神。\n据说他在和大国主神一起\n创造并巩固了苇原中国后，\n就去了常世国。"
+      ],
+      "paragraphs": [
+        "日本神话中登场的一位神明。是神产巢日神的子嗣之一，据说是从其指缝中滑落的神明。",
+        "他原本属于天津神，后来因为和大国主神结拜为兄弟而被列为国津神。据说他在和大国主神一起创造并巩固了苇原中国后，就去了常世国。"
+      ],
+      "localizationKeys": [
+        "3CF18081440CA8C0EDF12789FAA276A6"
+      ],
+      "textSha256": "af5c45c5333e90e4a664d4e86b3e0620fe3f55a49cef7eb8d9cc8f699923b5b2"
+    },
+    "Surt": {
+      "gameId": 80,
+      "officialNameZh": "苏尔特尔",
+      "officialNameEn": "Surt",
+      "messageLabel": "DEVIL_ID_080_SURT",
+      "pages": [
+        "北欧神话中的巨人之王，\n手持火焰之剑“雷瓦汀”，\n统治着火焰之国\n穆斯贝尔海姆。\n　\n在诸神黄昏时，\n他率领大军攻入了阿斯加德，\n一举歼灭了阿萨神族。"
+      ],
+      "paragraphs": [
+        "北欧神话中的巨人之王，手持火焰之剑“雷瓦汀”，统治着火焰之国穆斯贝尔海姆。",
+        "在诸神黄昏时，他率领大军攻入了阿斯加德，一举歼灭了阿萨神族。"
+      ],
+      "localizationKeys": [
+        "6E46C9D845C7BD21E0CD64AB2C90D804"
+      ],
+      "textSha256": "9b08e88eab81a881ae36bfe5d1ca354f11e860d4dd229994537a6a6a8891a8d3"
+    },
+    "Take-Minakata": {
+      "gameId": 216,
+      "officialNameZh": "建御名方",
+      "officialNameEn": "Take-Minakata",
+      "messageLabel": "DEVIL_ID_216_TAKEMINAKATA",
+      "pages": [
+        "日本神话中的军事之神。\n同时也具有狩猎之神\n和丰饶之神的性质。\n　\n他在让国之争中\n和建御雷正面交锋并落败，\n之后逃亡到信浓国，\n但最终仍被逼至绝境。\n据说在此之后\n他便被禁止离开诹访地界。"
+      ],
+      "paragraphs": [
+        "日本神话中的军事之神。同时也具有狩猎之神和丰饶之神的性质。",
+        "他在让国之争中和建御雷正面交锋并落败，之后逃亡到信浓国，但最终仍被逼至绝境。据说在此之后他便被禁止离开诹访地界。"
+      ],
+      "localizationKeys": [
+        "2AC341EC4F5036895E002DB6846D730A"
+      ],
+      "textSha256": "0c76b6915fb8c58373fa266e3bebc792481417b40863a187642726b516e62992"
+    },
+    "Thor": {
+      "gameId": 200,
+      "officialNameZh": "托尔",
+      "officialNameEn": "Thor",
+      "messageLabel": "DEVIL_ID_200_THOR",
+      "pages": [
+        "北欧神话中的雷神及丰饶之神。\n相传他的信徒以农民为主。\n　\n他性格豪爽直率，\n拥有无双的怪力。\n他手持的铁锤妙尔尼尔\n是雷霆的象征，\n无论被扔到哪里都能在粉碎敌人后\n自动返回他的手中。\n根据神话传说，\n在终结世界的诸神黄昏之时，\n他最终与世界蛇耶梦加得同归于尽。"
+      ],
+      "paragraphs": [
+        "北欧神话中的雷神及丰饶之神。相传他的信徒以农民为主。",
+        "他性格豪爽直率，拥有无双的怪力。他手持的铁锤妙尔尼尔是雷霆的象征，无论被扔到哪里都能在粉碎敌人后自动返回他的手中。根据神话传说，在终结世界的诸神黄昏之时，他最终与世界蛇耶梦加得同归于尽。"
+      ],
+      "localizationKeys": [
+        "591432A54C5C33D165D23BBF68C6021C"
+      ],
+      "textSha256": "e4e5b48a41e06a87bfce43e39d83ce5e3770b7945f646ba4f5f7e7da9202c18e"
+    },
+    "Thoth": {
+      "gameId": 14,
+      "officialNameZh": "托特",
+      "officialNameEn": "Thoth",
+      "messageLabel": "DEVIL_ID_014_THOTH",
+      "pages": [
+        "埃及神话中登场的全能之神，\n拥有狒狒的头颅。\n　\n传说他的立场\n和恶神赛特永远相反，\n但会遵从欧西里斯、\n伊西斯等善良的神明。"
+      ],
+      "paragraphs": [
+        "埃及神话中登场的全能之神，拥有狒狒的头颅。",
+        "传说他的立场和恶神赛特永远相反，但会遵从欧西里斯、伊西斯等善良的神明。"
+      ],
+      "localizationKeys": [
+        "A1208B174A450AF0E8D934999BFF56C3"
+      ],
+      "textSha256": "1a8253b13e457d8696e990c499bb286eec220aaf24211f13729497cbf2a8de61"
+    },
+    "Throne": {
+      "gameId": 254,
+      "officialNameZh": "座天使",
+      "officialNameEn": "Throne",
+      "messageLabel": "DEVIL_ID_254_THRONE",
+      "pages": [
+        "在神学的天阶等级中\n位于第三等的上级天使。\n名字的意思是“车轮”。\n　\n在拥有物质身躯的天使当中\n属于最高阶级，\n被视为上帝宝座的搬运者。"
+      ],
+      "paragraphs": [
+        "在神学的天阶等级中位于第三等的上级天使。名字的意思是“车轮”。",
+        "在拥有物质身躯的天使当中属于最高阶级，被视为上帝宝座的搬运者。"
+      ],
+      "localizationKeys": [
+        "5FB06E124E860A6C5EC704BF879CA438"
+      ],
+      "textSha256": "b62d759f75c75c9b6821fcb7ed9397ca1a4ff4532822dc55ac03e8bdf33d88ea"
+    },
+    "Thunderbird": {
+      "gameId": 283,
+      "officialNameZh": "雷鸟",
+      "officialNameEn": "Thunderbird",
+      "messageLabel": "DEVIL_ID_283",
+      "pages": [
+        "源于北美原住民神话的巨大灵鸟，\n是来自天界的精灵。\n　\n据说外貌和鹫相似，\n栖息在高空处。\n它的鸣叫和振翅都会化为惊雷，\n而眼中发出的光芒则会化为闪电。\n除此之外，传说中\n常常提及它巨大的身躯。\n据说它曾背起一整座湖飞翔，\n也有说法称它能吞下一整头鲸鱼。"
+      ],
+      "paragraphs": [
+        "源于北美原住民神话的巨大灵鸟，是来自天界的精灵。",
+        "据说外貌和鹫相似，栖息在高空处。它的鸣叫和振翅都会化为惊雷，而眼中发出的光芒则会化为闪电。除此之外，传说中常常提及它巨大的身躯。据说它曾背起一整座湖飞翔，也有说法称它能吞下一整头鲸鱼。"
+      ],
+      "localizationKeys": [
+        "88CC57C14B68B7F6057790A20393BE01"
+      ],
+      "textSha256": "e852d317c34fa9903d97af9272d86acb9d3780f607d468c0924502e7beefe036"
+    },
+    "Titania": {
+      "gameId": 51,
+      "officialNameZh": "缇坦妮雅",
+      "officialNameEn": "Titania",
+      "messageLabel": "DEVIL_ID_051_TITANIA",
+      "pages": [
+        "月夜森林的支配者，\n妖精王奥伯隆的王后。\n据说源自于罗马神话中的\n月亮女神狄安娜。\n　\n后来英国人认为她是妖精，\n经由莎士比亚的戏剧\n《仲夏夜之梦》，奠定了\n她作为女王的形象。"
+      ],
+      "paragraphs": [
+        "月夜森林的支配者，妖精王奥伯隆的王后。据说源自于罗马神话中的月亮女神狄安娜。",
+        "后来英国人认为她是妖精，经由莎士比亚的戏剧《仲夏夜之梦》，奠定了她作为女王的形象。"
+      ],
+      "localizationKeys": [
+        "1619F32E4A94B4A478BC3683E9FC0993"
+      ],
+      "textSha256": "20d18bfadd82e0408d371e375e3c498fe566c54049ba7c54aad4b05ed2f96ab0"
+    },
+    "Trumpeter": {
+      "gameId": 350,
+      "officialNameZh": "吹号者",
+      "officialNameEn": "Trumpeter",
+      "messageLabel": "DEVIL_ID_350_TRUMPETER",
+      "pages": [
+        "约翰启示录的预言中\n手持号角的上帝使者。\n被认为是一种天使。\n　\n据说他们吹奏的号角会引发\n火灾以及星辰陨落等各种灾难，\n使大地一时化为死亡的世界。"
+      ],
+      "paragraphs": [
+        "约翰启示录的预言中手持号角的上帝使者。被认为是一种天使。",
+        "据说他们吹奏的号角会引发火灾以及星辰陨落等各种灾难，使大地一时化为死亡的世界。"
+      ],
+      "localizationKeys": [
+        "F53E08C44967CF8979257085772E717F"
+      ],
+      "textSha256": "4163225f6ab1a56a2d8913713719318bf9332fa71ed5f5a5fe2720faf2f199b4"
+    },
+    "Tsuchigumo": {
+      "gameId": 331,
+      "officialNameZh": "土蜘蛛",
+      "officialNameEn": "Tsuchigumo",
+      "messageLabel": "DEVIL_ID_331_TSUCHIGUMO",
+      "pages": [
+        "据说起源于记纪神话中\n对日本原住民的丑化。\n　\n这些穴居原住民\n由于身材矮小，手脚细长，\n而被安上了“土蜘蛛”这样的蔑称。\n他们为了躲避当时朝廷的\n残杀迫害而逃进了山里，\n随着时代变迁最终被\n臆想成了一种妖怪。\n也有说法认为是怨念把他们\n变成了巨大的蜘蛛妖怪。"
+      ],
+      "paragraphs": [
+        "据说起源于记纪神话中对日本原住民的丑化。",
+        "这些穴居原住民由于身材矮小，手脚细长，而被安上了“土蜘蛛”这样的蔑称。他们为了躲避当时朝廷的残杀迫害而逃进了山里，随着时代变迁最终被臆想成了一种妖怪。也有说法认为是怨念把他们变成了巨大的蜘蛛妖怪。"
+      ],
+      "localizationKeys": [
+        "D9BF0E454BA729C5FFFA70ACFA163E61"
+      ],
+      "textSha256": "b8f46c8999c811222697a7b6f08c2e994d95896f99d05517940c0ec897c78313"
+    },
+    "Turbo Granny": {
+      "gameId": 175,
+      "officialNameZh": "高速婆婆",
+      "officialNameEn": "Turbo Granny",
+      "messageLabel": "DEVIL_ID_175_TURBOBACHAN",
+      "pages": [
+        "四脚着地的姿势在高速公路上\n飞速奔跑的老太太幽灵。\n据说常出没于六甲山附近。\n　\n据说被高速婆婆超车后，\n会发现她的背后\n贴着写着“高速”的纸。\n她并不会加害人类，只是会\n在高速公路上无谓地奔跑。\n在高速公路上奔跑的幽灵\n除了高速婆婆外，\n还有首都高速的“冲刺婆婆”，\n以及北海道的\n“100公里婆婆”等。"
+      ],
+      "paragraphs": [
+        "四脚着地的姿势在高速公路上飞速奔跑的老太太幽灵。据说常出没于六甲山附近。",
+        "据说被高速婆婆超车后，会发现她的背后贴着写着“高速”的纸。她并不会加害人类，只是会在高速公路上无谓地奔跑。在高速公路上奔跑的幽灵除了高速婆婆外，还有首都高速的“冲刺婆婆”，以及北海道的“100公里婆婆”等。"
+      ],
+      "localizationKeys": [
+        "A5EAB41A41A89CD06945DF8367B15FFD"
+      ],
+      "textSha256": "4635c2e169c8d35160d6a5a46d00d575cdd44542e21f0ca5f11c69318313b7b1"
+    },
+    "Turdak": {
+      "gameId": 325,
+      "officialNameZh": "吐鲁达克",
+      "officialNameEn": "Turdak",
+      "messageLabel": "DEVIL_ID_325_TURDAK",
+      "pages": [
+        "侍奉死神阎魔的印度鬼神。\n负责对受到审判的灵魂行刑。\n　\n当地狱的统治者、\n死者的审判官阎魔\n下达有罪判决后，吐鲁达克便会\n将那灵魂带往其应去的地狱。"
+      ],
+      "paragraphs": [
+        "侍奉死神阎魔的印度鬼神。负责对受到审判的灵魂行刑。",
+        "当地狱的统治者、死者的审判官阎魔下达有罪判决后，吐鲁达克便会将那灵魂带往其应去的地狱。"
+      ],
+      "localizationKeys": [
+        "4D1CA4454818AC8296B66790063338D7"
+      ],
+      "textSha256": "8a602a45154fb7a8bc58456dfc2ecb6dcf8ba2e17226e51c16c6e25751b064df"
+    },
+    "Tzitzimitl": {
+      "gameId": 238,
+      "officialNameZh": "兹兹米特尔",
+      "officialNameEn": "Tzitzimitl",
+      "messageLabel": "DEVIL_ID_238_TZITZIMITL",
+      "pages": [
+        "阿兹特克神话中\n掌管黑夜和恐惧的女神。\n　\n象征死亡和邪恶，\n会引发代表灾祸的日食，\n与作为神的太阳之间争斗永不停歇。\n她每隔52年会要求一次活祭，\n是一位心中充满嫉妒的邪神。"
+      ],
+      "paragraphs": [
+        "阿兹特克神话中掌管黑夜和恐惧的女神。",
+        "象征死亡和邪恶，会引发代表灾祸的日食，与作为神的太阳之间争斗永不停歇。她每隔52年会要求一次活祭，是一位心中充满嫉妒的邪神。"
+      ],
+      "localizationKeys": [
+        "AB14F12244DE3F5A1BD90781DB2360D4"
+      ],
+      "textSha256": "35921d8bfc6c50891839eccdfddeee5118f9608e88ca928a63af8580f69bca0f"
+    },
+    "Unicorn": {
+      "gameId": 131,
+      "officialNameZh": "独角兽",
+      "officialNameEn": "Unicorn",
+      "messageLabel": "DEVIL_ID_131_UNICORN",
+      "pages": [
+        "苏格兰传说中所记载的一种\n额头上长有螺旋状独角的白马。\n　\n人们认为它的角能用来制作\n可以治愈百病的万能药，\n但它只会对保有纯洁的少女\n敞开心扉，并接受其触碰。"
+      ],
+      "paragraphs": [
+        "苏格兰传说中所记载的一种额头上长有螺旋状独角的白马。",
+        "人们认为它的角能用来制作可以治愈百病的万能药，但它只会对保有纯洁的少女敞开心扉，并接受其触碰。"
+      ],
+      "localizationKeys": [
+        "0C51B94C4ED0BFF791E59DA9AB5B7A41"
+      ],
+      "textSha256": "ef8bed78c4fdf63abc62b8cd7e9974ed2864f47d36cfa7e6b1d272680a969c8e"
+    },
+    "Uriel": {
+      "gameId": 247,
+      "officialNameZh": "乌列尔",
+      "officialNameEn": "Uriel",
+      "messageLabel": "DEVIL_ID_247_URIEL",
+      "pages": [
+        "在天阶等级中位于顶点的\n四大天使之一。\n名字的意思是“上帝之焰”。\n　\n据说这位天使负责在最后的\n审判日执行复活与裁决。\n此外，他还负责掌管\n天空星辰的运转。"
+      ],
+      "paragraphs": [
+        "在天阶等级中位于顶点的四大天使之一。名字的意思是“上帝之焰”。",
+        "据说这位天使负责在最后的审判日执行复活与裁决。此外，他还负责掌管天空星辰的运转。"
+      ],
+      "localizationKeys": [
+        "43AB0A9B4554F0B7ECA16181994B1838"
+      ],
+      "textSha256": "cb8c2b8739e6365bac9dd4a1b01aa765f3d3ae9ca86cc2422f649cb83bc456a7"
+    },
+    "Valkyrie": {
+      "gameId": 223,
+      "officialNameZh": "女武神",
+      "officialNameEn": "Valkyrie",
+      "messageLabel": "DEVIL_ID_223_VALKYRJA",
+      "pages": [
+        "北欧神话中主神奥丁的女儿们。\n　\n她们的名字意为\n“运送死者之人”。\n为了应对日后必定来临的\n诸神黄昏，她们负责将\n人类勇士的灵魂带往瓦尔哈拉。\n她们身穿战服，驾驭着骏马，\n据说自己也有能力\n驰骋在空中奔赴战场。"
+      ],
+      "paragraphs": [
+        "北欧神话中主神奥丁的女儿们。",
+        "她们的名字意为“运送死者之人”。为了应对日后必定来临的诸神黄昏，她们负责将人类勇士的灵魂带往瓦尔哈拉。她们身穿战服，驾驭着骏马，据说自己也有能力驰骋在空中奔赴战场。"
+      ],
+      "localizationKeys": [
+        "CB23BE454B1D475DD85B73902BE6FD2B"
+      ],
+      "textSha256": "8ee2f1b25e34ef376790da5c444c8d58f3b8454415b7ce4c57ca66ff3553211a"
+    },
+    "Vasuki": {
+      "gameId": 111,
+      "officialNameZh": "婆苏吉",
+      "officialNameEn": "Vasuki",
+      "messageLabel": "DEVIL_ID_111_VASUKI",
+      "pages": [
+        "印度神话中的古龙。\n众神曾利用它的身体\n来搅拌混沌乳海。\n　\n为了制作不死灵药“甘露”，\n众神曾用巨大的\n曼荼罗山当搅棍，\n并把婆苏吉当作\n牵引搅棍的绳索。\n众神拉住婆苏吉的一端，\n阿修罗拉住另一端。\n由于过程太过痛苦，\n婆苏吉吐出了剧毒。\n甘露险些被剧毒污染，\n但湿婆急忙吞下剧毒，\n让甘露的制作得以顺利完成。"
+      ],
+      "paragraphs": [
+        "印度神话中的古龙。众神曾利用它的身体来搅拌混沌乳海。",
+        "为了制作不死灵药“甘露”，众神曾用巨大的曼荼罗山当搅棍，并把婆苏吉当作牵引搅棍的绳索。众神拉住婆苏吉的一端，阿修罗拉住另一端。由于过程太过痛苦，婆苏吉吐出了剧毒。甘露险些被剧毒污染，但湿婆急忙吞下剧毒，让甘露的制作得以顺利完成。"
+      ],
+      "localizationKeys": [
+        "1CE9225547DAE1EF9AAEC1A846A97DCD"
+      ],
+      "textSha256": "2ff6ace3b6dd8aed6007d9c8ee09e8aae20412ee2c6f06527d1d3b309251f479"
+    },
+    "Vishnu": {
+      "gameId": 16,
+      "officialNameZh": "毗湿奴",
+      "officialNameEn": "Vishnu",
+      "messageLabel": "DEVIL_ID_016_VISNE",
+      "pages": [
+        "印度神话中的创造神，\n三位主神之一。\n负责维持宇宙运转，\n在印度教中被视为至高神。\n　\n作为世界的守护者，\n当凡间陷入危机时，\n相传他便会使用名为\n“阿瓦塔尔”的化身降临于世。"
+      ],
+      "paragraphs": [
+        "印度神话中的创造神，三位主神之一。负责维持宇宙运转，在印度教中被视为至高神。",
+        "作为世界的守护者，当凡间陷入危机时，相传他便会使用名为“阿瓦塔尔”的化身降临于世。"
+      ],
+      "localizationKeys": [
+        "63567AE646038D31716906A2424F18FA"
+      ],
+      "textSha256": "1cd8c1d510f26a8befd86912750e3d0fbcc40adcfb10d4f29a789cba84ba3730"
+    },
+    "Vouivre": {
+      "gameId": 108,
+      "officialNameZh": "薇薇尔",
+      "officialNameEn": "Vouivre",
+      "messageLabel": "DEVIL_ID_108_VOUIVRE",
+      "pages": [
+        "长着蝙蝠翅膀、鹰爪\n和毒蛇尾巴的母龙，在某些传说中\n也可能是美丽的女性精灵。\n　\n其力量的秘密在于\n额头上镶嵌的石榴石，\n若这颗宝石丢失或被盗\n薇薇尔就会失去所有的魔力。\n如果其他人拿到了\n这颗石榴石，\n薇薇尔就必须服从\n这颗宝石的拥有者的一切命令。\n在另一些传说中，薇薇尔并非额头上\n有宝石，而是眼睛本身就是宝石。"
+      ],
+      "paragraphs": [
+        "长着蝙蝠翅膀、鹰爪和毒蛇尾巴的母龙，在某些传说中也可能是美丽的女性精灵。",
+        "其力量的秘密在于额头上镶嵌的石榴石，若这颗宝石丢失或被盗薇薇尔就会失去所有的魔力。如果其他人拿到了这颗石榴石，薇薇尔就必须服从这颗宝石的拥有者的一切命令。在另一些传说中，薇薇尔并非额头上有宝石，而是眼睛本身就是宝石。"
+      ],
+      "localizationKeys": [
+        "6B23242F4F5511E1ECB77FB9424D6BCE"
+      ],
+      "textSha256": "4a6427300187cb1592efb11316367598e49656e67d898e595fd79ec34be7ce84"
+    },
+    "Vritra": {
+      "gameId": 99,
+      "officialNameZh": "弗栗多",
+      "officialNameEn": "Vritra",
+      "messageLabel": "DEVIL_ID_099_VRTRA",
+      "pages": [
+        "印度神话中的凶暴巨龙。\n名字的意思是“障碍物”。\n传说它会堵住天河，带来干旱。\n　\n雷神因陀罗打倒它后，\n大地会重获生机，\n但第二年弗栗多又会重新复活。\n据说这二者之间的战斗\n永无终结之日。"
+      ],
+      "paragraphs": [
+        "印度神话中的凶暴巨龙。名字的意思是“障碍物”。传说它会堵住天河，带来干旱。",
+        "雷神因陀罗打倒它后，大地会重获生机，但第二年弗栗多又会重新复活。据说这二者之间的战斗永无终结之日。"
+      ],
+      "localizationKeys": [
+        "C36E998040E8F7BD0A9BBCAEBD1F3E4A"
+      ],
+      "textSha256": "bee8c1bbb6358435983d161a9a540bd7757befc5b3e918332de57bb6159d2883"
+    },
+    "White Rider": {
+      "gameId": 354,
+      "officialNameZh": "白骑士",
+      "officialNameEn": "White Rider",
+      "messageLabel": "DEVIL_ID_354_WHITERIDER",
+      "pages": [
+        "记载于约翰启示录中，\n会在世界末日降临时\n出现的四骑士之一。\n　\n他骑着白色的骏马，手持弓箭。\n身为上帝之战的象征，\n他被赐予了冠冕，\n保证其能一胜再胜。"
+      ],
+      "paragraphs": [
+        "记载于约翰启示录中，会在世界末日降临时出现的四骑士之一。",
+        "他骑着白色的骏马，手持弓箭。身为上帝之战的象征，他被赐予了冠冕，保证其能一胜再胜。"
+      ],
+      "localizationKeys": [
+        "4EDE7B364DBDB941B4C36BAE325C86C5"
+      ],
+      "textSha256": "1079fe449cff9550286a0f6063c1000132e9bd77a39152e2524e7c962c153622"
+    },
+    "Xiezhai": {
+      "gameId": 122,
+      "officialNameZh": "獬豸",
+      "officialNameEn": "Xiezhai",
+      "messageLabel": "DEVIL_ID_122_KAICHI",
+      "pages": [
+        "中国传说中长得像羊的灵兽。\n　\n据说它的眼睛\n拥有能够看穿所有谎言之力。\n它常常出现在人间，\n用寄宿于其尖角上的力量惩罚恶人。"
+      ],
+      "paragraphs": [
+        "中国传说中长得像羊的灵兽。",
+        "据说它的眼睛拥有能够看穿所有谎言之力。它常常出现在人间，用寄宿于其尖角上的力量惩罚恶人。"
+      ],
+      "localizationKeys": [
+        "0DF6979F4A0337B6367002A79259D7E1"
+      ],
+      "textSha256": "1eca0a90b9a66fe229cb4a2faa603a279d075393445b294e084ab093236b43a5"
+    },
+    "Xuanwu": {
+      "gameId": 97,
+      "officialNameZh": "玄武",
+      "officialNameEn": "Xuanwu",
+      "messageLabel": "DEVIL_ID_097_GENBU",
+      "pages": [
+        "在中国的众多神话和思想中\n被提及的“四圣兽”之一。\n　\n掌管北方、冬季\n和五行中的水。\n能够预见未来，传授智慧，\n据说有时也会化身成人\n对抗妖魔鬼怪。"
+      ],
+      "paragraphs": [
+        "在中国的众多神话和思想中被提及的“四圣兽”之一。",
+        "掌管北方、冬季和五行中的水。能够预见未来，传授智慧，据说有时也会化身成人对抗妖魔鬼怪。"
+      ],
+      "localizationKeys": [
+        "B062E3C14F457F66CA9D8D865B11711B"
+      ],
+      "textSha256": "0f1d6e73fa1a6d36375874d254c36daca05e751aff3112deab30516efa4dd897"
+    },
+    "Yakshini": {
+      "gameId": 299,
+      "officialNameZh": "母夜叉",
+      "officialNameEn": "Yakshini",
+      "messageLabel": "DEVIL_ID_299_YAKSINI",
+      "pages": [
+        "印度神话中的鬼女。\n　\n原本是达罗毗荼人\n所信仰的丰穰女神，\n但随着与达罗毗荼人\n思想对立的印度教的普及，\n而被解释成为了一种恶鬼。\n被描绘为拥有着\n丰满肉体的裸女。"
+      ],
+      "paragraphs": [
+        "印度神话中的鬼女。",
+        "原本是达罗毗荼人所信仰的丰穰女神，但随着与达罗毗荼人思想对立的印度教的普及，而被解释成为了一种恶鬼。被描绘为拥有着丰满肉体的裸女。"
+      ],
+      "localizationKeys": [
+        "B7526BCC42FED632673503BF1981FB12"
+      ],
+      "textSha256": "d9399350fbd8efb12aaebaf426be9f66044ac9e87b9a4c4883a6e4ee149e604c"
+    },
+    "Yamata-no-Orochi": {
+      "gameId": 103,
+      "officialNameZh": "八岐大蛇",
+      "officialNameEn": "Yamata-no-Orochi",
+      "messageLabel": "DEVIL_ID_103_YAMATANOOROCHI",
+      "pages": [
+        "在古事记中登场，\n拥有八头八尾的巨龙。\n　\n它每年都要吞吃作为活祭品的女孩，\n但后来因为中圈套喝醉了酒，\n被神明须佐之男用剑斩杀。"
+      ],
+      "paragraphs": [
+        "在古事记中登场，拥有八头八尾的巨龙。",
+        "它每年都要吞吃作为活祭品的女孩，但后来因为中圈套喝醉了酒，被神明须佐之男用剑斩杀。"
+      ],
+      "localizationKeys": [
+        "D5635E3E4456651BC29BF0B221B1BECA"
+      ],
+      "textSha256": "48b150f8dd04cb90dc5b605386448db09ef8636bd56ca2bb71c28f9efae97a19"
+    },
+    "Yatagarasu": {
+      "gameId": 280,
+      "officialNameZh": "八咫乌",
+      "officialNameEn": "Yatagarasu",
+      "messageLabel": "DEVIL_ID_280_YATAGARASU",
+      "pages": [
+        "日本神话中的灵鸟。\n是由天照派往人间的\n三足神圣乌鸦。\n　\n在战场上陷入迷途的\n神武天皇东征军，\n便是在它的引导下获得了胜利。\n拥有极高的神格，\n据说资格不足之人如果直视它，\n便会丧失神志。"
+      ],
+      "paragraphs": [
+        "日本神话中的灵鸟。是由天照派往人间的三足神圣乌鸦。",
+        "在战场上陷入迷途的神武天皇东征军，便是在它的引导下获得了胜利。拥有极高的神格，据说资格不足之人如果直视它，便会丧失神志。"
+      ],
+      "localizationKeys": [
+        "7F6101CC4D29DFD83CCE7F8F3DE6AC5F"
+      ],
+      "textSha256": "debe09033ec406b627a9bfa8882d5702f76f53f55f14e830506e860d123a6a43"
+    },
+    "Yoshitsune": {
+      "gameId": 224,
+      "officialNameZh": "义经",
+      "officialNameEn": "Yoshitsune",
+      "messageLabel": "DEVIL_ID_224_YOSHITSUNE",
+      "pages": [
+        "源义经。著名的武将，\n源平合战的英雄，\n其乳名“牛若丸”\n同样广为人知。\n　\n活跃于平安时代末期\n到镰仓时代初期，\n是源家总帅源义朝的第九子，\n据说是在京都东面郊外的\n鞍马寺中被养大的。\n传说他的武艺\n乃鞍马山的天狗所授，\n之后他在五条大桥\n和武藏坊弁庆的一战中成名。\n据说他在坛之浦战役中击败平家后，\n与兄长赖朝陷入对立并被追杀，\n最后在衣川自刎身亡。"
+      ],
+      "paragraphs": [
+        "源义经。著名的武将，源平合战的英雄，其乳名“牛若丸”同样广为人知。",
+        "活跃于平安时代末期到镰仓时代初期，是源家总帅源义朝的第九子，据说是在京都东面郊外的鞍马寺中被养大的。传说他的武艺乃鞍马山的天狗所授，之后他在五条大桥和武藏坊弁庆的一战中成名。据说他在坛之浦战役中击败平家后，与兄长赖朝陷入对立并被追杀，最后在衣川自刎身亡。"
+      ],
+      "localizationKeys": [
+        "4B2C4A034FF6F464BBD0B2B518C864A0"
+      ],
+      "textSha256": "87ebf357b8b6e500e899f59628d2aa1d210e66633c345b7f9237a22a22b17408"
+    },
+    "Yurlungur": {
+      "gameId": 105,
+      "officialNameZh": "虹蛇",
+      "officialNameEn": "Yurlungur",
+      "messageLabel": "DEVIL_ID_105_YURUNG",
+      "pages": [
+        "大洋洲神话中拥有铜质身躯的锦蛇。\n　\n拥有气象的权柄，是一位超越善恶，\n掌管丰饶的伟大神明。\n传说只要它伸长脖颈，\n它那巨大的身躯便能直达天穹。\n它因栖息在彩虹色的圣泉之中而得名，\n据说如果圣泉遭到污染，\n它就会招来洪水，宣泄愤怒。"
+      ],
+      "paragraphs": [
+        "大洋洲神话中拥有铜质身躯的锦蛇。",
+        "拥有气象的权柄，是一位超越善恶，掌管丰饶的伟大神明。传说只要它伸长脖颈，它那巨大的身躯便能直达天穹。它因栖息在彩虹色的圣泉之中而得名，据说如果圣泉遭到污染，它就会招来洪水，宣泄愤怒。"
+      ],
+      "localizationKeys": [
+        "32D192CE47FBA870573450ADFCA32389"
+      ],
+      "textSha256": "5c7364c7354ec54ae92a24ce3df03bdbd501c3898381e3634cc5ac061e2609c1"
+    },
+    "Zaou-Gongen": {
+      "gameId": 180,
+      "officialNameZh": "藏王权现",
+      "officialNameEn": "Zaou-Gongen",
+      "messageLabel": "DEVIL_ID_180_ZAOUGONGEN",
+      "pages": [
+        "役小角在金峰山上求得，\n拥有降魔神通的护法神。\n　\n传说为了追求拯救混乱世界的力量，\n役小角进行了千日修行，\n并在此过程中打动了这尊\n后来修验道的主神。\n被认为是释迦、观音、弥勒\n三尊神合而为一后的形象，\n在佛经中并没有关于其的记录，\n是日本独有的一尊佛。"
+      ],
+      "paragraphs": [
+        "役小角在金峰山上求得，拥有降魔神通的护法神。",
+        "传说为了追求拯救混乱世界的力量，役小角进行了千日修行，并在此过程中打动了这尊后来修验道的主神。被认为是释迦、观音、弥勒三尊神合而为一后的形象，在佛经中并没有关于其的记录，是日本独有的一尊佛。"
+      ],
+      "localizationKeys": [
+        "5A652E7D4A32DBE00655DE913CEAFBA4"
+      ],
+      "textSha256": "597942a824e16b2c7175ffa9424b515e68d76ae0816c1c388d8bb0e5319421a9"
+    },
+    "Zeus": {
+      "gameId": 8,
+      "officialNameZh": "宙斯",
+      "officialNameEn": "Zeus",
+      "messageLabel": "DEVIL_ID_008_ZEUS",
+      "pages": [
+        "希腊神话的主神。\n被认为是全知全能的天空神，\n也是众神之王，\n统领以奥林匹斯十二神\n为首的诸多神明。\n　\n他是克罗诺斯之子，\n哈迪斯和波塞冬的兄弟。\n他通过打倒父亲克罗诺斯，\n获得了全宇宙的支配权。\n他和许多女神乃至人类女性有关系，\n并和她们生下了众多子嗣。"
+      ],
+      "paragraphs": [
+        "希腊神话的主神。被认为是全知全能的天空神，也是众神之王，统领以奥林匹斯十二神为首的诸多神明。",
+        "他是克罗诺斯之子，哈迪斯和波塞冬的兄弟。他通过打倒父亲克罗诺斯，获得了全宇宙的支配权。他和许多女神乃至人类女性有关系，并和她们生下了众多子嗣。"
+      ],
+      "localizationKeys": [
+        "629AD9C34AF1F90761FD8A98DABED79F"
+      ],
+      "textSha256": "ae442c89b35440d63a8249f9291ee883e8119cc432021e2a23b4c48b45ec8ad8"
+    },
+    "Zhen": {
+      "gameId": 288,
+      "officialNameZh": "鸩",
+      "officialNameEn": "Zhen",
+      "messageLabel": "DEVIL_ID_288_CHIN",
+      "pages": [
+        "中国传说中一种带有剧毒的鸟。\n　\n其喙颜色似铜，喜好吃蛇。\n据说其毒性非常猛烈，\n一旦它从农田上飞过，\n农作物便会全部枯萎。\n如果把它的羽毛泡在酒里，\n这酒就会变为能一口致命的毒酒。"
+      ],
+      "paragraphs": [
+        "中国传说中一种带有剧毒的鸟。",
+        "其喙颜色似铜，喜好吃蛇。据说其毒性非常猛烈，一旦它从农田上飞过，农作物便会全部枯萎。如果把它的羽毛泡在酒里，这酒就会变为能一口致命的毒酒。"
+      ],
+      "localizationKeys": [
+        "F71D32A0456F1FCC7CF5CCBD21A5F109"
+      ],
+      "textSha256": "50599cc4cd050d1f30e939db1d0ae811efe432b0daa5eee3a190e12823136269"
+    },
+    "Zhu Tun She": {
+      "gameId": 117,
+      "officialNameZh": "猪豚蛇",
+      "officialNameEn": "Zhu Tun She",
+      "messageLabel": "DEVIL_ID_117_CHOTONDA",
+      "pages": [
+        "传说中在中国宋朝时期出现过的怪蛇。\n　\n根据传说，它出现在正在训练的\n士兵面前，企图吞食人类，\n最后被一个擅长咒术的军人消灭。\n其形貌奇特，体长约三尺，\n胴生四足，全身被毛，\n叫声似猪，乃自竹林中现身。\n由于从其体貌特征无法确定\n它是什么动物，\n因此有人认为\n它很可能是一种未知的生物。"
+      ],
+      "paragraphs": [
+        "传说中在中国宋朝时期出现过的怪蛇。",
+        "根据传说，它出现在正在训练的士兵面前，企图吞食人类，最后被一个擅长咒术的军人消灭。其形貌奇特，体长约三尺，胴生四足，全身被毛，叫声似猪，乃自竹林中现身。由于从其体貌特征无法确定它是什么动物，因此有人认为它很可能是一种未知的生物。"
+      ],
+      "localizationKeys": [
+        "61BFD8704C9DF61E544DD2B982BEE1BC"
+      ],
+      "textSha256": "59994fe8d8b83b1e7d5b533a4be322780ac8edc35105d95621d45a64ca39fe5a"
+    },
+    "Zhuque": {
+      "gameId": 279,
+      "officialNameZh": "朱雀",
+      "officialNameEn": "Zhuque",
+      "messageLabel": "DEVIL_ID_279_SUZAKU",
+      "pages": [
+        "在中国的众多神话和思想中\n被提及的“四圣兽”之一。\n　\n掌管南方、夏季\n和五行中的火。\n是只形似鹌鹑的巨鸟，\n叫声音色丰富，美妙动听。"
+      ],
+      "paragraphs": [
+        "在中国的众多神话和思想中被提及的“四圣兽”之一。",
+        "掌管南方、夏季和五行中的火。是只形似鹌鹑的巨鸟，叫声音色丰富，美妙动听。"
+      ],
+      "localizationKeys": [
+        "009C3FEA427F58B541A93DBF50BA74ED"
+      ],
+      "textSha256": "d3088ffa6c31af1570ca3cb753f1e0684b29c2f090914769acdc0f0fb52a3186"
+    },
+    "Zouchouten": {
+      "gameId": 206,
+      "officialNameZh": "增长天王",
+      "officialNameEn": "Zouchouten",
+      "messageLabel": "DEVIL_ID_206_ZOCHOTEN",
+      "pages": [
+        "是佛教的护法神，\n也是四大天王之一。\n　\n八部众与他是同族。\n受帝释天之命守护四方中的南方。\n常被描绘为身着甲胄、\n手持太刀的怒面形象，\n但有时也会手持三叉矛。\n被尊为与万物生长有关的\n五谷丰登之神。"
+      ],
+      "paragraphs": [
+        "是佛教的护法神，也是四大天王之一。",
+        "八部众与他是同族。受帝释天之命守护四方中的南方。常被描绘为身着甲胄、手持太刀的怒面形象，但有时也会手持三叉矛。被尊为与万物生长有关的五谷丰登之神。"
+      ],
+      "localizationKeys": [
+        "F2334744402383DFD51A68B4E4D589BC"
+      ],
+      "textSha256": "1b544bcee1c356e3c480b0e930c308d16b96ef0b32310f3c4e86a251d3957400"
+    }
+  },
+  "verification": {
+    "messageIdsAndLabelsChecked": true,
+    "englishNamesChecked": true,
+    "chineseNamesRead": true,
+    "portraitIdentitiesChecked": true,
+    "pakEntryChecksumsVerified": true,
+    "allCatalogDemonsCovered": true
+  }
+}

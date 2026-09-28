@@ -1,0 +1,49 @@
+From 42f8df65b694fa193cc2519f91cedd08fbe38a2c Mon Sep 17 00:00:00 2001
+From: Feng Wu <wufengwufengwufeng@gmail.com>
+Date: Wed, 24 Jun 2026 07:22:43 +0800
+Subject: [PATCH] Add missing bounds check in
+ ngx_{http,stream}_compile_complex_value()
+
+Complex value compilation scans strings for $1..$9 capture references.
+Check that a byte after '$' is present before testing it, matching
+ngx_str_t length semantics and avoiding reliance on NUL termination.
+
+Apply the same check to both HTTP and stream implementations.
+---
+ src/http/ngx_http_script.c     | 4 +++-
+ src/stream/ngx_stream_script.c | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/src/http/ngx_http_script.c b/src/http/ngx_http_script.c
+index 8f7b548..ddae0c1 100644
+--- a/src/http/ngx_http_script.c
++++ b/src/http/ngx_http_script.c
+@@ -150,7 +150,9 @@ ngx_http_compile_complex_value(ngx_http_compile_complex_value_t *ccv)
+ 
+     for (i = 0; i < v->len; i++) {
+         if (v->data[i] == '$') {
+-            if (v->data[i + 1] >= '1' && v->data[i + 1] <= '9') {
++            if (i + 1 < v->len
++                && v->data[i + 1] >= '1' && v->data[i + 1] <= '9')
++            {
+                 nc++;
+ 
+             } else {
+diff --git a/src/stream/ngx_stream_script.c b/src/stream/ngx_stream_script.c
+index c447e15..175e441 100644
+--- a/src/stream/ngx_stream_script.c
++++ b/src/stream/ngx_stream_script.c
+@@ -151,7 +151,9 @@ ngx_stream_compile_complex_value(ngx_stream_compile_complex_value_t *ccv)
+ 
+     for (i = 0; i < v->len; i++) {
+         if (v->data[i] == '$') {
+-            if (v->data[i + 1] >= '1' && v->data[i + 1] <= '9') {
++            if (i + 1 < v->len
++                && v->data[i + 1] >= '1' && v->data[i + 1] <= '9')
++            {
+                 nc++;
+ 
+             } else {
+-- 
+2.34.1
+

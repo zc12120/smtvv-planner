@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-skin="smtv">
+<head>
+  <meta charset="utf-8">
+<script>
+// Keep stylesheet recovery available even if an external script cannot load.
+window.addEventListener('error',event=>{
+  const link=event.target;
+  if(!(link instanceof HTMLLinkElement)||!link.relList.contains('stylesheet'))return;
+  const attempt=Number(link.dataset.stylesheetRetries||0);
+  if(attempt>=2)return;
+  link.dataset.stylesheetRetries=String(attempt+1);
+  const url=new URL(link.href);url.searchParams.set('cssRetry',String(attempt+1));
+  setTimeout(()=>{if(link.isConnected)link.href=url.href;},200*(attempt+1));
+},true);
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f2f4f1">
+  <title>管理后台 · 真女5复仇</title>
+  <link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
+  <link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
+  <link rel="stylesheet" href="/admin/admin.css?v=smtvv-admin-20260917-1">
+  <script>try{const p=JSON.parse(localStorage.getItem('smtvv-appearance')||'{}');document.documentElement.dataset.theme=(p?.theme||localStorage.getItem('smtvv-theme'))==='dark'?'dark':'light';document.documentElement.dataset.font=JSON.parse(localStorage.getItem('smtvv-font')||'null')==='large'?'large':'standard';}catch{}</script>
+</head>
+<body class="admin-page">
+<a class="skip-link" href="#access">跳到网站访问设置</a>
+<header class="admin-header"><div class="header-inner">
+  <a class="admin-brand" href="/"><img src="/assets/logo.png" width="188" height="56" alt="真女5复仇"><span class="sr-only">返回网站</span></a>
+  <div class="header-actions"><a href="/" class="header-link"><i data-icon="ArrowUpRight"></i>打开网站</a><button id="font" class="icon-button font-button" aria-label="使用大字号" aria-pressed="false">Aa</button><button id="theme" class="icon-button" aria-label="切换深色主题"><i data-icon="Moon"></i></button><a href="/auth/" class="icon-button" aria-label="账户与退出登录"><i data-icon="UserRound"></i></a></div>
+</div></header>
+<div class="admin-shell">
+  <aside class="admin-side"><div class="side-label">管理目录 <span>INDEX</span></div>
+    <nav aria-label="管理后台导航"><a href="#access" aria-current="location"><span>01</span>网站访问</a><a href="#login-policy"><span>02</span>登录与 Cookie</a><a href="#notice"><span>03</span>站点公告</a><a href="#jobs"><span>04</span>计算任务</a><a href="#account"><span>05</span>账户安全</a><a href="#history"><span>06</span>操作记录</a></nav>
+    <div class="side-account"><i data-icon="ShieldCheck"></i><span>管理员<strong id="username">正在验证…</strong></span></div>
+    <p class="side-note">管理后台始终需要登录。</p>
+  </aside>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">VENGEANCE / SITE CONTROL</p><h1>管理后台</h1><p class="intro">网站访问、登录期限、公告与合体计算任务。</p></div><div class="sync-controls"><button id="refresh" class="secondary" disabled><i data-icon="RefreshCw"></i>刷新状态</button><span id="last-sync">正在同步站点状态</span></div></div>
+    <div id="feedback" role="status" aria-live="polite" hidden><span id="feedback-text"></span><button id="dismiss-feedback" class="icon-button" aria-label="关闭提示"><i data-icon="X"></i></button></div>
+    <div id="session-error" role="alert" hidden><span id="session-message"></span><a class="primary" href="/auth/?rd=%2Fadmin%2F" target="_blank" rel="noopener">重新登录（新标签页）</a></div>
+    <dl class="site-health" aria-label="站点状态"><div><dt>服务状态</dt><dd id="health">正在连接</dd></div><div><dt>本次运行</dt><dd id="uptime">—</dd></div><div><dt>资料版本</dt><dd id="version">—</dd></div><div><dt>收录资料</dt><dd id="catalog">—</dd></div></dl>
+
+    <section id="access" class="admin-section"><div class="section-title"><span class="section-number">01</span><h2>网站访问</h2><span class="section-note">开关即时保存</span></div>
+      <div class="access-sheet"><div class="access-heading"><div><span id="access-stamp" class="access-stamp">ACCESS</span><h3 id="access-title">正在读取访问设置</h3><p id="access-description">请稍候…</p></div><i data-icon="KeyRound" class="access-symbol"></i></div>
+        <label class="setting-row" for="require-login"><span><strong>需要登录才能访问网站</strong><small>开启后，页面、资料和计算都需要登录。</small></span><span class="switch"><input type="checkbox" id="require-login" role="switch" checked disabled><span class="switch-track" aria-hidden="true"></span></span></label>
+        <p class="access-footnote"><i data-icon="ShieldCheck"></i>关闭后整个工具可匿名使用；后台仍只允许管理员访问。</p>
+      </div>
+      <label class="setting-row maintenance-row" for="maintenance"><span><strong>维护模式 <span id="maintenance-label" class="inline-state">—</span></strong><small>暂停创建新计算。资料仍可查阅，已有任务继续运行，也可以取消。</small></span><span class="switch"><input type="checkbox" id="maintenance" role="switch" disabled><span class="switch-track" aria-hidden="true"></span></span></label>
+    </section>
+
+    <section id="login-policy" class="admin-section"><div class="section-title"><span class="section-number">02</span><h2>登录与 Cookie</h2><span id="login-policy-state" class="section-note">正在读取…</span></div>
+      <form id="login-policy-form" class="section-body"><fieldset disabled>
+        <h3>决定一次登录保持多久</h3>
+        <p class="form-description">普通登录同时受有效期和闲置超时限制。勾选保持登录后，使用独立的长期有效期。</p>
+        <div class="policy-duration-grid">
+          <label class="field" for="session-hours">普通登录有效期 <span>小时</span><input id="session-hours" type="number" min="0.0833333333" max="720" step="any" inputmode="decimal" required aria-describedby="session-duration-hint"><small id="session-duration-hint" class="field-hint">最长 30 天</small></label>
+          <label class="field" for="inactivity-minutes">闲置超时 <span>分钟</span><input id="inactivity-minutes" type="number" min="1" max="43200" step="1" inputmode="numeric" required aria-describedby="inactivity-duration-hint"><small id="inactivity-duration-hint" class="field-hint">不操作多久后退出</small></label>
+          <label class="field" for="remember-days">记住登录有效期 <span>天</span><input id="remember-days" type="number" min="0.0034722222" max="365" step="any" inputmode="decimal" required aria-describedby="remember-duration-hint"><small id="remember-duration-hint" class="field-hint">最长 365 天</small></label>
+        </div>
+        <label class="setting-row policy-switch-row" for="remember-enabled"><span><strong>显示「保持登录」选项</strong><small>勾选后，关闭浏览器仍可保持登录；手动退出会立即撤销。</small></span><span class="switch"><input type="checkbox" id="remember-enabled" role="switch"><span class="switch-track" aria-hidden="true"></span></span></label>
+        <label class="setting-row policy-switch-row" for="remember-default"><span><strong>默认勾选「保持登录」</strong><small>用于首次访问；已选择过的浏览器会沿用个人选择。</small></span><span class="switch"><input type="checkbox" id="remember-default" role="switch"><span class="switch-track" aria-hidden="true"></span></span></label>
+        <label class="setting-row policy-switch-row" for="remember-password-enabled"><span><strong>显示「记住密码」选项</strong><small>由浏览器密码管理器保存与填入，网站只记住账号和选项。</small></span><span class="switch"><input type="checkbox" id="remember-password-enabled" role="switch"><span class="switch-track" aria-hidden="true"></span></span></label>
+        <div class="form-footer"><p>修改会话期限或保持登录开关后，所有账户需重新登录。</p><button id="discard-login-policy" class="quiet" type="button" disabled>载入已保存设置</button><button id="save-login-policy" class="primary" type="submit"><i data-icon="Check"></i>保存登录设置</button></div>
+      </fieldset></form>
+      <form id="turnstile-form" class="section-body turnstile-settings"><fieldset disabled>
+        <div class="turnstile-title"><div><h3>Cloudflare Turnstile</h3><p class="form-description">登录前完成人机验证，验证结果由本站服务器核验。</p></div><span id="turnstile-config-state" class="config-stamp">未配置</span></div>
+        <label class="setting-row policy-switch-row" for="turnstile-enabled"><span><strong>启用登录人机验证</strong><small>启用时，新的登录请求必须通过 Turnstile。</small></span><span class="switch"><input type="checkbox" id="turnstile-enabled" role="switch"><span class="switch-track" aria-hidden="true"></span></span></label>
+        <div class="turnstile-key-grid">
+          <label class="field" for="turnstile-site-key">Site Key <span>显示在登录页</span><input id="turnstile-site-key" type="text" autocomplete="off" spellcheck="false" maxlength="220" placeholder="0x4AAAAAA…"></label>
+          <div><label class="field" for="turnstile-secret-key">Secret Key <span id="turnstile-secret-state">尚未配置</span><input id="turnstile-secret-key" type="password" autocomplete="off" spellcheck="false" maxlength="220" placeholder="输入 Secret Key"></label><label class="secret-clear"><input id="turnstile-clear-secret" type="checkbox">清除已保存的 Secret Key</label></div>
+        </div>
+        <div class="turnstile-options">
+          <fieldset><legend>验证码主题</legend><div class="segmented"><label><input type="radio" name="turnstile-theme" value="auto" checked><span>跟随系统</span></label><label><input type="radio" name="turnstile-theme" value="light"><span>浅色</span></label><label><input type="radio" name="turnstile-theme" value="dark"><span>深色</span></label></div></fieldset>
+          <fieldset><legend>显示方式</legend><div class="segmented"><label><input type="radio" name="turnstile-appearance" value="interaction-only" checked><span>需要时显示</span></label><label><input type="radio" name="turnstile-appearance" value="always"><span>始终显示</span></label></div></fieldset>
+        </div>
+        <div id="turnstile-preview" class="turnstile-preview" hidden><div><strong>配置验证</strong><span id="turnstile-preview-state" role="status">等待验证</span><button id="retry-turnstile-preview" type="button" class="quiet" hidden>重新验证</button></div><div id="turnstile-admin-widget"></div></div>
+        <div class="form-footer"><p>首次启用或更换密钥时，需先通过上方验证；Secret Key 保存后不再显示。</p><button id="discard-turnstile" class="quiet" type="button" disabled>载入已保存设置</button><button id="save-turnstile" class="primary" type="submit"><i data-icon="ShieldCheck"></i>保存验证设置</button></div>
+      </fieldset></form>
+    </section>
+
+    <section id="notice" class="admin-section"><div class="section-title"><span class="section-number">03</span><h2>站点公告</h2><span id="notice-state" class="section-note">显示在前台顶部</span></div>
+      <form id="notice-form" class="section-body"><fieldset disabled><label class="notice-enabled"><input id="notice-enabled" type="checkbox">显示公告</label>
+        <label class="field" for="notice-title">标题 <span>最多 80 字</span><input id="notice-title" type="text" maxlength="80" placeholder="例如：今晚暂停计算维护"></label>
+        <label class="field" for="notice-body">正文 <span id="notice-count">0 / 1000</span><textarea id="notice-body" maxlength="1000" rows="4" placeholder="告诉访客发生了什么、何时恢复。支持换行。"></textarea></label>
+        <div class="form-footer"><p>公告以纯文本显示，前台会自动更新。</p><button id="discard-notice" class="quiet" type="button" disabled>载入已发布内容</button><button id="save-notice" class="primary" type="submit"><i data-icon="Check"></i>保存公告</button></div>
+      </fieldset></form>
+    </section>
+
+    <section id="jobs" class="admin-section"><div class="section-title"><span class="section-number">04</span><h2>计算任务</h2><span id="job-count" class="section-note">正在读取…</span></div>
+      <div id="queue-summary" class="queue-summary">等待任务状态</div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="计算任务列表，可横向滚动"><table><thead><tr><th>目标仲魔 / 任务</th><th>状态</th><th>计算阶段</th><th>耗时</th><th><span class="sr-only">操作</span></th></tr></thead><tbody id="job-list"><tr><td colspan="5" class="empty-state">正在读取计算任务…</td></tr></tbody></table></div>
+      <p class="section-footnote">每 5 秒刷新。显示当前服务保留的最近 24 个任务，重启后清空。</p>
+    </section>
+
+    <section id="account" class="admin-section"><div class="section-title"><span class="section-number">05</span><h2>账户安全</h2><a class="text-link" href="/auth/">账户与退出登录 <i data-icon="ArrowUpRight"></i></a></div>
+      <form id="password-form" class="section-body"><fieldset disabled><h3>修改登录密码</h3><p class="form-description">输入当前密码以确认身份。保存后所有账户需重新登录。</p>
+        <input id="password-username" type="text" autocomplete="username" class="sr-only" tabindex="-1" aria-label="当前账号" readonly>
+        <label class="field" for="current-password">当前密码<input id="current-password" type="password" autocomplete="current-password" required maxlength="1024"></label>
+        <div class="password-grid"><label class="field" for="new-password">新密码<input id="new-password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required aria-describedby="password-help"></label><label class="field" for="confirm-password">确认新密码<input id="confirm-password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label></div>
+        <div class="form-footer"><p id="password-help">12–128 个字符，建议使用密码管理器生成。</p><button type="button" id="show-password" class="quiet" aria-pressed="false">显示密码</button><button id="save-password" class="primary" type="submit">更新密码</button></div>
+        <p id="password-feedback" role="status" hidden></p>
+      </fieldset></form>
+    </section>
+
+    <section id="history" class="admin-section"><div class="section-title"><span class="section-number">06</span><h2>操作记录</h2><a class="text-link" href="/api/admin/export" download>导出站点设置 <i data-icon="Download"></i></a></div><ol id="audit-list" class="audit-list"><li class="empty-state">正在读取操作记录…</li></ol><p class="section-footnote">此处显示最近 30 条操作；密码内容不会记入记录。</p></section>
+  </main>
+</div>
+<noscript><p class="noscript">请启用 JavaScript 后使用管理后台。</p></noscript>
+<script>
+// Keep recovery available even when the first external script cannot load.
+(async () => {
+  for (const source of ['/assets/icons.js?v=performance-20260916-1', '/admin/admin.js?v=smtvv-admin-20260917-1']) {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          const timer = setTimeout(() => reject(Error('timeout')), 12000);
+          script.src = source + (attempt ? (source.includes('?') ? '&' : '?') + 'loadRetry=' + attempt : '');
+          script.async = false;
+          script.onload = () => {clearTimeout(timer);resolve();};
+          script.onerror = () => {clearTimeout(timer);script.remove();reject(Error('network'));};
+          document.body.append(script);
+        });
+        break;
+      } catch (error) {
+        // A timed-out request may still execute; never insert a second copy.
+        if (error.message === 'timeout' || attempt === 2) throw error;
+        await new Promise(resolve => setTimeout(resolve, 400 * (attempt + 1)));
+      }
+    }
+  }
+})().catch(() => {
+  const feedback = document.getElementById('feedback');
+  document.getElementById('feedback-text').textContent = '页面资源暂时无法加载，请重新加载。';
+  feedback.className = 'error';feedback.hidden = false;
+  document.getElementById('health').textContent = '页面资源未就绪';
+  document.getElementById('last-sync').textContent = '尚未连接站点';
+  const retry = document.getElementById('refresh');
+  retry.disabled = false;retry.textContent = '重新加载';retry.onclick = () => location.reload();
+});
+</script>
+</body></html>

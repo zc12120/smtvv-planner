@@ -1,0 +1,16 @@
+**
+!Dockerfile
+!*.py
+!requirements-auth.txt
+!scripts/
+!scripts/*.py
+!native/
+!native/optimal.cpp
+!data/
+!data/*.json
+!data/*.md
+!web/
+!web/**
+!LICENSE
+!THIRD_PARTY.md
+**/__pycache__/**

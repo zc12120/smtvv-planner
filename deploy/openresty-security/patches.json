@@ -1,0 +1,112 @@
+{
+  "upstream": "https://github.com/nginx/nginx",
+  "release": "release-1.31.3",
+  "archiveSHA256": "65b78baadd3f0984055de89bf13f4a1932e5bfe9c31932037a134ea2b1a0ce42",
+  "patches": [
+    {
+      "file": "01-e09c0d32d51c.patch",
+      "commit": "e09c0d32d51c8cf85caecaf8c07db5e7c8dcf742",
+      "subject": "Access log: fix \"request_length\" format length",
+      "sha256": "6a020d3d0959b014f66dd452c648f9312552a23e3af92ceb668ae1d1a788e3b3",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "02-875750a4f76b.patch",
+      "commit": "875750a4f76bf68189929f887951e02b66c99801",
+      "subject": "HTTP/3: use max table capacity for insert buffer allocation",
+      "sha256": "a1f3bae01ead3ac2530d9a9fb2f167ae52fcbf440569518127b0cd27f144a834",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "03-ceccdbd2ee79.patch",
+      "commit": "ceccdbd2ee799d020a371b9420bdacb9cf273aa7",
+      "subject": "HTTP/3: allocate insert buffer from connection pool",
+      "sha256": "2734bb6d94dc1a292c0da5df63b0d90a5025e168f31421f8887e6371a7e0a88e",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "04-9e293766e73c.patch",
+      "commit": "9e293766e73c469c015df5341f1c1d403fb532c6",
+      "subject": "HTTP/3: avoid recreation of standard client uni streams",
+      "sha256": "744d017192c9c68712e9ee34490f955a39c6ad69748b7457e105879badf5b356",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "05-26d824ec3a2f.patch",
+      "commit": "26d824ec3a2f819300edce0ab3b055751c9843ff",
+      "subject": "Upstream: limit header length for HTTP/2 and gRPC",
+      "sha256": "6d8d10f10539c4a357d79473fad7ea5fc8ea7cd12387107e666fcbd489d21a6d",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "06-319a0bff157b.patch",
+      "commit": "319a0bff157b15d9061f4712b2edbe6fdd2dee66",
+      "subject": "Charset: fixed another rare buffer overread in recode_from_utf8()",
+      "sha256": "d35a667b6fbaddfd73538fab8f4933379dbc82703cbf36c7429732b0375a4dff",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "07-42f8df65b694.patch",
+      "commit": "42f8df65b694fa193cc2519f91cedd08fbe38a2c",
+      "subject": "Add missing bounds check in ngx_{http,stream}_compile_complex_value()",
+      "sha256": "23673d86a8fa1b4e45a4f5f7418c6a93ff4683dce4b2d0bf636dab87619c57d6",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "08-44c66e92c88b.patch",
+      "commit": "44c66e92c88bf2367dd31efc9d5843c0838d11f2",
+      "subject": "Upstream: limit response header field sizes for HTTP/2 and gRPC",
+      "sha256": "e38c441c44ed57a3527f3b865c78189637525cd9c18d45e40a9c1b129a5b7275",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "09-28219209e0b4.patch",
+      "commit": "28219209e0b4f9e155fd8bd91ab81b8ac30628f2",
+      "subject": "Script: simplified copy capture codes.",
+      "sha256": "ac6ab3e723e893aa4461dd59d2d6599e197477bcb553ff77b6fee0a63fc0f2e5",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "10-b767540492e8.patch",
+      "commit": "b767540492e8c79a58bc26034d3bab2f708b7bd1",
+      "subject": "Script: buffer overrun protection.",
+      "sha256": "4d25cd7c3c77ed777c8ed4e2cc9e32f199dcf5b2f40b9ad4aa24dc685c046219",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "11-4d32a2703c79.patch",
+      "commit": "4d32a2703c79f92b7a99ce3547759cc599d6f83e",
+      "subject": "Access log: buffer overrun protection.",
+      "sha256": "60ed78aa8962f57b9d3b6eb7385ebb5939b5e4fd8badb60d50f31b64ca9badd2",
+      "adaptedForOpenResty": true
+    },
+    {
+      "file": "12-25f920eca977.patch",
+      "commit": "25f920eca977139dc6fc7638b419169a602a0064",
+      "subject": "Script: buffer overrun protection in direct script usage.",
+      "sha256": "cf1db0b22be2531dfef57ba402968c44f52530f77feec2c4417920505ef6927c",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "13-a8289aa69c74.patch",
+      "commit": "a8289aa69c74f7e664ad63b91c17aa2a554f190f",
+      "subject": "Script: avoid garbage at the end of the result string",
+      "sha256": "7e57e1155469da07a1e7388c7601bfe59eda0d1a9cc7ffaf79134427bcc69d74",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "14-0cca8e055a2d.patch",
+      "commit": "0cca8e055a2d909f1a00c2071665b502ec2fe94c",
+      "subject": "Fixed uninitialized memory read caused by stale regex captures.",
+      "sha256": "b025ac5d0f312fdefbb117a25aff183976befee9b4d01828968f187986298bf5",
+      "adaptedForOpenResty": false
+    },
+    {
+      "file": "15-700dc9e0e750.patch",
+      "commit": "700dc9e0e750e3f63587f9d0f9f36bae5ec47202",
+      "subject": "Avoid duplicate subrequest finalization",
+      "sha256": "7bf50ab7e11b50a066248716d6fa6358c0edeb9e865d6f5b206f720ab69c4be2",
+      "adaptedForOpenResty": false
+    }
+  ]
+}

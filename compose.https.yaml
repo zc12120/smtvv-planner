@@ -1,0 +1,24 @@
+# Optional public HTTPS entrypoint. Application and authentication stay internal.
+services:
+  https:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      SMTVV_PUBLIC_URL: "${SMTVV_PUBLIC_URL:?Run scripts/deploy.py with your HTTPS URL first}"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      gateway:
+        condition: service_healthy
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 64
+
+volumes:
+  caddy-data:
+  caddy-config:

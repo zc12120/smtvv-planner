@@ -1,0 +1,3 @@
+# Optional offline asset-build tools; the HTTP service does not import these.
+Pillow>=10,<12
+fonttools[woff]>=4.55,<5

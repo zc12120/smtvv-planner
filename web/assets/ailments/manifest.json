@@ -1,0 +1,112 @@
+{
+  "source": {
+    "steamAppId": 1875830,
+    "steamBuildId": "17140961",
+    "pak": "pakchunk0-WindowsNoEditor.pak",
+    "pakIndexSha1": "090daf1d1401c4198915626cd77875c8f773695f",
+    "dataAsset": "Project/Content/Blueprints/Gamedata/BinTable/Devil/NKMBaseTable",
+    "dataHeaderSha256": "d4b6a0aabc7f71a7ebd4486307c8f537b0f0335247d74bdf062d24664907d148",
+    "dataExportSha256": "12f28f0bb58d3efc4698401a2d2fe9fd8f60fa07040e679f4b9638fc485ed4e1",
+    "tables": [
+      {
+        "offset": 85,
+        "stride": 464,
+        "rows": 1201
+      },
+      {
+        "offset": 557365,
+        "stride": 368,
+        "rows": 1201
+      }
+    ],
+    "iconAsset": "Project/Content/Design/UI/Icon/Element/Textures/icon_element_01",
+    "iconHeaderSha256": "4c109da326467a27686291c4c113b7df0a0540ca7cc5256d4931690705bf448a",
+    "iconExportSha256": "53dcc075dc789e14dd5a2bb80a7ce5c1d9811948d8a73a5d4fb789a977784ea7"
+  },
+  "icons": {
+    "cha": {
+      "label": "魅惑",
+      "file": "cha.png",
+      "sourceBounds": [
+        516,
+        180,
+        580,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "64ce0114ba8fc7852c3bd6f84138e674779a476da68a56560bdf9e2aec280fd5",
+      "pixelSha256": "a7991361e9b91fe7da7b7b9e9b306f56c27f623c681996473bafefbd4e2aa81e"
+    },
+    "sea": {
+      "label": "封技",
+      "file": "sea.png",
+      "sourceBounds": [
+        600,
+        180,
+        664,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "3cc89bac0d7790f599a5a2928f1b4adf394f9e5abd47391221b9c8e6f845162a",
+      "pixelSha256": "4f654d2e4d74b08f22879bdda8ba695ed10fdee5160c39303391d614d4ec79f9"
+    },
+    "pan": {
+      "label": "混乱",
+      "file": "pan.png",
+      "sourceBounds": [
+        432,
+        180,
+        496,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "eeef4062d7b2ec2d1e5d49078e078a85de42da9baf19f7476cd46e9a7d008307",
+      "pixelSha256": "05f1452a333e4ea5730a16724f2a374aee83a7dd1adc8818741777b084d8aeed"
+    },
+    "poi": {
+      "label": "中毒",
+      "file": "poi.png",
+      "sourceBounds": [
+        684,
+        180,
+        748,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "4f900bbcabe0313289f55f754f60a67f96e6573d16713d86f6b68a68141eac5d",
+      "pixelSha256": "7744d7d11a74944f8ebae316baa4cdf1e2fe8428eea5987c3b4aaa3a43918683"
+    },
+    "sle": {
+      "label": "睡眠",
+      "file": "sle.png",
+      "sourceBounds": [
+        348,
+        180,
+        412,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "2d05e3f5b41755d587ecdb5437a7ff80b80094cfd8f08a2202beaa883843b1f0",
+      "pixelSha256": "5eb5a763d128f2cf5524295f9e36780dfa5c3d35798d85049fbee1bb2c6030b0"
+    },
+    "mir": {
+      "label": "幻惑",
+      "file": "mir.png",
+      "sourceBounds": [
+        264,
+        180,
+        328,
+        244
+      ],
+      "width": 64,
+      "height": 64,
+      "sha256": "e190bf580938e9a41bc37b004318f542bda7a2808da84530987b475288f9ad4f",
+      "pixelSha256": "87b739871c3584e261ea60d193561e6c96ec4ef3d0b11500b62b31920a5d0f9b"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "category": "Story Progression",
+    "unlocked": true,
+    "conditions": {
+      "Hydra": "Story locked",
+      "Lahmu": "Story locked",
+      "Surt": "Story locked or (CoC) Clear \"Special Training: Army of Chaos\" (CoV)",
+      "Ishtar": "Story locked (CoC) or Clear \"Special Training: Army of Chaos\" (CoV)",
+      "Chernobog": "Story locked (CoC) or Clear \"Special Training: Army of Chaos\" (CoV)",
+      "Arioch": "Story locked (CoC) or Clear \"Special Training: Army of Chaos\" (CoV)",
+      "Vasuki": "Story locked",
+      "Odin": "Story locked",
+      "Metatron": "Story locked",
+      "Hayataro": "Chaos Route (CoC) or Story locked (CoV)",
+      "Nuwa,Nuwa A": "New Game+ (CoC) or Follow up on Bethel's investigation of Yakumo (CoV)",
+      "Abdiel,Abdiel A": "New Game+ (CoC) or Story locked (CoV)"
+    }
+  },
+  {
+    "category": "Side Quests",
+    "unlocked": true,
+    "conditions": {
+      "Tzitzimitl": "Clear \"She Who Rules the Night\"",
+      "Anahita": "Clear \"The Demon of the Spring\"",
+      "Turbo Granny": "Clear \"Supersonic Racing\"",
+      "King Frost": "Clear \"A Wish for a Fish\"",
+      "Idun": "Clear \"A Goddess Stolen\"",
+      "Anansi,Onyankopon": "Clear \"Reclaim the Golden Stool\" or \"Liberate the Golden Stool\"",
+      "Camael": "Clear \"The Angel of Destruction\"",
+      "Oyamatsumi": "Clear \"The Search for Oyamatsumi\" (CoC) or \"Special Training: The Kunitsukami\" (CoV)",
+      "Okuninushi": "Clear \"Clash with the Kunitsukami\" (CoC) or \"Special Training: The Kunitsukami\" (CoV)",
+      "Nahobeeho": "Clear \"Wannabee-ho Nahobino\"",
+      "Marici": "Clear \"The Guardian of Light\"",
+      "Fionn mac Cumhaill": "Clear \"Fionn's Resolve\"",
+      "Huang Long": "Clear \"The Benevolent One\"",
+      "Amanozako,Zaou-Gongen": "Clear \"The Destined Leader\"",
+      "Uriel,Raphael,Gabriel": "Clear \"The Holy Ring\"",
+      "Belphegor": "Clear \"The Tyrant of Tennozu\"",
+      "Moloch": "Clear \"Roar of Hatred\"",
+      "Baal": "Clear \"The Bull God's Lineage\"",
+      "Mithras,Asura,Amon": "Clear \"The Winged Sun\"",
+      "Khonsu,Khonsu Ra": "Clear \"The Succession of Ra\" (CoC) or \"Rite of Resurrection\" (CoV)",
+      "Shiva": "Clear \"A Universe in Peril\"",
+      "Demeter,Zeus": "Clear \"A Plot Revealed\"",
+      "Maria": "Clear \"The Compassionate Queen\" (Law alignment)",
+      "Michael": "Clear \"The Seraph's Return\" (Law Route)",
+      "Danu": "Clear \"The Noble Queen\" (Neutral alignment)",
+      "Inanna": "Clear \"The Wrathful Queen\" (Chaos alignment)",
+      "Belial": "Clear \"The Red Dragon's Invitation\" (Chaos Route)",
+      "Masakado": "Clear \"Guardian of Tokyo\" (CoC)"
+    }
+  },
+  {
+    "category": "Canon of Vengeance",
+    "unlocked": true,
+    "conditions": {
+      "Glasya-Labolas": "Story locked (CoV)",
+      "Armaiti": "Clear \"Devotion to Order\" (CoV)",
+      "Naamah,Eisheth,Agrat,Lilith": "Story locked (CoV)",
+      "Saturnus": "Clear \"God of Old, Devourer of Kin\" (CoV)",
+      "Mastema": "New Game+ (CoV)",
+      "Samael": "Clear \"The Serpent King\" (CoV)",
+      "Satan": "Clear \"The Great Adversary\" (CoV)",
+      "Lucifer": "Godborn New Game+"
+    }
+  },
+  {
+    "category": "Legacy DLC",
+    "unlocked": true,
+    "conditions": {
+      "Artemis": "Clear \"A Goddess in Training\"",
+      "Cleopatra": "Clear \"The Rage of a Queen\"",
+      "Mephisto": "Clear \"The Doctor's Last Wish\"",
+      "Matador": "Defeat in Minato",
+      "Daisoujou": "Defeat in Shinagawa",
+      "Hell Biker": "Defeat in Shinagawa",
+      "White Rider": "Defeat in Chiyoda or Shinjuku",
+      "Red Rider": "Defeat in Chiyoda or Shinjuku",
+      "Black Rider": "Defeat in Chiyoda or Shinjuku",
+      "Pale Rider": "Defeat in Chiyoda or Shinjuku",
+      "Mother Harlot": "Defeat in Taito",
+      "Trumpeter": "Defeat in Taito",
+      "Demi-fiend": "Clear \"Return of the True Demon\""
+    }
+  },
+  {
+    "category": "Vengeance DLC",
+    "unlocked": false,
+    "conditions": {
+      "Konohana Sakuya": "Clear \"Sakura Cinders of the East\"",
+      "Dagda": "Clear \"Holy Will and Profane Dissent\""
+    }
+  }
+]

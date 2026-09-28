@@ -1,0 +1,80 @@
+From 9e293766e73c469c015df5341f1c1d403fb532c6 Mon Sep 17 00:00:00 2001
+From: Roman Arutyunyan <arut@nginx.com>
+Date: Tue, 19 May 2026 16:09:35 +0400
+Subject: [PATCH] HTTP/3: avoid recreation of standard client uni streams
+
+Creating a control/encoder/decoder stream while another such stream
+already exists, is not allowed.  Also, closing such a stream results
+in connection closure with NGX_HTTP_V3_ERR_CLOSED_CRITICAL_STREAM.
+However, since stream creation and connection closure are asynchronous,
+there could be a window where two control/encoder/decoder streams
+could coexist within a single cycle iteration.  This could result
+in reusing parsing context, such as encoder insert buffer.
+
+The change adds a mask for all standard client uni streams ever created.
+This allows to check if a stream of this type was created before.
+While here, mandatory stream validation now also uses this mask.
+---
+ src/http/v3/ngx_http_v3.h     |  1 +
+ src/http/v3/ngx_http_v3_uni.c | 15 +++++++++------
+ 2 files changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/src/http/v3/ngx_http_v3.h b/src/http/v3/ngx_http_v3.h
+index 8fd212c..af6b362 100644
+--- a/src/http/v3/ngx_http_v3.h
++++ b/src/http/v3/ngx_http_v3.h
+@@ -138,6 +138,7 @@ struct ngx_http_v3_session_s {
+ 
+     unsigned                      goaway:1;
+     unsigned                      hq:1;
++    unsigned                      created_streams:NGX_HTTP_V3_MAX_KNOWN_STREAM;
+ 
+     ngx_connection_t             *known_streams[NGX_HTTP_V3_MAX_KNOWN_STREAM];
+ };
+diff --git a/src/http/v3/ngx_http_v3_uni.c b/src/http/v3/ngx_http_v3_uni.c
+index 302064b..5d183aa 100644
+--- a/src/http/v3/ngx_http_v3_uni.c
++++ b/src/http/v3/ngx_http_v3_uni.c
+@@ -105,6 +105,7 @@ ngx_int_t
+ ngx_http_v3_register_uni_stream(ngx_connection_t *c, uint64_t type)
+ {
+     ngx_int_t                  index;
++    ngx_uint_t                 streams;
+     ngx_http_v3_session_t     *h3c;
+     ngx_http_v3_uni_stream_t  *us;
+ 
+@@ -139,10 +140,11 @@ ngx_http_v3_register_uni_stream(ngx_connection_t *c, uint64_t type)
+         ngx_log_debug1(NGX_LOG_DEBUG_HTTP, c->log, 0,
+                        "http3 stream 0x%02xL", type);
+ 
+-        if (h3c->known_streams[NGX_HTTP_V3_STREAM_CLIENT_ENCODER] == NULL
+-            || h3c->known_streams[NGX_HTTP_V3_STREAM_CLIENT_DECODER] == NULL
+-            || h3c->known_streams[NGX_HTTP_V3_STREAM_CLIENT_CONTROL] == NULL)
+-        {
++        streams = (1 << NGX_HTTP_V3_STREAM_CLIENT_ENCODER)
++                  | (1 << NGX_HTTP_V3_STREAM_CLIENT_DECODER)
++                  | (1 << NGX_HTTP_V3_STREAM_CLIENT_CONTROL);
++
++        if ((h3c->created_streams & streams) != streams) {
+             ngx_log_error(NGX_LOG_INFO, c->log, 0, "missing mandatory stream");
+             return NGX_HTTP_V3_ERR_STREAM_CREATION_ERROR;
+         }
+@@ -151,12 +153,13 @@ ngx_http_v3_register_uni_stream(ngx_connection_t *c, uint64_t type)
+     }
+ 
+     if (index >= 0) {
+-        if (h3c->known_streams[index]) {
+-            ngx_log_error(NGX_LOG_INFO, c->log, 0, "stream exists");
++        if (h3c->created_streams & (1 << index)) {
++            ngx_log_error(NGX_LOG_INFO, c->log, 0, "stream already created");
+             return NGX_HTTP_V3_ERR_STREAM_CREATION_ERROR;
+         }
+ 
+         h3c->known_streams[index] = c;
++        h3c->created_streams |= 1 << index;
+ 
+         us = c->data;
+         us->index = index;
+-- 
+2.34.1
+

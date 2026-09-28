@@ -1,0 +1,28 @@
+From e09c0d32d51c8cf85caecaf8c07db5e7c8dcf742 Mon Sep 17 00:00:00 2001
+From: Nitin Swami <n.swami@f5.com>
+Date: Fri, 5 Jun 2026 12:58:53 +0530
+Subject: [PATCH] Access log: fix "request_length" format length
+
+The variable handler uses "%O" format specifier.
+
+Reported by Mufeed VH of Winfunc Research.
+---
+ src/http/modules/ngx_http_log_module.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/http/modules/ngx_http_log_module.c b/src/http/modules/ngx_http_log_module.c
+index f7c4bd2..57fb1d3 100644
+--- a/src/http/modules/ngx_http_log_module.c
++++ b/src/http/modules/ngx_http_log_module.c
+@@ -243,7 +243,7 @@ static ngx_http_log_var_t  ngx_http_log_vars[] = {
+     { ngx_string("bytes_sent"), NGX_OFF_T_LEN, ngx_http_log_bytes_sent },
+     { ngx_string("body_bytes_sent"), NGX_OFF_T_LEN,
+                           ngx_http_log_body_bytes_sent },
+-    { ngx_string("request_length"), NGX_SIZE_T_LEN,
++    { ngx_string("request_length"), NGX_OFF_T_LEN,
+                           ngx_http_log_request_length },
+ 
+     { ngx_null_string, 0, NULL }
+-- 
+2.34.1
+

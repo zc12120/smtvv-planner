@@ -1,0 +1,98 @@
+name: smtvv-planner
+
+services:
+  app:
+    image: "smtvv-planner:${SMTVV_IMAGE_TAG:-local}"
+    build: .
+    restart: unless-stopped
+    environment:
+      SMTVV_AUTH_PORTAL: /auth/
+      SMTVV_PUBLIC_URL: "${SMTVV_PUBLIC_URL:?Run scripts/configure.py with your public HTTPS URL first}"
+      SMTVV_AUTH_VERIFY_URL: http://authelia:9091/auth/api/authz/auth-request
+      SMTVV_STATE_DIR: /state
+      SMTVV_USERS_FILE: /state/accounts/users_database.yml
+      SMTVV_USERS_BOOTSTRAP: /bootstrap/users_database.yml
+      SMTVV_AUTH_STATE_SHARED: "1"
+      SMTVV_LOGIN_BOOTSTRAP: /bootstrap/login-bootstrap.json
+      SMTVV_TURNSTILE_TESTING: "${SMTVV_TURNSTILE_TESTING:-0}"
+      SMTVV_COMPUTE_MODE: "${SMTVV_COMPUTE_MODE:-local}"
+      SMTVV_WORKERS_FILE: /state/compute-workers.json
+    volumes:
+      - planner-data:/state
+      - ./runtime/authelia/users_database.yml:/bootstrap/users_database.yml:ro
+      - ./runtime/login-bootstrap.json:/bootstrap/login-bootstrap.json:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 1.0
+    mem_limit: 768m
+    pids_limit: 128
+
+  authelia:
+    image: authelia/authelia:4.39.25@sha256:a039d87fb842f0af4f83c03434f5fb6ec45d4b46e86b8b3ac571cc104bbe6e6d
+    entrypoint: [/bin/sh, /supervisor.sh]
+    group_add: ["10001"]
+    healthcheck:
+      test: [CMD, wget, --quiet, --tries=1, --timeout=3, --spider, "http://127.0.0.1:9091/auth/api/health"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    restart: unless-stopped
+    environment:
+      AUTHELIA_SESSION_SECRET_FILE: /secrets/session
+      AUTHELIA_STORAGE_ENCRYPTION_KEY_FILE: /secrets/storage
+      AUTHELIA_IDENTITY_VALIDATION_RESET_PASSWORD_JWT_SECRET_FILE: /secrets/reset
+    volumes:
+      - ./runtime/authelia:/config:ro
+      - ./runtime/secrets:/secrets:ro
+      - auth-data:/state
+      - planner-data:/planner-state:ro
+      - ./deploy/authelia-supervisor.sh:/supervisor.sh:ro
+    depends_on:
+      app:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    pids_limit: 128
+
+  gateway:
+    image: nginx:stable-alpine@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c
+    restart: unless-stopped
+    user: "101:101"
+    entrypoint: [nginx, -g, "daemon off;"]
+    environment:
+      SMTVV_PUBLIC_URL: "${SMTVV_PUBLIC_URL}"
+    healthcheck:
+      test: [CMD-SHELL, 'wget --quiet --tries=1 --timeout=3 --spider --header="Host: $${SMTVV_PUBLIC_URL#https://}" http://127.0.0.1:8080/healthz']
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    ports:
+      - "${SMTVV_BIND:-127.0.0.1}:${SMTVV_PORT:-8088}:8080"
+    volumes:
+      - ./runtime/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./web:/srv/web:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 64
+    depends_on:
+      app:
+        condition: service_healthy
+      authelia:
+        condition: service_healthy
+
+volumes:
+  auth-data:
+  planner-data:

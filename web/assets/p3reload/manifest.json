@@ -1,0 +1,30 @@
+{
+  "source_page": "https://p3re.jp/",
+  "rights": "© ATLUS. © SEGA.",
+  "assets": [
+    {
+      "name": "protagonist-school",
+      "source": "https://p3re.jp/resources/img/top/character_modal/img_character1_f234d553552dd807c323dfecb0663805.webp",
+      "width": 232,
+      "height": 889,
+      "bytes": 32034,
+      "sha256": "aeb4c59fe03645dfb141b8e69383f4a810e5443bb568f8067cfc539d269060d3"
+    },
+    {
+      "name": "protagonist-battle",
+      "source": "https://p3re.jp/resources/img/top/character_modal/img_character1_battle_a100337e6e24dd2f2e97b63e3de283f3.webp",
+      "width": 609,
+      "height": 919,
+      "bytes": 52510,
+      "sha256": "f09ddad4d2fc4c4e027828ba6664aa2cbdf108dde214d777d5f286fbed5811d3"
+    },
+    {
+      "name": "p3reload-logo",
+      "source": "https://p3re.jp/resources/img/common/logo_color_a0ae396768813e9f6a6e710194abcc94.webp",
+      "width": 161,
+      "height": 112,
+      "bytes": 4936,
+      "sha256": "ba3ff7e836ed5a1f78062b1bfefe2d74216e7810c10b12a8dfc16fda5850d704"
+    }
+  ]
+}

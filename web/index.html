@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-skin="smtv">
+<head>
+  <meta charset="utf-8">
+<script>
+// Keep stylesheet recovery available even if an external script cannot load.
+window.addEventListener('error',event=>{
+  const link=event.target;
+  if(!(link instanceof HTMLLinkElement)||!link.relList.contains('stylesheet'))return;
+  const attempt=Number(link.dataset.stylesheetRetries||0);
+  if(attempt>=2)return;
+  link.dataset.stylesheetRetries=String(attempt+1);
+  const url=new URL(link.href);url.searchParams.set('cssRetry',String(attempt+1));
+  setTimeout(()=>{if(link.isConnected)link.href=url.href;},200*(attempt+1));
+},true);
+</script>
+
+<script>try{const p=JSON.parse(localStorage.getItem("smtvv-appearance")||"{}");document.documentElement.dataset.skin=["smtv","p5","p3r"].includes(p?.skin)?p.skin:"smtv";document.documentElement.dataset.theme=p?.theme==="dark"?"dark":"light";document.documentElement.dataset.font=JSON.parse(localStorage.getItem("smtvv-font")||"null")==="large"?"large":"standard";}catch{}try{const valid=value=>["zh-Hans","en","ja","zh-Hant","ko"].includes(value);let language=new URLSearchParams(location.search).get("lang");if(!valid(language))try{language=localStorage.getItem("smtvv-language");}catch{}document.documentElement.lang=valid(language)?language:"zh-Hans";}catch{}</script>
+<script>
+window.smtvvEarlyRequests=new Map();
+for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=portraits-4&view=runtime']){
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+  const response=fetch(url,{signal:controller.signal}).then(async response=>{
+    let body;
+    try{body=await response.json();}catch(error){if(controller.signal.aborted)throw error;}
+    return {response,body};
+  }).catch(error=>({error})).finally(()=>clearTimeout(timer));
+  window.smtvvEarlyRequests.set(url,response);
+}
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark"><link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
+  <title>真女5复仇</title><link rel="stylesheet" href="desktop.css?v=route-actions-20260917-1"><link rel="stylesheet" href="persona.css?v=performance-20260916-1"><link rel="stylesheet" href="p3reload.css?v=p3r-20260913-2"><link rel="stylesheet" href="vengeance.css?v=smtv-20260914-2">
+<link rel="stylesheet" href="/auth/theme/i18n.css?v=performance-20260916-1">
+<link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
+<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
+<link rel="stylesheet" href="experience.css?v=logo-original-20260917-1">
+<link rel="stylesheet" href="route-layout.css?v=route-emphasis-20260917-1">
+<link rel="preload" href="/auth/theme/i18n.js?v=objectives-20260917-1" as="script">
+<link rel="preload" href="assets/icons.js?v=performance-20260916-1" as="script">
+<link rel="preload" href="site.js?v=innate-search-20260918-1" as="script">
+<link rel="preload" href="skills-ui.js?v=worlds-20260914-1" as="script">
+<link rel="preload" href="catalog-ui.js?v=refinement-20260915-1" as="script">
+<link rel="preload" href="route-guide.js?v=route-actions-20260917-1" as="script">
+<link rel="preload" href="app.js?v=route-emphasis-20260917-1" as="script">
+<link rel="preload" href="inspector.js?v=refinement-20260915-1" as="script">
+<link rel="preload" href="ui.js?v=route-actions-20260917-1" as="script">
+</head>
+<body data-catalog-state="loading" data-page="planner">
+<header class="site-header" data-site-header></header>
+<div class="main-nav" data-site-nav></div>
+<main class="desktop-main">
+  <div class="page-title">
+    <div class="page-context"><div class="breadcrumb">真女5复仇 / <span id="page-section">合体规划</span></div><h1>合体规划</h1><span id="page-roman" class="page-roman" aria-hidden="true">DEMON FUSION</span></div>
+    <div class="page-state"><span id="status" role="status" class="muted">正在读取资料…</span> <button id="retry-data" class="secondary" type="button" hidden>重新加载资料</button></div>
+  </div>
+  <section id="tab-planner" class="tab-panel">
+    <div class="planner-views"><div class="view-tabs" role="tablist" aria-label="合体规划视图"><button id="build-tab" data-planner-view="build" role="tab" aria-selected="true" aria-controls="planner-build">仲魔配置</button><button id="route-tab" data-planner-view="route" role="tab" aria-selected="false" aria-controls="planner-route" tabindex="-1">路线方案<span id="route-ready" hidden>3</span></button></div><div id="build-summary" class="build-summary"></div></div>
+    <div id="planner-build" role="tabpanel" aria-labelledby="build-tab">
+    <div class="configuration-sheet" id="configuration" data-target-selected="false">
+      <section class="target-panel">
+        <div class="section-heading"><h2>目标仲魔</h2><button id="example" class="quiet" data-tooltip="载入爱丽丝示例配置" disabled>载入示例</button></div>
+        <div class="section-body">
+        <div class="search-row">
+          <label class="sr-only" for="race">种族</label><select id="race"><option value="">全部种族</option></select>
+          <div class="search-box"><span data-icon="Search"></span><label class="sr-only" for="target-search">搜索仲魔</label><input id="target-search" placeholder="搜索仲魔名称" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="target-results" aria-autocomplete="list"></div>
+          <div id="target-results" class="search-results" role="listbox" aria-label="仲魔搜索结果" hidden></div>
+        </div>
+        <div id="target-card" class="empty-target" aria-busy="true"><div class="target-skeleton" data-skeleton aria-hidden="true"><span class="skeleton skeleton-portrait"></span><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><div class="skeleton-elements"><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span></div><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span></div></div>
+        </div>
+      </section>
+      <section class="build-panel">
+        <div class="section-heading"><h2>技能配置 <small id="skill-count">0 / 8</small></h2><div class="loadout-tools"><span id="skill-capacity" class="skill-capacity" aria-hidden="true"></span><button id="clear-skills" class="quiet icon-button" aria-label="清空技能" data-tooltip="清空技能" disabled><span data-icon="Trash2"></span></button></div></div>
+        <div class="build-body">
+        <div id="loadout-guidance" class="loadout-guidance" hidden><span data-icon="Sparkles"></span><div><strong>等待装配</strong><p>选择目标仲魔，配置它的最终技能。</p></div><span class="loadout-mark" aria-hidden="true">VIII</span></div>
+        <div id="skill-slots" class="skill-slots" aria-label="技能插槽" aria-busy="true">
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+<div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
+        </div>
+        <div id="error" role="alert" class="error"></div>
+        <div id="build-preview" class="build-preview" hidden></div>
+        </div>
+      </section>
+      <aside class="planner-settings" id="planner-settings" aria-label="合体条件与材料设置">
+        <div class="section-heading"><h2>合体条件</h2><span class="dlc-state"><span data-icon="Check"></span>已含全部 DLC</span></div>
+        <div class="settings-body">
+        <span id="settings-summary" class="sr-only">8 栏位 · Lv.150 · 已包含全部 DLC</span>
+        <div class="settings-group"><div class="settings-grid">
+          <label>最高等级<input id="level" type="number" min="1" max="150" value="150" aria-label="最高仲魔或练级等级"></label>
+          <label>已解锁技能栏位<select id="slots"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option selected>8</option></select></label>
+        </div></div>
+        <details id="settings" class="settings-group"><summary>可用仲魔限制<small id="restriction-count"></small><span data-icon="ChevronDown"></span></summary>
+        <div class="settings-grid">
+          <div class="picker-field"><span class="field-label">未解锁仲魔</span><div id="locked-picker"></div></div>
+          <div class="picker-field"><span class="field-label">不想使用的仲魔</span><div id="excluded-picker"></div></div>
+        </div>
+        </details>
+        <details class="route-search-settings settings-group"><summary>材料与召唤价<small id="material-count"></small><span data-icon="ChevronDown"></span></summary><div class="settings-grid">
+        <div class="picker-field"><span class="field-label">限定起始仲魔</span><div id="starting-picker"></div></div>
+        <div class="picker-field price-field"><span class="field-label">自定义召唤价</span><div id="prices-picker"></div></div>
+        </div></details>
+        </div>
+      </aside>
+    <div class="action-bar"><div class="action-context"><span id="command-target">尚未选择目标</span><span class="muted" id="compute-status" role="status">等待配置</span></div><div class="command-actions">
+      <button id="cancel-compute" class="quiet icon-button" aria-label="取消计算" data-tooltip="取消计算" hidden><span data-icon="Square"></span></button>
+      <button id="share" class="secondary icon-button" aria-label="复制配置链接" data-tooltip="复制配置链接"><span data-icon="Link"></span></button>
+      <button id="calculate" class="primary with-icon" disabled><span id="calculate-label">生成路线</span><span data-icon="ArrowRight"></span></button>
+    </div></div>
+    </div>
+    </div>
+    <div id="planner-route" role="tabpanel" aria-labelledby="route-tab" hidden>
+    <div class="section-heading route-section-heading"><div class="route-heading-copy"><h2 id="result-heading"><span id="route-status" class="muted" role="status">等待配置</span></h2></div><div class="command-actions"><button id="route-cancel" class="secondary with-icon" hidden><span data-icon="Square"></span>取消计算</button><button id="retry-compute" class="primary with-icon" hidden><span data-icon="RotateCw"></span>重试计算</button><button id="edit-build" class="secondary with-icon"><span data-icon="SlidersHorizontal"></span>修改配置</button></div></div>
+    <div id="generation-notice" role="status" hidden></div>
+    <div id="result"><div class="empty-route"><span data-icon="Route"></span><h3>尚未生成路线</h3></div></div>
+    </div>
+  </section>
+  <section id="tab-demons" class="tab-panel" hidden>
+    <div class="catalog-layout"><details class="catalog-index" open><summary class="catalog-index-heading"><span>种族</span><small aria-hidden="true">INDEX / 01</small></summary><div id="demon-categories" class="catalog-categories" aria-label="仲魔种族分类"></div></details><div class="catalog-main">
+    <div class="catalog-toolbar"><label class="catalog-search"><span data-icon="Search"></span><input id="demon-filter" aria-label="筛选仲魔" placeholder="搜索仲魔名称或种族"></label><select id="demon-method" aria-label="合体方式筛选"><option value="">全部合体方式</option><option value="normal">普通合体</option><option value="special">特殊合体</option><option value="accident">合体事故</option><option value="dlc">付费 DLC</option></select></div>
+    <div class="collection-meta"><span class="catalog-count" id="demon-count" role="status"></span><div class="collection-tools">
+      <label class="collection-columns"><span>每行</span><select data-catalog-columns="demons" aria-label="仲魔每行数量" title="窄屏会自动减少每行数量"><option value="auto">自动</option><option value="1">最多 1 项</option><option value="2">最多 2 项</option><option value="3">最多 3 项</option><option value="4">最多 4 项</option><option value="5">最多 5 项</option><option value="6">最多 6 项</option></select></label>
+      <button type="button" class="catalog-reset" data-reset-catalog="demons" aria-label="重置筛选"><span data-icon="RotateCcw"></span><span class="catalog-reset-label">重置筛选</span></button>
+    </div></div>
+    <div id="demon-table" class="demon-library"></div>
+    </div></div>
+  </section>
+  <section id="tab-skills" class="tab-panel" hidden>
+    <div class="catalog-layout"><details class="catalog-index" open><summary class="catalog-index-heading"><span>技能类别</span><small aria-hidden="true">INDEX / 02</small></summary><div id="skill-categories" class="catalog-categories" aria-label="技能类别"></div></details><div class="catalog-main">
+    <div class="catalog-toolbar"><label class="catalog-search"><span data-icon="Search"></span><input id="skill-filter" aria-label="筛选技能资料" placeholder="搜索技能名称"></label><select id="skill-inherit" aria-label="技能继承筛选"><option value="">全部技能</option><option value="normal">可继承技能</option><option value="unique">专属／不可继承</option></select></div>
+    <div class="collection-meta"><span class="catalog-count" id="skill-total" role="status"></span><div class="collection-tools">
+      <label class="collection-columns"><span>每行</span><select data-catalog-columns="skills" aria-label="技能每行数量" title="窄屏会自动减少每行数量"><option value="auto">自动</option><option value="1">最多 1 项</option><option value="2">最多 2 项</option><option value="3">最多 3 项</option><option value="4">最多 4 项</option><option value="5">最多 5 项</option><option value="6">最多 6 项</option></select></label>
+      <button type="button" class="catalog-reset" data-reset-catalog="skills" aria-label="重置筛选"><span data-icon="RotateCcw"></span><span class="catalog-reset-label">重置筛选</span></button>
+    </div></div>
+    <details class="description-note"><summary>技能数据说明</summary><p>技能名沿用游戏中文对照；效果为依游戏术语与数据整理的中文译注，并非官方描述逐字转录。消耗为基础值，实际随适合度变化；基础威力不等于最终伤害。<a href="https://megatenwiki.com/wiki/Translations_in_Shin_Megami_Tensei_V:_Vengeance/Skills" target="_blank" rel="noreferrer">游戏译名对照</a></p></details>
+    <div id="skill-table" class="skill-library"></div>
+    </div></div>
+  </section>
+  <section id="tab-essences" class="tab-panel" hidden>
+    <div class="catalog-layout"><details class="catalog-index" open><summary class="catalog-index-heading"><span>灵体分类</span><small aria-hidden="true">INDEX / 03</small></summary><div id="essence-categories" class="catalog-categories" aria-label="灵体分类"></div></details><div class="catalog-main">
+    <div class="catalog-toolbar"><label class="catalog-search"><span data-icon="Search"></span><input id="essence-filter" aria-label="搜索灵体或技能" placeholder="搜索灵体名称或包含的技能"></label><select id="essence-element" aria-label="灵体技能属性"><option value="">全部技能属性</option></select></div>
+    <div class="collection-meta"><span class="catalog-count" id="essence-count" role="status"></span><div class="collection-tools">
+      <label class="collection-columns"><span>每行</span><select data-catalog-columns="essences" aria-label="灵体每行数量" title="窄屏会自动减少每行数量"><option value="auto">自动</option><option value="1">最多 1 项</option><option value="2">最多 2 项</option><option value="3">最多 3 项</option><option value="4">最多 4 项</option><option value="5">最多 5 项</option><option value="6">最多 6 项</option></select></label>
+      <button type="button" class="catalog-reset" data-reset-catalog="essences" aria-label="重置筛选"><span data-icon="RotateCcw"></span><span class="catalog-reset-label">重置筛选</span></button>
+    </div></div>
+    <div id="essence-table" class="essence-library"></div>
+    </div></div>
+  </section>
+</main>
+<dialog id="catalog-preview" class="catalog-inspector" aria-labelledby="catalog-preview-title"></dialog>
+<dialog id="skill-dialog" aria-labelledby="skill-dialog-title">
+  <div class="dialog-head"><h2 id="skill-dialog-title">选择技能</h2><button id="close-dialog" class="quiet icon-button" aria-label="关闭技能选择"><span data-icon="X"></span></button></div>
+  <input id="skill-search" aria-label="搜索可添加技能" placeholder="搜索技能名称"><div id="elements" class="filters"></div><div id="skill-options"></div>
+</dialog>
+<dialog id="source-dialog" aria-labelledby="source-title">
+  <div class="dialog-head"><h2 id="source-title">选择技能来源</h2><button id="close-source" class="quiet icon-button" aria-label="关闭来源选择"><span data-icon="X"></span></button></div>
+  <input id="source-search" aria-label="搜索技能来源仲魔" placeholder="搜索中文名、英文名或种族" autocomplete="off"><div id="source-options"></div>
+</dialog>
+<div id="toast" role="status"></div>
+<button type="button" id="back-to-top" class="back-to-top icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
+<button type="button" id="back-to-top-left" class="back-to-top back-to-top--left icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
+<script>
+// Keep the loader inline so a failed first script request still has a recovery path.
+window.currentPage=null;
+(async()=>{
+  const sources=["/auth/theme/i18n.js?v=objectives-20260917-1","assets/icons.js?v=performance-20260916-1","site.js?v=innate-search-20260918-1","skills-ui.js?v=worlds-20260914-1","catalog-ui.js?v=refinement-20260915-1","route-guide.js?v=route-actions-20260917-1","app.js?v=route-emphasis-20260917-1","inspector.js?v=refinement-20260915-1","ui.js?v=route-actions-20260917-1"];
+  for(const source of sources){
+    for(let attempt=0;attempt<3;attempt++){
+      try{
+        await new Promise((resolve,reject)=>{
+          const script=document.createElement('script');
+          const timer=setTimeout(()=>reject(Error('timeout')),12000);
+          script.src=source+(attempt?(source.includes('?')?'&':'?')+'loadRetry='+attempt:'');
+          script.async=false;
+          script.onload=()=>{clearTimeout(timer);resolve();};
+          script.onerror=()=>{clearTimeout(timer);script.remove();reject(Error('network'));};
+          document.body.append(script);
+        });
+        if (source.includes("/i18n.js")) await SmtvvI18n.ready;
+        break;
+      }catch(error){
+        // A timed-out script could still arrive later; reload the page instead
+        // of inserting another copy that might execute the same code twice.
+        if(error.message==='timeout'||attempt===2)throw error;
+        await new Promise(resolve=>setTimeout(resolve,400*(attempt+1)));
+      }
+    }
+  }
+})().catch(()=>{
+  document.body.dataset.catalogState='error';
+  document.querySelectorAll('[aria-busy="true"]').forEach(element=>element.setAttribute('aria-busy','false'));
+  const status=document.getElementById('status');
+  if(status)status.textContent='页面资源未就绪';
+  const box=document.getElementById('error')||document.getElementById('entry-content');
+  if(box){box.textContent='页面资源暂时无法加载，请重新加载。';box.setAttribute('role','alert');}
+  let button=document.getElementById('retry-data');
+  if(!button){button=document.createElement('button');button.id='retry-page';button.type='button';button.className='secondary';button.textContent='重新加载页面';(box||document.body).append(button);}
+  button.hidden=false;button.onclick=()=>location.reload();
+});
+</script>
+</body></html>

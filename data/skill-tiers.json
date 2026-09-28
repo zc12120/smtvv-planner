@@ -1,0 +1,772 @@
+{
+  "_meta": {
+    "source": "game8.jp 真女神転生5Vengeance 種類別スキル一覧（2024-09 版）日文官方描述中的威力档位",
+    "fetched": "2026-09-10",
+    "tiers": "小/中/大/特大/极小/极大",
+    "textHandling": "Only factual tier assignments and skill names are distributed; quoted game descriptions are omitted."
+  },
+  "Acrobat Kick": {
+    "tier": "小",
+    "ja": "とんぼ蹴り"
+  },
+  "Agi": {
+    "tier": "小",
+    "ja": "アギ"
+  },
+  "Agibarion": {
+    "tier": "特大",
+    "ja": "アギバリオン"
+  },
+  "Agidyne": {
+    "tier": "大",
+    "ja": "アギダイン"
+  },
+  "Agilao": {
+    "tier": "中",
+    "ja": "アギラオ"
+  },
+  "Akashic Arts": {
+    "tier": "特大",
+    "ja": "アカシャアーツ"
+  },
+  "Andalucia": {
+    "tier": "小",
+    "ja": "血のアンダルシア"
+  },
+  "Astral Saintstrike": {
+    "tier": "小",
+    "ja": "銀河烈星拳"
+  },
+  "Axel Claw": {
+    "tier": "中",
+    "ja": "アクセルクロー"
+  },
+  "Babylon Goblet": {
+    "tier": "特大",
+    "ja": "バビロンの杯"
+  },
+  "Beatdown": {
+    "tier": "大",
+    "ja": "ぶちかまし"
+  },
+  "Berserker God": {
+    "tier": "中",
+    "ja": "怪力乱神"
+  },
+  "Bestial Bite": {
+    "tier": "小",
+    "ja": "喰らいつき"
+  },
+  "Black Dracostrike": {
+    "tier": "中",
+    "ja": "黒龍撃"
+  },
+  "Blight": {
+    "tier": "小",
+    "ja": "ベノンザッパー"
+  },
+  "Blinding Strike": {
+    "tier": "小",
+    "ja": "目潰し"
+  },
+  "Bouncing Claw": {
+    "tier": "小",
+    "ja": "バウンスクロー"
+  },
+  "Brave Blade": {
+    "tier": "大",
+    "ja": "ブレイブザッパー"
+  },
+  "Bufu": {
+    "tier": "小",
+    "ja": "ブフ"
+  },
+  "Bufubarion": {
+    "tier": "特大",
+    "ja": "ブフバリオン"
+  },
+  "Bufudyne": {
+    "tier": "大",
+    "ja": "ブフダイン"
+  },
+  "Bufula": {
+    "tier": "中",
+    "ja": "ブフーラ"
+  },
+  "Carnage Fang": {
+    "tier": "大",
+    "ja": "絶・閃光斬烈牙"
+  },
+  "Catastrophe": {
+    "tier": "特大",
+    "ja": "カタストロフ"
+  },
+  "Critical Slash": {
+    "tier": "小",
+    "ja": "会心剣"
+  },
+  "Critical Wave": {
+    "tier": "小",
+    "ja": "会心波"
+  },
+  "Crusher Onslaught": {
+    "tier": "中",
+    "ja": "ぶっ潰し"
+  },
+  "Damascus Claw": {
+    "tier": "中",
+    "ja": "ダマスカスクロー"
+  },
+  "Dancing Strike": {
+    "tier": "中",
+    "ja": "舞踏撃"
+  },
+  "Dark Sword": {
+    "tier": "中",
+    "ja": "暗夜剣"
+  },
+  "Death Flies": {
+    "tier": "特大",
+    "ja": "死蠅の葬列"
+  },
+  "Death Lust": {
+    "tier": "大",
+    "ja": "女帝のリビドー"
+  },
+  "Deathbound": {
+    "tier": "中",
+    "ja": "デスバウンド"
+  },
+  "Die For Me!": {
+    "tier": "中",
+    "ja": "死んでくれる？"
+  },
+  "Dream Fist": {
+    "tier": "小",
+    "ja": "成仏拳"
+  },
+  "Dream Needle": {
+    "tier": "小",
+    "ja": "夢見針"
+  },
+  "Eat Whole": {
+    "tier": "中",
+    "ja": "丸かじり"
+  },
+  "Energy Drain": {
+    "tier": "小",
+    "ja": "エナジードレイン"
+  },
+  "Eternal Blizzard": {
+    "tier": "小",
+    "ja": "常世より舞う雪風"
+  },
+  "Fallen Destroyer": {
+    "tier": "特大",
+    "ja": "濫堕"
+  },
+  "Fang Breaker": {
+    "tier": "小",
+    "ja": "牙折り"
+  },
+  "Fatal Sword": {
+    "tier": "中",
+    "ja": "絶命剣"
+  },
+  "Figment Slash": {
+    "tier": "特大",
+    "ja": "朧一閃"
+  },
+  "Fire Breath": {
+    "tier": "小",
+    "ja": "ファイアブレス"
+  },
+  "Fire Dracostrike": {
+    "tier": "中",
+    "ja": "火龍撃"
+  },
+  "Fire of Sinai": {
+    "tier": "中",
+    "ja": "シナイの神火"
+  },
+  "Floral Gust": {
+    "tier": "中",
+    "ja": "妖花烈風"
+  },
+  "Formless Arrows": {
+    "tier": "中",
+    "ja": "無相幻射"
+  },
+  "Freikugel": {
+    "tier": "特大",
+    "ja": "至高の魔弾"
+  },
+  "Frenzied Chomp": {
+    "tier": "中",
+    "ja": "狂いかみつき"
+  },
+  "Gae Bolg": {
+    "tier": "中",
+    "ja": "ゲイ・ボルグ"
+  },
+  "Gale Charge": {
+    "tier": "中",
+    "ja": "ゲイルチャージ"
+  },
+  "Ghastfire Rain": {
+    "tier": "中",
+    "ja": "狐火のアプト"
+  },
+  "Glacial Blast": {
+    "tier": "中",
+    "ja": "絶対零度"
+  },
+  "Glacial Dragon Spiral": {
+    "tier": "小",
+    "ja": "螺旋龍水穿"
+  },
+  "God's Bow": {
+    "tier": "小",
+    "ja": "ゴッドアロー"
+  },
+  "Gram Slice": {
+    "tier": "小",
+    "ja": "グラムカット"
+  },
+  "Great Lament": {
+    "tier": "特大",
+    "ja": "大いなる嘆願"
+  },
+  "Gungnir": {
+    "tier": "特大",
+    "ja": "グングニル"
+  },
+  "Hades Blast": {
+    "tier": "大",
+    "ja": "冥界破"
+  },
+  "Hama": {
+    "tier": "小",
+    "ja": "ハマ"
+  },
+  "Hamabarion": {
+    "tier": "特大",
+    "ja": "ハマバリオン"
+  },
+  "Hamaon": {
+    "tier": "大",
+    "ja": "ハマオン"
+  },
+  "Hassou Tobi": {
+    "tier": "小",
+    "ja": "八艘飛び"
+  },
+  "Headcrush": {
+    "tier": "中",
+    "ja": "脳天割り"
+  },
+  "Heat Wave": {
+    "tier": "小",
+    "ja": "ヒートウェイブ"
+  },
+  "Heavy Blow": {
+    "tier": "中",
+    "ja": "ハードヒット"
+  },
+  "Heliopolis Dawn": {
+    "tier": "特大",
+    "ja": "ヘリオポリスの暁"
+  },
+  "Hell Burner": {
+    "tier": "大",
+    "ja": "ヘルバーナー"
+  },
+  "Hell Exhaust": {
+    "tier": "中",
+    "ja": "ヘルエキゾースト"
+  },
+  "Hell Gaze": {
+    "tier": "中",
+    "ja": "ヘルズアイ"
+  },
+  "Hell Spin": {
+    "tier": "大",
+    "ja": "ヘルスピン"
+  },
+  "Hell Thrust": {
+    "tier": "大",
+    "ja": "地獄突き"
+  },
+  "Hellish Brand": {
+    "tier": "大",
+    "ja": "地獄の焼きごて"
+  },
+  "Hellish Slash": {
+    "tier": "小",
+    "ja": "メッタ裂き"
+  },
+  "Hellish Spurt": {
+    "tier": "中",
+    "ja": "ヘルスプラッシュ"
+  },
+  "Hysterical Slap": {
+    "tier": "小",
+    "ja": "ヒステリービンタ"
+  },
+  "Ice Age": {
+    "tier": "大",
+    "ja": "アイスエイジ"
+  },
+  "Ice Breath": {
+    "tier": "小",
+    "ja": "アイスブレス"
+  },
+  "Ice Dracostrike": {
+    "tier": "中",
+    "ja": "氷龍撃"
+  },
+  "Jack Agilao": {
+    "tier": "中",
+    "ja": "ジャックアギラオ"
+  },
+  "Jack Bufula": {
+    "tier": "中",
+    "ja": "ジャックブフーラ"
+  },
+  "Jack Tempest": {
+    "tier": "小",
+    "ja": "こーじんらせんざん"
+  },
+  "Judgment Light": {
+    "tier": "中",
+    "ja": "審判の光"
+  },
+  "Karnak": {
+    "tier": "大",
+    "ja": "カルナック"
+  },
+  "Keraunos": {
+    "tier": "特大",
+    "ja": "ケラウノス"
+  },
+  "Killing Wind": {
+    "tier": "大",
+    "ja": "殺風激"
+  },
+  "King Bufula": {
+    "tier": "中",
+    "ja": "キングブフーラ"
+  },
+  "Life Drain": {
+    "tier": "小",
+    "ja": "吸血"
+  },
+  "Light's Descent": {
+    "tier": "特大",
+    "ja": "落光"
+  },
+  "Lost Hit": {
+    "tier": "特大",
+    "ja": "ロストヒット"
+  },
+  "Lunge": {
+    "tier": "小",
+    "ja": "突撃"
+  },
+  "Mabufu": {
+    "tier": "小",
+    "ja": "マハブフ"
+  },
+  "Mabufubarion": {
+    "tier": "特大",
+    "ja": "マハブフバリオン"
+  },
+  "Mabufudyne": {
+    "tier": "大",
+    "ja": "マハブフダイン"
+  },
+  "Mabufula": {
+    "tier": "中",
+    "ja": "マハブフーラ"
+  },
+  "Mac an Luin": {
+    "tier": "特大",
+    "ja": "マク・ア・ルイン"
+  },
+  "Madness Glint": {
+    "tier": "小",
+    "ja": "狂乱の神輝"
+  },
+  "Madness Nails": {
+    "tier": "大",
+    "ja": "狂乱の剛爪"
+  },
+  "Madness Needle": {
+    "tier": "小",
+    "ja": "狂乱針"
+  },
+  "Mahama": {
+    "tier": "小",
+    "ja": "マハンマ"
+  },
+  "Mahamabarion": {
+    "tier": "特大",
+    "ja": "マハンマバリオン"
+  },
+  "Mahamaon": {
+    "tier": "大",
+    "ja": "マハンマオン"
+  },
+  "Maiden's Morsel": {
+    "tier": "中",
+    "ja": "乙女の間食"
+  },
+  "Mamudo": {
+    "tier": "小",
+    "ja": "マハムド"
+  },
+  "Mamudobarion": {
+    "tier": "特大",
+    "ja": "マハムドバリオン"
+  },
+  "Mamudoon": {
+    "tier": "大",
+    "ja": "マハムドオン"
+  },
+  "Maragi": {
+    "tier": "小",
+    "ja": "マハラギ"
+  },
+  "Maragibarion": {
+    "tier": "特大",
+    "ja": "マハラギバリオン"
+  },
+  "Maragidyne": {
+    "tier": "大",
+    "ja": "マハラギダイン"
+  },
+  "Maragion": {
+    "tier": "中",
+    "ja": "マハラギオン"
+  },
+  "Mazan": {
+    "tier": "小",
+    "ja": "マハザン"
+  },
+  "Mazanbarion": {
+    "tier": "特大",
+    "ja": "マハザンバリオン"
+  },
+  "Mazandyne": {
+    "tier": "大",
+    "ja": "マハザンダイン"
+  },
+  "Mazanma": {
+    "tier": "中",
+    "ja": "マハザンマ"
+  },
+  "Mazio": {
+    "tier": "小",
+    "ja": "マハジオ"
+  },
+  "Maziobarion": {
+    "tier": "特大",
+    "ja": "マハジオバリオン"
+  },
+  "Maziodyne": {
+    "tier": "大",
+    "ja": "マハジオダイン"
+  },
+  "Mazionga": {
+    "tier": "中",
+    "ja": "マハジオンガ"
+  },
+  "Meditation": {
+    "tier": "小",
+    "ja": "瞑想"
+  },
+  "Megaton Press": {
+    "tier": "大",
+    "ja": "メガトンプレス"
+  },
+  "Megido": {
+    "tier": "中",
+    "ja": "メギド"
+  },
+  "Megido Ark": {
+    "tier": "中～特大",
+    "ja": "メギドアーク"
+  },
+  "Megido Flame": {
+    "tier": "特大",
+    "ja": "メギドフレイム"
+  },
+  "Megidola": {
+    "tier": "大",
+    "ja": "メギドラ"
+  },
+  "Megidolaon": {
+    "tier": "特大",
+    "ja": "メギドラオン"
+  },
+  "Mighty Cleave": {
+    "tier": "大",
+    "ja": "渾身剣"
+  },
+  "Mirage Assailment": {
+    "tier": "大",
+    "ja": "ミラージジャダー"
+  },
+  "Mirage Shot": {
+    "tier": "中",
+    "ja": "カゲロウシュート"
+  },
+  "Mist Rush": {
+    "tier": "中",
+    "ja": "霞駆け"
+  },
+  "Mortal Jihad": {
+    "tier": "大",
+    "ja": "モータルジハード"
+  },
+  "Mudo": {
+    "tier": "小",
+    "ja": "ムド"
+  },
+  "Mudobarion": {
+    "tier": "特大",
+    "ja": "ムドバリオン"
+  },
+  "Mudoon": {
+    "tier": "大",
+    "ja": "ムドオン"
+  },
+  "Myriad Slashes": {
+    "tier": "小",
+    "ja": "刹那五月雨斬り"
+  },
+  "Narukami": {
+    "tier": "大",
+    "ja": "ナルカミ"
+  },
+  "Needle Spray": {
+    "tier": "小",
+    "ja": "乱れ針"
+  },
+  "Nihil Claw": {
+    "tier": "大",
+    "ja": "虚空爪激"
+  },
+  "Pandemonic Crush": {
+    "tier": "中",
+    "ja": "天魔撃砕"
+  },
+  "Panta Spane": {
+    "tier": "中",
+    "ja": "万物粉砕"
+  },
+  "Pestilence": {
+    "tier": "大",
+    "ja": "ペストクロップ"
+  },
+  "Pierce Armor": {
+    "tier": "小",
+    "ja": "鎧通し"
+  },
+  "Power Punch": {
+    "tier": "特大",
+    "ja": "マッスルパンチ"
+  },
+  "Puncture Punch": {
+    "tier": "中",
+    "ja": "貫通撃"
+  },
+  "Purple Smoke": {
+    "tier": "小",
+    "ja": "紫煙乱打"
+  },
+  "Queen's Decree": {
+    "tier": "极小",
+    "ja": "従魔の行軍"
+  },
+  "Raging Blizzard": {
+    "tier": "特大",
+    "ja": "熱りたつ業雹"
+  },
+  "Raging Hellfire": {
+    "tier": "特大",
+    "ja": "熱りたつ業火"
+  },
+  "Raging Lightning": {
+    "tier": "特大",
+    "ja": "熱りたつ雷光"
+  },
+  "Raging Tempest": {
+    "tier": "特大",
+    "ja": "熱りたつ大嵐"
+  },
+  "Ragnarok": {
+    "tier": "中",
+    "ja": "ラグナロク"
+  },
+  "Rampage": {
+    "tier": "中",
+    "ja": "暴れまくり"
+  },
+  "Recalcitrant Execution": {
+    "tier": "特大",
+    "ja": "天誅殺"
+  },
+  "Root of Evil": {
+    "tier": "特大",
+    "ja": "初めに闇ありき"
+  },
+  "Sacrifice of Clay": {
+    "tier": "大",
+    "ja": "土偶発破"
+  },
+  "Sanguine Drain": {
+    "tier": "小",
+    "ja": "搾血"
+  },
+  "Scratch Dance": {
+    "tier": "小",
+    "ja": "スクラッチダンス"
+  },
+  "Severing Bite": {
+    "tier": "大",
+    "ja": "食いちぎり"
+  },
+  "Shockbound": {
+    "tier": "小",
+    "ja": "ショックバウンド"
+  },
+  "Silt of Ruin": {
+    "tier": "中",
+    "ja": "滅びのシルト"
+  },
+  "Somersault": {
+    "tier": "小",
+    "ja": "サマーソルト"
+  },
+  "Souffle D'eclair": {
+    "tier": "特大",
+    "ja": "スフレデクレール"
+  },
+  "Soul Divide": {
+    "tier": "特大",
+    "ja": "ソウルバランス"
+  },
+  "Spirit Drain": {
+    "tier": "小",
+    "ja": "吸魔"
+  },
+  "Steel Needle": {
+    "tier": "中",
+    "ja": "鉄鋼針"
+  },
+  "Storm Dracostrike": {
+    "tier": "中",
+    "ja": "雷龍撃"
+  },
+  "Stormcaller Song": {
+    "tier": "小",
+    "ja": "嵐からの歌声"
+  },
+  "Tandava": {
+    "tier": "特大",
+    "ja": "ターンダヴァ"
+  },
+  "Terrorblade": {
+    "tier": "大",
+    "ja": "テラーソード"
+  },
+  "Thunder Reign": {
+    "tier": "中",
+    "ja": "真理の雷"
+  },
+  "Titanomachia": {
+    "tier": "中",
+    "ja": "ティタノマキア"
+  },
+  "Toxic Breath": {
+    "tier": "中",
+    "ja": "蛇毒の息"
+  },
+  "Toxic Sting": {
+    "tier": "小",
+    "ja": "毒針"
+  },
+  "Trisagion": {
+    "tier": "大",
+    "ja": "トリスアギオン"
+  },
+  "Venom Chaser": {
+    "tier": "小",
+    "ja": "ベノンハント"
+  },
+  "Violent Rage": {
+    "tier": "中",
+    "ja": "忿怒の暴圧"
+  },
+  "Voracious Salvation": {
+    "tier": "大",
+    "ja": "悪しき果実の貪り"
+  },
+  "Walpurgisnacht": {
+    "tier": "特大",
+    "ja": "ワルプルギスの夜"
+  },
+  "What Comes After Four": {
+    "tier": "小",
+    "ja": "4のつぎ"
+  },
+  "White Dracostrike": {
+    "tier": "中",
+    "ja": "白龍撃"
+  },
+  "Wind Breath": {
+    "tier": "小",
+    "ja": "ウィンドブレス"
+  },
+  "Wind Dracostrike": {
+    "tier": "中",
+    "ja": "風龍撃"
+  },
+  "Yabusame Shot": {
+    "tier": "小",
+    "ja": "ヤブサメショット"
+  },
+  "Zan": {
+    "tier": "小",
+    "ja": "ザン"
+  },
+  "Zanbarion": {
+    "tier": "特大",
+    "ja": "ザンバリオン"
+  },
+  "Zandyne": {
+    "tier": "大",
+    "ja": "ザンダイン"
+  },
+  "Zanma": {
+    "tier": "中",
+    "ja": "ザンマ"
+  },
+  "Zio": {
+    "tier": "小",
+    "ja": "ジオ"
+  },
+  "Ziobarion": {
+    "tier": "特大",
+    "ja": "ジオバリオン"
+  },
+  "Ziodyne": {
+    "tier": "大",
+    "ja": "ジオダイン"
+  },
+  "Zionga": {
+    "tier": "中",
+    "ja": "ジオンガ"
+  }
+}

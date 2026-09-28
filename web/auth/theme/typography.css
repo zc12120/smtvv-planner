@@ -1,0 +1,29 @@
+/* Open-licensed, self-hosted fonts. Game references and sources: docs/DESIGN.md. */
+@font-face { font-family: 'Interface Barlow'; src: url('fonts/barlow-regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Interface Barlow'; src: url('fonts/barlow-medium.woff2') format('woff2'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Interface Barlow'; src: url('fonts/barlow-semibold.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Interface Barlow'; src: url('fonts/barlow-bold.woff2') format('woff2'); font-style: normal; font-weight: 700 900; font-display: swap; }
+@font-face { font-family: 'Nahobino Display'; src: url('fonts/cinzel.woff2') format('woff2'); font-style: normal; font-weight: 400 900; font-display: swap; }
+@font-face { font-family: 'Phantom Display'; src: url('fonts/archivo-black.woff2') format('woff2'); font-style: normal; font-weight: 700 900; font-display: swap; }
+@font-face { font-family: 'Reload Display'; src: url('fonts/chakra-petch.woff2') format('woff2'); font-style: normal; font-weight: 500 900; font-display: swap; }
+@font-face { font-family: 'Archive Serif KR'; src: url('fonts/archive-serif-kr.woff2') format('woff2'); font-style: normal; font-weight: 600 900; font-display: swap; }
+:root {
+  --font-native: 'Vengeance Sans', 'Noto Sans CJK SC', sans-serif;
+  --font-serif: 'Archive Serif SC', serif;
+  --font-body: 'Interface Barlow', var(--font-native);
+  --font-number: 'Interface Barlow', var(--font-native);
+}
+:root:lang(ja) { --font-native: 'Vengeance JP', 'Noto Sans CJK JP', sans-serif; --font-serif: 'Archive Serif JP', serif; --font-body: 'Interface Barlow', var(--font-native); }
+:root:lang(zh-Hant) { --font-native: 'Vengeance TC', 'Noto Sans CJK TC', sans-serif; --font-serif: 'Archive Serif TC', serif; --font-body: 'Interface Barlow', var(--font-native); }
+:root:lang(ko) { --font-native: 'Vengeance KR', 'Noto Sans CJK KR', sans-serif; --font-serif: 'Archive Serif KR', serif; --font-body: 'Interface Barlow', var(--font-native); }
+:root[data-skin='smtv'] { --font-heading: 'Nahobino Display', var(--font-serif); --font-display: 'Nahobino Display', var(--font-serif); }
+:root[data-skin='p5'] { --font-heading: 'Phantom Display', var(--font-native); --font-display: 'Phantom Display', var(--font-native); }
+:root[data-skin='p3r'] { --font-heading: 'Reload Display', var(--font-native); --font-display: 'Reload Display', var(--font-native); }
+:root[data-skin] { font-family: var(--font-body); font-kerning: normal; text-rendering: optimizeLegibility; }
+:root[data-skin] body { font-family: var(--font-body); }
+body.p3r-auth { --font-native: 'Reload Sans', 'Noto Sans CJK SC', sans-serif; }
+:root:lang(ja) body.p3r-auth { --font-native: 'Vengeance JP', 'Noto Sans CJK JP', sans-serif; }
+:root:lang(zh-Hant) body.p3r-auth { --font-native: 'Vengeance TC', 'Noto Sans CJK TC', sans-serif; }
+:root:lang(ko) body.p3r-auth { --font-native: 'Vengeance KR', 'Noto Sans CJK KR', sans-serif; }
+body.p3r-auth, body.p3r-auth input, body.p3r-auth button { font-family: 'Interface Barlow', var(--font-native); }
+body.p3r-auth #login-title { font-family: 'Reload Display', var(--font-native); letter-spacing: .015em; }

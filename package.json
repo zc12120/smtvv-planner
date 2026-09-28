@@ -1,0 +1,31 @@
+{
+  "name": "smtvv-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser regression tests for SMT V Vengeance Fusion Planner",
+  "scripts": {
+    "test:route-layout": "node tests/route_layout_browser.cjs",
+    "test:browser": "node tests/execution_ui_browser.cjs",
+    "test:visual": "node tests/vengeance_browser.cjs",
+    "test:i18n": "node tests/i18n_browser.cjs",
+    "test:collections": "node tests/collections_browser.cjs",
+    "test:review": "node tests/review_browser.cjs",
+    "test:refinement": "node tests/refinement_browser.cjs",
+    "test:login-style": "node tests/login_style_browser.cjs",
+    "test:auth": "node tests/auth_browser.cjs",
+    "test:session": "node tests/auth_session_browser.cjs",
+    "test:remember-me": "node tests/auth_remember_me_browser.cjs",
+    "test:login-policy": "node tests/login_policy_browser.cjs",
+    "test:turnstile-ui": "node tests/turnstile_ui_browser.cjs",
+    "test:turnstile-deployment": "node tests/turnstile_deployment_browser.cjs",
+    "test:admin-console": "node tests/admin_console_browser.cjs",
+    "test:admin": "node tests/admin_browser.cjs",
+    "test:admin-recovery": "node tests/admin_recovery_browser.cjs",
+    "test:public": "node tests/deployment_browser.cjs",
+    "test:performance": "node tests/performance_browser.cjs",
+    "test:on-demand": "node tests/on_demand_browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "license": "SIL Open Font License 1.1",
+  "fonts": [
+    {
+      "file": "noto-sans-sc.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+      "sourceSha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "sha256": "c17e7ef1f0637a16a2a1db6781042e820606f7cadf4749f77eaf7e040d77bc54",
+      "bytes": 2139612,
+      "glyphs": 7891
+    },
+    {
+      "file": "barlow-condensed-extra-bold.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/BarlowCondensed-ExtraBold.ttf",
+      "sourceSha256": "724c9c25952d5f4a2d87185d9767aa006144c5f0d944dc05bf7d5d603551c260",
+      "sha256": "ffe330bdf2dc59a4aa36e4b1442552cb133049512ecca78c84c93af6f4317f19",
+      "bytes": 39456,
+      "glyphs": 525
+    },
+    {
+      "file": "barlow-condensed-extra-bold-italic.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/BarlowCondensed-ExtraBoldItalic.ttf",
+      "sourceSha256": "331783dae9ec0c398f4d32c9fd5a56d4c602caa0c1628c2b9cbfe93f48eb68c9",
+      "sha256": "2489eb4eeace96435e63ecd827f84d85b92a981c665868bfba3c7936674040e0",
+      "bytes": 41960,
+      "glyphs": 525
+    }
+  ]
+}
