@@ -1,4 +1,4 @@
-# smtvv-planer | 真女5复仇合体图鉴
+# smtvv-planner | 真女5复仇合体图鉴
 
 **在线演示：[smtvv.wangliyu12.com](https://smtvv.wangliyu12.com/)**
 
@@ -15,8 +15,8 @@
 需要 Linux / WSL、Python 3.10+ 和 g++。Ubuntu / Debian 可用 `sudo apt-get install python3 g++` 安装运行依赖。
 
 ```sh
-git clone https://github.com/zc12120/smtvv-planer.git
-cd smtvv-planer
+git clone https://github.com/zc12120/smtvv-planner.git
+cd smtvv-planner
 python3 launch.py
 ```
 
@@ -27,8 +27,8 @@ python3 launch.py
 准备一台 Linux 服务器，安装 Git、Python 3.10+、Docker Engine 与 Docker Compose v2（支持 `up --wait` 的版本）。当前用户需有 Docker 使用权限。将自己的域名 A/AAAA 记录指向服务器，开放 TCP 80、443，并确认这两个端口未被其他服务使用。没有 IPv6 的服务器不要添加 AAAA 记录。首次签发建议使用直接解析。
 
 ```sh
-git clone https://github.com/zc12120/smtvv-planer.git
-cd smtvv-planer
+git clone https://github.com/zc12120/smtvv-planner.git
+cd smtvv-planner
 python3 scripts/deploy.py https://planner.example.com
 ```
 
