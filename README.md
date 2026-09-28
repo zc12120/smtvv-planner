@@ -2,6 +2,12 @@
 
 《Shin Megami Tensei V: Vengeance》非官方资料与合体路线工具。支持三套主题、五种语言、仲魔与灵体图鉴、最多八技能规划，以及「综合最优」「合体次数最少」「费用最低」三种经过规则回放校验的路线。包含完整网站资源，默认在自己的机器上计算，无需 AI API、外部计算节点或维护者的服务。
 
+## 页面截图
+
+![义经的八技能合体配置](docs/screenshots/planner.png)
+
+从[页面截图与功能介绍](docs/SHOWCASE.md)查看合体路线、仲魔全书、技能资料、灵体技能表、三类详情页及管理后台。截图取自仓库的本地版本；后台使用隔离测试数据。
+
 ## 本地运行
 
 需要 Linux / WSL、Python 3.10+ 和 g++。Ubuntu / Debian 可用 `sudo apt-get install python3 g++` 安装运行依赖。
