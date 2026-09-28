@@ -1,4 +1,4 @@
-# Vengeance Fusion Atlas | 真女5复仇合体图鉴
+# smtvv-planer | 真女5复仇合体图鉴
 
 《Shin Megami Tensei V: Vengeance》非官方资料与合体路线工具。支持三套主题、五种语言、仲魔与灵体图鉴、最多八技能规划，以及「综合最优」「合体次数最少」「费用最低」三种经过规则回放校验的路线。包含完整网站资源，默认在自己的机器上计算，无需 AI API、外部计算节点或维护者的服务。
 
@@ -13,8 +13,8 @@
 需要 Linux / WSL、Python 3.10+ 和 g++。Ubuntu / Debian 可用 `sudo apt-get install python3 g++` 安装运行依赖。
 
 ```sh
-git clone https://github.com/zc12120/vengeance-fusion-atlas.git
-cd vengeance-fusion-atlas
+git clone https://github.com/zc12120/smtvv-planer.git
+cd smtvv-planer
 python3 launch.py
 ```
 
@@ -25,8 +25,8 @@ python3 launch.py
 准备一台 Linux 服务器，安装 Git、Python 3.10+、Docker Engine 与 Docker Compose v2（支持 `up --wait` 的版本）。当前用户需有 Docker 使用权限。将自己的域名 A/AAAA 记录指向服务器，开放 TCP 80、443，并确认这两个端口未被其他服务使用。没有 IPv6 的服务器不要添加 AAAA 记录。首次签发建议使用直接解析。
 
 ```sh
-git clone https://github.com/zc12120/vengeance-fusion-atlas.git
-cd vengeance-fusion-atlas
+git clone https://github.com/zc12120/smtvv-planer.git
+cd smtvv-planer
 python3 scripts/deploy.py https://planner.example.com
 ```
 
