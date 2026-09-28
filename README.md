@@ -16,7 +16,7 @@ python3 launch.py
 
 ## 一条命令部署 HTTPS 网站
 
-准备一台 Linux 服务器，安装 Git、Python 3.10+、Docker Engine 与 Docker Compose v2。当前用户需有 Docker 使用权限。将自己的域名 A/AAAA 记录指向服务器，开放 TCP 80、443，并确认这两个端口未被其他服务使用。没有 IPv6 的服务器不要添加 AAAA 记录。首次签发建议使用直接解析。
+准备一台 Linux 服务器，安装 Git、Python 3.10+、Docker Engine 与 Docker Compose v2（支持 `up --wait` 的版本）。当前用户需有 Docker 使用权限。将自己的域名 A/AAAA 记录指向服务器，开放 TCP 80、443，并确认这两个端口未被其他服务使用。没有 IPv6 的服务器不要添加 AAAA 记录。首次签发建议使用直接解析。
 
 ```sh
 git clone https://github.com/zc12120/smtvv-planner-public.git
@@ -31,7 +31,7 @@ python3 scripts/deploy.py https://planner.example.com
 - 登录信息：本机 `runtime/credentials.txt`，可用 `cat runtime/credentials.txt` 自行查看；不要上传或转发该文件。
 - 默认要求登录，管理员可在后台开放前台匿名访问，后台仍需认证。
 
-同一域名重复运行命令会保留账号、密钥及持久卷。遇到已有配置不完整或域名不符会停止，不会重新初始化。不要在已有部署上切换部署模式；迁移前先备份并阅读 [部署说明](docs/DEPLOYMENT.md)。
+首次 Docker 部署请使用新的克隆目录；本地运行会产生自己的 `runtime/site` 状态，不要与容器初始化混用。同一域名重复运行命令会保留账号、密钥及持久卷。遇到已有配置不完整或域名不符会停止，不会重新初始化。不要在已有部署上切换部署模式；迁移前先备份并阅读 [部署说明](docs/DEPLOYMENT.md)。
 
 已有 Nginx、1Panel 等 HTTPS 反向代理时：
 
