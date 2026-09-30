@@ -143,7 +143,7 @@ dialog > input { width:100%; margin-bottom:12px; }
   .option-skill-title { font-size:1rem; }
   .mobile-objective { display:flex; align-items:center; gap:12px; margin:8px 0; color:var(--muted); font-size:.85rem; }
   .mobile-objective select { flex:1; min-width:0; font-size:16px; }
-  .strategy-strip .strategy:not(.selected),#route-choices { display:none; }
+  :root[data-skin] body .strategy-strip .strategy:not(.selected),#route-choices { display:none; }
   :root[data-skin] body .strategy-strip { padding:4px; }
   .collection-columns { display:none; }
   .record-affinities,.record-original,.record-more { display:none; }

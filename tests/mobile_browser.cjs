@@ -50,6 +50,7 @@ const output=process.env.SMTVV_MOBILE_ARTIFACTS||'/tmp/smtvv-mobile-acceptance';
       await page.locator('#calculate').click();await page.waitForFunction(()=>currentPage?.complete,{},{timeout:90000});
       assert.equal(await page.evaluate(()=>state.dlc.length),0,'hidden DLC preference must remain unchanged');
       assert(await page.locator('.route-mobile-summary').count()>0);
+      assert.equal(await page.locator('.strategy:visible').count(),1,'phone shows the chosen strategy beside its selector');
       await page.screenshot({path:output+'/'+engine+'-route.png',fullPage:true});
       for(const tab of ['demons','skills','essences']){
         await page.locator('[data-tab="'+tab+'"]').click();
