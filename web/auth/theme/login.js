@@ -20,38 +20,14 @@
     } catch {}
     return location.origin + '/';
   }
-  async function request(path, data) {
-    const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 15000);
-    try {
-      const response = await fetch(path, {cache:'no-store', credentials:'same-origin', signal:controller.signal,
-        ...(data === undefined ? {} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})});
-      let body;try {body = await response.json();} catch {}
-      if (!response.ok) throw Object.assign(Error(body?.error || (response.status === 401 ? '账号或密码不正确，请重新输入。' : response.status === 429 ? '登录尝试过于频繁，请稍后重试。' : '登录服务暂时不可用，请稍后重试。')), {status:response.status});
-      if (!body || typeof body !== 'object') throw Error('登录服务返回异常，请重新连接。');
-      return body;
-    } catch (error) {
-      if (error.name === 'AbortError') throw Error('连接超时，请重试。');
-      if (error instanceof TypeError) throw Error('暂时无法连接登录服务，请检查网络。');
-      throw error;
-    } finally {clearTimeout(timer);}
+  function request(path, data) {
+    return SmtvvCommon.requestJson(path,{data,timeout:15000,cache:'no-store',credentials:'same-origin',label:'登录服务',
+      statusMessage:status=>status===401?'账号或密码不正确，请重新输入。':status===429?'登录尝试过于频繁，请稍后重试。':'登录服务暂时不可用，请稍后重试。'});
   }
   function updateSubmit() {
     $('sign-in-button').disabled = busy || !settings || (turnstileSettings.enabled && !turnstileToken);
   }
-  function loadTurnstile() {
-    if (window.turnstile) return Promise.resolve(window.turnstile);
-    if (turnstileLoader) return turnstileLoader;
-    turnstileLoader = new Promise((resolve,reject) => {
-      const script = document.createElement('script');
-      const timer = setTimeout(() => failed(),12000);
-      function failed() {clearTimeout(timer);script.onload=script.onerror=null;turnstileLoader=undefined;script.remove();reject(Error('人机验证资源加载失败。'));}
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      script.onload = () => {clearTimeout(timer);if (window.turnstile) resolve(window.turnstile);else failed();};
-      script.onerror = failed;
-      document.head.append(script);
-    });
-    return turnstileLoader;
-  }
+  const loadTurnstile = SmtvvCommon.loadTurnstile;
   function verificationState(state, message) {
     $('turnstile-section').dataset.state = state;
     $('turnstile-state').textContent = message;

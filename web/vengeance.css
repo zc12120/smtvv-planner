@@ -142,7 +142,7 @@
 :root[data-skin="smtv"] .build-summary { font-size: .78rem; padding-bottom: 0; }
 
 /* Keep the action in the equipment column, in normal document flow. */
-.configuration-sheet > .action-bar { grid-column: 1 / -1; position: static; margin: 0; }
+
 .target-panel .search-row { position: relative; }
 .target-panel .search-row > .search-results { top: calc(100% + 8px); left: 0; right: 0; }
 .loadout-tools { display: flex; align-items: center; gap: 12px; }
@@ -163,7 +163,7 @@
 :root[data-skin="smtv"] .target-panel { grid-column: 1; grid-row: 1 / span 3; }
 :root[data-skin="smtv"] .build-panel { grid-column: 2; grid-row: 1; }
 :root[data-skin="smtv"] .planner-settings { grid-column: 2; grid-row: 2; }
-:root[data-skin="smtv"] .configuration-sheet > .action-bar { grid-column: 2; grid-row: 3; }
+
 :root[data-skin="smtv"] .target-panel,
 :root[data-skin="smtv"] .build-panel,
 :root[data-skin="smtv"] .planner-settings { background: linear-gradient(150deg,var(--raised),var(--surface) 32%); border-color: var(--line); box-shadow: inset 0 1px color-mix(in srgb,var(--secondary) 8%,transparent); }
@@ -237,55 +237,6 @@
 
 /* Eight persistent slots, with the same structure in every optional skin. */
 .build-panel { container: skill-bay / inline-size; }
-.skill-slots { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
-.skill-slot { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 10px; min-height: 208px; padding: 14px; border: 1px solid var(--line); border-radius: 2px; background: var(--inset); }
-.skill-slot.filled { border-top: 2px solid var(--accent); }
-.skill-slot.is-unique { border-top-color: var(--gold); }
-.skill-slot.is-over-capacity { border-color: var(--danger); }
-.slot-head { display: grid; grid-template-columns: 22px minmax(0,1fr) 36px 36px; grid-template-rows: auto auto; align-items: center; gap: 4px; min-width: 0; }
-.slot-head .slot-order { grid-column: 1; grid-row: 1; color: var(--accent); font-size: .9rem; letter-spacing: .06em; }
-.slot-head .slot-cost { grid-column: 2; grid-row: 1; padding-left: 3px; color: var(--muted); font-size: .68rem; line-height: 1.5; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
-.slot-head .icon-button { width: 36px; height: 36px; min-height: 36px; grid-row: 1; border-radius: 2px; }
-.slot-head .slot-replace { grid-column: 3; grid-row: 1; }
-.slot-head .slot-remove { grid-column: 4; grid-row: 1; }
-.slot-head .icon-button .icon { width: 17px; height: 17px; flex-basis: 17px; }
-.slot-head .skill-link { grid-column: 1 / -1; grid-row: 2; min-width: 0; padding-top: 4px; font-size: .93rem; line-height: 1.5; gap: 8px; align-items: flex-start; font-weight: 650; }
-.slot-head .skill-symbol { width: 26px; height: 26px; flex-basis: 26px; }
-.slot-effect { margin: 0; padding: 0; min-height: 3.3em; font-size: .76rem; line-height: 1.65; color: var(--secondary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.slot-bottom { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 6px; padding: 8px 0 0; margin-top: auto; border-top: 1px solid var(--soft-line); min-width: 0; }
-.slot-bottom .source-picker-button { min-height: 36px; width: 100%; gap: 6px; font-size: .7rem; color: var(--secondary); }
-.slot-bottom .source-picker-button > span { flex: 1; }
-.slot-bottom .source-picker-button:hover { color: var(--accent); text-decoration: none; }
-.slot-bottom .source-picker-button .icon { width: 15px; height: 15px; flex-basis: 15px; }
-.source-fixed { display: flex; align-items: center; gap: 7px; min-height: 36px; font-size: .68rem; flex-wrap: wrap; }
-.source-fixed .tag { font-size: .64rem; }
-.skill-slots .slot-empty { position: relative; min-height: 208px; margin: 0; padding: 20px 12px; display: flex; flex-direction: column; justify-content: center; gap: 10px; border: 1px dashed var(--line); border-radius: 2px; background: var(--inset); font-size: .8rem; }
-.skill-slots .slot-empty .slot-order { position: absolute; left: 14px; top: 16px; margin: 0; color: var(--muted); font-size: .9rem; }
-.skill-slots .slot-empty > .icon { width: 28px; height: 28px; color: var(--muted); }
-.skill-slots .slot-empty > span:last-child { margin: 0; }
-.skill-slots .slot-empty:disabled { opacity: .65; }
-.skill-slots .slot-empty:not(:disabled):hover { color: var(--accent); border-color: var(--accent); background: var(--accent-wash); }
-.skill-slots .slot-empty:not(:disabled):hover > .icon { color: var(--accent); }
-:root[data-skin="smtv"] .slot-empty { border-color: var(--line); }
-:root[data-skin="smtv"] .skill-slot { background: linear-gradient(135deg,var(--raised),var(--inset) 70%); border-top: 1px solid var(--line); }
-:root[data-skin="smtv"] .skill-slot::before { content: ""; position: absolute; left: -1px; top: 20px; width: 2px; height: 44px; background: var(--accent); }
-:root[data-skin="smtv"] .skill-slot::after { content: ""; position: absolute; right: -1px; top: -1px; width: 10px; height: 10px; background: linear-gradient(45deg,transparent 44%,var(--line) 45% 54%,var(--surface) 55%); pointer-events: none; }
-:root[data-skin="smtv"] .skill-slot.is-unique::before { background: var(--gold); }
-:root[data-skin="smtv"] .skill-slot.is-over-capacity { border-color: var(--danger); }
-:root[data-skin="smtv"] .slot-head .slot-cost { justify-self: start; border: 1px solid var(--soft-line); background: var(--inset); border-radius: 2px; padding: 2px 6px; color: var(--secondary); }
-:root[data-skin="smtv"] .slot-head .icon-button { opacity: .65; }
-:root[data-skin="smtv"] .slot-head .icon-button:hover,
-:root[data-skin="smtv"] .slot-head .icon-button:focus-visible { opacity: 1; }
-:root[data-skin="smtv"] .slot-head .skill-symbol { width: 30px; height: 30px; flex-basis: 30px; }
-:root[data-skin="smtv"] .slot-empty { background: linear-gradient(135deg,var(--inset),color-mix(in srgb,var(--surface) 55%,var(--inset))); }
-:root[data-skin="smtv"] .slot-empty > .icon { flex: 0 0 40px; width: 40px; height: 40px; padding: 9px; border: 1px solid var(--line); background: var(--surface); clip-path: polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px); }
-:root[data-skin="smtv"] [data-target-selected="false"] .slot-empty { min-height: 136px; padding-block: 16px; }
-:root[data-skin="smtv"] .skill-slot:hover,
-:root[data-skin="smtv"] .skill-slot:focus-within { background: linear-gradient(135deg,var(--raised),var(--surface)); border-color: var(--accent); }
-:root[data-skin="smtv"] .slot-remove:hover { color: var(--danger); background: var(--danger-wash); }
-@container skill-bay (min-width: 880px) {
-  .skill-slots { grid-template-columns: repeat(4,minmax(0,1fr)); }
-}
 
 /* The seven damage affinities use both words and color, never color alone. */
 .resists.elemental-grid { gap: 4px; padding: 0; border: 0; background: transparent; margin-block: 12px; }
@@ -308,14 +259,10 @@
 :root[data-skin="smtv"] .affinity-value.negative,
 :root[data-skin="smtv"] .ailment-grid .weak { color: var(--danger); }
 
-:root[data-skin="smtv"] .action-bar { background: linear-gradient(110deg,var(--accent-wash),var(--surface) 68%); color: var(--text); border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 16px 20px; box-shadow: none; }
 :root[data-skin="smtv"] .action-context { flex-direction: column; align-items: flex-start; gap: 4px; }
-:root[data-skin="smtv"] .action-bar .muted,
+
 :root[data-skin="smtv"] #command-target.is-empty { color: var(--muted); }
-:root[data-skin="smtv"] .action-bar .secondary,
-:root[data-skin="smtv"] .action-bar .quiet { color: var(--secondary); border-color: var(--line); }
-:root[data-skin="smtv"] .action-bar .secondary:hover,
-:root[data-skin="smtv"] .action-bar .quiet:hover { background: var(--hover); color: var(--accent); }
+
 :root[data-skin="smtv"] #command-target { font-size: .95rem; white-space: normal; }
 :root[data-skin="smtv"] #compute-status { font-size: .76rem; }
 :root[data-skin="smtv"] .strategy { border-top: 2px solid var(--line); background: linear-gradient(145deg,var(--raised),var(--surface)); }
@@ -405,16 +352,14 @@
 }
 
 /* Compendium and detail views follow the same palette and semantic labels. */
-:root[data-skin="smtv"] .catalog-categories button.active,
-:root[data-skin="smtv"] .filters button.active { color: var(--accent); background: var(--accent-wash); }
+:root[data-skin="smtv"] .catalog-categories button.active{ color: var(--accent); background: var(--accent-wash); }
 :root[data-skin="smtv"] .catalog-categories button.active small { color: var(--accent); }
 :root[data-skin="smtv"] .inspector-kicker,
 :root[data-skin="smtv"] .entry-kind { color: var(--gold); background: var(--gold-wash); font-weight: 500; }
 :root[data-skin="smtv"] .entry-heading { border-bottom: 1px solid var(--line); }
 :root[data-skin="smtv"] .entry-heading h1 { font-style: normal; letter-spacing: .03em; }
 :root[data-skin="smtv"] .entry-section > h2 { font-size: 1.1rem; font-weight: 600; }
-:root[data-skin="smtv"] dialog { background: var(--surface); border: 1px solid var(--line); border-top: 2px solid var(--accent); }
-:root[data-skin="smtv"] dialog::backdrop { background: rgb(4 9 16 / 78%); backdrop-filter: blur(5px); }
+
 :root[data-skin="smtv"] .auth-notice { color: var(--text); background: var(--surface); border-color: var(--accent); }
 :root[data-skin="smtv"] [data-tooltip]::after,
 :root[data-skin="smtv"] #toast { color: var(--text); background: var(--raised); border: 1px solid var(--line); }
@@ -441,7 +386,7 @@
 [data-catalog-state="loading"] #status::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; background: var(--accent); vertical-align: middle; }
 @media (prefers-reduced-motion: no-preference) {
   .skeleton::after { animation: vengeance-scan 1.8s ease-in-out infinite; }
-  .skill-slot { transition: background .18s ease-out, border-color .18s ease-out; }
+
   @keyframes vengeance-scan { to { transform: translateX(100%); } }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -460,8 +405,7 @@
   :root[data-skin="smtv"] .configuration-sheet { grid-template-columns: minmax(0,1fr); grid-template-rows: none; }
   :root[data-skin="smtv"] .target-panel,
   :root[data-skin="smtv"] .build-panel,
-  :root[data-skin="smtv"] .planner-settings,
-  :root[data-skin="smtv"] .configuration-sheet > .action-bar { grid-column: auto; grid-row: auto; }
+  :root[data-skin="smtv"] .planner-settings{ grid-column: auto; grid-row: auto; }
   :root[data-skin="smtv"] .execution-layout { grid-template-columns: minmax(0,1fr); }
   :root[data-skin="smtv"] .target-card { display: block; }
   :root[data-skin="smtv"] .target-overview { display: grid; grid-template-columns: 156px minmax(0,1fr); }
@@ -515,25 +459,9 @@
   :root[data-skin="smtv"] .native-skill-row .skill-link { grid-column: 1; grid-row: 1; font-size: .8rem; }
   :root[data-skin="smtv"] .native-skill-row small { grid-column: 1; grid-row: 2; text-align: left; padding-left: 32px; }
   :root[data-skin="smtv"] .native-skill-row .icon-button { grid-column: 2; grid-row: 1 / span 2; width: 28px; }
-  .skill-slots { gap: 8px; }
-  .skill-slot { padding: 10px; gap: 8px; min-height: 214px; }
-  .slot-head { grid-template-columns: 18px minmax(0,1fr) 32px 32px; gap: 3px; }
-  .slot-head .slot-order { font-size: .85rem; }
-  .slot-head .slot-cost { font-size: .68rem; padding-left: 0; }
-  .slot-head .icon-button { width: 32px; height: 40px; min-height: 40px; }
-  .slot-head .skill-link { font-size: .85rem; gap: 6px; }
-  .slot-head .skill-symbol { width: 22px; height: 22px; flex-basis: 22px; }
-  :root[data-skin="smtv"] .slot-head .skill-symbol { width: 24px; height: 24px; flex-basis: 24px; }
-  :root[data-skin="smtv"] .slot-head .slot-cost { padding: 1px 3px; font-size: .68rem; }
-  .slot-effect { font-size: .76rem; }
-  .slot-bottom .source-picker-button { min-height: 44px; font-size: .73rem; gap: 4px; }
-  .slot-bottom .source-picker-button .icon { width: 13px; height: 13px; flex-basis: 13px; }
-  .source-fixed { font-size: .7rem; min-height: 44px; gap: 4px; }
-  .skill-slots .slot-empty { min-height: 214px; }
-  :root[data-font="large"] .skill-slots { grid-template-columns: minmax(0,1fr); }
-  :root[data-skin="smtv"] .action-bar { padding: 12px; gap: 10px; }
+
   :root[data-skin="smtv"] .action-context { width: 100%; flex-direction: row; justify-content: space-between; gap: 8px; }
-  :root[data-skin="smtv"] .command-actions { margin-left: auto; }
+
   :root[data-skin="smtv"] #calculate { min-height: 44px; min-width: 132px; }
   :root[data-skin="smtv"] .guide-content { padding: 16px 10px; }
   :root[data-skin="smtv"] .guide-tabs { gap: 4px; }
@@ -554,7 +482,7 @@
   .entry-skeleton .skeleton-portrait { width: 160px; height: 160px; }
 }
 @media (max-width: 359px) {
-  .skill-slots { grid-template-columns: minmax(0,1fr); }
+
   :root[data-skin="smtv"] .display-controls { gap: 4px; }
   :root[data-skin="smtv"] .display-controls .appearance-switch button { padding-inline: 6px; }
   :root[data-skin="smtv"] .native-skills { grid-template-columns: minmax(0,1fr); }

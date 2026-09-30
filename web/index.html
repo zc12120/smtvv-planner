@@ -30,21 +30,22 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark"><link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
-  <title>真女5复仇</title><link rel="stylesheet" href="desktop.css?v=route-actions-20260917-1"><link rel="stylesheet" href="persona.css?v=performance-20260916-1"><link rel="stylesheet" href="p3reload.css?v=p3r-20260913-2"><link rel="stylesheet" href="vengeance.css?v=smtv-20260914-2">
-<link rel="stylesheet" href="/auth/theme/i18n.css?v=performance-20260916-1">
-<link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
-<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
-<link rel="stylesheet" href="experience.css?v=logo-original-20260917-1">
-<link rel="stylesheet" href="route-layout.css?v=route-emphasis-20260917-1">
-<link rel="preload" href="/auth/theme/i18n.js?v=objectives-20260917-1" as="script">
-<link rel="preload" href="assets/icons.js?v=performance-20260916-1" as="script">
-<link rel="preload" href="site.js?v=innate-search-20260918-1" as="script">
-<link rel="preload" href="skills-ui.js?v=worlds-20260914-1" as="script">
-<link rel="preload" href="catalog-ui.js?v=refinement-20260915-1" as="script">
-<link rel="preload" href="route-guide.js?v=route-actions-20260917-1" as="script">
-<link rel="preload" href="app.js?v=route-emphasis-20260917-1" as="script">
-<link rel="preload" href="inspector.js?v=refinement-20260915-1" as="script">
-<link rel="preload" href="ui.js?v=route-actions-20260917-1" as="script">
+  <title>真女5复仇</title><link rel="stylesheet" href="/desktop.css?v=4570570d52bd"><link rel="stylesheet" href="/persona.css?v=9e5d7803f738"><link rel="stylesheet" href="/p3reload.css?v=4a7d37b7336d"><link rel="stylesheet" href="/vengeance.css?v=e0ea9701fbdc">
+<link rel="stylesheet" href="/auth/theme/i18n.css?v=a9fec5ab85a4">
+<link rel="stylesheet" href="/auth/theme/typography.css?v=a539a7c69f3b">
+<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=ffaf512c74bc">
+<link rel="stylesheet" href="/experience.css?v=96c19a1f24c5">
+<link rel="stylesheet" href="/route-layout.css?v=165bf17da60d">
+<link rel="preload" href="/auth/theme/i18n.js?v=01e7a3a419b4" as="script">
+<link rel="preload" href="/assets/icons.js?v=f14faaf92748" as="script">
+<link rel="preload" href="/site.js?v=ca74c6f60227" as="script">
+<link rel="preload" href="/skills-ui.js?v=ef18ceb0a663" as="script">
+<link rel="preload" href="/catalog-ui.js?v=b3b94f6f4929" as="script">
+<link rel="preload" href="/route-guide.js?v=15db5963d158" as="script">
+<link rel="preload" href="/app.js?v=573ea55ecbfa" as="script">
+<link rel="preload" href="/inspector.js?v=dba569b57f99" as="script">
+<link rel="preload" href="/ui.js?v=573c1adc8e02" as="script">
+<link rel="stylesheet" href="/components.css?v=c9fcb41c4ee4">
 </head>
 <body data-catalog-state="loading" data-page="planner">
 <header class="site-header" data-site-header></header>
@@ -59,7 +60,7 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
     <div id="planner-build" role="tabpanel" aria-labelledby="build-tab">
     <div class="configuration-sheet" id="configuration" data-target-selected="false">
       <section class="target-panel">
-        <div class="section-heading"><h2>目标仲魔</h2><button id="example" class="quiet" data-tooltip="载入爱丽丝示例配置" disabled>载入示例</button></div>
+        <div class="section-heading"><h2>目标仲魔</h2><button id="change-target" class="quiet" hidden>更换</button><button id="example" class="quiet" data-tooltip="载入爱丽丝示例配置" disabled>载入示例</button></div>
         <div class="section-body">
         <div class="search-row">
           <label class="sr-only" for="race">种族</label><select id="race"><option value="">全部种族</option></select>
@@ -83,18 +84,19 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
 <div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
 <div class="skeleton-slot" data-skeleton aria-hidden="true"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-source"></span></div>
         </div>
+        <button id="add-skill" class="add-skill" disabled><span data-icon="Plus"></span><span>添加技能</span><small id="add-skill-count">0 / 8</small></button>
         <div id="error" role="alert" class="error"></div>
         <div id="build-preview" class="build-preview" hidden></div>
         </div>
       </section>
-      <aside class="planner-settings" id="planner-settings" aria-label="合体条件与材料设置">
-        <div class="section-heading"><h2>合体条件</h2><span class="dlc-state"><span data-icon="Check"></span>已含全部 DLC</span></div>
+      <details class="planner-settings" data-desktop-open open id="planner-settings" aria-label="合体条件与材料设置">
+        <summary class="section-heading"><h2>合体条件</h2><span id="settings-summary" class="settings-summary"></span><span data-icon="ChevronDown"></span></summary>
         <div class="settings-body">
-        <span id="settings-summary" class="sr-only">8 栏位 · Lv.150 · 已包含全部 DLC</span>
         <div class="settings-group"><div class="settings-grid">
           <label>最高等级<input id="level" type="number" min="1" max="150" value="150" aria-label="最高仲魔或练级等级"></label>
           <label>已解锁技能栏位<select id="slots"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option selected>8</option></select></label>
         </div></div>
+        <div class="settings-group"><div id="dlc-options"></div><label class="checkbox-setting"><input id="uncertain" type="checkbox">允许待核实配方</label></div>
         <details id="settings" class="settings-group"><summary>可用仲魔限制<small id="restriction-count"></small><span data-icon="ChevronDown"></span></summary>
         <div class="settings-grid">
           <div class="picker-field"><span class="field-label">未解锁仲魔</span><div id="locked-picker"></div></div>
@@ -106,7 +108,7 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
         <div class="picker-field price-field"><span class="field-label">自定义召唤价</span><div id="prices-picker"></div></div>
         </div></details>
         </div>
-      </aside>
+      </details>
     <div class="action-bar"><div class="action-context"><span id="command-target">尚未选择目标</span><span class="muted" id="compute-status" role="status">等待配置</span></div><div class="command-actions">
       <button id="cancel-compute" class="quiet icon-button" aria-label="取消计算" data-tooltip="取消计算" hidden><span data-icon="Square"></span></button>
       <button id="share" class="secondary icon-button" aria-label="复制配置链接" data-tooltip="复制配置链接"><span data-icon="Link"></span></button>
@@ -164,43 +166,5 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
 <div id="toast" role="status"></div>
 <button type="button" id="back-to-top" class="back-to-top icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
 <button type="button" id="back-to-top-left" class="back-to-top back-to-top--left icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
-<script>
-// Keep the loader inline so a failed first script request still has a recovery path.
-window.currentPage=null;
-(async()=>{
-  const sources=["/auth/theme/i18n.js?v=objectives-20260917-1","assets/icons.js?v=performance-20260916-1","site.js?v=innate-search-20260918-1","skills-ui.js?v=worlds-20260914-1","catalog-ui.js?v=refinement-20260915-1","route-guide.js?v=route-actions-20260917-1","app.js?v=route-emphasis-20260917-1","inspector.js?v=refinement-20260915-1","ui.js?v=route-actions-20260917-1"];
-  for(const source of sources){
-    for(let attempt=0;attempt<3;attempt++){
-      try{
-        await new Promise((resolve,reject)=>{
-          const script=document.createElement('script');
-          const timer=setTimeout(()=>reject(Error('timeout')),12000);
-          script.src=source+(attempt?(source.includes('?')?'&':'?')+'loadRetry='+attempt:'');
-          script.async=false;
-          script.onload=()=>{clearTimeout(timer);resolve();};
-          script.onerror=()=>{clearTimeout(timer);script.remove();reject(Error('network'));};
-          document.body.append(script);
-        });
-        if (source.includes("/i18n.js")) await SmtvvI18n.ready;
-        break;
-      }catch(error){
-        // A timed-out script could still arrive later; reload the page instead
-        // of inserting another copy that might execute the same code twice.
-        if(error.message==='timeout'||attempt===2)throw error;
-        await new Promise(resolve=>setTimeout(resolve,400*(attempt+1)));
-      }
-    }
-  }
-})().catch(()=>{
-  document.body.dataset.catalogState='error';
-  document.querySelectorAll('[aria-busy="true"]').forEach(element=>element.setAttribute('aria-busy','false'));
-  const status=document.getElementById('status');
-  if(status)status.textContent='页面资源未就绪';
-  const box=document.getElementById('error')||document.getElementById('entry-content');
-  if(box){box.textContent='页面资源暂时无法加载，请重新加载。';box.setAttribute('role','alert');}
-  let button=document.getElementById('retry-data');
-  if(!button){button=document.createElement('button');button.id='retry-page';button.type='button';button.className='secondary';button.textContent='重新加载页面';(box||document.body).append(button);}
-  button.hidden=false;button.onclick=()=>location.reload();
-});
-</script>
+<script src="/bootstrap.js?v=5757f82642c9"></script>
 </body></html>

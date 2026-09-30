@@ -23,7 +23,9 @@
     "test:admin-recovery": "node tests/admin_recovery_browser.cjs",
     "test:public": "node tests/deployment_browser.cjs",
     "test:performance": "node tests/performance_browser.cjs",
-    "test:on-demand": "node tests/on_demand_browser.cjs"
+    "test:on-demand": "node tests/on_demand_browser.cjs",
+    "build:web": "node scripts/build_icons.cjs && python3 scripts/build_web.py",
+    "test:mobile": "node tests/mobile_browser.cjs"
   },
   "devDependencies": {
     "playwright": "1.63.0"

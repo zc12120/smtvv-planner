@@ -30,6 +30,9 @@ async function skillOrder(page) {
   assert.deepEqual(result.groups,result.expected,'skill groups follow the visible attribute index without interleaving');
   return result.groups;
 }
+async function displaySettings(page) {
+  if (!(await page.locator('#site-font').isVisible())) await page.locator('.display-menu > summary').click();
+}
 async function layout(page, label) {
   await page.evaluate(() => document.fonts.ready);
   const result = await page.evaluate(() => ({
@@ -236,9 +239,9 @@ async function preview(page, card) {
         if (kind === 'skills') await skillOrder(page);
       }
       for (const skin of ['smtv','p5','p3r']) {
-        await page.locator('[data-skin-choice="'+skin+'"]').click();
+        await displaySettings(page);await page.locator('[data-skin-choice="'+skin+'"]').click();
         for (const mode of ['light','dark']) {
-          if (await page.locator('html').getAttribute('data-theme') !== mode) await page.locator('#site-theme').click();
+          if (await page.locator('html').getAttribute('data-theme') !== mode) {await displaySettings(page);await page.locator('#site-theme').click();}
           for (const width of [1440,390]) {
             await page.setViewportSize({width,height:1000});
             for (const kind of Object.keys(types)) {
@@ -249,9 +252,9 @@ async function preview(page, card) {
         }
       }
       await page.setViewportSize({width:320,height:1000});
-      await page.locator('#site-font').click();
+      await displaySettings(page);await page.locator('#site-font').click();
       for (const kind of Object.keys(types)) {await tab(page,kind); await layout(page,language+'/320/large/'+kind);}
-      await page.locator('#site-font').click();
+      await displaySettings(page);await page.locator('#site-font').click();
     }
     checks.push('five languages × three themes × two modes × desktop/mobile collections, plus 320px large type and reduced motion');
 

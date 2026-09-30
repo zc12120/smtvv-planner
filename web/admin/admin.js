@@ -34,17 +34,13 @@
   $('theme').onclick = () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
-    try {
-      const saved = JSON.parse(localStorage.getItem('smtvv-appearance') || '{}');
-      localStorage.setItem('smtvv-appearance',JSON.stringify({skin:['smtv','p5','p3r'].includes(saved?.skin) ? saved.skin : 'smtv',theme:next}));
-      localStorage.setItem('smtvv-theme',next);
-    } catch {}
+    SmtvvCommon.setAppearance({theme:next});
     appearanceButtons();
   };
   $('font').onclick = () => {
     const next = document.documentElement.dataset.font === 'large' ? 'standard' : 'large';
     document.documentElement.dataset.font = next;
-    try {localStorage.setItem('smtvv-font',JSON.stringify(next));} catch {}
+    SmtvvCommon.setAppearance({font:next});
     appearanceButtons();
   };
   window.addEventListener('storage',event => {
@@ -82,25 +78,19 @@
     document.querySelectorAll('[data-cancel]').forEach(button => {button.disabled = busy || expired;});
   }
   async function request(path, data) {
-    const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 30000);
+    const controller = new AbortController();
     if (data === undefined) pendingReads.add(controller);
     try {
-      const response = await fetch('/api/admin/' + path, {cache:'no-store',signal:controller.signal,
-        ...(data === undefined ? {} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})});
-      let body;try {body = await response.json();} catch {}
-      if (response.status === 401 || response.status === 403) {
-        expired = true;controls();$('session-error').hidden = false;
-        $('session-message').textContent = response.status === 401 ? '登录已过期。在新标签页登录后，返回此页继续；未保存的设置和公告会保留。' : '当前账户没有管理员权限。请使用管理员账号重新登录。';
-      }
-      if (!response.ok) throw Object.assign(Error(body?.error || `请求未完成（${response.status}），请稍后重试。`), {status:response.status});
-      if (!body || typeof body !== 'object') throw Error('返回数据不完整，请刷新重试。');
-      return body;
+      return await SmtvvCommon.requestJson('/api/admin/'+path,{data,signal:controller.signal,timeout:30000,cache:'no-store',label:'管理服务',onResponse:response=>{
+        if (response.status===401||response.status===403) {
+          expired=true;controls();$('session-error').hidden=false;
+          $('session-message').textContent=response.status===401?'登录已过期。在新标签页登录后，返回此页继续；未保存的设置和公告会保留。':'当前账户没有管理员权限。请使用管理员账号重新登录。';
+        }
+      }});
     } catch (error) {
-      if (controller.signal.reason === 'navigation') throw Object.assign(Error('页面已离开。'), {cancelled: true});
-      if (error.name === 'AbortError') throw Error('连接超时，请刷新状态后核对操作结果。');
-      if (error instanceof TypeError) throw Error('暂时无法连接服务器，请检查网络后刷新。');
+      if (controller.signal.reason==='navigation') throw Object.assign(Error('页面已离开。'),{cancelled:true});
       throw error;
-    } finally {clearTimeout(timer);pendingReads.delete(controller);}
+    } finally {pendingReads.delete(controller);}
   }
   function renderSettings(data) {
     state = {...state,...data};const s = state.settings;
@@ -154,19 +144,7 @@
     $('login-policy-state').textContent = conflict ? '设置已在其他页面更新，请先核对' : policyDirty ? '有未保存的修改' : `普通 ${policyDuration(settings.sessionMinutes)}${settings.rememberMeEnabled ? ' / 记住 ' + policyDuration(settings.rememberMinutes) : ''}`;
     $('login-policy-state').classList.toggle('conflict',conflict);
   }
-  function loadTurnstile() {
-    if (window.turnstile) return Promise.resolve(window.turnstile);
-    if (turnstileLoader) return turnstileLoader;
-    turnstileLoader = new Promise((resolve,reject) => {
-      const script = document.createElement('script');
-      const timer = setTimeout(() => failed('Turnstile 资源加载超时，请重试。'),12000);
-      function failed(message) {clearTimeout(timer);script.onload=script.onerror=null;turnstileLoader=undefined;script.remove();reject(Error(message));}
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      script.onload = () => {clearTimeout(timer);if (window.turnstile) resolve(window.turnstile);else failed('Turnstile 资源未就绪。');};
-      script.onerror = () => failed('Turnstile 资源加载失败。');document.head.append(script);
-    });
-    return turnstileLoader;
-  }
+  const loadTurnstile = SmtvvCommon.loadTurnstile;
   function clearAdminToken(message = '等待验证', retry = false) {
     turnstileAdminToken = '';$('turnstile-preview-state').textContent = message;
     $('retry-turnstile-preview').hidden = !retry;controls();

@@ -28,60 +28,23 @@ for(const url of ['/api/catalog?v=2026-09-14.2','/assets/demons/manifest.json?v=
 }
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-<title>仲魔详情 · 真女5复仇</title><link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64"><link rel="stylesheet" href="desktop.css?v=route-actions-20260917-1"><link rel="stylesheet" href="persona.css?v=performance-20260916-1"><link rel="stylesheet" href="p3reload.css?v=p3r-20260913-2">
-<link rel="stylesheet" href="vengeance.css?v=smtv-20260914-2">
-<link rel="stylesheet" href="/auth/theme/i18n.css?v=performance-20260916-1">
-<link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
-<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
-<link rel="stylesheet" href="experience.css?v=logo-original-20260917-1">
-<link rel="preload" href="/auth/theme/i18n.js?v=route-ledger-20260917-1" as="script">
-<link rel="preload" href="assets/icons.js?v=performance-20260916-1" as="script">
-<link rel="preload" href="site.js?v=innate-search-20260918-1" as="script">
-<link rel="preload" href="skills-ui.js?v=worlds-20260914-1" as="script">
-<link rel="preload" href="entry.js?v=detail-profile-20260915-1" as="script">
-<link rel="preload" href="ui.js?v=route-actions-20260917-1" as="script">
+<title>仲魔详情 · 真女5复仇</title><link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64"><link rel="stylesheet" href="/desktop.css?v=4570570d52bd"><link rel="stylesheet" href="/persona.css?v=9e5d7803f738"><link rel="stylesheet" href="/p3reload.css?v=4a7d37b7336d">
+<link rel="stylesheet" href="/vengeance.css?v=e0ea9701fbdc">
+<link rel="stylesheet" href="/auth/theme/i18n.css?v=a9fec5ab85a4">
+<link rel="stylesheet" href="/auth/theme/typography.css?v=a539a7c69f3b">
+<link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=ffaf512c74bc">
+<link rel="stylesheet" href="/experience.css?v=96c19a1f24c5">
+<link rel="preload" href="/auth/theme/i18n.js?v=01e7a3a419b4" as="script">
+<link rel="preload" href="/assets/icons.js?v=f14faaf92748" as="script">
+<link rel="preload" href="/site.js?v=ca74c6f60227" as="script">
+<link rel="preload" href="/skills-ui.js?v=ef18ceb0a663" as="script">
+<link rel="preload" href="/entry.js?v=6041f03829e1" as="script">
+<link rel="preload" href="/ui.js?v=573c1adc8e02" as="script">
+<link rel="stylesheet" href="/components.css?v=c9fcb41c4ee4">
 </head><body data-entry="demon" data-catalog-state="loading">
 <header class="site-header" data-site-header></header><div class="main-nav" data-site-nav></div>
 <main class="desktop-main entry-main"><a href="/?tab=demons" id="detail-back" class="back-link"><span data-icon="ArrowLeft"></span> 返回仲魔全书</a><div id="entry-content" aria-live="polite" aria-busy="true"><h1>仲魔详情</h1><p class="sr-only">正在读取资料…</p><div class="entry-skeleton" data-skeleton aria-hidden="true"><span class="skeleton skeleton-portrait"></span><div><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line"></span></div></div></div></main>
 <button type="button" id="back-to-top" class="back-to-top icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
 <button type="button" id="back-to-top-left" class="back-to-top back-to-top--left icon-button" aria-label="返回顶部" data-tooltip="返回顶部" hidden><span data-icon="ArrowUpToLine"></span></button>
-<script>
-// Keep the loader inline so a failed first script request still has a recovery path.
-window.currentPage=null;
-(async()=>{
-  const sources=["/auth/theme/i18n.js?v=route-ledger-20260917-1","assets/icons.js?v=performance-20260916-1","site.js?v=innate-search-20260918-1","skills-ui.js?v=worlds-20260914-1","entry.js?v=detail-profile-20260915-1","ui.js?v=route-actions-20260917-1"];
-  for(const source of sources){
-    for(let attempt=0;attempt<3;attempt++){
-      try{
-        await new Promise((resolve,reject)=>{
-          const script=document.createElement('script');
-          const timer=setTimeout(()=>reject(Error('timeout')),12000);
-          script.src=source+(attempt?(source.includes('?')?'&':'?')+'loadRetry='+attempt:'');
-          script.async=false;
-          script.onload=()=>{clearTimeout(timer);resolve();};
-          script.onerror=()=>{clearTimeout(timer);script.remove();reject(Error('network'));};
-          document.body.append(script);
-        });
-        if (source.includes("/i18n.js")) await SmtvvI18n.ready;
-        break;
-      }catch(error){
-        // A timed-out script could still arrive later; reload the page instead
-        // of inserting another copy that might execute the same code twice.
-        if(error.message==='timeout'||attempt===2)throw error;
-        await new Promise(resolve=>setTimeout(resolve,400*(attempt+1)));
-      }
-    }
-  }
-})().catch(()=>{
-  document.body.dataset.catalogState='error';
-  document.querySelectorAll('[aria-busy="true"]').forEach(element=>element.setAttribute('aria-busy','false'));
-  const status=document.getElementById('status');
-  if(status)status.textContent='页面资源未就绪';
-  const box=document.getElementById('error')||document.getElementById('entry-content');
-  if(box){box.textContent='页面资源暂时无法加载，请重新加载。';box.setAttribute('role','alert');}
-  let button=document.getElementById('retry-data');
-  if(!button){button=document.createElement('button');button.id='retry-page';button.type='button';button.className='secondary';button.textContent='重新加载页面';(box||document.body).append(button);}
-  button.hidden=false;button.onclick=()=>location.reload();
-});
-</script>
+<script src="/bootstrap.js?v=5757f82642c9"></script>
 </body></html>

@@ -1,0 +1,47 @@
+{
+  "index.html": [
+    "/auth/theme/common.js",
+    "/auth/theme/i18n.js",
+    "/assets/icons.js",
+    "/site.js",
+    "/skills-ui.js",
+    "/catalog-ui.js",
+    "/route-guide.js",
+    "/task-controller.js",
+    "/app.js",
+    "/inspector.js",
+    "/ui.js"
+  ],
+  "demon.html": [
+    "/auth/theme/common.js",
+    "/auth/theme/i18n.js",
+    "/assets/icons.js",
+    "/site.js",
+    "/skills-ui.js",
+    "/entry.js",
+    "/ui.js"
+  ],
+  "skill.html": [
+    "/auth/theme/common.js",
+    "/auth/theme/i18n.js",
+    "/assets/icons.js",
+    "/site.js",
+    "/skills-ui.js",
+    "/entry.js",
+    "/ui.js"
+  ],
+  "essence.html": [
+    "/auth/theme/common.js",
+    "/auth/theme/i18n.js",
+    "/assets/icons.js",
+    "/site.js",
+    "/skills-ui.js",
+    "/entry.js",
+    "/ui.js"
+  ],
+  "admin/index.html": [
+    "/auth/theme/common.js",
+    "/assets/icons.js",
+    "/admin/admin.js"
+  ]
+}

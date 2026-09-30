@@ -4,10 +4,9 @@
   function render(root, route, context) {
     const {catalog, state, demons, skillLink, entryLink, configKey, exportText, onPersist} = context;
     if (!route.found) { root.innerHTML = `<div class="empty-state">${esc(route.message || '当前条件下没有可行路线')}</div>`; return; }
-    const key = JSON.stringify([catalog.version,configKey(),route.objective,route.steps]);
-    const legacyKey = JSON.stringify([catalog.version,state,route.objective,route.steps]);
+    const key = SmtvvCommon.fingerprint([catalog.version,configKey(),route.objective,route.steps]);
     const stored = read('smtvv-route-progress', {});
-    const saved = stored?.[key] || stored?.[legacyKey] || {};
+    const saved = stored?.[key] || {};
     let current = Number.isInteger(saved.current) && route.steps[saved.current] ? saved.current : 0;
     let panel = ['steps','materials','skills'].includes(saved.panel) ? saved.panel : 'steps';
     const dn = name => demons[name]?.label || name;
@@ -64,11 +63,20 @@
     function carriers(sources) {
       return sources.map(source => `<span class="carrier">${source.kind === 'essence' ? entryLink('essence',source.name,source.label) : entryLink('demon',source.name,dn(source.name))}${source.id ? reference(source.id) : ''}</span>`).join('<span class="source-or">或</span>');
     }
+    function mobileStep(step) {
+      const ingredients=step.type==='essence'
+        ? `${entryLink('demon',step.result,dn(step.result))} ＋ ${entryLink('essence',step.essence,step.essenceLabel)}`
+        : step.ingredients.map((name,index)=>entryLink('demon',name,dn(name))+' '+reference(step.materialIds[index])).join(' ＋ ');
+      const skills=step.type==='essence'?step.grant:step.inherit;
+      return `<div class="route-mobile-summary"><p>${ingredients}</p><p>→ <strong>${entryLink('demon',step.result,dn(step.result))}</strong> · Lv.${step.level}</p>
+        ${skills.length?`<p>${step.type==='essence'?'授予':'继承'}：${skills.map(name=>skillLink(name,context.skillName(name))).join('、')}</p>`:''}
+        <p>完成后保留：${step.keep.length?step.keep.map(name=>skillLink(name,context.skillName(name))).join('、'):'无指定技能'}</p></div>`;
+    }
     function stepBody(step,index) {
       return `<article class="operation-step overview-step ledger-step ${current === index ? 'is-current' : ''}" id="route-step-${index+1}" tabindex="-1">
         <div class="ledger-heading"><span class="ledger-number">${String(index+1).padStart(2,'0')}</span><h2>${type(step)}</h2>${step.unlock ? `<button type="button" class="quiet step-requirement-toggle" aria-expanded="false" aria-controls="step-unlock-${index+1}">${icon('LockKeyhole')}<span>解锁条件</span>${icon('ChevronDown')}</button>` : ''}</div>
         ${step.unlock ? `<p id="step-unlock-${index+1}" class="step-requirement-text" hidden>${esc(step.unlock)}</p>` : ''}
-        ${formula(step,index === route.steps.length-1)}
+        ${mobileStep(step)}<details class="route-full" data-desktop-open ${GameSite.compact.matches?'':'open'}><summary>${icon('List')}查看材料与技能明细</summary>${formula(step,index === route.steps.length-1)}</details>
         ${step.reason ? `<p class="warning-box">${esc(step.reason)}</p>` : ''}
       </article>`;
     }

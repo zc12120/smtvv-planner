@@ -75,48 +75,14 @@
     notice.append(message, link);
     (document.querySelector('main') || document.body).prepend(notice);
   }
-  function retryDelay(response, attempt = 0) {
-    const value = response?.headers.get('Retry-After');
-    const seconds = value === null || value === undefined ? NaN : Number(value);
-    const requested = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(value) - Date.now();
-    return Math.min(30000, Math.max(400 * (attempt + 1), Number.isFinite(requested) ? requested : 0));
-  }
+  const retryDelay = SmtvvCommon.retryDelay;
   async function fetchJsonWithRetry(url, label, attempts = 2, timeout = 12000) {
-    let lastError;
-    for (let attempt = 0; attempt < attempts; attempt += 1) {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), timeout);
-      try {
-        const early = attempt === 0 ? window.smtvvEarlyRequests?.get(url) : null;
-        if (early) window.smtvvEarlyRequests.delete(url);
-        let response, body;
-        if (early) {
-          const result = await early;
-          if (result.error) throw result.error;
-          response = result.response;
-          body = result.body;
-        } else response = await fetch(url, {signal: controller.signal, ...(attempt ? {cache: 'reload'} : {})});
-        if (response.status === 401) {
-          requireLogin();
-          throw Object.assign(Error('登录已过期，请重新登录。'), {retryable: false, status: 401});
-        }
-        const retryable = response.status === 408 || response.status === 429 || response.status >= 500;
-        if (!early) try { body = await response.json(); } catch {}
-        if (!response.ok) {
-          const detail = typeof body?.error === 'string' ? body.error : '';
-          throw Object.assign(Error(detail || `${label}（HTTP ${response.status}）`), {retryable, delay: retryDelay(response, attempt)});
-        }
-        if (!body || typeof body !== 'object' || Array.isArray(body)) throw Error(`${label}：返回的数据不完整，请重试。`);
-        return String(url).startsWith('/api/skill?') ? SmtvvI18n.skill(body) : body;
-      } catch (error) {
-        lastError = controller.signal.aborted || error.name === 'AbortError' ? Error(`${label}：连接超时，请重试。`)
-          : error instanceof TypeError ? Error(`${label}：暂时无法连接服务，请重试。`) : error;
-        if (error.retryable === false) throw lastError;
-        clearTimeout(timer);
-        if (attempt + 1 < attempts) await new Promise(resolve => setTimeout(resolve, error.delay || 400 * (attempt + 1)));
-      } finally { clearTimeout(timer); }
-    }
-    throw lastError || Error(label);
+    const body = await SmtvvCommon.requestJson(url, {label,attempts,timeout,onResponse:response=>{
+      if (response.status === 401) {
+        requireLogin();throw Object.assign(Error('登录已过期，请重新登录。'),{status:401,retryable:false});
+      }
+    }});
+    return String(url).startsWith('/api/skill?') ? SmtvvI18n.skill(body) : body;
   }
   function placeholder(name, size, state, track = true, deferred = false) {
     const unavailable = state === 'missing';
@@ -381,7 +347,7 @@
         <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         <div id="global-results" role="listbox" aria-label="全部资料搜索结果" hidden></div>
       </div>
-      <div class="display-controls">
+      <details class="display-menu" data-desktop-open open><summary aria-label="显示设置">${icon('SlidersHorizontal')}<span>显示设置</span></summary><div class="display-controls">
         <div class="appearance-switch" role="group" aria-label="界面风格">
           <button type="button" data-skin-choice="smtv" aria-pressed="true" aria-label="切换为真女神转生V复仇主题">SMT V</button>
           <button type="button" data-skin-choice="p5" aria-pressed="false" aria-label="切换为女神异闻录5主题">P5</button>
@@ -389,7 +355,7 @@
         </div>
         <button id="site-font" class="icon-button" type="button" aria-label="大字号" data-tooltip="大字号" aria-pressed="false">${icon('CaseSensitive')}</button>
         <button id="site-theme" class="icon-button" type="button" aria-label="切换深色主题" data-tooltip="切换深色主题">${icon('Moon')}</button>
-      </div>
+      </div></details>
     </div>`;
   document.querySelector('[data-site-nav]').innerHTML = `<div class="nav-inner"><nav aria-label="主导航">${Object.entries(tabs).map(([key,label],index) => `<a href="/?tab=${key}" data-tab="${key}"><span class="nav-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span><span>${label}</span></a>`).join('')}</nav><span class="nav-context">VENGEANCE / 全部 DLC</span></div>`;
   document.querySelector('[data-site-nav]').insertAdjacentHTML('afterend', '<div class="reload-banner" aria-hidden="true"><div class="reload-banner-inner"><span class="reload-edition">P3<br>RELOAD</span><div class="reload-wordmark"><strong>RELOAD</strong><span>YOUR NEXT<br>FUSION.</span></div><div class="reload-figure"></div><span class="reload-stamp">PERSONA 3 / VISUAL THEME</span></div></div>');
@@ -402,13 +368,18 @@
   }));
   document.querySelectorAll('[data-icon]').forEach(element => { element.outerHTML = icon(element.dataset.icon); });
 
+  const compact = matchMedia('(max-width:699px)');
+  function adaptDetails(){document.querySelectorAll('[data-desktop-open]').forEach(el=>{el.open=!compact.matches;});}
+  adaptDetails();compact.addEventListener('change',adaptDetails);
+  window.GameSite.compact=compact;
+  document.addEventListener('pointerdown',event=>{const menu=document.querySelector('.display-menu');if(compact.matches&&!menu.contains(event.target))menu.open=false;});
   const themeButton = document.getElementById('site-theme');
   const fontButton = document.getElementById('site-font');
   // A fresh public appearance preference makes the Vengeance redesign the
   // default without changing the login page's or administrator's theme.
   const appearance = read('smtvv-appearance', {});
   function saveAppearance() {
-    write('smtvv-appearance', {skin: document.documentElement.dataset.skin, theme: document.documentElement.dataset.theme});
+    SmtvvCommon.setAppearance({skin:document.documentElement.dataset.skin,theme:document.documentElement.dataset.theme});
   }
   function skin(value, persist = true) {
     value = ['smtv','p5','p3r'].includes(value) ? value : 'smtv';
@@ -431,7 +402,7 @@
     value = value === 'large' ? 'large' : 'standard';
     document.documentElement.dataset.font = value;
     fontButton.setAttribute('aria-pressed', String(value === 'large'));
-    if (persist) write('smtvv-font', value);
+    if (persist) SmtvvCommon.setAppearance({font:value});
   }
   skin(appearance?.skin, false);
   theme(appearance?.theme, false);
@@ -526,3 +497,9 @@
   window.addEventListener('pagehide', () => window.persistDesktopState?.());
   document.addEventListener('visibilitychange', () => { if (document.hidden) window.persistDesktopState?.(); });
 })();
+
+// The fixed action bar yields to the software keyboard while editing text.
+if(window.visualViewport){
+ const updateKeyboard=()=>{document.body.dataset.keyboard=String(visualViewport.height<innerHeight-140&&document.activeElement?.matches('input,textarea'));};
+ visualViewport.addEventListener('resize',updateKeyboard);document.addEventListener('focusout',()=>{document.body.dataset.keyboard='false';});
+}

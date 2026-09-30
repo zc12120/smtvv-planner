@@ -20,16 +20,12 @@
     };
     theme.onclick = () => {
       root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      try {
-        const saved = JSON.parse(localStorage.getItem('smtvv-appearance') || '{}');
-        localStorage.setItem('smtvv-appearance',JSON.stringify({skin:['smtv','p5','p3r'].includes(saved?.skin) ? saved.skin : 'smtv',theme:root.dataset.theme}));
-        localStorage.setItem('smtvv-theme',root.dataset.theme);
-      } catch {}
+      SmtvvCommon.setAppearance({theme:root.dataset.theme});
       update();window.dispatchEvent(new Event('smtvv:login-theme'));
     };
     font.onclick = () => {
       root.dataset.font = root.dataset.font === 'large' ? 'standard' : 'large';
-      try {localStorage.setItem('smtvv-font',JSON.stringify(root.dataset.font));} catch {}
+      SmtvvCommon.setAppearance({font:root.dataset.font});
       update();
     };
     window.addEventListener('storage',event => {

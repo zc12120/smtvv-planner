@@ -18,9 +18,9 @@ window.addEventListener('error',event=>{
   <meta name="color-scheme" content="light dark"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f2f4f1">
   <title>管理后台 · 真女5复仇</title>
   <link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
-  <link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=performance-20260916-1">
-  <link rel="stylesheet" href="/auth/theme/typography.css?v=performance-20260916-1">
-  <link rel="stylesheet" href="/admin/admin.css?v=smtvv-admin-20260917-1">
+  <link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=ffaf512c74bc">
+  <link rel="stylesheet" href="/auth/theme/typography.css?v=a539a7c69f3b">
+  <link rel="stylesheet" href="/admin/admin.css?v=2bac4cd1d273">
   <script>try{const p=JSON.parse(localStorage.getItem('smtvv-appearance')||'{}');document.documentElement.dataset.theme=(p?.theme||localStorage.getItem('smtvv-theme'))==='dark'?'dark':'light';document.documentElement.dataset.font=JSON.parse(localStorage.getItem('smtvv-font')||'null')==='large'?'large':'standard';}catch{}</script>
 </head>
 <body class="admin-page">
@@ -107,37 +107,5 @@ window.addEventListener('error',event=>{
   </main>
 </div>
 <noscript><p class="noscript">请启用 JavaScript 后使用管理后台。</p></noscript>
-<script>
-// Keep recovery available even when the first external script cannot load.
-(async () => {
-  for (const source of ['/assets/icons.js?v=performance-20260916-1', '/admin/admin.js?v=smtvv-admin-20260917-1']) {
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        await new Promise((resolve, reject) => {
-          const script = document.createElement('script');
-          const timer = setTimeout(() => reject(Error('timeout')), 12000);
-          script.src = source + (attempt ? (source.includes('?') ? '&' : '?') + 'loadRetry=' + attempt : '');
-          script.async = false;
-          script.onload = () => {clearTimeout(timer);resolve();};
-          script.onerror = () => {clearTimeout(timer);script.remove();reject(Error('network'));};
-          document.body.append(script);
-        });
-        break;
-      } catch (error) {
-        // A timed-out request may still execute; never insert a second copy.
-        if (error.message === 'timeout' || attempt === 2) throw error;
-        await new Promise(resolve => setTimeout(resolve, 400 * (attempt + 1)));
-      }
-    }
-  }
-})().catch(() => {
-  const feedback = document.getElementById('feedback');
-  document.getElementById('feedback-text').textContent = '页面资源暂时无法加载，请重新加载。';
-  feedback.className = 'error';feedback.hidden = false;
-  document.getElementById('health').textContent = '页面资源未就绪';
-  document.getElementById('last-sync').textContent = '尚未连接站点';
-  const retry = document.getElementById('refresh');
-  retry.disabled = false;retry.textContent = '重新加载';retry.onclick = () => location.reload();
-});
-</script>
+<script src="/bootstrap.js?v=5757f82642c9"></script>
 </body></html>
