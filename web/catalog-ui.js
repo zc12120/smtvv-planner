@@ -42,7 +42,7 @@
           ${demon.dlc ? '<span class="record-dlc">DLC</span>' : ''}
         </a>
         <div class="record-copy"><span class="record-method${demon.special.length || demon.accident ? ' is-special' : ''}">${method(demon)}</span>
-          <h3><a href="${href('demon',demon.name,'demons')}">${esc(demon.label)}</a></h3>${originalName(demon)}
+          <h3><a class="record-detail-link" href="${href('demon',demon.name,'demons')}">${esc(demon.label)}</a></h3>${originalName(demon)}
         </div>
         <div class="record-affinities">${skillUI.resists(demon)}</div>
         <div class="record-actions"><button type="button" class="record-configure" data-plan="${esc(demon.name)}">${icon('Plus')}配置此仲魔</button>${preview()}</div>
@@ -53,7 +53,7 @@
     if (!rows.length) return empty('没有匹配技能，请调整筛选条件。');
     return `<div class="skill-collection collection-grid" ${columnAttributes('skills')}>${rows.map((skill,index) => `
       <article class="catalog-card skill-record" data-skill-name="${esc(skill.name)}" data-affinity="${esc(skill.element)}" ${order(index)}>
-        <div class="skill-record-heading"><a class="skill-record-link skill-detail-link" href="${href('skill',skill.name,'skills')}"><span class="archive-sigil">${skillUI.symbol(skill.element)}</span><div><span class="record-family">${esc(skill.categoryZh || skillUI.categories[skill.element])}</span><h3>${esc(skill.label)}</h3>${originalName(skill)}</div></a></div>
+        <div class="skill-record-heading"><a class="record-detail-link skill-record-link skill-detail-link" href="${href('skill',skill.name,'skills')}"><span class="archive-sigil">${skillUI.symbol(skill.element)}</span><div><span class="record-family">${esc(skill.categoryZh || skillUI.categories[skill.element])}</span><h3>${esc(skill.label)}</h3>${originalName(skill)}</div></a></div>
         <p class="record-effect">${esc(skill.effectZh || '效果待补充')}</p>
         <div class="record-facts"><div><span>基础消耗</span><strong>${esc(skill.costZh || '无')}</strong></div><div><span>继承</span><strong class="${skill.unique ? 'is-special' : ''}">${skill.unique ? '专属／不可继承' : '可继承'}</strong></div></div>
         <div class="record-actions"><span class="record-source-count">${icon('GitBranch')}<span>${skill.sources.length} 个习得来源</span></span>${preview()}</div>
@@ -71,7 +71,7 @@
     return `<div class="essence-collection collection-grid" ${columnAttributes('essences')}>${rows.map((essence,index) => {
       const visible = visibleSkills(essence, query);
       return `<article class="catalog-card essence-record" data-essence-name="${esc(essence.name)}" data-essence-group="${esc(essence.group)}" ${order(index)}>
-        <div class="essence-record-heading"><a class="essence-vessel" href="${href('essence',essence.name,'essences')}" aria-label="${esc(essence.label)}"><span class="summoning-seal" aria-hidden="true"></span>${demonUI.image(essence.name,'hero','lazy')}</a><div><span class="record-family">${esc(groups[essence.group])}</span><h3><a href="${href('essence',essence.name,'essences')}">${esc(essence.label)}</a></h3>${originalName(essence)}</div></div>
+        <div class="essence-record-heading"><a class="essence-vessel" href="${href('essence',essence.name,'essences')}" aria-label="${esc(essence.label)}"><span class="summoning-seal" aria-hidden="true"></span>${demonUI.image(essence.name,'hero','lazy')}</a><div><span class="record-family">${esc(groups[essence.group])}</span><h3><a class="record-detail-link" href="${href('essence',essence.name,'essences')}">${esc(essence.label)}</a></h3>${originalName(essence)}</div></div>
         <div class="essence-record-skills"><span class="record-section-label">包含技能 <small>${essence.skills.length}</small></span><ul>${essenceSkillList(visible)}</ul>${essence.skills.length > 4 ? `<span class="record-more">另有 ${essence.skills.length - 4} 个技能</span>` : ''}</div>
         <div class="record-actions"><span class="record-source-count">${icon('Layers2')}<span>${essence.skills.filter(skill => skill.transferable).length} 个可转授技能</span></span>${preview()}</div>
       </article>`;

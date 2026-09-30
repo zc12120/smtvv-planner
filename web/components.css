@@ -3,6 +3,11 @@
    Palette: existing teal/paper/gold or the selected game's semantic tokens.
    Depth: subtle borders; shared surfaces, body font and a 4px spacing rhythm. */
 .display-menu { position:relative; margin-left:auto; min-width:0; }
+.catalog-card { isolation:isolate; }
+/* The existing detail link covers the card; secondary controls stay above it. */
+.record-detail-link::after { content:""; position:absolute; inset:0; z-index:1; border-radius:var(--radius-card); }
+.record-detail-link:focus-visible::after { outline:2px solid var(--accent); outline-offset:-2px; }
+.catalog-card a:not(.record-detail-link),.catalog-card button { position:relative; z-index:2; }
 .display-menu > summary { display:none; }
 .target-details > summary,.slot-detail > summary { display:none; }
 .target-details { min-width:0; }
