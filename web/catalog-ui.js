@@ -80,7 +80,7 @@
 
   function updateCategories(container, items, attribute, selected) {
     const label = items.find(([key]) => key === selected)?.[1] || items[0][1];
-    const summary = container.closest('details').querySelector('.catalog-index-heading > span');
+    const summary = container.closest('details').querySelector('.catalog-index-selection');
     if (summary.textContent !== label) summary.textContent = label;
     // Keep existing buttons focused while a filter changes.
     if (!container.children.length) container.innerHTML = items.map(([key,label,count,element]) => `<button type="button" ${attribute}="${esc(key)}"><span class="category-label">${element ? skillUI.symbol(element) : !key ? icon('ListFilter') : ''}<span>${esc(label)}</span></span><small>${count}</small></button>`).join('');

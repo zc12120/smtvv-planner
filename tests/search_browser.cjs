@@ -23,19 +23,22 @@ async function bounded(page) {
       for (const [tab,kind,value,label] of kinds) {
         await page.locator('[data-tab="'+tab+'"]').click();
         const summary = page.locator('#tab-'+tab+' .catalog-index-heading');
-        assert.equal(await summary.innerText(),label);
+        const selection = summary.locator('.catalog-index-selection');
+        const title = {demons:'种族',skills:'技能类别',essences:'灵体分类'}[tab];
+        assert.equal(await summary.locator(':scope > span').first().innerText(),title);
+        assert.equal(await selection.innerText(),label);
         await summary.click();
         const attribute = kind === 'demon' ? 'race' : kind;
         const category = page.locator('[data-'+attribute+'-category="'+value+'"]');
         const selected = await category.locator('.category-label > span').innerText();
         await category.click();
-        assert.equal(await summary.innerText(),selected);
+        assert.equal(await selection.innerText(),selected);
         assert.equal(await summary.evaluate(e=>e.parentElement.open),false);
         assert(await summary.evaluate(e=>document.activeElement===e),'mobile selection returns focus to category heading');
         await page.reload({waitUntil:'domcontentloaded'});await ready(page);
-        assert.equal(await summary.innerText(),selected,'selected category survives reload');
+        assert.equal(await selection.innerText(),selected,'selected category survives reload');
         await page.locator('[data-reset-catalog="'+tab+'"]').click();
-        assert.equal(await summary.innerText(),label,'reset restores all categories');
+        assert.equal(await selection.innerText(),label,'reset restores all categories');
         const input = page.locator('#'+kind+'-filter');
         assert.equal(await input.isVisible(),false);
         assert.equal(await input.getAttribute('placeholder'),null);

@@ -360,7 +360,9 @@
 /* Collections: an index, a calm search strip, and content-specific records. */
 :root[data-skin] body .catalog-layout,:root[data-skin] body .catalog-layout:has(.catalog-inspector:not([hidden])) { display:grid; grid-template-columns:176px minmax(0,1fr); gap:16px; align-items:start; }
 .catalog-index { position:sticky; top:calc(var(--nav-height) + 16px); min-width:0; }
-.catalog-index-heading { display:flex; justify-content:space-between; gap:8px; padding:8px; color:var(--text); font-size:.85rem; border-bottom:1px solid var(--gold); }
+.catalog-index-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto; align-items:center; gap:8px; padding:8px; color:var(--text); font-size:.85rem; border-bottom:1px solid var(--gold); }
+.catalog-index-heading > span { min-width:0; overflow-wrap:anywhere; }
+.catalog-index-selection { text-align:right; color:var(--muted); font-weight:400; }
 .catalog-index summary { cursor:pointer; list-style:none; }
 .catalog-index summary::-webkit-details-marker { display:none; }
 .catalog-index summary::after { content:"⌄"; color:var(--accent); font:500 18px/1 var(--font-body); align-self:center; }
@@ -464,10 +466,6 @@
   :root[data-font="large"] .skill-record .record-actions button { justify-self:start; }
 }
 @media (min-width:900px) {
-  :root[data-font="large"] .catalog-index-heading { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 8px; }
-  :root[data-font="large"] .catalog-index-heading > span { grid-column:1; grid-row:1; }
-  :root[data-font="large"] .catalog-index-heading > small { grid-column:1; grid-row:2; white-space:nowrap; }
-  :root[data-font="large"] .catalog-index-heading::after { grid-column:2; grid-row:1 / span 2; }
 }
 
 .essence-record { container:essence-card / inline-size; display:flex; flex-direction:column; }
