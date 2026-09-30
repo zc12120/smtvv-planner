@@ -12,7 +12,7 @@ import tempfile
 import threading
 from urllib.parse import urlsplit
 
-from accounts import replace_private
+from persistence import publish_generation, locked_file
 from management import ManagementError
 
 
@@ -51,16 +51,9 @@ class LoginPolicy:
         self.configuration = Path(configuration) if configuration else None
         self.lock = threading.RLock()
 
-    @contextmanager
     def file_lock(self):
         self.directory.mkdir(parents=True, exist_ok=True, mode=0o750)
-        descriptor = os.open(self.directory / '.lock', os.O_CREAT | os.O_RDWR, 0o600)
-        try:
-            fcntl.flock(descriptor, fcntl.LOCK_EX)
-            yield
-        finally:
-            fcntl.flock(descriptor, fcntl.LOCK_UN)
-            os.close(descriptor)
+        return locked_file(self.directory / '.lock')
 
     def _base(self):
         if self.configuration:
@@ -144,32 +137,13 @@ class LoginPolicy:
             raise ManagementError('登录设置无法读取，请联系管理员检查。', 503) from None
 
     def _commit(self, state):
-        """Publish the UI policy and Authelia overlay as one atomic generation."""
-        generation = None
-        pointer = None
-        published = False
         try:
-            overlay = self._session(state['settings'])
-            generation = Path(tempfile.mkdtemp(prefix='v-', dir=self.directory))
-            os.chmod(generation, 0o750)
-            replace_private(generation / 'policy.json', state)
-            replace_private(generation / 'session.json', overlay, mode=0o640)
-            pointer = self.directory / ('.next-' + generation.name)
-            pointer.symlink_to(generation.name, target_is_directory=True)
-            os.replace(pointer, self.directory / 'current')
-            published = True
-            descriptor = os.open(self.directory, os.O_DIRECTORY)
-            try:
-                os.fsync(descriptor)
-            finally:
-                os.close(descriptor)
+            publish_generation(self.directory, {
+                'policy.json': (state, 0o600),
+                'session.json': (self._session(state['settings']), 0o640),
+            })
         except OSError:
             raise ManagementError('登录设置保存未完成，请刷新后核对。', 503) from None
-        finally:
-            if pointer:
-                pointer.unlink(missing_ok=True)
-            if generation and not published:
-                shutil.rmtree(generation, ignore_errors=True)
 
     def initialize(self):
         with self.lock, self.file_lock():

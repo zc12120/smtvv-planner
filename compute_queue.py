@@ -11,7 +11,7 @@ import time
 import uuid
 
 from compute_protocol import cache_key, encode, identifier, normalize, revision, OBJECTIVES, computed_objectives, objective_result
-from routes import SearchBusy
+from compute_errors import SearchBusy
 
 MAX_RESULT_BYTES = 8 * 1024 * 1024
 
@@ -181,26 +181,28 @@ class Coordinator:
         with self.lock, self.db:
             self._prune(self.clock())
             row = self._get(job_id)
-            config = json.loads(row['config'])
-            result = json.loads(row['result']) if row['result'] else {}
-            for route in result.get('solutions',{}).values():
-                route['skills']=json.loads(row['presentation']).get('skills',config.get('skills',[]))
-            cancelled = bool(row['cancelled']) or row['state'] == 'cancelled'
-            finished = cancelled or row['state'] in ('completed', 'failed')
-            elapsed = (row['updated'] if finished else self.clock()) - (row['started'] or row['submitted'])
-            if row['kind'] == 'optimal':
-                selected=json.loads(row['presentation']).get('objective') or config.get('objective','all')
-                if row['state']=='completed' and 'computedObjectives' not in result:
-                    result['computedObjectives']=computed_objectives(config.get('objective','all'))
-                result=objective_result({**result,'solutions':result.get('solutions',{})},selected)
-                return dict(jobId=job_id, finished=finished, complete=row['state']=='completed' and not cancelled,
-                            error=row['error'] if not cancelled else '', message='已取消' if cancelled else result.get('message',''),
-                            stage='已完成' if row['state']=='completed' else row['stage'], seconds=max(0, round(elapsed, 2)),
-                            solutions={} if cancelled else result.get('solutions', {}),
-                            objective=selected,computedObjectives=[] if cancelled else result['computedObjectives'],
-                            target=config['target'], priceMode='custom' if config['prices'] else 'baseline')
+        presentation = json.loads(row['presentation'])
+        config = json.loads(row['config'])
+        result = json.loads(row['result']) if row['result'] else {}
+        for route in result.get('solutions',{}).values():
+            route['skills']=presentation.get('skills',config.get('skills',[]))
+        cancelled = bool(row['cancelled']) or row['state'] == 'cancelled'
+        finished = cancelled or row['state'] in ('completed', 'failed')
+        elapsed = (row['updated'] if finished else self.clock()) - (row['started'] or row['submitted'])
+        if row['kind'] == 'optimal':
+            selected=presentation.get('objective') or config.get('objective','all')
+            if row['state']=='completed' and 'computedObjectives' not in result:
+                result['computedObjectives']=computed_objectives(config.get('objective','all'))
+            result=objective_result({**result,'solutions':result.get('solutions',{})},selected)
             return dict(jobId=job_id, finished=finished, complete=row['state']=='completed' and not cancelled,
-                        error=row['error'], cancelled=cancelled, result=result, seconds=max(0,round(elapsed,2)))
+                        error=row['error'] if not cancelled else '', message='已取消' if cancelled else result.get('message',''),
+                        stage='已完成' if row['state']=='completed' else row['stage'], seconds=max(0, round(elapsed, 2)),
+                        solutions={} if cancelled else result.get('solutions', {}),
+                        objective=selected,computedObjectives=[] if cancelled else result['computedObjectives'],
+                        status='cancelled' if cancelled else row['state'], resultId=row['id'] if row['state']=='completed' else None,
+                        target=config['target'], priceMode='custom' if config['prices'] else 'baseline')
+        return dict(jobId=job_id, finished=finished, complete=row['state']=='completed' and not cancelled,
+                    error=row['error'], cancelled=cancelled, result=result, seconds=max(0,round(elapsed,2)))
 
     def _claim(self, name, slot, session, version):
         now = self.clock()
@@ -240,6 +242,17 @@ class Coordinator:
                     self.changed.wait(max(0, deadline-time.monotonic()))
         if action not in ('heartbeat', 'finish'):
             raise ComputeError('未知的工作节点操作。')
+        payload = body.get('result')
+        result = None
+        if payload is not None:
+            if not isinstance(payload, dict):
+                raise ComputeError('工作节点结果格式不合法。')
+            result = encode(payload)
+            result_bytes = len(result.encode())
+            if result_bytes > MAX_RESULT_BYTES:
+                raise ComputeError('计算结果超出容量限制。', 413)
+        if result is None:
+            result_bytes = 0
         with self.changed, self.db:
             now = self.clock()
             self._prune(now)
@@ -255,14 +268,6 @@ class Coordinator:
             if now-row['started'] > self.task_seconds+15:
                 self.db.execute("UPDATE tasks SET state='failed',error='计算超时，请减少技能或限制起始材料。',updated=? WHERE id=?", (now,row['id']))
                 return {'accepted': False, 'cancel': True}
-            payload = body.get('result')
-            result = None
-            if payload is not None:
-                if not isinstance(payload, dict):
-                    raise ComputeError('工作节点结果格式不合法。')
-                result = encode(payload)
-                if len(result.encode()) > MAX_RESULT_BYTES:
-                    raise ComputeError('计算结果超出容量限制。', 413)
             stage = str(body.get('stage', row['stage']))[:120]
             if action == 'finish':
                 error = str(body.get('error',''))[:500]
@@ -279,10 +284,10 @@ class Coordinator:
                     if any(not isinstance(route,dict) or route.get('validated') is not True for route in payload['solutions'].values()):
                         raise ComputeError('路线未通过校验。')
                 self.db.execute('UPDATE tasks SET state=?,result=?,result_bytes=?,error=?,stage=?,updated=?,expires=NULL WHERE id=?',
-                                ('failed' if error else 'completed',result,len(result.encode()) if result else 0,error,'计算失败' if error else '已完成',now,row['id']))
+                                ('failed' if error else 'completed',result,result_bytes,error,'计算失败' if error else '已完成',now,row['id']))
             else:
                 self.db.execute('UPDATE tasks SET expires=?,updated=?,stage=?,result=COALESCE(?,result),result_bytes=COALESCE(?,result_bytes) WHERE id=?',
-                                (now+self.lease_seconds,now,stage,result,len(result.encode()) if result else None,row['id']))
+                                (now+self.lease_seconds,now,stage,result,result_bytes if result else None,row['id']))
             self.changed.notify_all()
             return {'accepted': True, 'cancel': False}
 
@@ -346,24 +351,24 @@ class Coordinator:
             self._prune(now)
             rows = self.db.execute('SELECT j.id AS ticket,j.cancelled,t.* FROM tickets j JOIN tasks t ON j.task=t.id ORDER BY j.created DESC LIMIT 200').fetchall()
             workers = self.db.execute('SELECT * FROM workers').fetchall()
-            counts = {key:0 for key in ('running','queued','completed','cancelled','failed')}
-            items = []
-            for row in rows:
-                state = 'cancelled' if row['cancelled'] else row['state']
-                counts[state] += 1
-                config = json.loads(row['config'])
-                target = config.get('target','')
-                items.append(dict(id=row['ticket'],target=target,label=label(target) if target else row['kind'],
-                                  status=state,stage=row['stage'],seconds=max(0,round((row['updated'] if state not in ('queued','running') else now)-(row['started'] or row['created']))),
-                                  solutions=len(json.loads(row['result']).get('solutions',{})) if row['result'] else 0,
-                                  canCancel=state in ('queued','running'),worker=row['worker']))
             nodes=[]
             for name,config in self.workers.items():
                 slots=[w for w in workers if w['name']==name and now-w['seen']<self.lease_seconds and w['revision']==self.version]
                 running=self.db.execute("SELECT count(*) FROM tasks WHERE worker=? AND state='running'",(name,)).fetchone()[0]
                 nodes.append(dict(name=name,slots=config['slots'],onlineSlots=len(slots),running=running))
-            return dict(items=items,counts=counts,capacity=self.capacity,mode='remote',workers=nodes,
-                        computeSlots=sum(w['slots'] for w in self.workers.values()))
+        counts = {key:0 for key in ('running','queued','completed','cancelled','failed')}
+        items = []
+        for row in rows:
+            state = 'cancelled' if row['cancelled'] else row['state']
+            counts[state] += 1
+            config = json.loads(row['config'])
+            target = config.get('target','')
+            items.append(dict(id=row['ticket'],target=target,label=label(target) if target else row['kind'],
+                              status=state,stage=row['stage'],seconds=max(0,round((row['updated'] if state not in ('queued','running') else now)-(row['started'] or row['created']))),
+                              solutions=len(json.loads(row['result']).get('solutions',{})) if row['result'] else 0,
+                              canCancel=state in ('queued','running'),worker=row['worker']))
+        return dict(items=items,counts=counts,capacity=self.capacity,mode='remote',workers=nodes,
+                    computeSlots=sum(w['slots'] for w in self.workers.values()))
 
 
 def from_environment():
@@ -377,4 +382,8 @@ def from_environment():
     return Coordinator(path/'compute-queue.sqlite3',config)
 
 
-COORDINATOR = from_environment()
+def __getattr__(name):
+    if name == 'COORDINATOR':
+        from server import default_services
+        return default_services().COORDINATOR
+    raise AttributeError(name)

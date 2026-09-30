@@ -17,7 +17,7 @@ class StartRequestTests(unittest.TestCase):
         self.jobs = patch.dict(optimal.JOBS, {}, clear=True)
         self.jobs.start()
         self.addCleanup(self.jobs.stop)
-        self.worker = patch('optimal.threading.Thread')
+        self.worker = patch('optimal.WorkerThread')
         self.thread = self.worker.start()
         self.addCleanup(self.worker.stop)
         self.request = {'target': 'Angel', 'skills': ['Dia'], 'requestId': 'lost-start-response'}
@@ -65,14 +65,14 @@ class StartRequestTests(unittest.TestCase):
 
     def test_visitors_cannot_evict_each_others_running_jobs(self):
         for index in range(optimal.MAX_ACTIVE_JOBS):
-            optimal.start_optimal({**self.request, 'requestId': f'visitor-{index}'})
+            optimal.start_optimal({**self.request, 'requestId': f'visitor-{index}', 'prices': {'Pixie': index}})
         first = optimal.JOBS['visitor-0']
         with self.assertRaisesRegex(optimal.SearchBusy, '队列已满'):
-            optimal.start_optimal({**self.request, 'requestId': 'over-capacity'})
+            optimal.start_optimal({**self.request, 'requestId': 'over-capacity', 'prices': {'Pixie': 100}})
         self.assertEqual(len(optimal.JOBS), optimal.MAX_ACTIVE_JOBS)
         self.assertTrue(all(not job.cancelled.is_set() for job in optimal.JOBS.values()))
         self.assertIs(optimal.JOBS['visitor-0'], first)
-        self.assertEqual(optimal.start_optimal({**self.request, 'requestId': 'visitor-0'}), {'jobId': 'visitor-0'})
+        self.assertEqual(optimal.start_optimal({**self.request, 'requestId': 'visitor-0', 'prices': {'Pixie': 0}}), {'jobId': 'visitor-0'})
 
     def test_only_completed_jobs_are_evicted_when_retention_is_full(self):
         first = optimal.start_optimal(self.request)
@@ -99,7 +99,7 @@ class StartRequestTests(unittest.TestCase):
         self.worker.stop()
         with patch('optimal.OptimalSearch', side_effect=prepare):
             with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-                future = pool.submit(optimal.start_optimal, {**self.request, 'requestId': 'preparing'})
+                future = pool.submit(optimal.start_optimal, {**self.request, 'requestId': 'preparing', 'skills': ['Agi']})
                 try:
                     self.assertTrue(entered.wait(timeout=2))
                     self.assertTrue(optimal.LOCK.acquire(timeout=0.5), 'registry must not be locked by preparation')

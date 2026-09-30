@@ -145,27 +145,11 @@ class SiteStore:
             self._state = state
 
     def _persist(self, state):
-        temporary = None
+        from persistence import replace_private
         try:
-            self.filename.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
-            with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=self.filename.parent,
-                                             prefix='.site-', suffix='.tmp', delete=False) as handle:
-                temporary = Path(handle.name)
-                os.chmod(temporary, 0o600)
-                json.dump(state, handle, ensure_ascii=False, indent=2)
-                handle.write('\n')
-                handle.flush()
-                os.fsync(handle.fileno())
-            os.replace(temporary, self.filename)
-            if hasattr(os, 'O_DIRECTORY'):
-                descriptor = os.open(self.filename.parent, os.O_DIRECTORY)
-                try: os.fsync(descriptor)
-                finally: os.close(descriptor)
+            replace_private(self.filename, state)
         except OSError as error:
             raise ManagementError('设置未能保存，请稍后重试。', 503) from error
-        finally:
-            if temporary and temporary.exists():
-                temporary.unlink(missing_ok=True)
 
     def snapshot(self, history=False):
         with self.lock:
@@ -221,31 +205,13 @@ class SiteStore:
             self._state = new
 
 
-def jobs_snapshot():
-    from compute_queue import COORDINATOR
+def jobs_snapshot(COORDINATOR=None):
     if COORDINATOR:return COORDINATOR.overview()
-    import optimal
-    from planner import label
-    with optimal.LOCK:
-        jobs = list(optimal.JOBS.items())
-    result = []
-    counts = {name: 0 for name in ('running', 'queued', 'completed', 'cancelled', 'failed')}
-    for job_id, job in reversed(jobs):
-        if job.cancelled.is_set():
-            status = 'cancelled'
-        elif job.finished:
-            status = 'completed' if job.complete else 'failed'
-        else:
-            status = 'queued' if job.stage == '排队等待计算' else 'running'
-        counts[status] += 1
-        result.append({'id': job_id, 'target': job.target, 'label': label(job.target), 'status': status,
-                       'stage': job.stage, 'seconds': max(0, round((getattr(job,'ended',None) or time.monotonic()) - job.started)),
-                       'solutions': len(job.solutions), 'canCancel': status in ('running', 'queued')})
-    return {'items': result, 'counts': counts, 'capacity': optimal.MAX_ACTIVE_JOBS}
+    from optimal import jobs_overview
+    return jobs_overview()
 
 
-def cancel_job(job_id, store, actor):
-    from compute_queue import COORDINATOR
+def cancel_job(job_id, store, actor, COORDINATOR=None):
     import optimal
     if not isinstance(job_id, str) or not 1 <= len(job_id) <= 80:
         raise ManagementError('任务编号不合法。')
@@ -255,12 +221,11 @@ def cancel_job(job_id, store, actor):
         if job['finished']:return {'cancelled':False,'message':'任务已结束，无需取消。'}
         store.record(actor,'cancel',{'jobId':job_id,'target':job.get('target','')})
         return COORDINATOR.cancel({'jobId':job_id})
-    with optimal.LOCK:
-        job = optimal.JOBS.get(job_id)
-        if job is None:
-            raise ManagementError('任务不存在或已过期。', 404)
-        if job.finished or job.cancelled.is_set():
-            return {'cancelled': False, 'message': '任务已结束，无需取消。'}
-        store.record(actor, 'cancel', {'jobId': job_id, 'target': job.target})
-        job.cancel()
-    return {'cancelled': True}
+    try:
+        job = optimal.get_optimal({'jobId': job_id})
+    except ValueError:
+        raise ManagementError('任务不存在或已过期。', 404) from None
+    if job['finished']:
+        return {'cancelled': False, 'message': '任务已结束，无需取消。'}
+    store.record(actor, 'cancel', {'jobId': job_id, 'target': job['target']})
+    return optimal.cancel_optimal({'jobId': job_id})

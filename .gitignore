@@ -15,7 +15,7 @@
 __pycache__/
 *.py[cod]
 /.venv/
-/node_modules/
+/node_modules
 /native/optimal-linux
 /native/optimal-linux.sha256
 /native/.optimal-*

@@ -8,53 +8,10 @@ from pathlib import Path
 from skill_text import explain
 from unlock_text import translate_condition
 
-ROOT = Path(__file__).parent
-VERSION = '2026-09-14.2'
-COMMIT = 'e93dd1c87ca453de8fae8165bdbef220732feabc'
-
-def read(name):
-    return json.loads((ROOT / 'data' / (name + '.json')).read_text())
-
-DEMONS = read('demon-data') | read('ven-demon-data')
-SPECIAL = read('ven-special-recipes')
-PREREQS = read('fusion-prereqs') | read('ven-fusion-prereqs')
-CHART, ELEMENT = read('ven-fusion-chart'), read('element-chart')
-SKILLS = {}
-for filename in ('skill-data', 'ven-skill-data'):
-    for row in read(filename).values():
-        SKILLS[row['a'][0]] = dict(name=row['a'][0], element=row['a'][1], rank=row['b'][0], mp=row['b'][1], power=row['b'][2], description=' / '.join(row['c']), raw=row)
-UNLOCKS, DLC = {}, set()
-for group in read('ven-demon-unlocks'):
-    for names, condition in group['conditions'].items():
-        for name in names.split(','):
-            UNLOCKS[name] = condition
-            if group['category'] == 'Vengeance DLC': DLC.add(name)
-PLAYABLE = {n: d for n, d in DEMONS.items() if d['race'] in CHART['races'] + ['Element']}
-ACCIDENTS = {n for n, p in PREREQS.items() if p == 'Fusion Accident'}
-RAW_UNLOCKS, RAW_PREREQS = UNLOCKS.copy(), PREREQS.copy()
-UNLOCKS = {n: translate_condition(t) for n,t in RAW_UNLOCKS.items()}
-PREREQS = {n: translate_condition(t) for n,t in RAW_PREREQS.items()}
-RACES = {r: i for i, r in enumerate(CHART['races'])}
-LABELS = {kind: read(kind+'-names') for kind in ('demon', 'skill', 'race')}
-INNATE = read('innate-skills')
-# Official game text is an optional, locally supplied resource pack. A clean
-# source checkout must work without distributing the game's text or artwork.
-def load_profiles():
-    if (ROOT / 'data' / 'demon-profiles.json').is_file():
-        return read('demon-profiles')
-    return {'source': {'kind': 'not-installed', 'label': ''}, 'demons': {}}
-
-DEMON_PROFILES = load_profiles()
-
-def label(name, kind='demon'):
-    suffix = re.match(r'^(.*) ([A-HJ-Z])$', name)
-    base = suffix[1] if suffix else name
-    translated = LABELS[kind].get(base, [])
-    result = translated[1] if len(translated)>1 and translated[1] else base
-    return result + (' '+suffix[2] if suffix else '')
-
-def transferable(skill):
-    return skill in SKILLS and SKILLS[skill]['element'] != 'inn' and 0 < SKILLS[skill]['rank'] < 99
+from game_data import (ROOT, VERSION, COMMIT, read, DEMONS, SPECIAL, PREREQS, CHART,
+                       ELEMENT, SKILLS, UNLOCKS, DLC, PLAYABLE, ACCIDENTS, RAW_UNLOCKS,
+                       RAW_PREREQS, RACES, LABELS, INNATE, DEMON_PROFILES, load_profiles,
+                       label, transferable, string_list)
 
 def innate_skill(name):
     return dict(name=name,label=label(name,'skill'),element='innate',unique=True,
@@ -74,7 +31,8 @@ def catalog():
         d['descriptionSource']=DEMON_PROFILES['source'].get('label','') if profile else ''
         d['ailments']=PLAYABLE[d['name']].get('ailments','------')
     innates=[innate_skill(n) for n in sorted({INNATE[n] for n in PLAYABLE})]
-    return dict(demons=sorted(demons,key=lambda d:(d['level'],d['name'])),skills=sorted(skills,key=lambda s:s['name']),innateSkills=innates,essences=essence_catalog(),demonProfileSource=DEMON_PROFILES['source'],source=COMMIT,version=VERSION)
+    from compute_protocol import revision
+    return dict(demons=sorted(demons,key=lambda d:(d['level'],d['name'])),skills=sorted(skills,key=lambda s:s['name']),innateSkills=innates,essences=essence_catalog(),demonProfileSource=DEMON_PROFILES['source'],source=COMMIT,version=revision())
 
 class FusionGraph:
     def __init__(self, dlc=False, locked=()):
@@ -140,22 +98,11 @@ class FusionGraph:
 @lru_cache(maxsize=12)
 def cached_graph(dlc,locked):return FusionGraph(dlc,locked)
 
-def string_list(value,title,valid):
-    if not isinstance(value,list) or not all(isinstance(x,str) and x in valid for x in value):raise ValueError(title+'包含无效项目。')
-    return list(dict.fromkeys(value))
-
 def settings(request):
-    enabled=request.get('dlc',True)
-    if isinstance(enabled,bool):enabled=sorted(DLC) if enabled else []
-    enabled=string_list(enabled,'DLC',DLC)
-    locked=string_list(request.get('locked',[]),'未解锁仲魔',PLAYABLE)
-    excluded=string_list(request.get('excluded',[]),'排除仲魔',PLAYABLE)
-    level=request.get('level',150);slots=request.get('slots',8)
-    if type(level) is not int or type(slots) is not int:raise ValueError('等级和技能栏位必须为整数。')
-    if not 1<=level<=150 or not 1<=slots<=8:raise ValueError('等级须为 1–150；技能栏位须为 1–8。')
-    uncertain=request.get('allowUncertain',False)
-    if not isinstance(uncertain,bool):raise ValueError('待核实配方开关必须为布尔值。')
-    return cached_graph(tuple(sorted(enabled)),tuple(sorted(locked))),level,slots,set(excluded),uncertain
+    from configuration import Settings
+    config = Settings.parse(request)
+    return (cached_graph(config.dlc, config.locked), config.level, config.slots,
+            set(config.excluded), config.allow_uncertain)
 
 def inspect_fusion(request):
     graph,*_=settings(request)
@@ -175,20 +122,13 @@ def reverse_recipes(request):
     return dict(target=target,recipes=recipes,accident=target in ACCIDENTS)
 
 def plan(request):
-    target=request.get('target')
-    if target not in PLAYABLE:raise ValueError('请选择有效的目标仲魔。')
-    selected=string_list(request.get('skills',[]),'技能',SKILLS)
-    graph,level,slots,excluded,uncertain=settings(request)
-    if len(selected)>slots:raise ValueError(f'所选技能超过 {slots} 个可用栏位。')
-    for s in selected:
-        if not transferable(s) and s not in PLAYABLE[target]['skills']:raise ValueError(label(s,'skill')+' 是不可继承的专属技能。')
-    allowed={n for n,d in graph.demons.items() if n not in excluded and d['lvl']<=level}
-    if target not in allowed:raise ValueError('目标受到等级、DLC、未解锁或排除设置限制。')
-    sources=request.get('sources',{})
-    if not isinstance(sources,dict):raise ValueError('技能来源格式不正确。')
-    for s,n in sources.items():
-        if s not in selected or n not in allowed or s not in graph.demons[n]['skills'] or graph.demons[n]['skills'][s]>level:raise ValueError('指定的技能来源不可用或无法在等级上限内学会。')
-        if not transferable(s) and n!=target:raise ValueError('专属技能只能由目标自身学习。')
+    from configuration import parse_config
+    config = parse_config(request, 'plan')
+    target = config['target']
+    selected = string_list(request.get('skills', []), '技能', SKILLS)
+    graph, level, slots, excluded, uncertain = settings(config)
+    allowed = {n for n, d in graph.demons.items() if n not in excluded and d['lvl'] <= level}
+    sources = config['sources']
     skills=[s for s in selected if transferable(s)];full=(1<<len(skills))-1
     def names(mask):return [s for i,s in enumerate(skills) if mask&(1<<i)]
     native={n:sum(1<<i for i,s in enumerate(skills) if s in graph.demons[n]['skills'] and graph.demons[n]['skills'][s]<=level and (s not in sources or sources[s]==n)) for n in allowed}

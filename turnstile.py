@@ -21,7 +21,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
-from accounts import replace_private
+from persistence import publish_generation, locked_file
 from management import ManagementError
 
 
@@ -57,16 +57,9 @@ class TurnstileConfig:
         self.lock = threading.RLock()
         self.tickets = {}
 
-    @contextmanager
     def file_lock(self):
         self.directory.mkdir(parents=True, exist_ok=True, mode=0o750)
-        descriptor = os.open(self.directory / '.lock', os.O_CREAT | os.O_RDWR, 0o600)
-        try:
-            fcntl.flock(descriptor, fcntl.LOCK_EX)
-            yield
-        finally:
-            fcntl.flock(descriptor, fcntl.LOCK_UN)
-            os.close(descriptor)
+        return locked_file(self.directory / '.lock')
 
     @staticmethod
     def validate(settings):
@@ -104,31 +97,13 @@ class TurnstileConfig:
             raise ManagementError('Turnstile 设置无法读取，请联系管理员检查。', 503) from None
 
     def _commit(self, state, secret):
-        generation = None
-        pointer = None
-        published = False
+        files = {'settings.json': (state, 0o600)}
+        if secret:
+            files['secret.json'] = (secret, 0o600)
         try:
-            generation = Path(tempfile.mkdtemp(prefix='v-', dir=self.directory))
-            os.chmod(generation, 0o750)
-            replace_private(generation / 'settings.json', state)
-            if secret:
-                replace_private(generation / 'secret.json', secret)
-            pointer = self.directory / ('.next-' + generation.name)
-            pointer.symlink_to(generation.name, target_is_directory=True)
-            os.replace(pointer, self.directory / 'current')
-            published = True
-            descriptor = os.open(self.directory, os.O_DIRECTORY)
-            try:
-                os.fsync(descriptor)
-            finally:
-                os.close(descriptor)
+            publish_generation(self.directory, files)
         except OSError:
             raise ManagementError('Turnstile 设置保存未完成，请刷新后核对。', 503) from None
-        finally:
-            if pointer:
-                pointer.unlink(missing_ok=True)
-            if generation and not published:
-                shutil.rmtree(generation, ignore_errors=True)
 
     def initialize(self):
         with self.lock, self.file_lock():
@@ -210,8 +185,12 @@ class TurnstileConfig:
                 not previous['settings']['enabled']
                 or state['settings']['siteKey'] != previous['settings']['siteKey']
                 or candidate_secret != previous_secret))
-            if protected_changed:
-                self.verify(verification_token, candidate_secret, 'turnstile_settings', remote_ip, 400)
+        if protected_changed:
+            self.verify(verification_token, candidate_secret, 'turnstile_settings', remote_ip, 400)
+        with self.lock, self.file_lock():
+            current, current_secret = self._current()
+            if current['revision'] != revision or current_secret != previous_secret:
+                raise ManagementError('Turnstile 设置已更新，请刷新后重新验证。', 409)
             changes = {key: value for key, value in state['settings'].items()
                        if value != previous['settings'][key]}
             secret_changed = candidate_secret != previous_secret
@@ -236,7 +215,11 @@ class TurnstileConfig:
             state, secret = self._current()
             if not state['settings']['enabled']:
                 return {'verified': True, 'required': False}, None
-            self.verify(token, secret, 'login', remote_ip)
+        self.verify(token, secret, 'login', remote_ip)
+        with self.lock:
+            current, current_secret = self._current()
+            if current['revision'] != state['revision'] or current_secret != secret:
+                raise ManagementError('验证设置已更新，请重新验证。', 409)
             now = int(time.time())
             address = self.client_ip(remote_ip)
             self.tickets = {nonce: issued for nonce, issued in self.tickets.items() if issued[0] >= now}

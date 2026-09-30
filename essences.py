@@ -3,7 +3,7 @@ Ordinary/Proto/Panagia essence roster cross-checked against the Vengeance item
 list. Marici is the later-patch addition. Innate/Magatsuhi/unique skills are NOT
 made transferable by owning an essence.
 """
-from planner import DEMONS, PLAYABLE, transferable, label
+from game_data import DEMONS, PLAYABLE, transferable, label
 ESSENCES={n:dict(name=n,label=label(n)+'的灵体',skills=[s for s in d['skills'] if transferable(s)])
           for n,d in DEMONS.items() if d['race']!='Human' and n!='Demi-fiend A'}
 
@@ -19,7 +19,7 @@ def candidates(skills,sources):
 
 def essence_catalog():
     """Display the complete essence skill list, with transfer restrictions."""
-    from planner import SKILLS
+    from game_data import SKILLS
     rows=[]
     for name,e in ESSENCES.items():
         d=DEMONS[name]

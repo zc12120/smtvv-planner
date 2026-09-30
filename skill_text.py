@@ -52,6 +52,27 @@ def repeated(s,count):
         else:parts.append(word(token))
     return '；'.join(parts)
 
+SIMPLE_CONDITIONS = {
+    'FMTNullElem': '使受到的{e}属性攻击无效',
+    'FMTDrainElem': '吸收受到的{e}属性攻击',
+    'FMTRepelElem': '反弹受到的{e}属性攻击',
+    'FMTResistElem': '受到的{e}属性伤害变为{p}倍',
+    'FMTSmtKaja': '{e}提升1阶',
+    'FMTSmtKunda': '{e}降低1阶',
+    'FMTInstakillWhen': '命中弱点时附加即死判定（基础成功率{p}%）',
+    'FMTResistAilment': '陷入{e}的概率变为{p}倍',
+    'FMTElemBlock': '使下一次受到的{e}属性攻击无效',
+    'FMTElemKarn': '反弹下一次受到的{e}攻击',
+    'FMTLifeAidN': '战斗结束后{e}，恢复量为对应最大值的{p}%',
+    'FMTEndure': '受到致命攻击时以1点HP存活，每场战斗限一次',
+    'FMTEnduringSoul': '受到致命攻击时以全满HP存活，每场战斗限一次',
+    'FMTCureAilment': '解除{e}',
+    'FMTPowerAgainst': '对处于{e}的敌人，基础威力改为{p}',
+    'FMTElemCharge': '下一次{e}的攻击伤害变为{p}倍',
+    'FMTRecarm': '使目标复活，恢复最大HP的{p}%',
+    'FMTSmtCounterN': '受到{e}攻击时，有{p}%概率以物理攻击反击',
+}
+
 def explain(row):
     if row['a'][1] == 'inn':
         from innate_text import explain_innate
@@ -70,28 +91,11 @@ def explain(row):
     probability=lambda x:f'附加{x}（基础成功率{p}%，实际受耐性等因素影响）'
     recover_base=f'以基础回复威力计算恢复量，另加最大HP的{p}%'
     if condition=='-':detail=''
+    elif condition in SIMPLE_CONDITIONS:detail=SIMPLE_CONDITIONS[condition].format(e=e,p=p)
     elif condition=='FMTBase':detail=e
     elif condition=='FMTExact':detail=probability(e)
-    elif condition=='FMTNullElem':detail=f'使受到的{e}属性攻击无效'
-    elif condition=='FMTDrainElem':detail=f'吸收受到的{e}属性攻击'
-    elif condition=='FMTRepelElem':detail=f'反弹受到的{e}属性攻击'
-    elif condition=='FMTResistElem':detail=f'受到的{e}属性伤害变为{p}倍'
     elif condition=='FMTElemBoost':detail=f'{e}'+('技能回复量' if effect=='Recovery' else '属性伤害')+f'变为{p}倍'
-    elif condition=='FMTSmtKaja':detail=f'{e}提升1阶'
-    elif condition=='FMTSmtKunda':detail=f'{e}降低1阶'
     elif condition=='FMTTimes':detail=repeated(effect,m) if any(x in BUFFS for x in effect.split(' + ')) else f'{e}变为{p}倍'
-    elif condition=='FMTInstakillWhen':detail=f'命中弱点时附加即死判定（基础成功率{p}%）'
-    elif condition=='FMTResistAilment':detail=f'陷入{e}的概率变为{p}倍'
-    elif condition=='FMTElemBlock':detail=f'使下一次受到的{e}属性攻击无效'
-    elif condition=='FMTElemKarn':detail=f'反弹下一次受到的{e}攻击'
-    elif condition=='FMTLifeAidN':detail=f'战斗结束后{e}，恢复量为对应最大值的{p}%'
-    elif condition=='FMTEndure':detail='受到致命攻击时以1点HP存活，每场战斗限一次'
-    elif condition=='FMTEnduringSoul':detail='受到致命攻击时以全满HP存活，每场战斗限一次'
-    elif condition=='FMTCureAilment':detail=f'解除{e}'
-    elif condition=='FMTPowerAgainst':detail=f'对处于{e}的敌人，基础威力改为{p}'
-    elif condition=='FMTElemCharge':detail=f'下一次{e}的攻击伤害变为{p}倍'
-    elif condition=='FMTRecarm':detail=f'使目标复活，恢复最大HP的{p}%'
-    elif condition=='FMTSmtCounterN':detail=f'受到{e}攻击时，有{p}%概率以物理攻击反击'
     elif condition=='$1 pwr when $2':detail=f'发生{e}时，基础威力改为{p}'
     elif condition=='$1 pwr when $2, St-based':detail=f'攻击以力为基准；发生{e}时，基础威力改为{p}'
     elif condition=='$2-based':detail=f'攻击以{e}为基准'

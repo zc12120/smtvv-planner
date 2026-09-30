@@ -34,7 +34,7 @@ class CancellationTests(unittest.TestCase):
             workers.append(thread)
             return thread
 
-        with patch.dict(optimal.JOBS, {}, clear=True), patch('optimal.threading.Thread', side_effect=worker):
+        with patch.dict(optimal.JOBS, {}, clear=True), patch('optimal.WorkerThread', side_effect=worker):
             optimal.COMPUTE_LOCK.acquire()
             try:
                 result = optimal.start_optimal({'target': 'Angel', 'skills': ['Dia']})

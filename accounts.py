@@ -18,28 +18,7 @@ import time
 from management import ManagementError
 
 
-def replace_private(path, value, mode=0o600):
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
-    temporary = None
-    try:
-        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=path.parent,
-                                         prefix='.accounts-', delete=False) as handle:
-            temporary = Path(handle.name)
-            os.fchmod(handle.fileno(), mode)
-            if path.exists() and os.geteuid() == 0:
-                previous = path.stat()
-                os.fchown(handle.fileno(), previous.st_uid, previous.st_gid)
-            json.dump(value, handle, ensure_ascii=False, indent=2)
-            handle.write('\n')
-            handle.flush()
-            os.fsync(handle.fileno())
-        os.replace(temporary, path)
-        descriptor = os.open(path.parent, os.O_DIRECTORY)
-        try: os.fsync(descriptor)
-        finally: os.close(descriptor)
-    finally:
-        if temporary: temporary.unlink(missing_ok=True)
+from persistence import replace_private, locked_file
 
 
 class Accounts:
@@ -63,15 +42,8 @@ class Accounts:
             self.read()
             os.chmod(self.filename, 0o640)
 
-    @contextmanager
     def file_lock(self):
-        fd = os.open(self.filename.with_suffix('.lock'), os.O_CREAT | os.O_RDWR, 0o600)
-        try:
-            fcntl.flock(fd, fcntl.LOCK_EX)
-            yield
-        finally:
-            fcntl.flock(fd, fcntl.LOCK_UN)
-            os.close(fd)
+        return locked_file(self.filename.with_suffix('.lock'))
 
     @staticmethod
     def validate_database(data):

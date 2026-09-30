@@ -8,16 +8,14 @@ import time
 
 
 def configuration_key(request, root, rules_version):
+    from compute_protocol import cache_key, revision
+    from configuration import parse_config
     try:
         source = Path(root) / 'native/optimal.cpp'
         engine = source if source.is_file() else Path(root) / 'native/optimal-linux'
-        revision = hashlib.sha256(engine.read_bytes()).hexdigest()
-        config = {key:value for key,value in request.items() if key not in ('requestId','previousJob','maxSteps')}
-        config.setdefault('objective', 'mixed')
-        data = json.dumps([rules_version,revision,config],sort_keys=True,ensure_ascii=False,separators=(',',':'))
-        return hashlib.sha256(data.encode()).hexdigest()
-    except (OSError,TypeError,ValueError):
-        # A cache problem must not prevent the normal engine/error path.
+        engine_revision = hashlib.sha256(engine.read_bytes()).hexdigest()
+        return cache_key('optimal', parse_config(request), [rules_version, revision(), engine_revision])
+    except (OSError, TypeError, ValueError):
         return None
 
 

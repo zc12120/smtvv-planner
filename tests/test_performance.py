@@ -200,7 +200,7 @@ class CachedJobTests(unittest.TestCase):
         for item in (patch.dict(optimal.JOBS, {}, clear=True),
                      patch.object(optimal, 'RESULTS', CompletedResults()),
                      patch.object(optimal, 'COMPUTE_LOCK', threading.Lock()),
-                     patch('optimal.threading.Thread', side_effect=thread)):
+                     patch('optimal.WorkerThread', side_effect=thread)):
             item.start()
             self.addCleanup(item.stop)
         self.addCleanup(self.join_workers)

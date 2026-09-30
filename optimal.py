@@ -1,34 +1,36 @@
 """On-demand exact fusion and essence optimization.
 A finite (demon, requested-skill subset) state space replaces depth limits.
 """
+from copy import deepcopy
 import json
 import os
 import sys
 from pathlib import Path
 import subprocess
 import threading
+from threading import Thread as WorkerThread
 import time
 import uuid
-from routes import RouteSearch, Tree, SearchBusy
+from routes import Tree, SearchBusy
+from search_context import SearchContext
 from native_engine import engine_command
 from search_graph import context_topology
 from compute_cache import CompletedResults, configuration_key
 from planner import VERSION
-from compute_protocol import objective, computed_objectives, objective_result
+from compute_protocol import objective, computed_objectives, objective_result, normalize, identifier
 
 ROOT=Path(__file__).parent
 
-class OptimalSearch(RouteSearch):
+class OptimalSearch:
     def __init__(self,request):
-        # The legacy bounded context supplies validation/data and materialization
-        # only; no step budget enters the optimizer problem or stop condition.
-        self.objective=objective(request.get('objective','mixed'))
-        self.computed_objectives=[]
-        super().__init__({k:v for k,v in request.items() if k!='maxSteps'})
-        del self.max_steps
-        del self.deadline
+        self.context = SearchContext(request)
+        self.objective = self.context.request['objective']
+        self.computed_objectives = []
         self.solutions={};self.stage='准备数据';self.cancelled=threading.Event();self.process=None
         self.finished=False;self.complete=False;self.error='';self.message='';self.started=time.monotonic();self.ended=None
+
+    def __getattr__(self, name):
+        return getattr(self.context, name)
 
     def problem(self):
         names,graph=context_topology(self)
@@ -54,7 +56,8 @@ class OptimalSearch(RouteSearch):
                 n=names[node['entity']]
                 # Align material order with the real recipe before validation.
                 if children:
-                    expected=next((ins for ins in self.reverse[n] if sorted(ins)==sorted(c.name for c in children)),None)
+                    child_names=sorted(c.name for c in children)
+                    expected=next((ins for ins in self.reverse[n] if sorted(ins)==child_names),None)
                     if expected is None:raise ValueError('优化结果包含无法验证的配方。')
                     lookup={c.name:c for c in children};children=[lookup[x] for x in expected]
                 entries.append(Tree(n,tuple(children),node['mask'],node['cost'],node['steps']))
@@ -121,97 +124,231 @@ class OptimalSearch(RouteSearch):
     def cancel(self):
         self.cancelled.set()
         if self.process and self.process.poll() is None:
-            try:self.process.terminate()
+            process = self.process
+            try:process.terminate()
             except OSError:pass
+            def reap():
+                try:process.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    try:process.kill()
+                    except OSError:pass
+            threading.Thread(target=reap, daemon=True).start()
 
     def snapshot(self):
         return dict(jobId=getattr(self,'id',''),finished=self.finished,complete=self.complete,error=self.error,message=self.message,stage=self.stage,seconds=round((self.ended or time.monotonic())-self.started,2),objective=self.objective,computedObjectives=self.computed_objectives.copy(),solutions=self.solutions.copy(),priceMode=self.price_mode,target=self.target)
 
-MAX_ACTIVE_JOBS=8
-MAX_RETAINED_JOBS=24
-JOB_RETENTION_SECONDS=1800
+MAX_ACTIVE_JOBS = 8
+MAX_RETAINED_JOBS = 128
+JOB_RETENTION_SECONDS = 1800
+JOBS = {}
+LOCK = threading.RLock()
+COMPUTE_LOCK = threading.Lock()
+RESULTS = CompletedResults()
 
-JOBS={};LOCK=threading.Lock();COMPUTE_LOCK=threading.Lock();RESULTS=CompletedResults()
-def start_optimal(request):
-    job_id=request.get('requestId')
-    if job_id is not None and (not isinstance(job_id,str) or not 1<=len(job_id)<=80):
-        raise ValueError('计算请求编号不合法。')
-    with LOCK:
-        # A client may lose the response after the search has already started.
-        # Reusing its request ID returns that job instead of starting it again.
-        existing=JOBS.get(job_id)
-        if existing:
-            if existing.request!={k:v for k,v in request.items() if k!='maxSteps'}:raise ValueError('同一计算请求不能使用不同配置，请重新生成。')
-            return {'jobId':existing.id}
-        old=JOBS.get(request.get('previousJob'))
-        active=[job for job in JOBS.values() if job is not old and not job.finished]
-        if len(active)>=MAX_ACTIVE_JOBS:raise SearchBusy('计算队列已满，请稍后重试。')
-    # Graph construction and request validation can be expensive. Keep them
-    # outside the registry lock so cancellation/status remain responsive.
-    job=OptimalSearch(request);job.id=job_id or uuid.uuid4().hex
-    with LOCK:
-        # Another caller may have submitted the same ID while we prepared it.
-        existing=JOBS.get(job_id)
-        if existing:
-            if existing.request!=job.request:raise ValueError('同一计算请求不能使用不同配置，请重新生成。')
-            return {'jobId':existing.id}
-        old=JOBS.get(request.get('previousJob'))
-        active=[saved for saved in JOBS.values() if saved is not old and not saved.finished]
-        if len(active)>=MAX_ACTIVE_JOBS:raise SearchBusy('计算队列已满，请稍后重试。')
-        if old:old.cancel()
-        # Retire completed/cancelled jobs only; another visitor must never evict a running search.
-        now=time.monotonic()
-        for key,saved in list(JOBS.items()):
-            if (saved.finished or saved.cancelled.is_set()) and now-saved.started>JOB_RETENTION_SECONDS:del JOBS[key]
-        while len(JOBS)>=MAX_RETAINED_JOBS:
-            key=next((key for key,saved in JOBS.items() if saved.finished or saved.cancelled.is_set()),None)
-            if key is None:raise SearchBusy('计算队列已满，请稍后重试。')
-            del JOBS[key]
-        job.stage='排队等待计算'
-        JOBS[job.id]=job
-    def work():
-        cache_key=configuration_key(job.request,ROOT,VERSION)
-        def restore_completed():
-            saved=RESULTS.get(cache_key)
-            if saved is None or job.cancelled.is_set():return False
-            if configuration_key(job.request,ROOT,VERSION)!=cache_key:return False
-            job.computed_objectives=saved['computedObjectives'];job.solutions=saved['solutions'];job.message=saved['message'];job.stage='已完成'
-            job.complete=True;job.cache_hit=True;job.ended=time.monotonic();job.finished=True
-            return True
-        # Completed identical configurations do not need to wait behind a
-        # different expensive request; configuration validation already ran.
-        if restore_completed():return
-        # A cancelled queued job must leave promptly, even while another search
-        # owns the engine. Otherwise repeated cancel/retry can exhaust threads.
-        while not job.cancelled.is_set():
-            if not COMPUTE_LOCK.acquire(timeout=0.1):continue
-            try:
-                if not job.cancelled.is_set():
-                    # An engine update may have arrived while this job queued.
-                    cache_key=configuration_key(job.request,ROOT,VERSION)
-                    if restore_completed():return
-                    job.started=time.monotonic();job.stage='准备数据';job.run()
-                    if job.complete and not job.error and not job.cancelled.is_set() and configuration_key(job.request,ROOT,VERSION)==cache_key:
-                        saved={'solutions':job.solutions,'message':job.message,'computedObjectives':job.computed_objectives}
-                        RESULTS.put(cache_key,saved)
-                        for selected in job.computed_objectives:
-                            if set(computed_objectives(selected))<=set(job.computed_objectives):
-                                RESULTS.put(configuration_key({**job.request,'objective':selected},ROOT,VERSION),objective_result(saved,selected))
-                    return
-            finally:COMPUTE_LOCK.release()
-        job.message='已取消';job.ended=time.monotonic();job.finished=True
-    try:threading.Thread(target=work,daemon=True).start()
+
+class LocalTask:
+    """A bounded execution shared by independent client subscriptions."""
+    def __init__(self, config, key):
+        self.request, self.key = config, key
+        self.target = config['target']
+        self.price_mode = 'custom' if config['prices'] else 'baseline'
+        self.objective = config['objective']
+        self.cancelled = threading.Event()
+        self.started = time.monotonic()
+        self.ended = None
+        self.finished = self.complete = self.cache_hit = False
+        self.status = 'queued'
+        self.stage = '排队等待计算'
+        self.error = self.message = ''
+        self.solutions = {}
+        self.computed_objectives = []
+        self.search = None
+
+    @property
+    def process(self):
+        return self.search.process if self.search else None
+
+    def restore(self, saved):
+        self.solutions = saved['solutions']
+        self.computed_objectives = saved['computedObjectives']
+        self.message = saved['message']
+        self.complete = self.finished = self.cache_hit = True
+        self.status, self.stage = 'completed', '已完成'
+        self.ended = time.monotonic()
+
+    def cancel(self):
+        self.cancelled.set()
+        if self.search:
+            self.search.cancel()
+
+
+class LocalJob:
+    def __init__(self, job_id, task, selected):
+        self.id, self.task, self.selected = job_id, task, selected
+        self.cancelled = threading.Event()
+
+    def __getattr__(self, name):
+        return getattr(self.task, name)
+
+    def cancel(self):
+        with LOCK:
+            self.cancelled.set()
+            if not any(job.task is self.task and not job.cancelled.is_set() for job in JOBS.values()):
+                self.task.cancel()
+
+    def snapshot(self):
+        task = self.task
+        source = task.search.snapshot() if task.search and not task.finished else dict(
+            stage=task.stage, solutions=task.solutions, computedObjectives=task.computed_objectives,
+            complete=task.complete, finished=task.finished, error=task.error, message=task.message)
+        result = deepcopy(source)
+        for route in result['solutions'].values():
+            route['skills'] = self.selected.copy()
+        cancelled = self.cancelled.is_set()
+        result.update(jobId=self.id, target=self.target, priceMode=self.price_mode,
+                      objective=self.objective, status='cancelled' if cancelled else task.status,
+                      seconds=round((task.ended or time.monotonic()) - task.started, 2),
+                      resultId=self.key if task.complete else None)
+        if cancelled:
+            result.update(finished=True, complete=False, message='已取消', error='', solutions={}, computedObjectives=[])
+        return result
+
+
+def _run_task(task):
+    acquired = False
+    timer = None
+    key = task.key
+    try:
+        while not task.cancelled.is_set():
+            if not COMPUTE_LOCK.acquire(timeout=.1):
+                continue
+            acquired = True
+            key = configuration_key(task.request, ROOT, VERSION)
+            saved = RESULTS.get(key)
+            if saved is not None and not task.cancelled.is_set():
+                task.restore(saved)
+                return
+            if task.cancelled.is_set():
+                break
+            task.status, task.stage = 'running', '准备数据'
+            task.started = time.monotonic()
+            search = task.search = OptimalSearch(task.request)
+            search.cancelled = task.cancelled
+            timer = threading.Timer(180, task.cancel)
+            timer.daemon = True
+            timer.start()
+            search.run()
+            task.solutions, task.computed_objectives = search.solutions, search.computed_objectives
+            task.error, task.message, task.complete = search.error, search.message, search.complete
+            if task.complete and not task.error and not task.cancelled.is_set() and configuration_key(task.request, ROOT, VERSION) == key:
+                saved = dict(solutions=task.solutions, message=task.message, computedObjectives=task.computed_objectives)
+                RESULTS.put(key, saved)
+                for selected in task.computed_objectives:
+                    if set(computed_objectives(selected)) <= set(task.computed_objectives):
+                        RESULTS.put(configuration_key({**task.request, 'objective': selected}, ROOT, VERSION), objective_result(saved, selected))
+            break
     except Exception:
-        with LOCK:JOBS.pop(job.id,None)
-        raise
-    return {'jobId':job.id}
+        import logging
+        logging.exception('Local calculation failed')
+        task.error = '生成失败，请重新尝试。'
+    finally:
+        if timer:
+            timer.cancel()
+        if acquired:
+            COMPUTE_LOCK.release()
+        if not task.cache_hit:
+            if task.cancelled.is_set():
+                task.message = '已取消或达到计算时间上限，请重新生成。'
+                task.complete = False
+            task.status = 'cancelled' if task.cancelled.is_set() else 'completed' if task.complete else 'failed'
+            task.stage = '已完成' if task.complete else task.message or '计算失败'
+            task.ended, task.finished = time.monotonic(), True
+        # Completed tasks retain only the response, never the search graph.
+        task.search = None
+
+
+def start_optimal(request):
+    config = normalize(request)
+    job_id = request.get('requestId')
+    previous = request.get('previousJob')
+    if job_id is not None:
+        identifier(job_id)
+    if previous is not None:
+        identifier(previous, '上次任务编号')
+    key = configuration_key(config, ROOT, VERSION)
+    saved = RESULTS.get(key)
+    selected = list(dict.fromkeys(request.get('skills', [])))
+    with LOCK:
+        existing = JOBS.get(job_id)
+        if existing:
+            if existing.request != config:
+                raise ValueError('同一计算请求不能使用不同配置，请重新生成。')
+            return {'jobId': existing.id}
+        tasks = {id(job.task): job.task for job in JOBS.values()}
+        task = next((t for t in tasks.values() if key is not None and t.key == key and not t.finished and not t.cancelled.is_set()), None)
+        new_execution = task is None and saved is None
+        if new_execution and sum(not t.finished for t in tasks.values()) >= MAX_ACTIVE_JOBS:
+            raise SearchBusy('计算队列已满，请稍后重试。')
+        now = time.monotonic()
+        for name, old in list(JOBS.items()):
+            if old.finished and now - old.started > JOB_RETENTION_SECONDS:
+                del JOBS[name]
+        while len(JOBS) >= MAX_RETAINED_JOBS:
+            name = next((name for name, old in JOBS.items() if old.finished), None)
+            if name is None:
+                raise SearchBusy('任务记录暂满，请稍后重试。')
+            del JOBS[name]
+        if saved is not None:
+            task = LocalTask(config, key)
+            task.restore(saved)
+        elif task is None:
+            task = LocalTask(config, key)
+        job_id = job_id or uuid.uuid4().hex
+        job = JOBS[job_id] = LocalJob(job_id, task, selected)
+        if new_execution:
+            try:
+                WorkerThread(target=_run_task, args=(task,), daemon=True, name='smtvv-optimal-worker').start()
+            except Exception:
+                JOBS.pop(job_id, None)
+                raise
+        old = JOBS.get(previous)
+        if old and old is not job:
+            old.cancel()
+        return {'jobId': job.id}
+
 
 def get_optimal(request):
-    with LOCK:job=JOBS.get(request.get('jobId'))
-    if not job:raise ValueError('生成任务已过期，请重新生成。')
+    with LOCK:
+        job = JOBS.get(request.get('jobId'))
+    if not job:
+        raise ValueError('生成任务已过期，请重新生成。')
     return job.snapshot()
 
+
 def cancel_optimal(request):
-    with LOCK:job=JOBS.get(request.get('jobId'))
-    if job:job.cancel()
-    return {'cancelled':True}
+    with LOCK:
+        job = JOBS.get(request.get('jobId'))
+        if job:
+            job.cancel()
+    return {'cancelled': True}
+
+
+def jobs_overview():
+    from game_data import label
+    with LOCK:
+        jobs = list(JOBS.items())
+    items = []
+    counts = {name: 0 for name in ('running', 'queued', 'completed', 'cancelled', 'failed')}
+    for job_id, job in reversed(jobs):
+        snapshot = job.snapshot()
+        status = snapshot['status']
+        counts[status] += 1
+        items.append(dict(id=job_id, target=job.target, label=label(job.target), status=status,
+                          stage=snapshot['stage'], seconds=snapshot['seconds'],
+                          solutions=len(snapshot['solutions']), canCancel=status in ('running', 'queued')))
+    return dict(items=items, counts=counts, capacity=MAX_ACTIVE_JOBS)
+
+
+def job_exists(job_id):
+    with LOCK:
+        return isinstance(job_id, str) and job_id in JOBS

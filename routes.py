@@ -15,13 +15,12 @@ from search_graph import filtered_recipes
 from planner import (PLAYABLE, SKILLS, SPECIAL, UNLOCKS, PREREQS, VERSION,
                      read, settings, string_list, transferable, label, validate_route, annotate_skill_sources)
 
-_COSTS=read('comp-costs')
-BASE_PRICES={n:2*_COSTS[n] for n in PLAYABLE}
+from search_context import SearchContext, BASE_PRICES
 
 class SearchStopped(Exception):pass
-class SearchBusy(Exception):pass
+from compute_errors import SearchBusy
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class Tree:
     name:str
     children:tuple
@@ -76,40 +75,15 @@ def budgets(total,parts):
 
 class RouteSearch:
     def __init__(self,request):
-        self.request=request.copy();self.target=request.get('target')
-        if self.target not in PLAYABLE:raise ValueError('请选择目标仲魔。')
-        self.graph,self.level,self.slots,self.excluded,self.uncertain=settings(request)
-        self.selected=string_list(request.get('skills',[]),'技能',SKILLS)
-        if len(self.selected)>self.slots:raise ValueError('所选技能超过可用栏位。')
-        self.allowed={n for n,d in self.graph.demons.items() if n not in self.excluded and d['lvl']<=self.level}
-        if self.target not in self.allowed:raise ValueError('目标受到等级、DLC、未解锁或排除设置限制。')
-        self.skills=[s for s in self.selected if transferable(s)]
-        self.unique=[s for s in self.selected if not transferable(s)]
-        for s in self.unique:
-            if s not in PLAYABLE[self.target]['skills'] or PLAYABLE[self.target]['skills'][s]>self.level:raise ValueError(label(s,'skill')+' 无法由目标自身习得。')
-        self.sources=request.get('sources',{})
-        if not isinstance(self.sources,dict):raise ValueError('技能来源格式不正确。')
-        for s,n in self.sources.items():
-            if s not in self.selected or n not in self.allowed or s not in PLAYABLE[n]['skills'] or PLAYABLE[n]['skills'][s]>self.level:raise ValueError('指定技能来源不可用。')
-            if not transferable(s) and n!=self.target:raise ValueError('专属技能不可继承。')
-        self.full=(1<<len(self.skills))-1
-        self.native={n:sum(1<<i for i,s in enumerate(self.skills) if s in PLAYABLE[n]['skills'] and PLAYABLE[n]['skills'][s]<=self.level and (s not in self.sources or self.sources[s]==n)) for n in self.allowed}
-        self.prices=BASE_PRICES.copy()
-        overrides=request.get('prices',{})
-        if not isinstance(overrides,dict):raise ValueError('价格应为仲魔与魔货的对应表。')
-        for n,p in overrides.items():
-            if n not in PLAYABLE or isinstance(p,bool) or not isinstance(p,int) or not 0<=p<=100000000:raise ValueError('请填写有效的仲魔召唤价格（非负整数）。')
-            self.prices[n]=p
-        self.price_mode='custom' if overrides else 'baseline'
-        self.starting=None
-        if request.get('starting') is not None:self.starting=set(string_list(request['starting'],'可用起始材料',PLAYABLE))
-        try:self.max_steps=int(request.get('maxSteps',3))
-        except (ValueError,TypeError):raise ValueError('最大合体次数须为整数。')
-        if not 1<=self.max_steps<=6:raise ValueError('最大合体次数可设置为 1–6 次。')
-        self.reverse=defaultdict(list,{name:list(recipes) for name,recipes in filtered_recipes(self.graph,tuple(sorted(self.allowed)),self.uncertain)})
+        self.context = SearchContext(request, 'routes')
+        self.max_steps = self.context.request['maxSteps']
         self.memo={};self.leaves={};self.roots={};self.done_steps=0;self.complete=False;self.finished=False;self.message='';self.error=''
         self.cancelled=threading.Event();self.started=time.monotonic();self.deadline=self.started+60
         self.work=0;self.alternatives=0;self.rank_cache={}
+
+    def __getattr__(self, name):
+        # Read shared inputs through composition; enumeration owns its own state.
+        return getattr(self.context, name)
 
     def tick(self):
         self.work+=1
@@ -176,27 +150,6 @@ class RouteSearch:
         except SearchStopped as e:self.message=str(e)
         except Exception as e:self.error=f'搜索失败：{type(e).__name__}: {e}'
         finally:self.finished=True
-
-    def names(self,mask):return [s for i,s in enumerate(self.skills) if mask&(1<<i)]
-    def materialize(self,tree):
-        materials=[];steps=[]
-        def visit(t,root=False):
-            if not t.children:
-                mid='m'+str(len(materials)+1);learn=self.names(t.mask)
-                materials.append(dict(id=mid,name=t.name,learn=learn,level=max([PLAYABLE[t.name]['lvl']]+[int(PLAYABLE[t.name]['skills'][s]) for s in learn]),price=self.prices[t.name],unlock=UNLOCKS.get(t.name,PREREQS.get(t.name,''))))
-                return mid
-            ids=[visit(c) for c in t.children];inherited=0
-            for c in t.children:inherited|=c.mask
-            learn=self.names(t.mask&~inherited)+(self.unique if root else [])
-            sid='s'+str(len(steps)+1);ins=[c.name for c in t.children]
-            steps.append(dict(id=sid,number=len(steps)+1,result=t.name,ingredients=ins,materialIds=ids,inherit=self.names(inherited),learn=learn,keep=self.names(t.mask)+(self.unique if root else []),level=max([PLAYABLE[t.name]['lvl']]+[int(PLAYABLE[t.name]['skills'][s]) for s in learn]),special=t.name in SPECIAL,unlock=UNLOCKS.get(t.name,''),reason=self.graph.reason(t.name,ins)))
-            return sid
-        final=visit(tree,True)
-        names={m['name'] for m in materials}|{s['result'] for s in steps}
-        route=dict(found=True,target=self.target,skills=self.selected,materials=materials,steps=steps,finalId=final,conditions={n:UNLOCKS.get(n,PREREQS.get(n,'')) for n in names if UNLOCKS.get(n,PREREQS.get(n,''))},totalCost=tree.cost,stepCount=tree.steps,version=VERSION,priceMode=self.price_mode)
-        validate_route(route,self.graph,self.selected,self.sources,self.level,self.slots,self.excluded,self.uncertain)
-        if len(steps)!=tree.steps or sum(m['price'] for m in materials)!=tree.cost:raise ValueError('路线计数或费用校验失败。')
-        route['validated']=True;return annotate_skill_sources(route)
 
     def ranked(self,order,index):
         # New completed bounds invalidate the root merge, not node k-best caches.

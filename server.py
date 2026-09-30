@@ -16,59 +16,49 @@ from management import Access, Authelia, SiteStore, ManagementError, admin_path,
 from planner import catalog, plan, inspect_fusion, reverse_recipes, skill_detail
 from routes import start_routes, get_routes, cancel_routes
 from optimal import start_optimal, get_optimal, cancel_optimal, SearchBusy
-from compute_queue import COORDINATOR, ComputeError
+from compute_queue import ComputeError
 
-WEB=Path(__file__).parent/'web'
-LOCK=threading.Semaphore(1)
-REMOTE_SYNC=threading.BoundedSemaphore(8)
-STATIC_LOCK=threading.Lock()
-STATIC_ASSETS=StaticAssets()
-CATALOG=catalog()
-CATALOG['authPortal']='/auth/' if os.environ.get('SMTVV_AUTH_PORTAL')=='/auth/' else ''
-PUBLIC_ORIGIN=os.environ.get('SMTVV_PUBLIC_URL','').rstrip('/')
-if CATALOG['authPortal'] and not PUBLIC_ORIGIN.startswith('https://'):
-    raise RuntimeError('SMTVV_PUBLIC_URL must be an HTTPS origin when authentication is enabled')
-AUTH_ENABLED=bool(CATALOG['authPortal'])
-AUTH=Authelia(PUBLIC_ORIGIN,os.environ.get('SMTVV_AUTH_VERIFY_URL','http://127.0.0.1:9091/auth/api/authz/auth-request'),os.environ.get('SMTVV_ADMIN_GROUP','admins')) if AUTH_ENABLED else None
-STATE_DIR=Path(os.environ.get('SMTVV_STATE_DIR') or os.environ.get('STATE_DIRECTORY') or str(Path(__file__).parent/'runtime/site'))
-SITE=SiteStore(STATE_DIR/'settings.json')
-STARTED=time.monotonic()
-ACCOUNTS=None
-LOGIN_POLICY=None
-TURNSTILE=None
-if AUTH_ENABLED and os.environ.get('SMTVV_USERS_FILE'):
-    from accounts import Accounts
-    if os.environ.get('SMTVV_AUTH_STATE_SHARED')=='1':
-        STATE_DIR.mkdir(parents=True,exist_ok=True,mode=0o750)
-        os.chmod(STATE_DIR,0o750)
-    ACCOUNTS=Accounts(os.environ['SMTVV_USERS_FILE'],os.environ.get('SMTVV_USERS_BOOTSTRAP'))
-    if os.environ.get('SMTVV_LOGIN_BOOTSTRAP'):
-        from login_policy import LoginPolicy
-        from turnstile import TurnstileConfig
-        LOGIN_POLICY=LoginPolicy(STATE_DIR/'login-policy',PUBLIC_ORIGIN,os.environ['SMTVV_LOGIN_BOOTSTRAP'])
-        LOGIN_POLICY.initialize()
-        TURNSTILE=TurnstileConfig(STATE_DIR/'turnstile',PUBLIC_ORIGIN,
-                                  testing=os.environ.get('SMTVV_TURNSTILE_TESTING')=='1')
-        TURNSTILE.initialize()
-CATALOG['assets']={
-    'officialLogo': (WEB/'assets/logo.png').is_file(),
-    'elementIcons': (WEB/'assets/elements/phy.png').is_file(),
-    'ailmentIcons': (WEB/'assets/ailments/cha.png').is_file(),
-}
-if (WEB/'assets/optimized/story-art.webp').is_file():
-    CATALOG['assets']['storyArt']='/assets/optimized/story-art.webp'
-# Catalog data is immutable for the lifetime of this process. Encode/compress it
-# once; every delivery still passes through authorize() and remains no-store.
-CATALOG_JSON=json.dumps(CATALOG,ensure_ascii=False,separators=(',',':')).encode()
-CATALOG_GZIP=gzip.compress(CATALOG_JSON,compresslevel=6,mtime=0)
+from services import create_services, SERVICE_FIELDS
 
-def check_access(cookie,uri,method='GET',administrator=False):
+_DEFAULT_SERVICES = None
+_DEFAULT_LOCK = threading.Lock()
+
+
+def default_services():
+    global _DEFAULT_SERVICES
+    if _DEFAULT_SERVICES is None:
+        with _DEFAULT_LOCK:
+            if _DEFAULT_SERVICES is None:
+                _DEFAULT_SERVICES = create_services()
+    return _DEFAULT_SERVICES
+
+
+def __getattr__(name):
+    # Backward-compatible imports for local launchers; construction is lazy.
+    if name in SERVICE_FIELDS:
+        return getattr(default_services(), name)
+    raise AttributeError(name)
+
+
+class DefaultServicesView:
+    def __getattr__(self, name):
+        # Legacy embedding/tests may override a default; injected services never
+        # consult module globals and are independent of one another.
+        if name in globals():
+            return globals()[name]
+        return __getattr__(name)
+
+
+DEFAULT_SERVICES = DefaultServicesView()
+
+def check_access(cookie,uri,method='GET',administrator=False, services=None):
+    services = services or DEFAULT_SERVICES
     administrator=administrator or admin_path(uri)
     if administrator:
-        if not AUTH_ENABLED:return Access(403)
-        return AUTH.verify(cookie,uri,method,require_admin=True)
-    if not AUTH_ENABLED or not SITE.requires_login():return Access(204)
-    return AUTH.verify(cookie,uri,method)
+        if not services.AUTH_ENABLED:return Access(403)
+        return services.AUTH.verify(cookie,uri,method,require_admin=True)
+    if not services.AUTH_ENABLED or not services.SITE.requires_login():return Access(204)
+    return services.AUTH.verify(cookie,uri,method)
 
 class PlannerHTTPServer(ThreadingHTTPServer):
     # Static portraits can arrive in bursts; keep the accept queue ahead of the proxy.
@@ -76,7 +66,8 @@ class PlannerHTTPServer(ThreadingHTTPServer):
     daemon_threads=True
     max_request_threads=48
 
-    def __init__(self,*args,**kwargs):
+    def __init__(self,*args,services=None,**kwargs):
+        self.services = services if services is not None else DEFAULT_SERVICES
         self._request_slots=threading.BoundedSemaphore(self.max_request_threads)
         super().__init__(*args,**kwargs)
 
@@ -103,7 +94,13 @@ class Handler(SimpleHTTPRequestHandler):
     # connections to be reused without reconnecting for every small asset.
     protocol_version='HTTP/1.1'
     timeout=15
-    def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(WEB),**kwargs)
+    @property
+    def services(self):
+        return getattr(self.server, 'services', DEFAULT_SERVICES)
+
+    def __init__(self,*args,**kwargs):
+        self.server = args[2] if len(args) > 2 else kwargs['server']
+        super().__init__(*args,directory=str(self.services.WEB),**kwargs)
     def setup(self):
         super().setup()
         # Headers and small JSON bodies are separate writes. Persistent TCP
@@ -118,7 +115,7 @@ class Handler(SimpleHTTPRequestHandler):
             super().log_message(format, *args)
     def end_headers(self):
         if getattr(self,'_streaming_static',False):
-            self.send_header('Cache-Control','no-store' if AUTH_ENABLED else 'no-cache')
+            self.send_header('Cache-Control','no-store' if self.services.AUTH_ENABLED else 'no-cache')
         super().end_headers()
     def send_json(self,content,status=200,headers=None):
         data=json.dumps(content,ensure_ascii=False).encode()
@@ -132,7 +129,7 @@ class Handler(SimpleHTTPRequestHandler):
         except (BrokenPipeError,ConnectionResetError):pass
     def send_catalog(self):
         compressed=accepts_gzip(self.headers.get('Accept-Encoding',''))
-        data=CATALOG_GZIP if compressed else CATALOG_JSON
+        data=self.services.CATALOG_GZIP if compressed else self.services.CATALOG_JSON
         self.send_response(200)
         self.send_header('Content-Type','application/json; charset=utf-8')
         self.send_header('Content-Length',str(len(data)))
@@ -153,7 +150,7 @@ class Handler(SimpleHTTPRequestHandler):
                     path=index
                     break
         runtime_portraits=parsed.path=='/assets/demons/manifest.json' and parse_qs(parsed.query).get('view')==['runtime']
-        try:asset=STATIC_ASSETS.get(path,runtime_portraits)
+        try:asset=self.services.STATIC_ASSETS.get(path,runtime_portraits)
         except (OSError,ValueError):asset=None
         if asset is not None:
             compressed=bool(asset.compressed) and accepts_gzip(self.headers.get('Accept-Encoding',''))
@@ -162,9 +159,9 @@ class Handler(SimpleHTTPRequestHandler):
             # The authenticated deployment keeps its no-store policy. A local
             # unauthenticated preview can revalidate files or reuse hashed copies.
             immutable=bool(re.search(r'-[a-f0-9]{12}-\d+\.(webp|woff2)$',path.name))
-            policy='no-store' if AUTH_ENABLED else 'public, max-age=31536000, immutable' if immutable else 'no-cache'
+            policy='no-store' if self.services.AUTH_ENABLED else 'public, max-age=31536000, immutable' if immutable else 'no-cache'
             fresh=False
-            if not AUTH_ENABLED:
+            if not self.services.AUTH_ENABLED:
                 tags=self.headers.get('If-None-Match')
                 if tags:fresh=any(tag.strip().removeprefix('W/') in ('*',etag) for tag in tags.split(','))
                 elif self.headers.get('If-Modified-Since'):
@@ -184,20 +181,20 @@ class Handler(SimpleHTTPRequestHandler):
                 except (BrokenPipeError,ConnectionResetError):pass
             return
         # Large files and directory handling retain the standard streaming path.
-        if AUTH_ENABLED:
+        if self.services.AUTH_ENABLED:
             # SimpleHTTPRequestHandler implements its own date conditional.
             # Authenticated responses must remain no-store, including large files.
             for header in ('If-Modified-Since','If-None-Match'):
                 if header in self.headers:del self.headers[header]
         self._streaming_static=True
         try:
-            with STATIC_LOCK:stream=super().send_head()
+            with self.services.STATIC_LOCK:stream=super().send_head()
         finally:self._streaming_static=False
         if stream is None:return
         try:
             if self.command=='HEAD':return
             while True:
-                with STATIC_LOCK:data=stream.read(64*1024)
+                with self.services.STATIC_LOCK:data=stream.read(64*1024)
                 if not data:break
                 self.wfile.write(data)
         except (BrokenPipeError,ConnectionResetError):pass
@@ -215,7 +212,7 @@ class Handler(SimpleHTTPRequestHandler):
     def remote_ip(self):
         return self.headers.get('X-Real-IP') or self.client_address[0]
     def authorize(self):
-        decision=check_access(self.headers.get('Cookie',''),self.path,self.command)
+        decision=check_access(self.headers.get('Cookie',''),self.path,self.command,services=self.services)
         if decision.status==204:return decision
         self.close_connection=True
         message={401:'请先登录。',403:'需要管理员权限。',503:'认证服务暂时不可用，请稍后重试。'}.get(decision.status,'访问被拒绝。')
@@ -232,17 +229,17 @@ class Handler(SimpleHTTPRequestHandler):
         path=normalized_path(self.path)
         if path=='/healthz':self.send_json({'status':'ok'});return
         if path=='/api/login/options':
-            if LOGIN_POLICY is None:raise ManagementError('登录设置暂时不可用，请稍后重试。',503)
-            options=LOGIN_POLICY.snapshot()
-            options['turnstile']=TURNSTILE.public_snapshot() if TURNSTILE else {'enabled':False}
+            if self.services.LOGIN_POLICY is None:raise ManagementError('登录设置暂时不可用，请稍后重试。',503)
+            options=self.services.LOGIN_POLICY.snapshot()
+            options['turnstile']=self.services.TURNSTILE.public_snapshot() if self.services.TURNSTILE else {'enabled':False}
             self.send_json(options);return
         if path=='/_internal/login-gate':
-            allowed=TURNSTILE is None or TURNSTILE.consume(self.headers.get('Cookie',''),self.remote_ip())
+            allowed=self.services.TURNSTILE is None or self.services.TURNSTILE.consume(self.headers.get('Cookie',''),self.remote_ip())
             self.send_response(204 if allowed else 403)
             self.send_header('Cache-Control','no-store');self.send_header('Content-Length','0')
             self.end_headers();return
         if path in ('/_internal/access','/_internal/admin-access'):
-            decision=check_access(self.headers.get('Cookie',''),self.headers.get('X-Original-URI','/'),self.headers.get('X-Original-Method','GET'),path.endswith('/admin-access'))
+            decision=check_access(self.headers.get('Cookie',''),self.headers.get('X-Original-URI','/'),self.headers.get('X-Original-Method','GET'),path.endswith('/admin-access'),services=self.services)
             self.send_response(decision.status)
             self.send_header('Cache-Control','no-store');self.send_header('Content-Length','0')
             if decision.location:self.send_header('Location',decision.location)
@@ -252,11 +249,11 @@ class Handler(SimpleHTTPRequestHandler):
         if path.startswith('/api/admin'):
             self.admin_get(path,identity);return
         if path=='/api/site':
-            state=SITE.snapshot()
-            if not AUTH_ENABLED:state['settings']['requireLogin']=False
-            state['administrator']=bool(AUTH and AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True).status==204)
+            state=self.services.SITE.snapshot()
+            if not self.services.AUTH_ENABLED:state['settings']['requireLogin']=False
+            state['administrator']=bool(self.services.AUTH and self.services.AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True).status==204)
             self.send_json(state);return
-        if path=='/assets/demons/manifest.json' and not (WEB/'assets/demons/manifest.json').is_file():
+        if path=='/assets/demons/manifest.json' and not (self.services.WEB/'assets/demons/manifest.json').is_file():
             self.send_json({'demons':{},'essences':{}})
         elif path=='/api/catalog':self.send_catalog()
         elif path=='/api/skill':
@@ -269,30 +266,30 @@ class Handler(SimpleHTTPRequestHandler):
 
     def admin_get(self,path,identity):
         if path=='/api/admin/overview':
-            state=SITE.snapshot(history=True)
-            login_policy=LOGIN_POLICY.snapshot(history=True) if LOGIN_POLICY else None
-            turnstile=TURNSTILE.snapshot(history=True) if TURNSTILE else None
+            state=self.services.SITE.snapshot(history=True)
+            login_policy=self.services.LOGIN_POLICY.snapshot(history=True) if self.services.LOGIN_POLICY else None
+            turnstile=self.services.TURNSTILE.snapshot(history=True) if self.services.TURNSTILE else None
             if login_policy:
                 state['history']=sorted(state['history']+login_policy['history'],key=lambda event:event['at'],reverse=True)[:100]
             if turnstile:
                 state['history']=sorted(state['history']+turnstile['history'],key=lambda event:event['at'],reverse=True)[:100]
-            self.send_json({**state,'account':{'username':identity.username,'group':AUTH.admin_group,'canChangePassword':ACCOUNTS is not None},
+            self.send_json({**state,'account':{'username':identity.username,'group':self.services.AUTH.admin_group,'canChangePassword':self.services.ACCOUNTS is not None},
                             'loginPolicy':login_policy,
                             'turnstile':turnstile,
-                            'version':CATALOG['version'],'uptime':round(time.monotonic()-STARTED),
-                            'catalog':{'demons':len(CATALOG['demons']),'skills':len(CATALOG['skills'])},
-                            'jobs':jobs_snapshot()})
-        elif path=='/api/admin/settings':self.send_json(SITE.snapshot())
+                            'version':self.services.CATALOG['version'],'uptime':round(time.monotonic()-self.services.STARTED),
+                            'catalog':{'demons':len(self.services.CATALOG['demons']),'skills':len(self.services.CATALOG['skills'])},
+                            'jobs':jobs_snapshot(self.services.COORDINATOR)})
+        elif path=='/api/admin/settings':self.send_json(self.services.SITE.snapshot())
         elif path=='/api/admin/login-policy':
-            if LOGIN_POLICY is None:raise ManagementError('此部署尚未启用登录设置。',503)
-            self.send_json(LOGIN_POLICY.snapshot(history=True))
+            if self.services.LOGIN_POLICY is None:raise ManagementError('此部署尚未启用登录设置。',503)
+            self.send_json(self.services.LOGIN_POLICY.snapshot(history=True))
         elif path=='/api/admin/turnstile':
-            if TURNSTILE is None:raise ManagementError('此部署尚未启用 Turnstile 设置。',503)
-            self.send_json(TURNSTILE.snapshot(history=True))
-        elif path=='/api/admin/jobs':self.send_json(jobs_snapshot())
-        elif path=='/api/admin/audit':self.send_json({'items':SITE.snapshot(history=True)['history']})
+            if self.services.TURNSTILE is None:raise ManagementError('此部署尚未启用 Turnstile 设置。',503)
+            self.send_json(self.services.TURNSTILE.snapshot(history=True))
+        elif path=='/api/admin/jobs':self.send_json(jobs_snapshot(self.services.COORDINATOR))
+        elif path=='/api/admin/audit':self.send_json({'items':self.services.SITE.snapshot(history=True)['history']})
         elif path=='/api/admin/export':
-            self.send_json({'schema':1,'settings':SITE.snapshot()['settings']},headers={'Content-Disposition':'attachment; filename="site-settings.json"'})
+            self.send_json({'schema':1,'settings':self.services.SITE.snapshot()['settings']},headers={'Content-Disposition':'attachment; filename="site-settings.json"'})
         else:self.send_json({'error':'管理接口不存在。'},404)
     def do_HEAD(self):
         self.do_GET()
@@ -303,12 +300,12 @@ class Handler(SimpleHTTPRequestHandler):
             self.worker_post();return
         if path=='/api/login/turnstile':
             try:
-                if not CATALOG['authPortal'] or self.headers.get('Origin')!=PUBLIC_ORIGIN:
+                if not self.services.CATALOG['authPortal'] or self.headers.get('Origin')!=self.services.PUBLIC_ORIGIN:
                     raise ManagementError('请求来源无效，请从本站登录页重新操作。',403)
-                if TURNSTILE is None:raise ManagementError('人机验证暂时不可用，请稍后重试。',503)
+                if self.services.TURNSTILE is None:raise ManagementError('人机验证暂时不可用，请稍后重试。',503)
                 body=self.read_json()
                 if set(body)!={'token'}:raise ManagementError('人机验证请求格式不合法。')
-                result,cookie=TURNSTILE.challenge(body['token'],self.remote_ip())
+                result,cookie=self.services.TURNSTILE.challenge(body['token'],self.remote_ip())
                 self.send_json(result,headers={'Set-Cookie':cookie} if cookie else None)
             except ManagementError as error:
                 self.close_connection=True;self.send_json({'error':str(error)},error.status)
@@ -322,37 +319,37 @@ class Handler(SimpleHTTPRequestHandler):
         except ManagementError as error:self.close_connection=True;self.send_json({'error':str(error)},error.status);return
         # The gateway authenticates first. Requiring the configured Origin on
         # every mutation also blocks same-site sibling-domain CSRF requests.
-        if CATALOG['authPortal'] and self.headers.get('Origin')!=PUBLIC_ORIGIN:
+        if self.services.CATALOG['authPortal'] and self.headers.get('Origin')!=self.services.PUBLIC_ORIGIN:
             self.close_connection=True
             self.send_json({'error':'请求来源无效，请从本站页面重新操作。'},403)
             return
         if path.startswith('/api/admin'):
             self.admin_post(path,identity);return
         operation={'/api/plan':plan,'/api/fuse':inspect_fusion,'/api/recipes':reverse_recipes,'/api/routes/start':start_routes,'/api/routes/status':get_routes,'/api/routes/cancel':cancel_routes,'/api/optimal/start':start_optimal,'/api/optimal/status':get_optimal,'/api/optimal/cancel':cancel_optimal}.get(path)
-        if COORDINATOR:
+        if self.services.COORDINATOR:
             operation={
-                '/api/optimal/start':COORDINATOR.submit,'/api/optimal/status':COORDINATOR.snapshot,
-                '/api/optimal/cancel':COORDINATOR.cancel,'/api/routes/start':lambda r:COORDINATOR.submit(r,'routes'),
-                '/api/routes/status':COORDINATOR.routes_snapshot,'/api/routes/cancel':COORDINATOR.cancel,
-                **{'/api/'+kind:(lambda r,k=kind:COORDINATOR.synchronous(r,k)) for kind in ('plan','fuse','recipes')}
+                '/api/optimal/start':self.services.COORDINATOR.submit,'/api/optimal/status':self.services.COORDINATOR.snapshot,
+                '/api/optimal/cancel':self.services.COORDINATOR.cancel,'/api/routes/start':lambda r:self.services.COORDINATOR.submit(r,'routes'),
+                '/api/routes/status':self.services.COORDINATOR.routes_snapshot,'/api/routes/cancel':self.services.COORDINATOR.cancel,
+                **{'/api/'+kind:(lambda r,k=kind:self.services.COORDINATOR.synchronous(r,k)) for kind in ('plan','fuse','recipes')}
             }.get(path)
         if not operation:self.close_connection=True;self.send_json({'error':'接口不存在'},404);return
         acquired=False;status=200
-        gate=REMOTE_SYNC if COORDINATOR else LOCK
+        gate=self.services.REMOTE_SYNC if self.services.COORDINATOR else self.services.LOCK
         try:
             request=self.read_json()
-            if path in ('/api/plan','/api/fuse','/api/recipes','/api/routes/start','/api/optimal/start') and SITE.paused():
+            if path in ('/api/plan','/api/fuse','/api/recipes','/api/routes/start','/api/optimal/start') and self.services.SITE.paused():
                 import optimal
                 request_id=request.get('requestId')
-                existing=path=='/api/optimal/start' and isinstance(request_id,str) and (COORDINATOR.exists(request_id) if COORDINATOR else request_id in optimal.JOBS)
+                existing=path=='/api/optimal/start' and isinstance(request_id,str) and (self.services.COORDINATOR.exists(request_id) if self.services.COORDINATOR else optimal.job_exists(request_id))
                 if not existing:
                     self.send_json({'error':'站点维护中，暂时停止创建新的计算。已有任务可以继续查看。','maintenance':True},503);return
-            if path in ('/api/optimal/status','/api/optimal/cancel','/api/routes/cancel') or COORDINATOR and path in ('/api/optimal/start','/api/routes/start'):
+            if path in ('/api/optimal/status','/api/optimal/cancel','/api/routes/cancel') or self.services.COORDINATOR and path in ('/api/optimal/start','/api/routes/start'):
                 # These operations only snapshot state or signal cancellation;
                 # they must remain available while a new graph is being built.
                 content=operation(request)
             else:
-                acquired=gate.acquire(blocking=False) if COORDINATOR else gate.acquire(timeout=20)
+                acquired=gate.acquire(blocking=False) if self.services.COORDINATOR else gate.acquire(timeout=20)
                 if not acquired:content={'error':'计算繁忙，请稍后重试。'};status=503
                 else:content=operation(request)
         except SearchBusy as e:
@@ -373,17 +370,17 @@ class Handler(SimpleHTTPRequestHandler):
         except (BrokenPipeError,ConnectionResetError):pass
 
     def worker_post(self):
-        if COORDINATOR is None:
+        if self.services.COORDINATOR is None:
             self.close_connection=True;self.send_json({'error':'接口不存在'},404);return
         try:
             # Authenticate before accepting a potentially large result body.
             import hashlib,hmac
             authorization=self.headers.get('Authorization','')
             digest=hashlib.sha256(authorization.removeprefix('Bearer ').encode()).hexdigest()
-            if not authorization.startswith('Bearer ') or not any(hmac.compare_digest(digest,v['tokenSha256']) for v in COORDINATOR.workers.values()):
+            if not authorization.startswith('Bearer ') or not any(hmac.compare_digest(digest,v['tokenSha256']) for v in self.services.COORDINATOR.workers.values()):
                 raise ComputeError('工作节点认证失败。',401)
             body=self.read_json(9*1024*1024)
-            self.send_json(COORDINATOR.worker_call(authorization,body))
+            self.send_json(self.services.COORDINATOR.worker_call(authorization,body))
         except (ComputeError,ManagementError) as error:
             self.close_connection=True;self.send_json({'error':str(error)},error.status)
         except (ValueError,TypeError,KeyError):
@@ -397,49 +394,49 @@ class Handler(SimpleHTTPRequestHandler):
             body=self.read_json()
             if path=='/api/admin/settings':
                 if set(body)!={'revision','patch'}:raise ManagementError('设置请求字段不合法。')
-                self.send_json(SITE.update(body['patch'],body['revision'],identity.username))
+                self.send_json(self.services.SITE.update(body['patch'],body['revision'],identity.username))
             elif path=='/api/admin/login-policy':
-                if LOGIN_POLICY is None:raise ManagementError('此部署尚未启用登录设置。',503)
+                if self.services.LOGIN_POLICY is None:raise ManagementError('此部署尚未启用登录设置。',503)
                 if set(body)!={'revision','patch'}:raise ManagementError('登录设置请求字段不合法。')
-                result=LOGIN_POLICY.update(body['patch'],body['revision'],identity.username)
+                result=self.services.LOGIN_POLICY.update(body['patch'],body['revision'],identity.username)
                 if result['sessionChanged']:
                     result['sessionsRevoked']=False
                     deadline=time.monotonic()+12
                     while time.monotonic()<deadline:
-                        if AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True,timeout=1).status==401:
+                        if self.services.AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True,timeout=1).status==401:
                             result['sessionsRevoked']=True;break
                         time.sleep(0.25)
                 self.send_json(result)
             elif path=='/api/admin/turnstile':
-                if TURNSTILE is None:raise ManagementError('此部署尚未启用 Turnstile 设置。',503)
+                if self.services.TURNSTILE is None:raise ManagementError('此部署尚未启用 Turnstile 设置。',503)
                 if 'revision' not in body or 'patch' not in body or set(body)-{'revision','patch','secretKey','clearSecret','verificationToken'}:
                     raise ManagementError('Turnstile 设置请求字段不合法。')
-                self.send_json(TURNSTILE.update(body['patch'],body['revision'],identity.username,
+                self.send_json(self.services.TURNSTILE.update(body['patch'],body['revision'],identity.username,
                                                 secret_key=body.get('secretKey'),
                                                 clear_secret=body.get('clearSecret',False),
                                                 verification_token=body.get('verificationToken'),
                                                 remote_ip=self.remote_ip()))
             elif path=='/api/admin/jobs/cancel':
                 if set(body)!={'jobId'}:raise ManagementError('取消任务请求不合法。')
-                self.send_json(cancel_job(body['jobId'],SITE,identity.username))
+                self.send_json(cancel_job(body['jobId'],self.services.SITE,identity.username,self.services.COORDINATOR))
             elif path=='/api/admin/password':
                 if set(body)!={'currentPassword','newPassword'}:raise ManagementError('密码请求字段不合法。')
-                if ACCOUNTS is None:raise ManagementError('此部署尚未启用后台密码修改。',503)
+                if self.services.ACCOUNTS is None:raise ManagementError('此部署尚未启用后台密码修改。',503)
                 # Persist an intent before touching credentials so a failed audit
                 # write can never leave an unreported successful password change.
-                SITE.record(identity.username,'password-request',{})
-                ACCOUNTS.change(identity.username,body['currentPassword'],body['newPassword'],AUTH.admin_group)
+                self.services.SITE.record(identity.username,'password-request',{})
+                self.services.ACCOUNTS.change(identity.username,body['currentPassword'],body['newPassword'],self.services.AUTH.admin_group)
                 # The auth supervisor discards all sessions after the atomic file
                 # change. Wait until the previous cookie is no longer accepted.
                 revoked=False
                 deadline=time.monotonic()+12
                 while time.monotonic()<deadline:
-                    if AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True,timeout=1).status==401:
+                    if self.services.AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True,timeout=1).status==401:
                         revoked=True;break
                     time.sleep(0.25)
-                try:SITE.record(identity.username,'password',{'sessionsRevoked':revoked})
+                try:self.services.SITE.record(identity.username,'password',{'sessionsRevoked':revoked})
                 except ManagementError:logging.error('Password changed but completion audit could not be saved')
-                self.send_json({'changed':True,'sessionsRevoked':revoked,'login':'/auth/?rd='+PUBLIC_ORIGIN+'/admin/'})
+                self.send_json({'changed':True,'sessionsRevoked':revoked,'login':'/auth/?rd='+self.services.PUBLIC_ORIGIN+'/admin/'})
             else:self.send_json({'error':'管理接口不存在。'},404)
         except ManagementError as error:
             self.close_connection=True;self.send_json({'error':str(error)},error.status)
@@ -454,6 +451,7 @@ if __name__=='__main__':
     parser.add_argument('--port',type=int,default=8765)
     parser.add_argument('--host',default='127.0.0.1',help='Keep loopback for local use; containers use a private network.')
     args=parser.parse_args()
-    if AUTH_ENABLED:SITE.snapshot()
+    services = create_services()
+    if services.AUTH_ENABLED:services.SITE.snapshot()
     print(f'打开 http://{args.host}:{args.port}',flush=True)
-    PlannerHTTPServer((args.host,args.port),Handler).serve_forever()
+    PlannerHTTPServer((args.host,args.port),Handler,services=services).serve_forever()
