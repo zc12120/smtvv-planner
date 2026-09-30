@@ -80,8 +80,8 @@
 
   function updateCategories(container, items, attribute, selected) {
     const label = items.find(([key]) => key === selected)?.[1] || items[0][1];
-    const summary = container.closest('details').querySelector('.catalog-index-selection');
-    if (summary.textContent !== label) summary.textContent = label;
+    const selection = container.closest('.catalog-index').querySelector('.catalog-index-selection');
+    if (selection.textContent !== label) selection.textContent = label;
     // Keep existing buttons focused while a filter changes.
     if (!container.children.length) container.innerHTML = items.map(([key,label,count,element]) => `<button type="button" ${attribute}="${esc(key)}"><span class="category-label">${element ? skillUI.symbol(element) : !key ? icon('ListFilter') : ''}<span>${esc(label)}</span></span><small>${count}</small></button>`).join('');
     for (const button of container.querySelectorAll('button')) {
@@ -192,12 +192,25 @@
     columnKinds.forEach(applyColumns);
   });
   const compact = matchMedia('(max-width:899px)');
-  document.querySelectorAll('.catalog-categories').forEach(container => container.addEventListener('click', event => {
-    if (!compact.matches || !event.target.closest('button')) return;
-    const index = container.closest('details');
-    index.open = false;
-    index.querySelector('summary').focus({preventScroll:true});
-  }));
-  function setIndexes() { document.querySelectorAll('details.catalog-index').forEach(index=>{index.open=!compact.matches;}); }
+  function setCategoryOpen(index, open) {
+    index.querySelector('.catalog-category-toggle').setAttribute('aria-expanded', String(open));
+    index.querySelector('.catalog-categories').hidden = !open;
+  }
+  document.querySelectorAll('.catalog-index').forEach(index => {
+    const trigger = index.querySelector('.catalog-category-toggle');
+    trigger.onclick = () => setCategoryOpen(index, trigger.getAttribute('aria-expanded') !== 'true');
+    index.querySelector('.catalog-categories').addEventListener('click', event => {
+      if (!compact.matches || !event.target.closest('button')) return;
+      setCategoryOpen(index, false);
+      trigger.focus({preventScroll:true});
+    });
+    index.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || event.isComposing || trigger.getAttribute('aria-expanded') !== 'true') return;
+      event.preventDefault();
+      setCategoryOpen(index, false);
+      trigger.focus({preventScroll:true});
+    });
+  });
+  function setIndexes() { document.querySelectorAll('.catalog-index').forEach(index => setCategoryOpen(index, !compact.matches)); }
   setIndexes();compact.addEventListener('change',setIndexes);
 })();

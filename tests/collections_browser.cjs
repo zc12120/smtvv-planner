@@ -223,11 +223,12 @@ async function preview(page, card) {
     for (const kind of Object.keys(types)) {
       await tab(page,kind);
       const index = page.locator('#tab-'+kind+' .catalog-index');
-      assert.equal(await index.evaluate(e => e.open),false,'mobile index starts collapsed');
-      await index.locator('summary').focus(); await page.keyboard.press('Enter');
-      assert.equal(await index.evaluate(e => e.open),true);
+      const trigger = index.locator('.catalog-category-toggle');
+      assert.equal(await trigger.getAttribute('aria-expanded'),'false','mobile index starts collapsed');
+      await trigger.focus(); await page.keyboard.press('Enter');
+      assert.equal(await trigger.getAttribute('aria-expanded'),'true');
       await page.keyboard.press('Enter');
-      assert.equal(await index.evaluate(e => e.open),false);
+      assert.equal(await trigger.getAttribute('aria-expanded'),'false');
       await preview(page,page.locator(types[kind]).first());
     }
     checks.push('mobile category indexes toggle with keyboard; modal focus returns without moving the collection');

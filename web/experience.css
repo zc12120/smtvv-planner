@@ -360,13 +360,16 @@
 /* Collections: an index, a calm search strip, and content-specific records. */
 :root[data-skin] body .catalog-layout,:root[data-skin] body .catalog-layout:has(.catalog-inspector:not([hidden])) { display:grid; grid-template-columns:176px minmax(0,1fr); gap:16px; align-items:start; }
 .catalog-index { position:sticky; top:calc(var(--nav-height) + 16px); min-width:0; }
-.catalog-index-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto; align-items:center; gap:8px; padding:8px; color:var(--text); font-size:.85rem; border-bottom:1px solid var(--gold); }
-.catalog-index-heading > span { min-width:0; overflow-wrap:anywhere; }
-.catalog-index-selection { text-align:right; color:var(--muted); font-weight:400; }
-.catalog-index summary { cursor:pointer; list-style:none; }
-.catalog-index summary::-webkit-details-marker { display:none; }
-.catalog-index summary::after { content:"⌄"; color:var(--accent); font:500 18px/1 var(--font-body); align-self:center; }
-.catalog-index[open] summary::after { content:"⌃"; }
+/* The field guide keeps passive labels quiet; only the filled category button
+   opens choices. Use existing paper/teal surfaces, body type and 4px spacing. */
+.catalog-index-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; padding:0; }
+.catalog-index-label { flex:1; min-width:0; color:var(--muted); font:400 .75rem/1.5 var(--font-body); overflow-wrap:anywhere; }
+:root[data-skin] body .catalog-category-toggle { display:inline-flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; min-width:0; max-width:72%; padding:8px 12px; border:0; border-radius:var(--radius-control); background:var(--accent-wash); color:var(--accent); font:600 .9rem/1.5 var(--font-body); text-align:left; box-shadow:none; cursor:pointer; }
+:root[data-skin] body .catalog-category-toggle:hover { background:color-mix(in srgb,var(--accent) 18%,var(--surface)); }
+.catalog-category-toggle:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.catalog-index-selection { min-width:0; overflow-wrap:anywhere; }
+.catalog-category-toggle > .icon { width:16px; height:16px; flex:0 0 16px; }
+.catalog-category-toggle[aria-expanded="true"] > .icon { transform:rotate(180deg); }
 :root[data-skin] body .catalog-categories { position:static; max-height:calc(100dvh - 140px); padding:8px 0; display:flex; flex-direction:column; gap:4px; background:transparent; border:0; box-shadow:none; scrollbar-width:thin; }
 :root[data-skin] body .catalog-categories button { display:flex; justify-content:space-between; gap:8px; width:100%; min-height:36px; padding:6px 8px; border:1px solid transparent; background:transparent; color:var(--secondary); border-radius:var(--radius-control); font-size:var(--font-small); }
 .category-label { display:flex; align-items:center; gap:10px; min-width:0; }
@@ -579,7 +582,6 @@
 :root[data-skin="p5"] body .record-method { color:var(--accent); }
 :root[data-skin="p5"] body .record-copy h3 { font-size:1.05rem; }
 :root[data-skin="p5"] body .archive-sigil { border-radius:var(--radius-small); background:var(--accent-wash); border-color:var(--line); }
-:root[data-skin="p5"] body .catalog-index-heading { border-bottom:1px solid var(--line); font-weight:700; }
 :root[data-skin="p5"] body .catalog-categories button.active { background:var(--accent-fill); color:var(--primary-ink); border-color:var(--accent-fill); }
 :root[data-skin="p5"] body .catalog-categories button.active :is(small,.icon) { color:var(--primary-ink); }
 
@@ -594,7 +596,6 @@
 :root[data-skin="p3r"] body .summoning-seal { background:var(--accent-wash); border-color:var(--line); }
 :root[data-skin="p3r"] body .summoning-seal::before { inset:-10px; border:1px solid var(--line); border-right-color:transparent; border-bottom-color:transparent; transform:rotate(35deg); }
 :root[data-skin="p3r"] body .summoning-seal::after { box-shadow:none; height:8px; width:8px; left:4px; top:12px; border-radius:50%; opacity:1; }
-:root[data-skin="p3r"] body .catalog-index-heading { color:var(--accent); }
 :root[data-skin="p3r"] body .record-copy h3 { font-weight:600; font-size:1.05rem; }
 :root[data-skin="p3r"] body .archive-sigil { border-color:var(--line); background:var(--accent-wash); }
 
@@ -628,7 +629,6 @@
   :root[data-skin] body .appearance-switch { margin-right:auto; }
   :root[data-skin] body .catalog-layout { grid-template-columns:minmax(0,1fr); gap:12px; }
   .catalog-index { position:static; }
-  .catalog-index-heading { min-height:44px; padding:8px 0; }
   :root[data-skin] body .catalog-categories { max-height:264px; flex-direction:row; flex-wrap:wrap; gap:8px; padding:8px 0 0; }
   :root[data-skin] body .catalog-categories button { width:auto; min-height:44px; padding:8px; border-color:var(--line); gap:8px; background:var(--surface); }
   .category-label { gap:7px; }
