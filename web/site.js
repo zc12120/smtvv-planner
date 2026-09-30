@@ -369,7 +369,11 @@
   document.querySelectorAll('[data-icon]').forEach(element => { element.outerHTML = icon(element.dataset.icon); });
 
   const compact = matchMedia('(max-width:699px)');
-  function adaptDetails(){document.querySelectorAll('[data-desktop-open]').forEach(el=>{el.open=!compact.matches;});}
+  function adaptDetails(){
+    document.querySelectorAll('[data-desktop-open]').forEach(el=>{el.open=!compact.matches;});
+    const search=document.querySelector('.target-panel .search-row');
+    if(search)search.hidden=compact.matches&&document.querySelector('#configuration')?.dataset.targetSelected==='true';
+  }
   adaptDetails();compact.addEventListener('change',adaptDetails);
   window.GameSite.compact=compact;
   document.addEventListener('pointerdown',event=>{const menu=document.querySelector('.display-menu');if(compact.matches&&!menu.contains(event.target))menu.open=false;});

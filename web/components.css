@@ -172,8 +172,9 @@ dialog > input { width:100%; margin-bottom:12px; }
 }
 @media (min-width:700px) {
   .route-full > summary { display:none; }
+  #change-target { display:none; }
 }
 
 .checkbox-setting { display:flex; align-items:center; gap:8px; min-height:44px; font-size:.85rem; }
 .checkbox-setting input { min-width:20px; min-height:20px; width:20px; height:20px; }
-@media (max-width:699px) { [data-tooltip]::after { display:none; } }
+@media (max-width:699px) { :root[data-skin] body [data-tooltip]::after { display:none; } }
