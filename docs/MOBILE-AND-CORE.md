@@ -11,6 +11,13 @@ and the final retained set. Full material and provenance details remain availabl
 per step. Desktop continues to display the full equations. Collections use
 compact records on phones and retain the existing previews and detail pages.
 
+Collection toolbars place the search icon, category selector and secondary filter
+on the same row. Both selectors share a button/dropdown pattern; the search input
+expands to the available width. Global search opens a separate spacious dialog.
+Cards use native detail links across their surface while configuration, preview
+and nested skill links remain independent. Phones show one right-hand back-to-top
+control in libraries/details and none on the planner.
+
 ## Shared code
 
 - `game_data.py` owns pinned data independently of search and presentation.
