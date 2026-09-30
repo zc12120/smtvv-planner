@@ -224,6 +224,7 @@ async function skillIcons(page) {
     await page.locator('[data-add="Enduring Soul"]').click(); await generate(page);
     assert.equal(await page.evaluate(()=>state.sources['Figment Slash']),undefined);
     await page.locator('[data-tab="skills"]').click();
+    await page.locator('[aria-controls="skill-categories"]').click();
     await page.locator('[data-skill-category="fir"]').click();
     await page.locator('#skill-filter').fill('Agilao');
     await skillIcons(page);

@@ -36,4 +36,9 @@ async function fillSearch(page, id, value) {
   await input.fill(value);
 }
 
-module.exports = {useStaticFixture,fillSearch};
+async function selectCatalogFilter(page, id, value) {
+  const trigger = page.locator('[aria-controls="'+id+'-options"]');
+  if (await trigger.getAttribute('aria-expanded') !== 'true') await trigger.click();
+  await page.locator('#'+id+'-options [data-select-value='+JSON.stringify(value)+']').click();
+}
+module.exports = {useStaticFixture,fillSearch,selectCatalogFilter};

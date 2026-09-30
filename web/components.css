@@ -191,11 +191,13 @@ dialog > input { width:100%; margin-bottom:12px; }
 .search-toggle > .icon { width:24px; height:24px; flex-shrink:0; }
 :root[data-skin] body .header-search-button { margin-left:auto; flex:0 0 44px; }
 .display-menu { margin-left:0; }
-:root[data-skin] body .catalog-toolbar { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; }
-:root[data-skin] body .catalog-search-button { justify-self:start; justify-content:flex-start; min-width:0; max-width:100%; }
+:root[data-skin] body .catalog-toolbar { position:relative; display:grid; grid-template-columns:44px minmax(0,max-content) minmax(0,max-content); align-items:stretch; gap:8px; }
+:root[data-skin] body .catalog-search-button { align-self:start; justify-self:start; width:44px; min-width:44px; }
+:root[data-skin] body .catalog-search-button.has-query { background:var(--accent-wash); }
+.catalog-search-summary { grid-column:1 / -1; display:flex; align-items:baseline; gap:8px; color:var(--muted); font-size:var(--font-small); }
+.catalog-search-summary > :first-child { flex-shrink:0; }
 .search-query-label { font-size:var(--font-small); overflow-wrap:anywhere; text-align:left; }
 .search-query-label:empty { display:none; }
-.catalog-search-button[aria-expanded="true"] .search-query-label { display:none; }
 .catalog-query { grid-column:1 / -1; display:flex; align-items:center; gap:4px; min-width:0; }
 .catalog-query[hidden] { display:none; }
 .search-field { position:relative; min-width:0; flex:1; }
@@ -225,4 +227,9 @@ dialog > input { width:100%; margin-bottom:12px; }
   :root[data-skin] body #site-search-dialog { margin:12px auto; padding:12px; max-width:calc(100% - 24px); max-height:calc(var(--search-viewport-height,100dvh) - 24px); border-radius:16px; }
   #site-search-dialog #global-results a { grid-template-columns:minmax(0,1fr); gap:4px; }
   #site-search-dialog #global-results a small { text-align:left; padding-left:56px; }
+}
+
+@media (max-width:699px) {
+  :root[data-skin] body .catalog-toolbar { grid-template-columns:44px minmax(0,1fr) minmax(0,1.35fr); gap:6px; }
+  :root[data-skin] body .catalog-filter-toggle { height:100%; padding:8px; gap:4px; font-size:.85rem; }
 }

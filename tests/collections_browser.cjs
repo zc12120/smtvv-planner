@@ -2,7 +2,7 @@
 const assert = require('node:assert/strict');
 const path = require('node:path');
 const {chromium} = require('./playwright.cjs');
-const {useStaticFixture,fillSearch} = require('./browser_env.cjs');
+const {useStaticFixture,fillSearch,selectCatalogFilter} = require('./browser_env.cjs');
 const base = process.env.SMTVV_URL || 'http://127.0.0.1:8766';
 const checks = [], errors = [];
 const types = {demons:'.demon-record', skills:'.skill-record', essences:'.essence-record'};
@@ -138,8 +138,9 @@ async function preview(page, card) {
 
     await tab(page,'demons');
     const fairy = page.locator('[data-race-category="Fairy"]');
+    await page.locator('[aria-controls="demon-categories"]').click();
     await fairy.focus(); await page.keyboard.press('Enter');
-    assert.equal(await fairy.evaluate(e => document.activeElement === e),true,'category filtering preserves keyboard focus');
+    assert.equal(await page.locator('[aria-controls="demon-categories"]').evaluate(e => document.activeElement === e),true,'category choice returns focus to the trigger');
     assert.equal(await fairy.getAttribute('aria-pressed'),'true');
     await fillSearch(page,'demon-filter','Pixie');
     assert.equal(await page.locator('.demon-record').count(),2);
@@ -154,7 +155,7 @@ async function preview(page, card) {
     assert.equal(await page.locator('#demon-filter').inputValue(),'Pixie');
     assert.equal(await page.locator('[data-race-category="Fairy"]').getAttribute('aria-pressed'),'true');
     await page.locator('[data-reset-catalog="demons"]').click();
-    await page.locator('#demon-method').selectOption('dlc');
+    await selectCatalogFilter(page,'demon-method','dlc');
     assert.deepEqual(await page.locator('.demon-record').evaluateAll(cards => cards.map(card => card.dataset.demonName).sort()),['Dagda','Konohana Sakuya']);
     await fillSearch(page,'demon-filter','no-such-demon-collection-fixture');
     assert.equal(await page.locator('#tab-demons .collection-empty').isVisible(),true);
@@ -170,15 +171,16 @@ async function preview(page, card) {
     assert.equal(await page.locator('.skill-record').first().getAttribute('data-affinity'),'phy');
     await skillOrder(page);
     await fillSearch(page,'skill-filter','物理');
-    await page.locator('#skill-inherit').selectOption('normal');
+    await selectCatalogFilter(page,'skill-inherit','normal');
     assert((await skillOrder(page)).length > 1,'combined search and inheritance filters retain multiple ordered attributes');
     await page.locator('[data-reset-catalog="skills"]').click();
     await skillOrder(page);
     checks.push('skill attribute order matches the sidebar before filtering, after combined filters, and after reset');
     const fire = page.locator('[data-skill-category="fir"]');
+    await page.locator('[aria-controls="skill-categories"]').click();
     await fire.locator('[data-element-icon]').click();
     assert.equal(await fire.getAttribute('aria-pressed'),'true','the category icon is clickable');
-    await page.locator('#skill-inherit').selectOption('normal');
+    await selectCatalogFilter(page,'skill-inherit','normal');
     await fillSearch(page,'skill-filter','Agilao');
     const agilao = page.locator('[data-skill-name="Agilao"]');
     await preview(page,agilao);
@@ -195,6 +197,7 @@ async function preview(page, card) {
     checks.push('skill category icons, inheritance/search filters, exact skill icons, preview and filter-preserving detail links');
 
     await tab(page,'essences');
+    await page.locator('[aria-controls="essence-categories"]').click();
     await page.locator('[data-essence-category="aogami"]').click();
     assert.equal(await page.locator('.essence-record').count(),15);
     await fillSearch(page,'essence-filter','Murakumo');
@@ -210,7 +213,7 @@ async function preview(page, card) {
     await page.locator('[data-close-preview]').click();
     assert.equal(await essence.locator('[data-catalog-preview]').evaluate(e => document.activeElement === e),true);
     await page.locator('[data-reset-catalog="essences"]').click();
-    await page.locator('#essence-element').selectOption('phy');
+    await selectCatalogFilter(page,'essence-element','phy');
     const filtered = await page.locator('.essence-record').count();
     await page.reload(); await ready(page);
     assert.equal(await page.locator('#essence-element').inputValue(),'phy');

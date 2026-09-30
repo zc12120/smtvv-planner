@@ -364,7 +364,7 @@ function libraryCategories(){
 }
 $('demon-categories').onclick=e=>{const b=e.target.closest('[data-race-category]');if(b){demonCategory=b.dataset.raceCategory;libraryCategories();demonTable();}};
 $('skill-categories').onclick=e=>{const b=e.target.closest('[data-skill-category]');if(b){skillCategory=b.dataset.skillCategory;libraryCategories();skillTable();}};
-function demonTable(){GameSite.catalogUI.syncSearch($('demon-filter'));
+function demonTable(){GameSite.catalogUI.syncToolbar($('demon-filter'));
  const q=queryText($('demon-filter').value),method=$('demon-method').value;
  const ds=catalog.demons.filter(d=>(!demonCategory||d.race===demonCategory)&&matchesQuery(d,q)&&(!method||method==='dlc'&&d.dlc||method==='special'&&d.special.length||method==='accident'&&d.accident||method==='normal'&&!d.special.length&&!d.accident));
  $('demon-count').textContent=`显示 ${ds.length} / ${catalog.demons.length} 只`;
@@ -373,7 +373,7 @@ function demonTable(){GameSite.catalogUI.syncSearch($('demon-filter'));
 }
 GameSite.bindSearch($('demon-filter'),demonTable);$('demon-method').onchange=demonTable;
 $('demon-table').onclick=e=>{const b=e.target.closest('[data-plan]');if(b){activate('planner');setPlannerView('build',false);chooseTarget(b.dataset.plan);$('target-card').scrollIntoView({behavior:'smooth',block:'center'});}};
-function skillTable(){GameSite.catalogUI.syncSearch($('skill-filter'));
+function skillTable(){GameSite.catalogUI.syncToolbar($('skill-filter'));
  const q=queryText($('skill-filter').value),inherit=$('skill-inherit').value;
  const rows=orderedSkills.filter(s=>(!skillCategory||s.element===skillCategory)&&matchesSkillName(s,q)&&(!inherit||inherit==='unique'&&s.unique||inherit==='normal'&&!s.unique));
  $('skill-total').textContent=`显示 ${rows.length} / ${catalog.skills.length} 个技能`;
@@ -384,7 +384,7 @@ GameSite.bindSearch($('skill-filter'),skillTable);$('skill-inherit').onchange=sk
 let essenceCategory='';
 const essenceGroups={demon:'仲魔灵体',aogami:'青神灵体',tsukuyomi:'月读灵体',other:'其他灵体'};
 function renderEssenceCategories(){GameSite.catalogUI.updateCategories($('essence-categories'),[['','全部类别'],...Object.entries(essenceGroups)].map(([key,title])=>[key,title,catalog.essences.filter(e=>!key||e.group===key).length]),'data-essence-category',essenceCategory);}
-function essenceTable(){GameSite.catalogUI.syncSearch($('essence-filter'));const q=queryText($('essence-filter').value),element=$('essence-element').value;const rows=catalog.essences.filter(e=>(!essenceCategory||e.group===essenceCategory)&&(!element||e.skills.some(s=>s.element===element))&&matchesQuery(e,q));$('essence-count').textContent=`${rows.length} / ${catalog.essences.length} 个灵体`;GameSite.catalogUI.render('essences',$('essence-table'),rows,{groups:essenceGroups,query:q});demonUI.hydrate($('essence-table'),activeTab==='essences');}
+function essenceTable(){GameSite.catalogUI.syncToolbar($('essence-filter'));const q=queryText($('essence-filter').value),element=$('essence-element').value;const rows=catalog.essences.filter(e=>(!essenceCategory||e.group===essenceCategory)&&(!element||e.skills.some(s=>s.element===element))&&matchesQuery(e,q));$('essence-count').textContent=`${rows.length} / ${catalog.essences.length} 个灵体`;GameSite.catalogUI.render('essences',$('essence-table'),rows,{groups:essenceGroups,query:q});demonUI.hydrate($('essence-table'),activeTab==='essences');}
 
 function initEssenceOptions(){if($('essence-element').options.length===1)$('essence-element').innerHTML='<option value="">全部技能属性</option>'+Object.entries(elements).map(([key,title])=>`<option value="${key}">${title}</option>`).join('');}
 GameSite.bindSearch($('essence-filter'),essenceTable);

@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert/strict');
 const {chromium,webkit} = require('playwright');
-const {useStaticFixture,fillSearch} = require('./browser_env.cjs');
+const {useStaticFixture,fillSearch,selectCatalogFilter} = require('./browser_env.cjs');
 const base = process.env.SMTVV_URL || 'http://127.0.0.1:8766';
 const errors = [];
 async function ready(page) {
@@ -22,14 +22,15 @@ async function bounded(page) {
       const kinds = [['demons','demon','Fairy','全部种族'],['skills','skill','fir','全部类别'],['essences','essence','aogami','全部类别']];
       for (const [tab,kind,value,label] of kinds) {
         await page.locator('[data-tab="'+tab+'"]').click();
-        const heading = page.locator('#tab-'+tab+' .catalog-index-heading');
+        const heading = page.locator('#tab-'+tab+' .catalog-index');
         const trigger = heading.locator('.catalog-category-toggle');
         const selection = heading.locator('.catalog-index-selection');
-        const title = {demons:'种族',skills:'技能类别',essences:'灵体分类'}[tab];
-        assert.equal(await heading.locator('.catalog-index-label').innerText(),title);
+        assert.equal(await page.locator('#tab-'+tab+' .catalog-index-label').count(),0);
         assert.equal(await selection.innerText(),label);
-        await heading.locator('.catalog-index-label').click();
-        assert.equal(await trigger.getAttribute('aria-expanded'),'false','passive label does not open categories');
+        const controls = await page.locator('#tab-'+tab+' .catalog-toolbar').evaluate(toolbar => [...toolbar.querySelectorAll(':scope > .catalog-search-button,:scope > .catalog-dropdown > .catalog-filter-toggle')].map(e=>({top:e.getBoundingClientRect().top,x:e.getBoundingClientRect().x})));
+        assert.equal(controls.length,3);
+        assert(controls.every(e=>Math.abs(e.top-controls[0].top)<1),'three controls share a row');
+        assert(controls[0].x<controls[1].x&&controls[1].x<controls[2].x);
         await trigger.press('Enter');
         const attribute = kind === 'demon' ? 'race' : kind;
         const category = page.locator('[data-'+attribute+'-category="'+value+'"]');
@@ -48,6 +49,13 @@ async function bounded(page) {
         assert.equal(await selection.innerText(),selected,'selected category survives reload');
         await page.locator('[data-reset-catalog="'+tab+'"]').click();
         assert.equal(await selection.innerText(),label,'reset restores all categories');
+        const secondary = {demon:['demon-method','dlc'],skill:['skill-inherit','unique'],essence:['essence-element','phy']}[kind];
+        await selectCatalogFilter(page,...secondary);
+        assert.equal(await page.locator('#'+secondary[0]).inputValue(),secondary[1]);
+        const chosen = await page.locator('#'+secondary[0]+'-selection').innerText();
+        await page.reload({waitUntil:'domcontentloaded'});await ready(page);
+        assert.equal(await page.locator('#'+secondary[0]+'-selection').innerText(),chosen);
+        await page.locator('[data-reset-catalog="'+tab+'"]').click();
         const input = page.locator('#'+kind+'-filter');
         assert.equal(await input.isVisible(),false);
         assert.equal(await input.getAttribute('placeholder'),null);

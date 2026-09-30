@@ -115,8 +115,6 @@
   .guide-toolbar { flex-wrap:wrap; }
   .guide-tabs { flex-wrap:wrap; }
   .recipe-formula { grid-template-columns:minmax(0,1fr); }
-  .catalog-layout,.catalog-layout:has(.catalog-inspector:not([hidden])) { grid-template-columns:minmax(0,1fr); }
-  .catalog-categories { position:static; max-height:240px; }
   .catalog-inspector { top:100px; right:12px; width:min(340px,calc(100vw - 24px)); }
   .table-wrap,.table-scroll { overflow-x:auto; }
   .route-compare { overflow-x:auto; }

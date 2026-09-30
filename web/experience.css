@@ -357,31 +357,28 @@
   :root[data-skin] body .recipe-entity { --route-portrait:88px; padding:12px; }
 }
 
-/* Collections: an index, a calm search strip, and content-specific records. */
-:root[data-skin] body .catalog-layout,:root[data-skin] body .catalog-layout:has(.catalog-inspector:not([hidden])) { display:grid; grid-template-columns:176px minmax(0,1fr); gap:16px; align-items:start; }
-.catalog-index { position:sticky; top:calc(var(--nav-height) + 16px); min-width:0; }
-/* The field guide keeps passive labels quiet; only the filled category button
-   opens choices. Use existing paper/teal surfaces, body type and 4px spacing. */
-.catalog-index-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; padding:0; }
-.catalog-index-label { flex:1; min-width:0; color:var(--muted); font:400 .75rem/1.5 var(--font-body); overflow-wrap:anywhere; }
-:root[data-skin] body .catalog-category-toggle { display:inline-flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; min-width:0; max-width:72%; padding:8px 12px; border:0; border-radius:var(--radius-control); background:var(--accent-wash); color:var(--accent); font:600 .9rem/1.5 var(--font-body); text-align:left; box-shadow:none; cursor:pointer; }
-:root[data-skin] body .catalog-category-toggle:hover { background:color-mix(in srgb,var(--accent) 18%,var(--surface)); }
-.catalog-category-toggle:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-.catalog-index-selection { min-width:0; overflow-wrap:anywhere; }
-.catalog-category-toggle > .icon { width:16px; height:16px; flex:0 0 16px; }
-.catalog-category-toggle[aria-expanded="true"] > .icon { transform:rotate(180deg); }
-:root[data-skin] body .catalog-categories { position:static; max-height:calc(100dvh - 140px); padding:8px 0; display:flex; flex-direction:column; gap:4px; background:transparent; border:0; box-shadow:none; scrollbar-width:thin; }
-:root[data-skin] body .catalog-categories button { display:flex; justify-content:space-between; gap:8px; width:100%; min-height:36px; padding:6px 8px; border:1px solid transparent; background:transparent; color:var(--secondary); border-radius:var(--radius-control); font-size:var(--font-small); }
+/* Field-guide filters share one row and one choice surface. Existing teal/paper
+   tokens, body typography and 4px spacing keep the controls in the game's world. */
+:root[data-skin] body .catalog-layout { display:block; }
+.catalog-dropdown { min-width:0; }
+:root[data-skin] body .catalog-filter-toggle { display:inline-flex; align-items:center; justify-content:space-between; gap:8px; width:100%; min-height:44px; min-width:0; padding:8px 12px; border:0; border-radius:var(--radius-control); background:var(--accent-wash); color:var(--accent); font:600 .9rem/1.5 var(--font-body); text-align:left; box-shadow:none; cursor:pointer; }
+:root[data-skin] body .catalog-filter-toggle:hover { background:color-mix(in srgb,var(--accent) 18%,var(--surface)); }
+.catalog-filter-toggle:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.catalog-filter-toggle > span { min-width:0; overflow-wrap:anywhere; }
+.catalog-filter-toggle > .icon { width:16px; height:16px; flex:0 0 16px; }
+.catalog-filter-toggle[aria-expanded="true"] > .icon { transform:rotate(180deg); }
+:root[data-skin] body .catalog-dropdown-options { position:absolute; z-index:40; top:calc(100% + 8px); left:0; width:min(560px,100%); max-height:360px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); gap:4px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; padding:8px; border:1px solid var(--line); border-radius:var(--radius-panel); box-shadow:var(--shadow-lg); background:var(--raised); }
+:root[data-skin] body .catalog-dropdown-options button { display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; min-width:0; min-height:44px; padding:8px; border:0; background:transparent; color:var(--secondary); border-radius:var(--radius-control); font-size:var(--font-small); text-align:left; overflow-wrap:anywhere; }
+:root[data-skin] body .catalog-dropdown-options button:hover,:root[data-skin] body .catalog-dropdown-options button:focus-visible { background:var(--accent-wash); color:var(--accent); }
+:root[data-skin] body .catalog-dropdown-options button.active { background:var(--accent-wash); color:var(--accent); font-weight:600; }
 .category-label { display:flex; align-items:center; gap:10px; min-width:0; }
 .category-label > span { overflow-wrap:anywhere; }
 .category-label > .icon { width:17px; height:17px; color:var(--muted); flex-shrink:0; }
-:root[data-skin] body .catalog-categories button.active { background:var(--accent-wash); border-color:transparent; color:var(--accent); font-weight:600; }
-:root[data-skin] body .catalog-categories button small { color:var(--muted); font:500 var(--font-micro)/1.5 var(--font-number); align-self:center; }
-:root[data-skin] body .catalog-categories button.active small { color:var(--accent); }
-:root[data-skin] body .catalog-categories .skill-symbol { width:23px; height:23px; flex-basis:23px; }
+:root[data-skin] body .catalog-dropdown-options button small { color:var(--muted); font:500 var(--font-micro)/1.5 var(--font-number); align-self:center; }
+:root[data-skin] body .catalog-dropdown-options button.active small { color:var(--accent); }
+:root[data-skin] body .catalog-dropdown-options .skill-symbol { width:23px; height:23px; flex-basis:23px; }
 :root[data-skin] body .catalog-main { min-width:0; background:transparent; padding:0; border:0; box-shadow:none; }
 :root[data-skin] body .catalog-toolbar { display:flex; gap:8px; margin:0; padding:0; border:0; background:transparent; }
-:root[data-skin] body .catalog-toolbar select { width:200px; max-width:100%; font-size:var(--font-small); }
 .collection-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0; }
 .collection-tools { display:flex; align-items:center; gap:16px; flex-shrink:0; }
 .collection-columns { display:flex; align-items:center; gap:8px; color:var(--muted); font:500 var(--font-meta)/1.5 var(--font-body); white-space:nowrap; }
@@ -582,8 +579,8 @@
 :root[data-skin="p5"] body .record-method { color:var(--accent); }
 :root[data-skin="p5"] body .record-copy h3 { font-size:1.05rem; }
 :root[data-skin="p5"] body .archive-sigil { border-radius:var(--radius-small); background:var(--accent-wash); border-color:var(--line); }
-:root[data-skin="p5"] body .catalog-categories button.active { background:var(--accent-fill); color:var(--primary-ink); border-color:var(--accent-fill); }
-:root[data-skin="p5"] body .catalog-categories button.active :is(small,.icon) { color:var(--primary-ink); }
+:root[data-skin="p5"] body .catalog-dropdown-options button.active { background:var(--accent-fill); color:var(--primary-ink); border-color:var(--accent-fill); }
+:root[data-skin="p5"] body .catalog-dropdown-options button.active :is(small,.icon) { color:var(--primary-ink); }
 
 /* P3 Reload: a blue horizon, orbit marks and precise geometric labels. */
 :root[data-skin="p3r"] body .page-title { background:#0d58bb; border-color:#0d58bb; color:#f2fdff; }
@@ -603,7 +600,6 @@
 @keyframes preview-arrival { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:none; } }
 @media (max-width:1279px) {
   :root[data-skin] body .masthead { gap:20px; }
-  :root[data-skin] body .catalog-layout { grid-template-columns:164px minmax(0,1fr); gap:16px; }
 }
 @media (max-width:1199px) {
   :root[data-skin] body .entry-heading--profile { grid-template-columns:minmax(0,1fr); gap:20px; }
@@ -627,12 +623,6 @@
   :root[data-skin] body .site-brand img { width:100%; height:52px; }
   :root[data-skin] body .display-controls { grid-column:1 / -1; grid-row:2; margin:0; justify-content:flex-end; width:100%; }
   :root[data-skin] body .appearance-switch { margin-right:auto; }
-  :root[data-skin] body .catalog-layout { grid-template-columns:minmax(0,1fr); gap:12px; }
-  .catalog-index { position:static; }
-  :root[data-skin] body .catalog-categories { max-height:264px; flex-direction:row; flex-wrap:wrap; gap:8px; padding:8px 0 0; }
-  :root[data-skin] body .catalog-categories button { width:auto; min-height:44px; padding:8px; border-color:var(--line); gap:8px; background:var(--surface); }
-  .category-label { gap:7px; }
-  .category-label > .icon { display:none; }
   :root[data-skin] body .nav-context { display:none; }
   :root[data-skin] body .main-nav nav { width:100%; justify-content:space-between; gap:8px; }
   :root[data-skin] body .execution-layout { grid-template-columns:minmax(0,1fr); }
@@ -685,11 +675,8 @@
   :root[data-skin] body .strategy-price small { margin-left:4px; }
   :root[data-skin] body .strategy-counts { grid-column:1 / -1; grid-row:2; gap:4px 12px; }
   :root[data-skin] body .strategy-pending { grid-column:1 / -1; }
-  :root[data-skin] body .catalog-categories { max-height:240px; }
-  :root[data-skin] body .catalog-categories button { font-size:.78rem; min-height:44px; }
   :root[data-skin] body .catalog-toolbar { padding:0; flex-wrap:wrap; gap:8px; }
   :root[data-skin] body .catalog-reset { min-height:44px; }
-  :root[data-skin] body .catalog-toolbar select { width:100%; }
   .collection-grid { --collection-gap:16px; }
   .collection-tools { gap:8px; }
   :root[data-skin] body .collection-columns select { width:96px; }

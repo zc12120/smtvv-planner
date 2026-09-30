@@ -118,6 +118,7 @@ async function chooseMixed(page) {
     await page.goto(base+'/essence.html?name=Jack%20Frost');
     await page.waitForSelector('.entry-heading [data-demon-portrait="Jack Frost"]'); await layout(page);
     await page.goto(base+'/?tab=essences'); await ready(page);
+    await page.locator('[aria-controls="essence-categories"]').click();
     await page.locator('[data-essence-category="aogami"]').click();
     await page.locator('#essence-filter').fill('');
     assert.equal(await page.locator('.essence-collection [data-demon-portrait]').count(),15);
