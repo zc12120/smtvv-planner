@@ -107,10 +107,6 @@
 :root[data-skin="smtv"] .site-brand > span { border-left: 1px solid var(--accent); padding-left: 16px; }
 :root[data-skin="smtv"] .site-brand strong { font-style: normal; font-weight: 700; letter-spacing: .06em; font-size: 1.1rem; }
 :root[data-skin="smtv"] .site-brand small { color: var(--muted); font-size: .68rem; letter-spacing: .16em; }
-:root[data-skin="smtv"] .global-search input { color: var(--text); background: var(--control-bg); border-color: var(--line); }
-:root[data-skin="smtv"] .global-search input::placeholder { color: var(--muted); }
-:root[data-skin="smtv"] .global-search input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-ring); }
-:root[data-skin="smtv"] .global-search > .icon { color: var(--accent); }
 :root[data-skin="smtv"] .display-controls { gap: 6px; color: var(--secondary); }
 :root[data-skin="smtv"] .display-controls button { border-color: var(--line); color: var(--secondary); }
 :root[data-skin="smtv"] .appearance-switch { border-color: var(--line); background: var(--control-bg); margin-right: 4px; }

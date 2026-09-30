@@ -158,10 +158,6 @@ a.primary:hover,a.secondary:hover { text-decoration: none; }
 .site-brand img { display: block; width: 118px; height: 40px; object-fit: contain; }
 .site-brand strong { display: block; font-size: 1.0625rem; line-height: 1.3; font-weight: 600; }
 .site-brand small { display: block; margin-top: 1px; font-size: var(--font-meta); color: var(--muted); }
-.global-search { position: relative; margin-left: auto; width: 360px; }
-.global-search > .icon { position: absolute; left: 11px; top: 10px; color: var(--muted); }
-.global-search input { width: 100%; padding-left: 34px; height: 36px; font-size: var(--font-small); background: var(--inset); }
-.global-search input:focus { background: var(--surface); }
 #global-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; max-height: 68vh; overflow: auto; z-index: 150; border: 1px solid var(--line); border-radius: var(--radius); background: var(--raised); box-shadow: var(--shadow-lg); }
 .search-group-label { color: var(--muted); background: var(--inset); font-size: var(--font-meta); font-weight: 500; padding: 6px 12px; }
 #global-results a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 12px; border-bottom: 1px solid var(--soft-line); color: var(--text); font-size: var(--font-small); }
@@ -610,9 +606,6 @@ footer small { margin-left: 8px; font-size: var(--font-meta); }
 /* 舒适阅读：文字、控件和图形共用同一尺寸层级。 */
 .masthead { min-height: 76px; padding-block: 12px; }
 .site-brand img { width: 140px; height: 48px; }
-.global-search { width: 400px; }
-.global-search input { height: 44px; padding-left: 42px; }
-.global-search > .icon { top: 11px; left: 12px; }
 .search-box > .icon { top: 11px; left: 12px; }
 .search-box input { padding-left: 42px; }
 .search-results { top: 124px; max-height: 480px; }
@@ -675,7 +668,6 @@ th,td { padding: 15px 16px; line-height: 1.65; }
 /* 窄桌面：给技能配置独立宽度，条件卡片排到它的下方。 */
 @media (max-width: 1439px) {
   .masthead,.nav-inner,.desktop-main { padding-left: 24px; padding-right: 24px; }
-  .global-search { width: 320px; }
   .configuration-sheet { grid-template-columns: 300px minmax(0,1fr); gap: 20px; }
   .target-panel { grid-row: 1 / span 2; }
   .build-panel { grid-column: 2; grid-row: 1; }

@@ -2,7 +2,7 @@
 const assert = require('node:assert/strict');
 const path = require('node:path');
 const {chromium} = require('./playwright.cjs');
-const {useStaticFixture} = require('./browser_env.cjs');
+const {useStaticFixture,fillSearch} = require('./browser_env.cjs');
 const base = process.env.SMTVV_URL || 'http://127.0.0.1:8766';
 const checks = [], errors = [];
 const types = {demons:'.demon-record', skills:'.skill-record', essences:'.essence-record'};
@@ -103,7 +103,7 @@ async function preview(page, card) {
     }
     assert.deepEqual(await page.evaluate(() => state),originalBuild,'layout preferences do not change the build');
     await tab(page,'demons');
-    await page.locator('#demon-filter').fill('no-such-column-fixture');
+    await fillSearch(page,'demon-filter','no-such-column-fixture');
     await page.locator('[data-catalog-columns="demons"]').selectOption('5');
     await page.locator('[data-reset-catalog="demons"]').click();
     assert.equal(await page.locator('[data-catalog-columns="demons"]').inputValue(),'5','filter reset preserves layout');
@@ -141,7 +141,7 @@ async function preview(page, card) {
     await fairy.focus(); await page.keyboard.press('Enter');
     assert.equal(await fairy.evaluate(e => document.activeElement === e),true,'category filtering preserves keyboard focus');
     assert.equal(await fairy.getAttribute('aria-pressed'),'true');
-    await page.locator('#demon-filter').fill('Pixie');
+    await fillSearch(page,'demon-filter','Pixie');
     assert.equal(await page.locator('.demon-record').count(),2);
     const pixie = page.locator('[data-demon-name="Pixie"]');
     assert.equal(await pixie.locator('.resist-cell[aria-label]').count(),7);
@@ -156,11 +156,11 @@ async function preview(page, card) {
     await page.locator('[data-reset-catalog="demons"]').click();
     await page.locator('#demon-method').selectOption('dlc');
     assert.deepEqual(await page.locator('.demon-record').evaluateAll(cards => cards.map(card => card.dataset.demonName).sort()),['Dagda','Konohana Sakuya']);
-    await page.locator('#demon-filter').fill('no-such-demon-collection-fixture');
+    await fillSearch(page,'demon-filter','no-such-demon-collection-fixture');
     assert.equal(await page.locator('#tab-demons .collection-empty').isVisible(),true);
     await page.locator('[data-reset-catalog="demons"]').click();
     assert.equal(await page.locator('.demon-record').count(),totals.demons);
-    await page.locator('#demon-filter').fill('Pixie');
+    await fillSearch(page,'demon-filter','Pixie');
     await page.locator('[data-demon-name="Pixie"] [data-plan]').click();
     assert.equal(await page.locator('#tab-planner').isVisible(),true);
     assert.equal(await page.evaluate(() => state.target),'Pixie');
@@ -169,7 +169,7 @@ async function preview(page, card) {
     await tab(page,'skills');
     assert.equal(await page.locator('.skill-record').first().getAttribute('data-affinity'),'phy');
     await skillOrder(page);
-    await page.locator('#skill-filter').fill('物理');
+    await fillSearch(page,'skill-filter','物理');
     await page.locator('#skill-inherit').selectOption('normal');
     assert((await skillOrder(page)).length > 1,'combined search and inheritance filters retain multiple ordered attributes');
     await page.locator('[data-reset-catalog="skills"]').click();
@@ -179,7 +179,7 @@ async function preview(page, card) {
     await fire.locator('[data-element-icon]').click();
     assert.equal(await fire.getAttribute('aria-pressed'),'true','the category icon is clickable');
     await page.locator('#skill-inherit').selectOption('normal');
-    await page.locator('#skill-filter').fill('Agilao');
+    await fillSearch(page,'skill-filter','Agilao');
     const agilao = page.locator('[data-skill-name="Agilao"]');
     await preview(page,agilao);
     assert.equal(await agilao.locator('.skill-record-link [data-element-icon="fir"]').count(),1);
@@ -197,13 +197,13 @@ async function preview(page, card) {
     await tab(page,'essences');
     await page.locator('[data-essence-category="aogami"]').click();
     assert.equal(await page.locator('.essence-record').count(),15);
-    await page.locator('#essence-filter').fill('Murakumo');
+    await fillSearch(page,'essence-filter','Murakumo');
     assert.equal(await page.locator('[data-essence-name="Aogami Type-0"]').count(),1);
     assert.equal(await page.locator('[data-essence-name="Aogami Type-0"] .essence-record-skills a[href*="Murakumo"]').count(),1,'a searched skill is surfaced in the card');
     await page.locator('[data-reset-catalog="essences"]').click();
     const full = await page.evaluate(async () => (await GameSite.catalog).essences.find(e => e.skills.length > 7));
     assert(full,'fixture has an essence with more than seven skills');
-    await page.locator('#essence-filter').fill(full.name);
+    await fillSearch(page,'essence-filter',full.name);
     const essence = page.locator('[data-essence-name='+JSON.stringify(full.name)+']');
     await essence.locator('[data-catalog-preview]').click();
     assert.equal(await page.locator('#catalog-preview .inspector-skills li').count(),full.skills.length,'preview exposes every skill');
@@ -264,7 +264,7 @@ async function preview(page, card) {
     fallback.on('pageerror',error => errors.push(error.message));
     await fallback.route('**/assets/demons/**',route => route.abort());
     await fallback.goto(base+'/?tab=demons&lang=en'); await ready(fallback);
-    await fallback.locator('#demon-filter').fill('Pixie');
+    await fillSearch(fallback,'demon-filter','Pixie');
     await preview(fallback,fallback.locator('[data-demon-name="Pixie"]'));
     await fallback.locator('[data-demon-name="Pixie"] [data-plan]').click();
     assert.equal(await fallback.evaluate(() => state.target),'Pixie','missing optional portraits cannot break configure');

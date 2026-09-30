@@ -79,6 +79,9 @@
   }
 
   function updateCategories(container, items, attribute, selected) {
+    const label = items.find(([key]) => key === selected)?.[1] || items[0][1];
+    const summary = container.closest('details').querySelector('.catalog-index-heading > span');
+    if (summary.textContent !== label) summary.textContent = label;
     // Keep existing buttons focused while a filter changes.
     if (!container.children.length) container.innerHTML = items.map(([key,label,count,element]) => `<button type="button" ${attribute}="${esc(key)}"><span class="category-label">${element ? skillUI.symbol(element) : !key ? icon('ListFilter') : ''}<span>${esc(label)}</span></span><small>${count}</small></button>`).join('');
     for (const button of container.querySelectorAll('button')) {
@@ -147,7 +150,34 @@
     collections.delete(kind);
   }
 
-  GameSite.catalogUI = {demons,skills,essences,render,release,updateCategories};
+  function syncSearch(input) {
+    const toolbar = input.closest('.catalog-toolbar');
+    toolbar.querySelector('.search-query-label').textContent = input.value;
+    toolbar.querySelector('[data-clear-search]').hidden = !input.value;
+  }
+  document.querySelectorAll('.catalog-toolbar').forEach(toolbar => {
+    const trigger = toolbar.querySelector('[data-open-search]');
+    const field = toolbar.querySelector('.catalog-query');
+    const input = field.querySelector('input');
+    function toggle(open) {
+      field.hidden = !open;
+      trigger.setAttribute('aria-expanded', String(open));
+      (open ? input : trigger).focus({preventScroll:true});
+    }
+    trigger.onclick = () => toggle(field.hidden);
+    toolbar.querySelector('[data-close-search]').onclick = () => toggle(false);
+    toolbar.querySelector('[data-clear-search]').onclick = () => {
+      input.value = '';
+      input.dispatchEvent(new Event('input', {bubbles:true}));
+      syncSearch(input);
+      input.focus();
+    };
+    input.addEventListener('input', () => syncSearch(input));
+    field.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !event.isComposing) { event.preventDefault(); toggle(false); }
+    });
+  });
+  GameSite.catalogUI = {demons,skills,essences,render,release,updateCategories,syncSearch};
   for (const kind of columnKinds) {
     applyColumns(kind);
     document.querySelector(`[data-catalog-columns="${kind}"]`)?.addEventListener('change', event => {
@@ -162,6 +192,12 @@
     columnKinds.forEach(applyColumns);
   });
   const compact = matchMedia('(max-width:899px)');
+  document.querySelectorAll('.catalog-categories').forEach(container => container.addEventListener('click', event => {
+    if (!compact.matches || !event.target.closest('button')) return;
+    const index = container.closest('details');
+    index.open = false;
+    index.querySelector('summary').focus({preventScroll:true});
+  }));
   function setIndexes() { document.querySelectorAll('details.catalog-index').forEach(index=>{index.open=!compact.matches;}); }
   setIndexes();compact.addEventListener('change',setIndexes);
 })();

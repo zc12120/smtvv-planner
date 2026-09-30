@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert/strict');
 const {chromium} = require('./playwright.cjs');
-const {useStaticFixture} = require('./browser_env.cjs');
+const {useStaticFixture,fillSearch} = require('./browser_env.cjs');
 const base = process.env.SMTVV_URL || 'http://127.0.0.1:8766';
 const checks = [], errors = [];
 const ready = async page => {
@@ -27,10 +27,10 @@ const tab = async (page, kind) => {
       return Object.fromEntries(['demons','skills','essences'].map(kind => [kind,data[kind].length]));
     });
 
-    await page.locator('#global-search').fill('Ｐｉｘｉｅ');
+    await fillSearch(page,'global-search','Ｐｉｘｉｅ');
     assert.equal(await page.locator('#global-results a[href^="/demon.html?name=Pixie&"]').count(),1);
     await page.keyboard.press('Escape');
-    await page.locator('#global-search').fill('电击增幅');
+    await fillSearch(page,'global-search','电击增幅');
     const innateSkill = page.locator('#global-results a[href^="/skill.html?name=Elec%20Enhancer&"]');
     assert.equal(await innateSkill.count(),1,'global search includes demon innate/passive skills');
     assert.match(await innateSkill.innerText(),/电击增幅/);
@@ -62,11 +62,11 @@ const tab = async (page, kind) => {
     assert.equal(await page.locator('#skill-options [data-add]').count(),0,'effect-only keywords do not match');
     await page.locator('#close-dialog').click();
     await tab(page,'skills');
-    await page.locator('#skill-filter').fill('物理');
+    await fillSearch(page,'skill-filter','物理');
     assert.deepEqual(await page.locator('.skill-record').evaluateAll(items => items.map(item => item.dataset.skillName).sort()),physicalNames,'skill archive uses the same name-only rule');
-    await page.locator('#skill-filter').fill('对敌方全体');
+    await fillSearch(page,'skill-filter','对敌方全体');
     assert.equal(await page.locator('.skill-record').count(),0);
-    await page.locator('#global-search').fill('物理');
+    await fillSearch(page,'global-search','物理');
     const globalSkills = await page.locator('#global-results a[href^="/skill.html"] .search-result-name').allTextContents();
     assert.equal(globalSkills.length,5);
     assert(globalSkills.every(name => name.includes('物理')),'global skill suggestions match the name, not category or effect');
@@ -76,16 +76,16 @@ const tab = async (page, kind) => {
 
     await tab(page,'demons');
     const pixie = await page.locator('[data-demon-name="Pixie"]').elementHandle();
-    await page.locator('#demon-filter').fill('Ｐｉｘｉｅ');
+    await fillSearch(page,'demon-filter','Ｐｉｘｉｅ');
     assert.equal(await page.locator('.demon-record').count(),2);
     assert(await pixie.evaluate(node => node === document.querySelector('[data-demon-name="Pixie"]')));
-    await page.locator('#demon-filter').fill('no-such-record-fixture');
+    await fillSearch(page,'demon-filter','no-such-record-fixture');
     assert.equal(await page.locator('.demon-record').count(),0);
-    await page.locator('#demon-filter').fill('');
+    await fillSearch(page,'demon-filter','');
     assert(await pixie.evaluate(node => node === document.querySelector('[data-demon-name="Pixie"]')),'reset reuses the original record');
     assert.equal(await page.locator('.demon-record').count(),totals.demons);
     await pixie.dispose();
-    await page.locator('#demon-filter').fill('Pixie');
+    await fillSearch(page,'demon-filter','Pixie');
     await page.locator('[data-catalog-columns="demons"]').selectOption('3');
     const preview = page.locator('[data-demon-name="Pixie"] [data-catalog-preview]');
     await preview.click();

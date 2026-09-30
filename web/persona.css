@@ -109,10 +109,6 @@ a.secondary,.badge,.tag,.skill-method,.picked-demon { border-radius: 2px; }
 .site-brand > span { border-left: 4px solid var(--phantom-red); padding-left: 16px; }
 .site-brand strong { font-size: 1.3rem; font-weight: 900; font-style: italic; letter-spacing: -.025em; }
 .site-brand small { color: #d8cbc2; font: 800 .85rem/1.4 var(--font-display); letter-spacing: .12em; margin-top: 4px; }
-.global-search input { background: #2a2426; border-color: #59494e; color: var(--paper); }
-.global-search input::placeholder { color: #c4b4b0; }
-.global-search input:focus { background: #33282c; border-color: #ff7183; box-shadow: 0 0 0 3px rgb(255 113 131 / 20%); }
-.global-search > .icon { color: #d8cbc2; }
 .display-controls { gap: 6px; }
 .display-controls button { color: var(--paper); border: 1px solid #59494e; border-radius: 0; }
 .display-controls button:hover,.display-controls button[aria-pressed="true"] { color: var(--paper); background: var(--phantom-red); border-color: var(--phantom-red); }

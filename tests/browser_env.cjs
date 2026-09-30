@@ -27,4 +27,13 @@ async function useStaticFixture(context, base) {
   console.log('Local static fixture enabled; API requests still use '+origin.origin);
 }
 
-module.exports = {useStaticFixture};
+async function fillSearch(page, id, value) {
+  const input = page.locator('#'+id);
+  if (!await input.isVisible()) {
+    const trigger = id === 'global-search' ? '.header-search-button' : '[aria-controls="'+id.replace('-filter','-query')+'"]';
+    await page.locator(trigger).click();
+  }
+  await input.fill(value);
+}
+
+module.exports = {useStaticFixture,fillSearch};

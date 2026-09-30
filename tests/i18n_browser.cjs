@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const {chromium}=require('./playwright.cjs');
-const {useStaticFixture}=require('./browser_env.cjs');
+const {useStaticFixture,fillSearch}=require('./browser_env.cjs');
 const base=process.env.SMTVV_URL||'http://127.0.0.1:8766';
 const languages=['en','ja','zh-Hant','ko','zh-Hans'];
 const build={target:'Arioch',skills:['Figment Slash','Phys Pleroma','High Phys Pleroma']};
@@ -83,12 +83,12 @@ async function changeLanguage(page,language){
       const pack=language==='zh-Hans'?null:JSON.parse(await fs.readFile(path.join(__dirname,'../web/assets/locales',language+'.json'),'utf8'));
       if(pack){
         const searchName=pack.skills.Agi.name;
-        await tab.locator('#global-search').fill(searchName);
+        await fillSearch(tab,'global-search',searchName);
         await tab.locator('#global-results a').first().waitFor();
         const matches=await tab.locator('#global-results a').evaluateAll(links=>links.map(link=>new URL(link.href).searchParams.get('name')));
         assert(matches.includes('Agi'),'localized search must use canonical skill links');
         // A Chinese/Japanese alias should also work in an English/Korean view.
-        await tab.locator('#global-search').fill('義經');
+        await fillSearch(tab,'global-search','義經');
         await tab.waitForFunction(()=>[...document.querySelectorAll('#global-results a')].some(link=>new URL(link.href).searchParams.get('name')==='Yoshitsune'));
       }
       await tab.goto(base+'/demon.html?name=Yoshitsune&lang='+language);await ready(tab);

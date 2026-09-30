@@ -2,7 +2,6 @@
 .appearance-switch { display:flex; align-items:center; gap:2px; padding:3px; border:1px solid #59494e; margin-right:7px; }
 .display-controls .appearance-switch button { min-height:34px; padding:5px 10px; border:0; font:800 13px/1.2 var(--font-display); letter-spacing:.05em; white-space:nowrap; }
 .display-controls .appearance-switch button[aria-pressed="true"] { background:var(--phantom-red); color:#fff; }
-.masthead .global-search { flex:1; min-width:180px; max-width:360px; }
 .display-controls { align-items:center; flex-shrink:0; }
 .reload-banner { display:none; }
 
@@ -34,10 +33,6 @@
 [data-skin="p3r"] .site-brand > span { border-left:3px solid #64dfff; }
 [data-skin="p3r"] .site-brand strong { font-style:normal; letter-spacing:.035em; }
 [data-skin="p3r"] .site-brand small { color:#95c8ed; letter-spacing:.14em; }
-[data-skin="p3r"] .global-search input { background:#0b305a; border-color:#345b83; color:#fff; }
-[data-skin="p3r"] .global-search input::placeholder { color:#b4d2ec; }
-[data-skin="p3r"] .global-search input:focus { background:#123c69; border-color:#73e7ff; box-shadow:0 0 0 2px rgb(115 231 255 / 20%); }
-[data-skin="p3r"] .global-search > .icon { color:#8edfff; }
 [data-skin="p3r"] .appearance-switch,[data-skin="p3r"] .display-controls > button { border-color:#42648c; }
 [data-skin="p3r"] .display-controls button:hover { background:#164e84; border-color:#71d8ff; }
 [data-skin="p3r"] .display-controls .appearance-switch button[aria-pressed="true"] { color:#06214a; background:#8eeeff; }
@@ -97,7 +92,6 @@
   body { min-width:320px; }
   .masthead { flex-wrap:wrap; padding:16px 20px; gap:14px; }
   .site-brand { flex:1; }
-  .masthead .global-search { order:3; flex-basis:100%; max-width:none; }
   .site-brand small { font-size:11px; letter-spacing:.05em; }
   .site-brand strong { font-size:1.1rem; }
   .nav-inner,.desktop-main { padding-inline:20px; }
@@ -140,7 +134,6 @@
   .display-controls { width:100%; gap:6px; }
   .appearance-switch { margin-right:auto; }
   .display-controls .icon-button,.display-controls > a.icon-button { width:38px; height:38px; min-width:38px; min-height:38px; }
-  .masthead .global-search { order:2; }
   .display-controls { order:3; }
   .nav-inner,.desktop-main { padding-inline:14px; }
   .main-nav a { padding-inline:14px; font-size:14px; }

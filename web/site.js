@@ -341,12 +341,7 @@
       <a class="site-brand" href="/?tab=planner&view=build" title="仲魔配置">
         <img src="/assets/planner-mark.svg" width="666" height="227" alt="真女5复仇 · 合体规划">
       </a>
-      <div class="global-search">
-        ${icon('Search')}<label class="sr-only" for="global-search">搜索全部资料</label>
-        <input id="global-search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="global-results" aria-autocomplete="list" placeholder="搜索仲魔、技能、灵体">
-        <kbd class="search-shortcut" aria-hidden="true">/</kbd>
-        <div id="global-results" role="listbox" aria-label="全部资料搜索结果" hidden></div>
-      </div>
+      <button class="search-toggle header-search-button" type="button" aria-label="搜索全部资料" aria-haspopup="dialog" aria-controls="site-search-dialog">${icon('Search')}</button>
       <details class="display-menu" data-desktop-open open><summary aria-label="显示设置">${icon('SlidersHorizontal')}<span>显示设置</span></summary><div class="display-controls">
         <div class="appearance-switch" role="group" aria-label="界面风格">
           <button type="button" data-skin-choice="smtv" aria-pressed="true" aria-label="切换为真女神转生V复仇主题">SMT V</button>
@@ -426,8 +421,49 @@
   fontButton.onclick = () => font(document.documentElement.dataset.font === 'large' ? 'standard' : 'large');
   SmtvvI18n.mount(document.querySelector('.display-controls'), icon('Languages'));
 
+  document.body.insertAdjacentHTML('beforeend', `<dialog id="site-search-dialog" aria-labelledby="site-search-title">
+    <div class="dialog-head"><h2 id="site-search-title">搜索全部资料</h2><button type="button" class="search-toggle" data-close-search aria-label="关闭搜索">${icon('X')}</button></div>
+    <label class="sr-only" for="global-search">搜索仲魔、技能、灵体</label>
+    <div class="search-field"><input id="global-search" type="search" autocomplete="off" autofocus role="combobox" aria-expanded="false" aria-controls="global-results" aria-autocomplete="list"><button type="button" class="search-toggle" data-clear-search aria-label="清除搜索" hidden>${icon('X')}</button></div>
+    <p id="global-search-status" role="status" hidden></p>
+    <div id="global-results" role="listbox" aria-label="全部资料搜索结果" hidden></div>
+  </dialog>`);
+  const searchDialog = document.getElementById('site-search-dialog');
+  const searchTrigger = document.querySelector('.header-search-button');
   const input = document.getElementById('global-search');
   const results = document.getElementById('global-results');
+  const searchStatus = document.getElementById('global-search-status');
+  const clearSearch = searchDialog.querySelector('[data-clear-search]');
+  function openSearch() {
+    resizeSearch();
+    if (!searchDialog.open) searchDialog.showModal();
+    document.body.classList.add('site-search-open');
+    input.focus();
+    search();
+  }
+  searchTrigger.onclick = openSearch;
+  function resizeSearch() {
+    searchDialog.style.setProperty('--search-viewport-height', (window.visualViewport?.height || innerHeight) + 'px');
+  }
+  window.visualViewport?.addEventListener('resize', resizeSearch);
+  searchDialog.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !event.isComposing) {
+      event.preventDefault();
+      searchDialog.close();
+    }
+  });
+  searchDialog.querySelector('[data-close-search]').onclick = () => searchDialog.close();
+  searchDialog.addEventListener('close', () => {
+    close();
+    document.body.classList.remove('site-search-open');
+    searchTrigger.focus({preventScroll:true});
+  });
+  searchDialog.addEventListener('click', event => {
+    if (event.target !== searchDialog) return;
+    const rect = searchDialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) searchDialog.close();
+  });
+  clearSearch.onclick = () => { input.value = ''; search(); input.focus(); };
   let index = [];
   catalog.then(data => {
     if (data.assets?.officialLogo) document.querySelector('.site-brand img').src = '/assets/logo.png';
@@ -454,9 +490,11 @@
       ...data.essences.map(e => ({kind:'essence', type:'灵体', name:e.name, label:e.label, aliases:e.searchAliases||'', extra:`${e.skills.length} 个技能`}))
     ];
     if (input.value) search();
-  }).catch(() => { input.placeholder = '资料读取失败'; });
+  }).catch(() => { searchStatus.textContent = '资料读取失败'; searchStatus.hidden = false; });
   function close() { results.hidden = true; input.setAttribute('aria-expanded', 'false'); }
   function search() {
+    clearSearch.hidden = !input.value;
+    if (!searchDialog.open) return;
     const query = normalizeSearch(input.value);
     if (!query) { close(); return; }
     const found = index.filter(item => item.kind === 'skill' ? matchesName(item, query) : matchesQuery(item, query))
@@ -475,7 +513,6 @@
   input.onfocus = () => { if (input.value) search(); };
   input.onkeydown = event => {
     if (event.isComposing) return;
-    if (event.key === 'Escape') close();
     if (event.key === 'ArrowDown') { event.preventDefault(); search(); results.querySelector('a')?.focus(); }
     if (event.key === 'Enter' && !results.hidden) { event.preventDefault(); results.querySelector('a')?.click(); }
   };
@@ -486,12 +523,10 @@
       event.preventDefault();
       links[(current + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length]?.focus();
     }
-    if (event.key === 'Escape') { input.focus(); close(); }
   };
-  document.addEventListener('pointerdown', event => { if (!event.target.closest('.global-search')) close(); });
   document.addEventListener('keydown', event => {
-    if (event.key === '/' && !event.ctrlKey && !event.metaKey && !document.querySelector('dialog[open]') && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) {
-      event.preventDefault(); input.focus();
+    if (event.key === '/' && !event.isComposing && !event.ctrlKey && !event.metaKey && !document.querySelector('dialog[open]') && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) {
+      event.preventDefault(); openSearch();
     }
   });
   document.addEventListener('click', event => {

@@ -586,5 +586,8 @@
   "限定材料": "Restricted materials",
   "自定义价格": "Custom prices",
   "含待核实配方": "Unverified recipes enabled",
-  "允许待核实配方": "Allow unverified recipes"
+  "允许待核实配方": "Allow unverified recipes",
+  "关闭搜索": "Close search",
+  "清除搜索": "Clear search",
+  "收起搜索": "Collapse search"
 }

@@ -4,7 +4,7 @@
 (() => {
   const languages = {'zh-Hans':['简体中文','简中'],en:['English','EN'],ja:['日本語','JA'],'zh-Hant':['繁體中文','繁中'],ko:['한국어','KO']};
   const version = 'worlds-20260914-1';
-  const interfaceVersion = 'mobile-core-20261001';
+  const interfaceVersion = 'search-ui-20261001';
   const storageKey = 'smtvv-language';
   const valid = value => Object.hasOwn(languages, value);
   let saved;

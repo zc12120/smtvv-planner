@@ -149,11 +149,6 @@
 :root[data-skin] body .site-brand { min-width:0; flex:0 0 auto; }
 :root[data-skin] body .site-brand img { display:block; width:188px; height:64px; object-fit:contain; }
 :root[data-skin][data-theme] body .site-brand img { filter:none; opacity:1; }
-:root[data-skin] body .global-search { max-width:380px; min-width:180px; flex:1; order:0; }
-:root[data-skin] body .global-search input { color:var(--text); background:var(--control-bg); border-color:var(--control-border); font-size:var(--font-small); min-height:46px; }
-:root[data-skin] body .global-search > .icon { color:var(--accent); }
-.search-shortcut { position:absolute; right:12px; top:50%; transform:translateY(-50%); display:grid; place-items:center; min-width:24px; height:24px; border:1px solid var(--line); border-radius:6px; color:var(--muted); font:500 var(--font-meta)/1 var(--font-number); pointer-events:none; }
-:root[data-skin] body .global-search input { padding-right:44px; }
 :root[data-skin] body .display-controls { gap:8px; color:var(--secondary); }
 :root[data-skin] body .appearance-switch { background:var(--inset); border:1px solid var(--soft-line); border-radius:var(--radius-inset); padding:4px; gap:2px; margin:0; }
 :root[data-skin] body .appearance-switch button { font:600 var(--font-micro)/1.4 var(--font-body); padding:8px; min-height:36px; color:var(--muted); border-radius:11px; transform:none; }
@@ -366,7 +361,6 @@
 :root[data-skin] body .catalog-layout,:root[data-skin] body .catalog-layout:has(.catalog-inspector:not([hidden])) { display:grid; grid-template-columns:176px minmax(0,1fr); gap:16px; align-items:start; }
 .catalog-index { position:sticky; top:calc(var(--nav-height) + 16px); min-width:0; }
 .catalog-index-heading { display:flex; justify-content:space-between; gap:8px; padding:8px; color:var(--text); font-size:.85rem; border-bottom:1px solid var(--gold); }
-.catalog-index-heading small { color:var(--muted); font:500 var(--font-micro)/1.7 var(--font-number); letter-spacing:.04em; align-self:center; }
 .catalog-index summary { cursor:pointer; list-style:none; }
 .catalog-index summary::-webkit-details-marker { display:none; }
 .catalog-index summary::after { content:"⌄"; color:var(--accent); font:500 18px/1 var(--font-body); align-self:center; }
@@ -382,9 +376,6 @@
 :root[data-skin] body .catalog-categories .skill-symbol { width:23px; height:23px; flex-basis:23px; }
 :root[data-skin] body .catalog-main { min-width:0; background:transparent; padding:0; border:0; box-shadow:none; }
 :root[data-skin] body .catalog-toolbar { display:flex; gap:8px; margin:0; padding:0; border:0; background:transparent; }
-.catalog-search { display:flex; align-items:center; position:relative; flex:1; min-width:0; }
-.catalog-search > .icon { position:absolute; left:16px; width:20px; height:20px; color:var(--accent); pointer-events:none; }
-:root[data-skin] body .catalog-search input { padding-left:48px; min-width:0; width:100%; font-size:var(--font-small); }
 :root[data-skin] body .catalog-toolbar select { width:200px; max-width:100%; font-size:var(--font-small); }
 .collection-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0; }
 .collection-tools { display:flex; align-items:center; gap:16px; flex-shrink:0; }
@@ -632,12 +623,9 @@
   .record-actions { flex-wrap:wrap; }
 }
 @media (max-width:899px) {
-  .search-shortcut { display:none; }
-  :root[data-skin] body .global-search input { padding-right:12px; }
   :root[data-skin] body .masthead { display:grid; grid-template-columns:clamp(112px,32vw,176px) minmax(0,1fr); gap:10px 16px; }
   :root[data-skin] body .site-brand { grid-column:1; grid-row:1; }
   :root[data-skin] body .site-brand img { width:100%; height:52px; }
-  :root[data-skin] body .global-search { grid-column:2; grid-row:1; min-width:0; max-width:none; width:100%; }
   :root[data-skin] body .display-controls { grid-column:1 / -1; grid-row:2; margin:0; justify-content:flex-end; width:100%; }
   :root[data-skin] body .appearance-switch { margin-right:auto; }
   :root[data-skin] body .catalog-layout { grid-template-columns:minmax(0,1fr); gap:12px; }
@@ -703,7 +691,6 @@
   :root[data-skin] body .catalog-categories button { font-size:.78rem; min-height:44px; }
   :root[data-skin] body .catalog-toolbar { padding:0; flex-wrap:wrap; gap:8px; }
   :root[data-skin] body .catalog-reset { min-height:44px; }
-  .catalog-search { flex-basis:100%; }
   :root[data-skin] body .catalog-toolbar select { width:100%; }
   .collection-grid { --collection-gap:16px; }
   .collection-tools { gap:8px; }
