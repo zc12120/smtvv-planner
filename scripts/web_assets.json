@@ -47,6 +47,7 @@
     "/auth/theme/common.js",
     "/assets/icons.js",
     "/admin/admin.js",
+    "/admin/analytics-charts.js",
     "/admin/analytics.js"
   ]
 }

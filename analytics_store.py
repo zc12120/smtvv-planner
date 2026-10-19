@@ -133,13 +133,15 @@ class AnalyticsStore:
             clauses.append('(instr(path,?)>0 OR instr(path,?)>0)');args.extend([request['path'],quote_plus(request['path'])])
         where = ' AND '.join(clauses)
         if request['mode'] == 'summary':
-            row = dict(self.db.execute('SELECT count(*) AS views,count(DISTINCT ip) AS ips,count(DISTINCT visitor) AS visitors,count(DISTINCT session) AS sessions,coalesce(round(avg(duration)),0) AS duration FROM visits WHERE '+where,args).fetchone())
+            row = dict(self.db.execute('SELECT count(*) AS views,count(DISTINCT ip) AS ips,count(DISTINCT visitor) AS visitors,count(DISTINCT session) AS sessions,coalesce(round(avg(duration)),0) AS duration,min(at) AS firstAt FROM visits WHERE '+where,args).fetchone())
             counts = {r['phase']: r['n'] for r in self.db.execute('SELECT phase,count(*) AS n FROM actions WHERE '+where+' GROUP BY phase',args)}
             top = {}
-            for label, column in [('pages','path'),('regions',"CASE WHEN region!='' THEN country||' '||region ELSE country END"),('devices','device'),('browsers','browser'),('sources',"CASE WHEN referrer='' THEN '直接访问 / 未提供来源' ELSE referrer END")]:
+            for label, column in [('pages','path'),('regions',"CASE WHEN region!='' THEN country||' '||region ELSE country END"),('devices','device'),('browsers','browser'),('systems','os'),('sources',"CASE WHEN referrer='' THEN '直接访问 / 未提供来源' ELSE referrer END")]:
                 top[label] = [dict(r) for r in self.db.execute('SELECT '+column+' AS label,count(*) AS count FROM visits WHERE '+where+' GROUP BY 1 ORDER BY count DESC LIMIT 8',args)]
-            trend = [dict(r) for r in self.db.execute("SELECT date(at+28800,'unixepoch') AS day,count(*) AS views,count(DISTINCT ip) AS ips FROM visits WHERE "+where+' GROUP BY 1 ORDER BY 1',args)]
-            row.update({'calculations':counts,'top':top,'trend':trend,'days':request['days'],'storage':self.stats()})
+            trend = [dict(r) for r in self.db.execute("SELECT date(at+28800,'unixepoch') AS day,count(*) AS views,count(DISTINCT ip) AS ips,count(DISTINCT visitor) AS visitors FROM visits WHERE "+where+' GROUP BY 1 ORDER BY 1',args)]
+            hours = [dict(r) for r in self.db.execute("SELECT CAST(strftime('%H',at+28800,'unixepoch') AS INTEGER) AS hour,count(*) AS views,count(DISTINCT ip) AS ips,count(DISTINCT visitor) AS visitors FROM visits WHERE "+where+' GROUP BY 1 ORDER BY 1',args)]
+            heatmap = [dict(r) for r in self.db.execute("SELECT (CAST(strftime('%w',at+28800,'unixepoch') AS INTEGER)+6)%7 AS weekday,CAST(strftime('%H',at+28800,'unixepoch') AS INTEGER) AS hour,count(*) AS views FROM visits WHERE "+where+' GROUP BY 1,2 ORDER BY 1,2',args)]
+            row.update({'calculations':counts,'top':top,'trend':trend,'hours':hours,'heatmap':heatmap,'days':request['days'],'storage':self.stats()})
             result = row
         else:
             if request.get('before'):

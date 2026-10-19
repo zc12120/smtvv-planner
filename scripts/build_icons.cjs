@@ -9,7 +9,7 @@ function scan(directory) {
   for (const entry of fs.readdirSync(directory,{withFileTypes:true})) {
     const file = path.join(directory,entry.name);
     if (entry.isDirectory()) {
-      if (entry.name !== 'assets' && entry.name !== 'fonts') scan(file);
+      if (!['assets','fonts','vendor'].includes(entry.name)) scan(file);
     } else if (/\.(html|js)$/.test(entry.name)) source.push(fs.readFileSync(file,'utf8'));
   }
 }

@@ -60,6 +60,31 @@ class RelayTests(unittest.TestCase):
 
 
 class StorageTests(unittest.TestCase):
+    def test_charts_use_shanghai_hours_weekdays_and_scope_filters(self):
+        from datetime import datetime, timezone
+        now=int(datetime(2026,10,19,3,tzinfo=timezone.utc).timestamp())
+        with tempfile.TemporaryDirectory() as directory:
+            store=AnalyticsStore(Path(directory)/'visits.sqlite',clock=lambda:now);self.addCleanup(store.close)
+            sample=normalize_event(body(),'8.8.8.8','Mozilla Windows Chrome/100','salt',now)
+            # Sunday 23:59 and Monday 00:00/01:00 in Shanghai; one visitor has two page views.
+            boundary=int(datetime(2026,10,18,16,tzinfo=timezone.utc).timestamp())
+            store.ingest([{**sample,'id':'a','visit':'a','at':boundary-60},
+                          {**sample,'id':'b','visit':'b','at':boundary},
+                          {**sample,'id':'c','visit':'c','at':boundary+3600,'visitor':'other','session':'other','ip':'1.1.1.1','ua':'Mozilla iPhone Mobile Safari/100','path':'/skill.html?name=Dia'}])
+            today=store.query({'mode':'summary','days':1})
+            self.assertEqual((today['views'],today['visitors'],today['ips'],today['sessions']),(2,2,2,2))
+            self.assertEqual(today['firstAt'],boundary)
+            self.assertEqual([(r['hour'],r['views']) for r in today['hours']],[(0,1),(1,1)])
+            self.assertEqual([(r['weekday'],r['hour'],r['views']) for r in today['heatmap']],[(0,0,1),(0,1,1)])
+            self.assertEqual({r['label'] for r in today['top']['systems']},{'Windows','iOS'})
+            week=store.query({'mode':'summary','days':7})
+            self.assertEqual(sum(r['views'] for r in week['hours']),week['views'])
+            self.assertEqual(week['heatmap'][-1]['weekday'],6)
+            scoped=store.query({'mode':'summary','days':7,'ip':'8.8.8.8','path':'tab=demons'})
+            self.assertEqual((scoped['views'],scoped['visitors']),(2,1))
+            self.assertEqual(sum(r['views'] for r in scoped['heatmap']),2)
+            self.assertEqual(sum(r['count'] for r in scoped['top']['systems']),2)
+
     def test_dedup_visible_duration_calculations_filters_and_60_day_retention(self):
         with tempfile.TemporaryDirectory() as directory:
             now=[1800000000]

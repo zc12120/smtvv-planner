@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | 固定版本合体、技能与名称资料 | [aqiu384/megaten-fusion-tool](https://github.com/aqiu384/megaten-fusion-tool)，提交 `e93dd1c87ca453de8fae8165bdbef220732feabc` | [Unlicense](data/LICENSE.md) |
 | Lucide 0.468.0 | [Lucide](https://lucide.dev/) | [ISC](web/assets/lucide-LICENSE) |
+| Apache ECharts 6.1.0、zrender 与 tslib（后台按需构建） | [Apache ECharts](https://github.com/apache/echarts) | [Apache-2.0 / BSD-3-Clause 及上游通知](web/admin/vendor/ECHARTS-LICENSE.txt) |
 | Noto Sans SC | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/notosanssc) | [SIL OFL 1.1](web/assets/fonts/notosanssc-OFL.txt) |
 | Noto Sans CJK JP / TC / KR 字体子集 | [Noto CJK](https://github.com/googlefonts/noto-cjk) | [SIL OFL 1.1](web/auth/theme/fonts/OFL.txt) |
 | Noto Serif CJK SC / JP / TC / KR 标题子集 | [Noto CJK](https://github.com/googlefonts/noto-cjk/tree/main/Serif) | [SIL OFL 1.1](web/auth/theme/fonts/OFL.txt) |
