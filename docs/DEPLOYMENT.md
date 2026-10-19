@@ -50,13 +50,13 @@ TLS 由外层代理负责。网关根据最终域名验证 Host；Authelia Cooki
 
 使用 systemd 的实例必须采用新版 `deploy/smtvv-planner.service`，或配置 `StateDirectory=smtvv-planner` 和 `SMTVV_STATE_DIR=/var/lib/smtvv-planner`。不要把可写设置放在只读的 `/opt/` 发布目录。若启用后台改密，还需安装 `requirements-auth.txt`、指定真实 `SMTVV_USERS_FILE`，并让 Authelia 的只读挂载及附加组对应同一账户目录；完整 Compose 已配置这些权限。
 
-为**整个精确主机名**配置缓存绕过。Cloudflare Cache Rule 的条件示例是 `http.host eq "planner.example.com"`，动作是 Bypass cache。确保没有后续规则重新对该主机启用缓存；取消旧的 Cache Everything、目录或扩展名缓存规则。
+缓存策略跟随后台 `requireLogin` 开关联动：关闭登录时，公开攻略页面、目录数据、头像映射和站点状态使用 60 秒浏览器/共享缓存；带内容版本的脚本、样式和哈希资源可在浏览器缓存一天，其他图片与字体缓存一小时，共享缓存均限制为 60 秒。开启登录后，源站重新鉴权，新的业务响应使用 `no-store`。后台、登录和计算接口始终禁止共享缓存，公共站点状态不包含管理员身份。
 
-这包含 `/api/catalog`、`/auth/`、`.js`、`.css`、图片和字体。不要仅对带 Cookie 的请求绕过缓存，否则匿名请求仍可能命中以前缓存的受保护内容。原站统一返回 `Cache-Control: no-store`。不要通过额外的静态站点绕过鉴权直接提供 `web/`。
+CDN 只按源站缓存头处理公开 GET/HEAD，不能强制 Cache Everything，也不能忽略 `no-store` 或缓存 POST、后台、登录、工作节点请求。外层 OpenResty 必须保留网关的 `Cache-Control`，不能统一覆盖为 `no-store`。开启登录不会撤回浏览器已下载的公开副本；共享缓存最迟 60 秒过期，页面/目录浏览器副本最迟 60 秒过期，公开过的脚本和图片可能保留更久。需要立即停止边缘返回旧副本时，另行清除本站 CDN 缓存。
 
-应用在进程内复用静态文件读取和 gzip 压缩结果，每次响应仍先鉴权。这与浏览器/CDN 缓存
-无关，受保护部署保持 `no-store`，包括带哈希的图片与字体。只有本地匿名模式使用 ETag
-重验证和哈希资源的长期缓存。静态缓存最多 32 MiB、512 项；单文件超过 4 MiB 时使用流式发送。
+网关只缓存一秒匿名公开访问判断，合并同一秒内的并发检查；任何登录鉴权结果都不共享缓存。Python API 自行鉴权，避免网关与应用重复验证同一请求。使用单独的 OpenResty 网关片段时，还须在 `http` 上下文加载生成的 `runtime/http-cache.conf`。
+
+运行 `python3 scripts/build_web.py` 会更新页面资源版本，并生成可由 Nginx `gzip_static` 直接发送的 `.gz` 文件；生成物不提交 Git，部署时随原文件发布。应用已有 32 MiB 的静态内容缓存和预压缩目录数据，继续保留；任务状态支持 `knownResult`，内容不变时省略重复路线，完成响应始终包含完整结果。队列每两秒检查租约，每三十秒整理历史记录，持久化提交与完成结果仍使用 SQLite WAL/FULL。
 
 更新时一并发布公共 HTML、CSS、`assets/icons.js`、`auth/theme/fonts-optimized.css` 及其
 `fonts/optimized/` 字体文件。WebP 头像、装饰图及原始图片随本发行版提供；更新时按
@@ -139,7 +139,7 @@ docker compose up -d --wait
 
 ## 后台操作与验证
 
-管理员访问 `/admin/`。访问开关即时保存，关闭后页面、资料和计算可匿名使用，管理页面与管理 API 仍要求 `admins` 组。维护模式只暂停新计算，已有任务可继续查看与取消。前台每 5 秒同步公告和维护状态，切回页面时立即刷新。公告采用纯文本，编辑冲突会保留草稿并拒绝覆盖他人的更新。
+管理员访问 `/admin/`。访问开关即时保存，关闭后页面、资料和计算可匿名使用，管理页面与管理 API 仍要求 `admins` 组。维护模式只暂停新计算，已有任务可继续查看与取消。前台每 60 秒同步公告和维护状态，切回页面时立即刷新。公告采用纯文本，编辑冲突会保留草稿并拒绝覆盖他人的更新。
 
 后台会话过期时，重新登录会在新标签页打开；登录后返回原标签页即可恢复编辑，登录设置和公告草稿继续保留。也可点击“刷新状态”重新检查登录状态。页面脚本短暂加载失败会自动重试，持续失败时显示“重新加载”入口。
 
@@ -172,7 +172,7 @@ SMTVV_URL=https://planner.example.com SMTVV_CREDENTIALS_FILE=runtime/credentials
 SMTVV_URL=https://planner.example.com SMTVV_CREDENTIALS_FILE=runtime/credentials.txt npm run test:admin-recovery
 ```
 
-未登录的页面请求应跳转 `/auth/`，业务 API 应返回 401 JSON；带伪造 `Remote-User` 等请求头也不能通过。登录后资料与计算可用，退出后的旧 Cookie 必须失效。所有受保护路径都不应返回 CDN HIT。
+未登录的页面请求应跳转 `/auth/`，业务 API 应返回 401 JSON；带伪造 `Remote-User` 等请求头也不能通过。登录后资料与计算可用，退出后的旧 Cookie 必须失效。开启登录后，等此前公开共享缓存的 60 秒有效期结束，所有受保护路径都不应返回 CDN HIT；响应必须使用 no-store。
 
 会话回归测试会在隔离浏览器中预置旧的主机、父域和路径 Cookie，检查登录、前台与后台、刷新、新标签页和退出后重放。它只改变测试浏览器的会话，不修改网站设置或账号。
 

@@ -286,7 +286,7 @@
     const settings = data?.settings;
     if (!settings || typeof settings !== 'object') return;
     document.getElementById('auth-notice')?.remove();
-    const signature = JSON.stringify([settings, data.administrator]);
+    const signature = JSON.stringify(settings);
     if (signature === lastSiteSignature) return;
     lastSiteSignature = signature;
     window.dispatchEvent(new CustomEvent('smtvv:site-state', {detail: data}));
@@ -324,7 +324,7 @@
       .catch(error => { if (error.status === 401) requireLogin(); return null; })
       .finally(() => {
         siteRequest = null;
-        if (!document.hidden) siteTimer = setTimeout(refreshSiteState, 5000);
+        if (!document.hidden) siteTimer = setTimeout(refreshSiteState, 60000);
       });
     return siteRequest;
   }

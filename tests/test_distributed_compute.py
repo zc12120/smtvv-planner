@@ -167,6 +167,32 @@ class QueueTests(unittest.TestCase):
             self.call('finish',taskId=task['taskId'],lease=task['lease'],result={'complete':True,'solutions':{},'computedObjectives':['shortest']})
         self.assertFalse(self.queue.snapshot(job)['complete'])
 
+    def test_progress_payload_is_sent_only_when_changed_and_final_is_always_full(self):
+        job=self.queue.submit({'target':'Angel'})
+        task=self.claim()
+        progress={'computedObjectives':['mixed'],'solutions':{'mixed':{'validated':True,'skills':[]}}}
+        self.call('heartbeat',taskId=task['taskId'],lease=task['lease'],result=progress)
+        first=self.queue.snapshot(job)
+        second=self.queue.snapshot({**job,'knownResult':first['resultRevision']})
+        self.assertTrue(second['unchanged'])
+        self.assertEqual(second['solutions'],{})
+        self.assertEqual(second['resultRevision'],first['resultRevision'])
+        self.call('finish',taskId=task['taskId'],lease=task['lease'],result={**progress,'complete':True})
+        final=self.queue.snapshot({**job,'knownResult':first['resultRevision']})
+        self.assertFalse(final['unchanged'])
+        self.assertTrue(final['complete'])
+        self.assertIn('mixed',final['solutions'])
+
+    def test_idle_worker_claim_does_not_rewrite_same_heartbeat_on_every_wakeup(self):
+        self.assertIsNone(self.claim())
+        changes=self.queue.db.total_changes
+        for _ in range(10):self.claim()
+        self.assertEqual(self.queue.db.total_changes,changes)
+        self.now[0]+=5
+        self.claim()
+        self.assertGreater(self.queue.db.total_changes,changes)
+        self.assertEqual(self.queue.overview()['workers'][0]['onlineSlots'],1)
+
 
 class WorkerTests(unittest.TestCase):
     def test_real_worker_produces_validated_results_without_local_fallback(self):

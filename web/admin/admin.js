@@ -360,5 +360,5 @@
   window.addEventListener('scroll',scheduleNavigation,{passive:true});
   window.addEventListener('resize',scheduleNavigation);
   updateNavigation();
-  refresh();setInterval(() => {if (!document.hidden && !expired) refresh();},5000);
+  refresh();setInterval(() => {if (!document.hidden && !expired) refresh();},15000);
 })();

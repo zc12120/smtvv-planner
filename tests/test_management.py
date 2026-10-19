@@ -151,6 +151,18 @@ class ManagementHTTPTests(unittest.TestCase):
         self.assertEqual(status, 200);self.assertFalse(body['administrator'])
         self.assertEqual(set(body), {'revision', 'settings', 'administrator'})
 
+    def test_public_cookie_does_not_trigger_admin_verification(self):
+        with patch.object(server.AUTH,'verify',side_effect=AssertionError('public state must not verify identity')):
+            status,body=self.request('GET','/api/site',headers={'Cookie':'edge_tracking=present'})
+            self.assertEqual(status,200)
+            self.assertFalse(body['administrator'])
+
+    def test_login_toggle_closes_previously_public_data(self):
+        self.assertEqual(self.request('GET','/assets/demons/manifest.json?view=runtime')[0],200)
+        self.store.update({'requireLogin':True},1,'test-admin')
+        for path in ('/api/site','/api/catalog','/assets/demons/manifest.json?view=runtime'):
+            self.assertEqual(self.request('GET',path)[0],401)
+
 
 if __name__ == '__main__':
     unittest.main()

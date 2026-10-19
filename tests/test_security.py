@@ -70,7 +70,7 @@ class DistributionTests(unittest.TestCase):
     def test_gateway_proxies_runtime_manifest_with_access_control(self):
         config = gateway_configuration('https://planner.example.com')
         block = re.search(r'location = /assets/demons/manifest\.json \{(.*?)\n\}', config, re.S).group(1)
-        self.assertIn('auth_request /_smtvv_access;', block)
+        self.assertNotIn('auth_request /_smtvv_access;', block)  # Handler authorizes once.
         self.assertIn('error_page 401 = @smtvv_unauthorized;', block)
         self.assertIn('proxy_pass http://app:8765;', block)
         self.assertNotIn('try_files', block)

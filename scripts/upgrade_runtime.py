@@ -11,7 +11,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.configure import gateway_configuration, nginx_locations, public_origin, session_cookie_name, login_bootstrap
+from scripts.configure import gateway_configuration, nginx_locations, public_origin, session_cookie_name, login_bootstrap, nginx_http_cache_configuration
 
 
 def replace(path, text, mode):
@@ -66,6 +66,7 @@ def upgrade(directory):
             remember_me_migrated = True
     replace(config_file, json.dumps(config, ensure_ascii=False, indent=2) + '\n', 0o600)
     replace(directory / 'login-bootstrap.json', json.dumps(login_bootstrap(config), indent=2) + '\n', 0o644)
+    replace(directory / 'http-cache.conf', nginx_http_cache_configuration(), 0o644)
     replace(directory / 'nginx.conf', gateway_configuration(origin), 0o644)
     replace(directory / 'openresty-locations.conf', nginx_locations(origin, '127.0.0.1:8765', '127.0.0.1:9091', '/www/sites/smtvv/index'), 0o644)
     os.chmod(user_file, 0o644)

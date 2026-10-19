@@ -118,8 +118,10 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_header('Cache-Control','no-store' if self.services.AUTH_ENABLED else 'no-cache')
         super().end_headers()
     def send_json(self,content,status=200,headers=None):
-        data=json.dumps(content,ensure_ascii=False).encode()
-        self.send_response(status);self.send_header('Content-Type','application/json; charset=utf-8');self.send_header('Content-Length',str(len(data)));self.send_header('Cache-Control','no-store')
+        data=json.dumps(content,ensure_ascii=False,separators=(',',':')).encode()
+        self.send_response(status);self.send_header('Content-Type','application/json; charset=utf-8');self.send_header('Content-Length',str(len(data)))
+        if not headers or 'Cache-Control' not in headers:
+            self.send_header('Cache-Control','no-store')
         if status in (429,503):self.send_header('Retry-After','2')
         for key,value in (headers or {}).items():self.send_header(key,value)
         if self.close_connection:self.send_header('Connection','close')
@@ -133,7 +135,8 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-Type','application/json; charset=utf-8')
         self.send_header('Content-Length',str(len(data)))
-        self.send_header('Cache-Control','no-store')
+        public=not self.services.AUTH_ENABLED or not self.services.SITE.requires_login()
+        self.send_header('Cache-Control','public, max-age=60, s-maxage=60, must-revalidate' if public else 'no-store')
         self.send_header('Vary','Accept-Encoding')
         if compressed:self.send_header('Content-Encoding','gzip')
         self.end_headers()
@@ -156,12 +159,12 @@ class Handler(SimpleHTTPRequestHandler):
             compressed=bool(asset.compressed) and accepts_gzip(self.headers.get('Accept-Encoding',''))
             data=asset.compressed if compressed else asset.data
             etag='"'+asset.etag+('-gzip' if compressed else '')+'"'
-            # The authenticated deployment keeps its no-store policy. A local
-            # unauthenticated preview can revalidate files or reuse hashed copies.
+            # Runtime login mode controls shared caching; authorization ran first.
             immutable=bool(re.search(r'-[a-f0-9]{12}-\d+\.(webp|woff2)$',path.name))
-            policy='no-store' if self.services.AUTH_ENABLED else 'public, max-age=31536000, immutable' if immutable else 'no-cache'
+            public_mode=not self.services.AUTH_ENABLED or not self.services.SITE.requires_login()
+            policy=('public, max-age=31536000, immutable' if immutable else 'no-cache') if not self.services.AUTH_ENABLED else ('public, max-age=60, s-maxage=60, must-revalidate' if public_mode else 'no-store')
             fresh=False
-            if not self.services.AUTH_ENABLED:
+            if public_mode:
                 tags=self.headers.get('If-None-Match')
                 if tags:fresh=any(tag.strip().removeprefix('W/') in ('*',etag) for tag in tags.split(','))
                 elif self.headers.get('If-Modified-Since'):
@@ -181,7 +184,7 @@ class Handler(SimpleHTTPRequestHandler):
                 except (BrokenPipeError,ConnectionResetError):pass
             return
         # Large files and directory handling retain the standard streaming path.
-        if self.services.AUTH_ENABLED:
+        if not (not self.services.AUTH_ENABLED or not self.services.SITE.requires_login()):
             # SimpleHTTPRequestHandler implements its own date conditional.
             # Authenticated responses must remain no-store, including large files.
             for header in ('If-Modified-Since','If-None-Match'):
@@ -238,10 +241,16 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_response(204 if allowed else 403)
             self.send_header('Cache-Control','no-store');self.send_header('Content-Length','0')
             self.end_headers();return
-        if path in ('/_internal/access','/_internal/admin-access'):
-            decision=check_access(self.headers.get('Cookie',''),self.headers.get('X-Original-URI','/'),self.headers.get('X-Original-Method','GET'),path.endswith('/admin-access'),services=self.services)
+        if path in ('/_internal/access','/_internal/admin-access','/_internal/presentation-access'):
+            decision=Access(204) if path.endswith('/presentation-access') else check_access(self.headers.get('Cookie',''),self.headers.get('X-Original-URI','/'),self.headers.get('X-Original-Method','GET'),path.endswith('/admin-access'),services=self.services)
             self.send_response(decision.status)
             self.send_header('Cache-Control','no-store');self.send_header('Content-Length','0')
+            if path in ('/_internal/access','/_internal/presentation-access'):
+                public=not self.services.AUTH_ENABLED or not self.services.SITE.requires_login()
+                self.send_header('X-Smtvv-Public','1' if public else '0')
+                self.send_header('X-Smtvv-Protected','0' if public else '1')
+                # Cache only the anonymous public decision, never a user's login.
+                self.send_header('X-Accel-Expires','1' if public else '0')
             if decision.location:self.send_header('Location',decision.location)
             self.end_headers();return
         identity=self.authorize()
@@ -251,8 +260,9 @@ class Handler(SimpleHTTPRequestHandler):
         if path=='/api/site':
             state=self.services.SITE.snapshot()
             if not self.services.AUTH_ENABLED:state['settings']['requireLogin']=False
-            state['administrator']=bool(self.services.AUTH and self.services.AUTH.verify(self.headers.get('Cookie',''),'/admin/',require_admin=True).status==204)
-            self.send_json(state);return
+            state['administrator']=False  # Public state contains no session-dependent identity.
+            public_mode=not self.services.AUTH_ENABLED or not self.services.SITE.requires_login()
+            self.send_json(state,headers={'Cache-Control':'public, max-age=60, s-maxage=60, must-revalidate'} if public_mode else None);return
         if path=='/assets/demons/manifest.json' and not (self.services.WEB/'assets/demons/manifest.json').is_file():
             self.send_json({'demons':{},'essences':{}})
         elif path=='/api/catalog':self.send_catalog()

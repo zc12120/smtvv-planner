@@ -3,7 +3,7 @@
 class TaskController {
   constructor() {
     this.phase='idle';this.revision=0;this.pageRevision=0;this.jobId='';this.request=null;
-    this.pollTimer=null;this.completed=null;this.retryObjective='mixed';this.abort=new AbortController();
+    this.pollTimer=null;this.lastSnapshot=null;this.completed=null;this.retryObjective='mixed';this.abort=new AbortController();
   }
   get busy() {return ['submitting','queued','running'].includes(this.phase);}
   transition(phase) {
@@ -13,7 +13,7 @@ class TaskController {
   invalidate() {
     const jobId=this.jobId||this.request?.requestId;
     this.revision++;this.pageRevision++;clearTimeout(this.pollTimer);this.abort.abort();this.abort=new AbortController();
-    this.jobId='';this.request=null;this.transition('idle');return jobId;
+    this.jobId='';this.request=null;this.lastSnapshot=null;this.transition('idle');return jobId;
   }
   receive(result) {
     this.transition(result.finished ? (result.complete?'completed':result.error?'failed':'cancelled') : result.status==='queued'?'queued':'running');

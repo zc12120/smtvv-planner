@@ -1,5 +1,7 @@
 """Build one shared page loader and content-version local page assets."""
+import gzip
 import hashlib
+import os
 import json
 from pathlib import Path
 import re
@@ -32,6 +34,18 @@ def build():
             return match[1] + versioned('/' + str(file.relative_to(WEB))) + match[3]
         page = re.sub(r'((?:src|href)=")([^"]+\.(?:js|css)(?:\?[^"]*)?)(")', update, page)
         path.write_text(page)
+    # Compress text once during release construction, not on every visit.
+    for path in WEB.rglob('*'):
+        if path.suffix not in {'.html','.css','.js','.json','.svg','.txt'} or not path.is_file():
+            continue
+        data=path.read_bytes()
+        compressed=gzip.compress(data,compresslevel=9,mtime=0) if len(data)>1024 else b''
+        target=path.with_name(path.name+'.gz')
+        if compressed and len(compressed)<len(data):
+            target.write_bytes(compressed)
+            os.utime(target,ns=(path.stat().st_mtime_ns,path.stat().st_mtime_ns))
+        else:
+            target.unlink(missing_ok=True)
 
 
 if __name__ == '__main__':

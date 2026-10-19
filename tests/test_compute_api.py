@@ -241,7 +241,7 @@ class ComputeHTTPTests(unittest.TestCase):
                         connection.request(method, '/api/catalog', headers={'Accept-Encoding': accept})
                         response = connection.getresponse()
                         self.assertEqual(response.status, 200)
-                        self.assertEqual(response.getheader('Cache-Control'), 'no-store')
+                        self.assertIn('public, max-age=60', response.getheader('Cache-Control'))
                         self.assertEqual(response.getheader('Vary'), 'Accept-Encoding')
                         self.assertEqual(response.getheader('Content-Encoding'), 'gzip' if compressed else None)
                         lengths.append(int(response.getheader('Content-Length')))

@@ -9,6 +9,7 @@ import sqlite3
 import threading
 import time
 import uuid
+from functools import lru_cache
 
 from compute_protocol import cache_key, encode, identifier, normalize, revision, OBJECTIVES, computed_objectives, objective_result
 from compute_errors import SearchBusy
@@ -30,8 +31,10 @@ class Coordinator:
         self.lease_seconds, self.task_seconds = lease_seconds, task_seconds
         self.workers = workers
         self.last_pruned = float('-inf')
+        self.last_retained = float('-inf')
         self.lock = threading.RLock()
         self.changed = threading.Condition(self.lock)
+        self.worker_seen = {}
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(path, check_same_thread=False)
         self.db.row_factory = sqlite3.Row
@@ -92,6 +95,9 @@ class Coordinator:
                         "WHERE state='running' AND expires<?", (now, now))
         self.db.execute("UPDATE tasks SET state='failed',error='排队时间过长，请稍后重试。',updated=? "
                         "WHERE state='queued' AND created<?", (now, now-900))
+        if now-self.last_retained < 30:
+            return
+        self.last_retained = now
         self.db.execute("DELETE FROM tickets WHERE created<? AND task IN "
                         "(SELECT id FROM tasks WHERE state NOT IN ('queued','running'))", (now-1800,))
         rows = self.db.execute("SELECT id,result_bytes AS size,updated FROM tasks "
@@ -176,16 +182,28 @@ class Coordinator:
             raise ValueError('生成任务已过期，请重新生成。')
         return row
 
+    @staticmethod
+    @lru_cache(maxsize=128)
+    def _decode_small(value):
+        return json.loads(value)
+
+    def _decode(self, value):
+        return self._decode_small(value) if len(value) <= 16384 else json.loads(value)
+
     def snapshot(self, request):
         job_id = identifier(request.get('jobId'))
         with self.lock, self.db:
             self._prune(self.clock())
             row = self._get(job_id)
-        presentation = json.loads(row['presentation'])
-        config = json.loads(row['config'])
-        result = json.loads(row['result']) if row['result'] else {}
-        for route in result.get('solutions',{}).values():
-            route['skills']=presentation.get('skills',config.get('skills',[]))
+        presentation = self._decode(row['presentation'])
+        config = self._decode(row['config'])
+        result_revision=hashlib.sha256((row['result'] or '').encode()).hexdigest()[:24]
+        unchanged=(row['kind']=='optimal' and row['state'] in ('queued','running')
+                   and not row['cancelled'] and request.get('knownResult')==result_revision)
+        source = (self._decode(row['result']) if row['kind']=='optimal' else json.loads(row['result'])) if row['result'] and not unchanged else {}
+        # Projection never mutates the shared decoded result or another visitor.
+        result = {**source,'solutions':{key:{**route,'skills':presentation.get('skills',config.get('skills',[]))}
+                                      for key,route in source.get('solutions',{}).items()}} if row['kind']=='optimal' else source
         cancelled = bool(row['cancelled']) or row['state'] == 'cancelled'
         finished = cancelled or row['state'] in ('completed', 'failed')
         elapsed = (row['updated'] if finished else self.clock()) - (row['started'] or row['submitted'])
@@ -194,7 +212,7 @@ class Coordinator:
             if row['state']=='completed' and 'computedObjectives' not in result:
                 result['computedObjectives']=computed_objectives(config.get('objective','all'))
             result=objective_result({**result,'solutions':result.get('solutions',{})},selected)
-            return dict(jobId=job_id, finished=finished, complete=row['state']=='completed' and not cancelled,
+            return dict(jobId=job_id, resultRevision=result_revision, unchanged=unchanged, finished=finished, complete=row['state']=='completed' and not cancelled,
                         error=row['error'] if not cancelled else '', message='已取消' if cancelled else result.get('message',''),
                         stage='已完成' if row['state']=='completed' else row['stage'], seconds=max(0, round(elapsed, 2)),
                         solutions={} if cancelled else result.get('solutions', {}),
@@ -207,9 +225,12 @@ class Coordinator:
     def _claim(self, name, slot, session, version):
         now = self.clock()
         self._prune(now)
-        self.db.execute('INSERT INTO workers VALUES(?,?,?,?,?) ON CONFLICT(name,slot) DO UPDATE SET '
-                        'seen=excluded.seen,session=excluded.session,revision=excluded.revision',
-                        (name, slot, now, session, version))
+        previous = self.worker_seen.get((name,slot))
+        if previous is None or previous[1:] != (session,version) or now-previous[0] >= 5:
+            self.db.execute('INSERT INTO workers VALUES(?,?,?,?,?) ON CONFLICT(name,slot) DO UPDATE SET '
+                            'seen=excluded.seen,session=excluded.session,revision=excluded.revision',
+                            (name, slot, now, session, version))
+            self.worker_seen[(name,slot)] = (now,session,version)
         if version != self.version:
             raise ComputeError('计算版本不一致，请更新工作节点。', 409)
         row = self.db.execute("SELECT * FROM tasks WHERE state='running' AND worker=? AND slot=?", (name,slot)).fetchone()
@@ -288,7 +309,8 @@ class Coordinator:
             else:
                 self.db.execute('UPDATE tasks SET expires=?,updated=?,stage=?,result=COALESCE(?,result),result_bytes=COALESCE(?,result_bytes) WHERE id=?',
                                 (now+self.lease_seconds,now,stage,result,result_bytes if result else None,row['id']))
-            self.changed.notify_all()
+            if action == 'finish':
+                self.changed.notify_all()
             return {'accepted': True, 'cancel': False}
 
     def synchronous(self, request, kind, timeout=22):

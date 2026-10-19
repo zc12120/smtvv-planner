@@ -269,11 +269,15 @@ function restoreRoutes(){
 async function pollRoutes(current){
  const token=++computation.pageRevision;
  try{
-  const r=await api('optimal/status',{jobId:computation.jobId},requestOptions(current));
+  const r=await api('optimal/status',{jobId:computation.jobId,knownResult:computation.lastSnapshot?.jobId===computation.jobId?computation.lastSnapshot.resultRevision:undefined},requestOptions(current));
   if(current!==computation.revision||token!==computation.pageRevision)return;
   if(r.error)throw Error(r.error);
+  if(r.unchanged&&computation.lastSnapshot?.jobId===r.jobId){
+   r.solutions=computation.lastSnapshot.solutions;r.computedObjectives=computation.lastSnapshot.computedObjectives;r.message=computation.lastSnapshot.message;
+  }
+  computation.lastSnapshot=r;
   plannerError('');showRouteStatus(r);
-  if(!r.finished)computation.pollTimer=setTimeout(()=>pollRoutes(current),document.hidden?1000:r.seconds<1?100:r.seconds<3?250:500);
+  if(!r.finished)computation.pollTimer=setTimeout(()=>pollRoutes(current),document.hidden?5000:r.status==='queued'?2000:r.seconds<3?1000:2000);
   else if(r.complete){rememberRoutes(currentPage);computation.jobId='';computation.request=null;forgetActiveRequest();}
   else{computation.jobId='';computation.request=null;forgetActiveRequest();$('retry-compute').hidden=false;}
  }catch(e){if(token===computation.pageRevision)computationFailed(e,current);}
