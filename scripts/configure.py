@@ -291,6 +291,7 @@ location @smtvv_busy {
     # Worker credentials are checked by the application, independently of
     # browser login/Origin checks. Never expose the generic internal namespace.
     value += '\nlocation = /api/compute/worker {\n    client_max_body_size 9m;\n' + proxy + '}\n'
+    value += '\nlocation = /api/analytics/worker {\n    client_max_body_size 9m;\n' + proxy + '}\n'
     value += '\nlocation = /admin { return 302 @ORIGIN@/admin/; }\n'
     value += '\nlocation ^~ /admin/ {\n' + admin_check + '''    error_page 401 =302 $smtvv_redirect;
     root @STATIC@;

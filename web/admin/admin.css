@@ -244,3 +244,58 @@ td .quiet { min-height:44px; padding:4px 8px; color:var(--danger); }
 }
 @media (max-width:420px) { .header-link { display:none; } .header-inner { padding-inline:12px; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
+
+/* Visitor register: the same jade/stone ledger as the site controls. */
+.analytics-sheet { overflow:hidden; }
+.analytics-toolbar,.analytics-pagination { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; }
+.analytics-periods { display:flex; gap:4px; flex-wrap:wrap; }
+.analytics-periods button { min-height:44px; padding:8px 14px; border:1px solid transparent; background:transparent; border-radius:var(--radius-control); font-size:.8125rem; }
+.analytics-periods button:hover { background:var(--hover); }
+.analytics-periods button[aria-pressed='true'] { background:var(--accent-wash); color:var(--accent); border-color:var(--line); font-weight:600; }
+.analytics-message { margin:0 20px 16px; padding:12px; background:var(--gold-wash); color:var(--text); border-radius:var(--radius-control); font-size:.8125rem; }
+.analytics-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 20px; padding:20px 0; border-block:1px solid var(--line); }
+.analytics-metrics>div { padding:0 16px; }
+.analytics-metrics>div+div { border-left:1px solid var(--line); }
+.analytics-metrics dt { font-size:.75rem; color:var(--muted); }
+.analytics-metrics dd { margin:4px 0 0; font:500 1.75rem/1.3 var(--font-number); color:var(--accent); font-variant-numeric:tabular-nums; }
+.analytics-trend { padding:20px; }
+.analytics-trend h3,.analytics-rankings h3 { font-size:.875rem; font-weight:600; }
+.analytics-trend h3 small { margin-left:8px; color:var(--muted); font-size:.6875rem; font-weight:400; }
+.analytics-trend svg { display:block; width:100%; height:148px; margin-top:12px; overflow:visible; }
+.analytics-trend rect { fill:var(--accent); opacity:.75; }
+.analytics-trend text { fill:var(--muted); font:12px var(--font-number); }
+.analytics-rankings { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; padding:0 20px 20px; }
+.analytics-rankings article { min-width:0; }
+.analytics-rankings ol { margin:10px 0 0; padding:0; list-style:none; }
+.analytics-rankings li { display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid var(--soft-line); padding:7px 0; font-size:.75rem; }
+.analytics-rankings li span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.analytics-rankings b { font-weight:500; color:var(--accent); font-variant-numeric:tabular-nums; }
+.analytics-filter { display:flex; align-items:end; flex-wrap:wrap; gap:12px; padding:20px; background:var(--inset); border-block:1px solid var(--line); }
+.analytics-filter .field { flex:1 1 190px; margin:0; }
+.analytics-filter input { width:100%; min-width:0; }
+.analytics-table { min-width:850px; }
+.analytics-table td { vertical-align:top; max-width:260px; }
+.analytics-table td strong { font-size:.8125rem; font-weight:500; overflow-wrap:anywhere; }
+.analytics-table td small { display:block; margin-top:4px; color:var(--muted); font-size:.6875rem; overflow-wrap:anywhere; }
+.analytics-table .analytics-ip-button { padding:0; background:none; border:0; color:var(--accent); text-align:left; font:500 .8125rem var(--font-number); overflow-wrap:anywhere; }
+.analytics-table .analytics-ip-button:hover { text-decoration:underline; }
+.analytics-pagination { font-size:.75rem; color:var(--muted); }
+.analytics-sheet>.section-footnote { margin:0 20px 16px; }
+.analytics-dialog { width:min(680px,calc(100vw - 32px)); max-height:85vh; padding:20px; color:var(--text); background:var(--surface); border:1px solid var(--control-border); border-radius:var(--radius-panel); }
+.analytics-dialog::backdrop { background:rgb(5 20 22 / 45%); }
+.analytics-dialog-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.analytics-dialog dl { display:grid; grid-template-columns:100px minmax(0,1fr); gap:10px; font-size:.8125rem; }
+.analytics-dialog dt { color:var(--muted); }
+.analytics-dialog dd { margin:0; overflow-wrap:anywhere; }
+.analytics-dialog li { font-size:.8125rem; margin-top:8px; }
+@media(max-width:700px) {
+ .analytics-toolbar { align-items:flex-start; flex-direction:column; }
+ .analytics-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 0; }
+ .analytics-metrics>div:nth-child(3) { border-left:0; }
+ .analytics-rankings { grid-template-columns:1fr; }
+ .analytics-filter .field { flex-basis:100%; }
+ .analytics-metrics dd { font-size:1.4rem; }
+}
+.analytics-sheet>.table-scroll { max-height:620px; overflow:auto; }
+.analytics-table thead { position:sticky; top:0; z-index:1; background:var(--inset); }
+@media(max-width:700px) { .analytics-sheet>.table-scroll { max-height:520px; } }

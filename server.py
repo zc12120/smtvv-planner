@@ -297,6 +297,25 @@ class Handler(SimpleHTTPRequestHandler):
             if self.services.TURNSTILE is None:raise ManagementError('此部署尚未启用 Turnstile 设置。',503)
             self.send_json(self.services.TURNSTILE.snapshot(history=True))
         elif path=='/api/admin/jobs':self.send_json(jobs_snapshot(self.services.COORDINATOR))
+        elif path=='/api/admin/analytics':
+            relay=self.services.ANALYTICS
+            if relay is None:self.send_json({'enabled':False});return
+            options={k:v[0] for k,v in parse_qs(urlsplit(self.path).query).items()}
+            if options.get('mode')=='status':self.send_json(relay.status());return
+            result=relay.query(options)
+            if options.get('mode')=='export':
+                import csv,io
+                stream=io.StringIO();writer=csv.writer(stream)
+                keys=['at','ip','country','region','city','isp','path','referrer','device','browser','os','duration','ua']
+                writer.writerow(['时间(UTC秒)','IP','国家','省份','城市','运营商','页面','来源域名','设备','浏览器','系统','停留秒数','User-Agent'])
+                for row in result['items']:
+                    values=[str(row.get(k,'')) for k in keys]
+                    writer.writerow(["'"+v if v.startswith(('=','+','-','@','\t','\r')) else v for v in values])
+                data=('\ufeff'+stream.getvalue()).encode()
+                self.send_response(200);self.send_header('Cache-Control','no-store');self.send_header('Content-Type','text/csv; charset=utf-8')
+                self.send_header('Content-Disposition','attachment; filename=visits.csv');self.send_header('Content-Length',str(len(data)))
+                self.end_headers();self.wfile.write(data)
+            else:self.send_json(result)
         elif path=='/api/admin/audit':self.send_json({'items':self.services.SITE.snapshot(history=True)['history']})
         elif path=='/api/admin/export':
             self.send_json({'schema':1,'settings':self.services.SITE.snapshot()['settings']},headers={'Content-Disposition':'attachment; filename="site-settings.json"'})
@@ -306,6 +325,15 @@ class Handler(SimpleHTTPRequestHandler):
     def do_POST(self):
         try:path=normalized_path(self.path)
         except ManagementError as error:self.close_connection=True;self.send_json({'error':str(error)},error.status);return
+        if path=='/api/analytics/worker':
+            try:
+                relay=self.services.ANALYTICS
+                if relay is None:raise ManagementError('接口不存在。',404)
+                relay.authenticate(self.headers.get('Authorization',''))
+                self.send_json(relay.exchange(self.read_json(8*1024*1024)))
+            except ManagementError as error:
+                self.close_connection=True;self.send_json({'error':str(error)},error.status)
+            return
         if path=='/api/compute/worker':
             self.worker_post();return
         if path=='/api/login/turnstile':
@@ -332,6 +360,15 @@ class Handler(SimpleHTTPRequestHandler):
         if self.services.CATALOG['authPortal'] and self.headers.get('Origin')!=self.services.PUBLIC_ORIGIN:
             self.close_connection=True
             self.send_json({'error':'请求来源无效，请从本站页面重新操作。'},403)
+            return
+        if path=='/api/analytics/collect':
+            try:
+                body=self.read_json(4096)
+                relay=self.services.ANALYTICS
+                if relay is not None:relay.collect(body,self.remote_ip(),self.headers.get('User-Agent',''))
+                self.send_json({'accepted':relay is not None},202)
+            except ManagementError as error:
+                self.close_connection=True;self.send_json({'error':str(error)},error.status)
             return
         if path.startswith('/api/admin'):
             self.admin_post(path,identity);return

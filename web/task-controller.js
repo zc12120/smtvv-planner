@@ -8,7 +8,8 @@ class TaskController {
   get busy() {return ['submitting','queued','running'].includes(this.phase);}
   transition(phase) {
     if (!['idle','submitting','queued','running','completed','failed','cancelled'].includes(phase)) throw Error('Invalid task phase');
-    this.phase=phase;
+    const previous=this.phase;this.phase=phase;
+    if(previous!==phase&&this.request&&['submitting','completed','failed','cancelled'].includes(phase))window.dispatchEvent(new CustomEvent('smtvv:calculation',{detail:{phase,target:this.request.target||''}}));
   }
   invalidate() {
     const jobId=this.jobId||this.request?.requestId;

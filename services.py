@@ -11,7 +11,7 @@ from planner import catalog
 from static_assets import StaticAssets
 from compute_queue import from_environment
 
-SERVICE_FIELDS = frozenset({'ACCOUNTS', 'CATALOG_GZIP', 'WEB', 'CATALOG_JSON', 'STATIC_LOCK', 'SITE', 'PUBLIC_ORIGIN', 'STARTED', 'LOCK', 'AUTH', 'STATE_DIR', 'REMOTE_SYNC', 'LOGIN_POLICY', 'COORDINATOR', 'AUTH_ENABLED', 'TURNSTILE', 'CATALOG', 'STATIC_ASSETS'})
+SERVICE_FIELDS = frozenset({'ACCOUNTS', 'CATALOG_GZIP', 'WEB', 'CATALOG_JSON', 'STATIC_LOCK', 'SITE', 'PUBLIC_ORIGIN', 'STARTED', 'LOCK', 'AUTH', 'STATE_DIR', 'REMOTE_SYNC', 'LOGIN_POLICY', 'COORDINATOR', 'AUTH_ENABLED', 'TURNSTILE', 'CATALOG', 'STATIC_ASSETS', 'ANALYTICS'})
 
 
 def create_services():
@@ -56,8 +56,10 @@ def create_services():
         CATALOG['assets']['storyArt']='/assets/optimized/story-art.webp'
     # Catalog data is immutable for the lifetime of this process. Encode/compress it
     # once; every delivery still passes through authorize() and remains no-store.
+    from visit_analytics import from_environment as analytics_from_environment
+    ANALYTICS = analytics_from_environment(STATE_DIR)
+    CATALOG['analytics'] = {'enabled': ANALYTICS is not None}
     CATALOG_JSON=json.dumps(CATALOG,ensure_ascii=False,separators=(',',':')).encode()
     CATALOG_GZIP=gzip.compress(CATALOG_JSON,compresslevel=6,mtime=0)
-
     COORDINATOR = from_environment()
     return SimpleNamespace(**{key: value for key, value in locals().items() if key in SERVICE_FIELDS})

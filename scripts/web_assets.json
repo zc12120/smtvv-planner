@@ -10,7 +10,8 @@
     "/task-controller.js",
     "/app.js",
     "/inspector.js",
-    "/ui.js"
+    "/ui.js",
+    "/analytics-client.js"
   ],
   "demon.html": [
     "/auth/theme/common.js",
@@ -19,7 +20,8 @@
     "/site.js",
     "/skills-ui.js",
     "/entry.js",
-    "/ui.js"
+    "/ui.js",
+    "/analytics-client.js"
   ],
   "skill.html": [
     "/auth/theme/common.js",
@@ -28,7 +30,8 @@
     "/site.js",
     "/skills-ui.js",
     "/entry.js",
-    "/ui.js"
+    "/ui.js",
+    "/analytics-client.js"
   ],
   "essence.html": [
     "/auth/theme/common.js",
@@ -37,11 +40,13 @@
     "/site.js",
     "/skills-ui.js",
     "/entry.js",
-    "/ui.js"
+    "/ui.js",
+    "/analytics-client.js"
   ],
   "admin/index.html": [
     "/auth/theme/common.js",
     "/assets/icons.js",
-    "/admin/admin.js"
+    "/admin/admin.js",
+    "/admin/analytics.js"
   ]
 }
