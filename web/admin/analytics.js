@@ -56,6 +56,7 @@
   $('analytics-reset').onclick=()=>{$('analytics-ip').value='';$('analytics-path').value='';before=0;refresh();};
   $('analytics-next').onclick=()=>{before=next;refresh(false);};
   $('analytics-refresh').onclick=()=>{before=0;refresh();};
+  $('analytics-visits-refresh').onclick=()=>{before=0;refresh(false);};
   $('analytics-detail-close').onclick=()=>$('analytics-detail').close();
   $('analytics-visits').onclick=event=>{
     const ip=event.target.closest('[data-visit-ip]');if(ip){$('analytics-ip').value=ip.dataset.visitIp;before=0;refresh();return;}

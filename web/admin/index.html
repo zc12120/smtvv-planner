@@ -110,7 +110,7 @@ window.addEventListener('error',event=>{
         </div>
         <p id="analytics-coverage" class="analytics-coverage"></p>
         <div class="analytics-detail-heading"><h3><i data-icon="Network"></i>访问明细</h3><p>按 IP 查看访问轨迹，或导出筛选后的记录</p></div>
-        <form id="analytics-filter" class="analytics-filter"><label class="field" for="analytics-ip">访客 IP<input id="analytics-ip" type="text" placeholder="输入完整 IPv4 / IPv6" maxlength="64" autocomplete="off"></label><label class="field" for="analytics-path">访问页面<input id="analytics-path" type="text" placeholder="仲魔、技能名称或页面路径" maxlength="160" autocomplete="off"></label><button class="primary" type="submit"><i data-icon="Search"></i>查询</button><button id="analytics-reset" class="quiet" type="button"><i data-icon="RotateCcw"></i>重置</button><a id="analytics-export" class="text-link" href="/api/admin/analytics?mode=export&amp;days=7" download><i data-icon="Download"></i>导出 CSV</a></form>
+        <form id="analytics-filter" class="analytics-filter"><label class="field" for="analytics-ip">访客 IP<input id="analytics-ip" type="text" placeholder="输入完整 IPv4 / IPv6" maxlength="64" autocomplete="off"></label><label class="field" for="analytics-path">访问页面<input id="analytics-path" type="text" placeholder="仲魔、技能名称或页面路径" maxlength="160" autocomplete="off"></label><button class="primary" type="submit"><i data-icon="Search"></i>查询</button><button id="analytics-visits-refresh" class="secondary" type="button"><i data-icon="RefreshCw"></i>刷新</button><button id="analytics-reset" class="quiet" type="button"><i data-icon="RotateCcw"></i>重置</button><a id="analytics-export" class="text-link" href="/api/admin/analytics?mode=export&amp;days=7" download><i data-icon="Download"></i>导出 CSV</a></form>
         <div class="table-scroll" tabindex="0" role="region" aria-label="访客访问明细，可横向滚动"><table class="analytics-table"><thead><tr><th>访问时间</th><th>IP / 地区</th><th>访问页面</th><th>设备 / 来源</th><th>停留</th><th>详情</th></tr></thead><tbody id="analytics-visits"><tr><td colspan="6" class="empty-state">正在读取访问记录…</td></tr></tbody></table></div>
         <div class="analytics-pagination"><span id="analytics-page-note">每页 50 条</span><button type="button" id="analytics-next" class="secondary" disabled>更早记录<i data-icon="ChevronRight"></i></button></div>
         <p class="section-footnote">明细滚动保留 60 天，每日清理。独立 IP 不等同于人数；浏览器访客与停留时间为估算。地区来自离线 IP 库，代理访问显示出口地区。健康探测、节点通信及静态资源不计入访问量。</p>
@@ -133,5 +133,5 @@ window.addEventListener('error',event=>{
   </main>
 </div>
 <noscript><p class="noscript">请启用 JavaScript 后使用管理后台。</p></noscript>
-<script src="/bootstrap.js?v=e06ba4a3a0f3"></script>
+<script src="/bootstrap.js?v=db075127c66f"></script>
 </body></html>
