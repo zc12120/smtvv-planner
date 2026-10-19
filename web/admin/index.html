@@ -20,7 +20,7 @@ window.addEventListener('error',event=>{
   <link rel="icon" href="/auth/theme/smtvv-favicon.png?v=smtvv-icon-20260917-1" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="/auth/theme/fonts-optimized.css?v=ffaf512c74bc">
   <link rel="stylesheet" href="/auth/theme/typography.css?v=a539a7c69f3b">
-  <link rel="stylesheet" href="/admin/admin.css?v=ae7823c6f71c">
+  <link rel="stylesheet" href="/admin/admin.css?v=67152fdddf3b">
   <script>try{const p=JSON.parse(localStorage.getItem('smtvv-appearance')||'{}');document.documentElement.dataset.theme=(p?.theme||localStorage.getItem('smtvv-theme'))==='dark'?'dark':'light';document.documentElement.dataset.font=JSON.parse(localStorage.getItem('smtvv-font')||'null')==='large'?'large':'standard';}catch{}</script>
 </head>
 <body class="admin-page">
@@ -94,16 +94,16 @@ window.addEventListener('error',event=>{
     </section>
 
     <section id="analytics" class="admin-section" aria-labelledby="analytics-heading">
-      <div class="section-title"><span class="section-number">05</span><h2 id="analytics-heading">访问统计</h2><span id="analytics-health" class="section-note">玻尔1 · 正在连接</span></div>
+      <div class="section-title"><span class="section-number">05</span><h2 id="analytics-heading"><i data-icon="ChartNoAxesCombined"></i>访问统计</h2><span id="analytics-health" class="section-note analytics-health" data-state="pending"><i data-icon="Server"></i><span>玻尔1 · 正在连接</span></span></div>
       <div class="analytics-sheet section-body">
-        <div class="analytics-toolbar"><div class="analytics-periods" role="group" aria-label="统计时间"><button type="button" data-analytics-days="1" aria-pressed="false">今天</button><button type="button" data-analytics-days="7" aria-pressed="true">7 天</button><button type="button" data-analytics-days="30" aria-pressed="false">30 天</button><button type="button" data-analytics-days="60" aria-pressed="false">60 天</button></div><button type="button" id="analytics-refresh" class="secondary">刷新统计</button></div>
+        <div class="analytics-toolbar"><div class="analytics-periods" role="group" aria-label="统计时间"><button type="button" data-analytics-days="1" aria-pressed="false">今天</button><button type="button" data-analytics-days="7" aria-pressed="true">7 天</button><button type="button" data-analytics-days="30" aria-pressed="false">30 天</button><button type="button" data-analytics-days="60" aria-pressed="false">60 天</button></div><button type="button" id="analytics-refresh" class="secondary"><i data-icon="RefreshCw"></i>刷新统计</button></div>
         <p id="analytics-message" class="analytics-message" role="status" hidden></p>
-        <dl class="analytics-metrics" aria-label="访问概览"><div><dt>页面访问</dt><dd id="analytics-views">—</dd></div><div><dt>独立 IP</dt><dd id="analytics-ips">—</dd></div><div><dt>浏览器访客</dt><dd id="analytics-visitors">—</dd></div><div><dt>生成路线</dt><dd id="analytics-calculations">—</dd></div></dl>
-        <div class="analytics-trend"><h3>访问趋势 <small>北京时间</small></h3><div id="analytics-chart" aria-live="polite"><p class="empty-state">正在读取统计…</p></div></div>
+        <dl class="analytics-metrics" aria-label="访问概览"><div><dt><span class="analytics-metric-icon"><i data-icon="Eye"></i></span>页面访问</dt><dd id="analytics-views">—</dd><small>页面打开与站内切换</small></div><div><dt><span class="analytics-metric-icon"><i data-icon="Globe2"></i></span>独立 IP</dt><dd id="analytics-ips">—</dd><small>按访问地址去重</small></div><div><dt><span class="analytics-metric-icon"><i data-icon="Users"></i></span>浏览器访客</dt><dd id="analytics-visitors">—</dd><small>按浏览器标识去重</small></div><div><dt><span class="analytics-metric-icon"><i data-icon="GitBranch"></i></span>生成路线</dt><dd id="analytics-calculations">—</dd><small>发起路线计算的次数</small></div></dl>
+        <div class="analytics-trend"><div class="analytics-trend-heading"><h3><i data-icon="Activity"></i>访问趋势 <small>北京时间</small></h3><div class="analytics-legend"><span><i class="analytics-legend-views" aria-hidden="true"></i>页面访问</span><span><i class="analytics-legend-ips" aria-hidden="true"></i>独立 IP</span></div></div><div id="analytics-chart"><p class="empty-state">正在读取统计…</p></div><div class="analytics-trend-footer"><p id="analytics-chart-detail" role="status">选择日期查看当天数据</p><span class="analytics-duration"><i data-icon="Clock3"></i>平均可见停留 <strong id="analytics-duration">—</strong></span></div></div>
         <div id="analytics-rankings" class="analytics-rankings"></div>
-        <form id="analytics-filter" class="analytics-filter"><label class="field" for="analytics-ip">访客 IP<input id="analytics-ip" type="text" placeholder="输入完整 IPv4 / IPv6" maxlength="64" autocomplete="off"></label><label class="field" for="analytics-path">访问页面<input id="analytics-path" type="text" placeholder="仲魔、技能名称或页面路径" maxlength="160" autocomplete="off"></label><button class="primary" type="submit">查询</button><button id="analytics-reset" class="quiet" type="button">重置</button><a id="analytics-export" class="text-link" href="/api/admin/analytics?mode=export&amp;days=7" download>导出 CSV</a></form>
+        <form id="analytics-filter" class="analytics-filter"><label class="field" for="analytics-ip">访客 IP<input id="analytics-ip" type="text" placeholder="输入完整 IPv4 / IPv6" maxlength="64" autocomplete="off"></label><label class="field" for="analytics-path">访问页面<input id="analytics-path" type="text" placeholder="仲魔、技能名称或页面路径" maxlength="160" autocomplete="off"></label><button class="primary" type="submit"><i data-icon="Search"></i>查询</button><button id="analytics-reset" class="quiet" type="button"><i data-icon="RotateCcw"></i>重置</button><a id="analytics-export" class="text-link" href="/api/admin/analytics?mode=export&amp;days=7" download><i data-icon="Download"></i>导出 CSV</a></form>
         <div class="table-scroll" tabindex="0" role="region" aria-label="访客访问明细，可横向滚动"><table class="analytics-table"><thead><tr><th>访问时间</th><th>IP / 地区</th><th>访问页面</th><th>设备 / 来源</th><th>停留</th><th>详情</th></tr></thead><tbody id="analytics-visits"><tr><td colspan="6" class="empty-state">正在读取访问记录…</td></tr></tbody></table></div>
-        <div class="analytics-pagination"><span id="analytics-page-note">每页 50 条</span><button type="button" id="analytics-next" class="secondary" disabled>更早记录</button></div>
+        <div class="analytics-pagination"><span id="analytics-page-note">每页 50 条</span><button type="button" id="analytics-next" class="secondary" disabled>更早记录<i data-icon="ChevronRight"></i></button></div>
         <p class="section-footnote">明细滚动保留 60 天，每日清理。独立 IP 不等同于人数；浏览器访客与停留时间为估算。地区来自离线 IP 库，代理访问显示出口地区。健康探测、节点通信及静态资源不计入访问量。</p>
         <p id="analytics-storage" class="section-footnote"></p>
       </div>
@@ -124,5 +124,5 @@ window.addEventListener('error',event=>{
   </main>
 </div>
 <noscript><p class="noscript">请启用 JavaScript 后使用管理后台。</p></noscript>
-<script src="/bootstrap.js?v=63d5882f0c35"></script>
+<script src="/bootstrap.js?v=a21a89406247"></script>
 </body></html>
